@@ -1,0 +1,41 @@
+{
+	"name": "ct.portal",
+	"version": "0.0.1",
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo run build --parallel",
+		"clean": "turbo run clean --parallel && rm -rf node_modules",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"preinstall": "npx only-allow pnpm",
+		"lint": "turbo run lint --parallel",
+		"prepare": "husky install",
+		"prisma": "cd ./apps/web && pnpm prisma generate",
+		"start": "turbo run start --parallel",
+		"test": "turbo run test --parallel",
+		"dev": "turbo run dev --parallel"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.4.2",
+		"@commitlint/config-conventional": "^17.4.2",
+		"@portal/eslint-config-root": "workspace:*",
+		"@portal/prettier-config": "workspace:*",
+		"encoding": "0.1.13",
+		"husky": "^8.0.0",
+		"lint-staged": "14.0.1",
+		"turbo": "latest",
+		"typescript": "5.2.2"
+	},
+	"packageManager": "pnpm@8.6.10",
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"pnpm": {
+		"overrides": {
+			"@auth/core": "^0.14.0"
+		}
+	}
+}

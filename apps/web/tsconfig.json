@@ -1,0 +1,27 @@
+{
+  "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "target": "es2017",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@ui/*": ["../../packages/ui/src/*"],
+      "@fb/*": ["../../packages/fb/src/*"]
+    },
+    "strict": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "allowJs": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
