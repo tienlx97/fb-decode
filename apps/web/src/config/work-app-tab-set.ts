@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
-
-import { WorkGalahadAppTabItem } from '@/components/work-galahad-app-tab-item/index'
 import {
   WorkGalahadAppTabKeyUpdatesBadgeRenderer,
   WorkGalahadAppTabNotificationsBadgeRenderer,
-} from '@/components/work-galahad-app-tab-key-updates-badge-renderer'
+} from '@/features/navigation-app'
 
 type WorkAppTabSet = {
   id: string
@@ -14,7 +11,7 @@ type WorkAppTabSet = {
   badgeRenderer?: any
 }
 
-const WORK_APP_TAB_SET: WorkAppTabSet[] = [
+export const WORK_APP_TAB_SET: WorkAppTabSet[] = [
   {
     id: 'home',
     title: 'Trang chủ',
@@ -36,17 +33,3 @@ const WORK_APP_TAB_SET: WorkAppTabSet[] = [
     tabIconName: 'document',
   },
 ]
-
-export default function WorkGalahadAppTabTopApps() {
-  return WORK_APP_TAB_SET.map((tab, index) => (
-    <WorkGalahadAppTabItem
-      badgeRenderer={tab.badgeRenderer}
-      key={tab.id}
-      href={tab.href}
-      icon={tab.tabIconName}
-      id={tab.id}
-      isFirst={index === 0}
-      title={tab.title}
-    />
-  ))
-}

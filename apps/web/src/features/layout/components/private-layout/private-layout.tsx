@@ -4,8 +4,10 @@ import React from 'react'
 import { useStyles } from './style'
 
 import { mergeClasses } from '@fluentui/react-components'
-import { LayoutNavigationAppRoot } from '../layout-navigation-app-root'
-import { LayoutNavigationAppList } from '../layout-navigation-app-nav-list'
+import {
+  LayoutNavigationAppRoot,
+  LayoutNavigationAppList,
+} from '@/features/navigation-app'
 
 export default function PrivateLayout({
   children,

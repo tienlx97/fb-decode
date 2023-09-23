@@ -1,6 +1,2 @@
 export { default as SpinnerIcon } from './spinner'
 export { default as Icon } from './icon'
-export { default as Document } from './document'
-export { default as Home } from './home'
-export { default as Notification } from './notification'
-export { default as IconWith } from './icon-with'

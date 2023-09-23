@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import React, { forwardRef, useMemo } from 'react'
-import { Icon, IconWith } from 'ui'
+import { Icon } from 'ui'
 
 import { WorkGalahadUIAppsListItem } from '../work-galahad-ui-apps-list-item'
 import { WorkGalahadUIAppNavButton } from '../work-galahad-ui-app-nav-button'

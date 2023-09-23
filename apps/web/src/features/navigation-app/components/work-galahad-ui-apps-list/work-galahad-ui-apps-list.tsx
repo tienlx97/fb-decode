@@ -3,6 +3,7 @@
 import React from 'react'
 
 import { WorkGalahadAppTabTopApps } from '../work-galahad-app-tab-top-apps'
+import { WorkNavigationCollapseButtonAndNubs } from '../work-navigation-collapse-button-and-nubs'
 import { useStyles } from './styles'
 
 export default function WorkGalahadUIAppsList() {
@@ -11,7 +12,7 @@ export default function WorkGalahadUIAppsList() {
   return (
     <div role="grid" className={classes.root}>
       <WorkGalahadAppTabTopApps />
-      {/* WorkNavigationCollapseButtonAndNubs.react */}
+      <WorkNavigationCollapseButtonAndNubs />
     </div>
   )
 }

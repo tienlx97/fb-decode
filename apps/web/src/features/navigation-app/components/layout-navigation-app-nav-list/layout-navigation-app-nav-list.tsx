@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 
-import WorkGalahadUIAppsList from '../work-galahad-ui-apps-list/work-galahad-ui-apps-list'
+import { WorkGalahadUIAppsList } from '../work-galahad-ui-apps-list'
 import { useStyles } from './styles'
 
 export default function NavigationAppList() {
