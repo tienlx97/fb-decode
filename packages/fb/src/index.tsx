@@ -8,3 +8,5 @@ export {
 } from './utils/user-agent/index'
 
 export * from './components'
+
+export * from './tetra-text'

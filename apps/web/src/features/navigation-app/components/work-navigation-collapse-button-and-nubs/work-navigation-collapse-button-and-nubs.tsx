@@ -1,7 +1,9 @@
 import React, { memo } from 'react'
 
 function WorkNavigationCollapseButtonAndNubs() {
-  return <WorkGalahadAppTabProfileItem />
+  // return <WorkGalahadAppTabProfileItem />
+
+  return <div>1</div>
 }
 
 export default memo(WorkNavigationCollapseButtonAndNubs)
@@ -20,7 +22,8 @@ __d("BasePopoverTrigger.react",
     "CometHeroInteractionContextPassthrough.react",//
      "CometHeroInteractionWithDiv.react",
      "CometHeroLogging", 
-     "CometHideLayerOnEscape.react", "CometMenuContext", "CometPlaceholder.react", "cr:1791018", "cr:1802022", "cr:1802023", "gkx", "react", "useCometPrerenderer", "useMergeRefs", "useOnOutsideClick", "useVisibilityObserver"], (function(a, b, c, d, e, f, g) {
+     "CometHideLayerOnEscape.react", //
+     "CometMenuContext", "CometPlaceholder.react", "cr:1791018", "cr:1802022", "cr:1802023", "gkx", "react", "useCometPrerenderer", "useMergeRefs", "useOnOutsideClick", "useVisibilityObserver"], (function(a, b, c, d, e, f, g) {
 
 __d("BasePopoverLayerVisibility.react",
    ["HiddenSubtreePassiveContext", //

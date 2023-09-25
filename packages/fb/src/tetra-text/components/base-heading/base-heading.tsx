@@ -1,0 +1,52 @@
+import React, { forwardRef, ReactNode, useContext, useMemo } from 'react'
+// @ts-ignore
+import { jsx } from 'react/jsx-runtime'
+
+import { BaseHeadingContext } from '@fb/context/base-heading-context'
+import { useBaseTextContext } from '@fb/context/base-text-context'
+// @ts-ignore
+import { mergeClasses } from '@fluentui/react-components'
+
+import { useStyles } from './styles'
+
+type BaseHeadingReactProps = {
+  children: ReactNode
+  isPrimaryHeading?: boolean
+  testid?: string
+  className?: string
+} & HTMLElement
+
+const BaseHeading = forwardRef<HTMLElement, BaseHeadingReactProps>(
+  ({ children, className, isPrimaryHeading = false, testid, ...rest }, ref) => {
+    const classes = useStyles()
+
+    const heading = useContext(BaseHeadingContext)
+
+    const HeadingComponent = useMemo(
+      () => (isPrimaryHeading ? 'h1' : 'h' + Math.max(Math.min(heading, 6), 2)),
+      [isPrimaryHeading, heading],
+    )
+
+    const baseTextContextValue = useBaseTextContext()
+    const isNested =
+      (baseTextContextValue === null
+        ? undefined
+        : baseTextContextValue?.nested) === true
+
+    // HeadingComponent
+    return jsx(
+      HeadingComponent,
+      Object.assign({}, rest, {
+        className: mergeClasses(classes.root, className),
+        'data-testid': undefined,
+        dir: isNested ? undefined : 'auto',
+        ref,
+        children,
+      }),
+    )
+  },
+)
+
+BaseHeading.displayName = 'BaseHeading.react'
+
+export default BaseHeading

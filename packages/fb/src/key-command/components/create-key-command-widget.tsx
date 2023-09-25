@@ -5,7 +5,7 @@ export default function createKeyCommandWidget(isFocusCapture = true) {
   const context = createContext<any>(undefined)
   const wrapper = createKeyCommandWrapper(isFocusCapture, context)
 
-  function useKeyCommands(commands: any, d: any, dependencies: any) {
+  function useKeyCommands(commands: any, d?: any, dependencies?: any) {
     d === void 0 && (d = !1)
     var contextValue = useContext(context)
     useEffect(() => {

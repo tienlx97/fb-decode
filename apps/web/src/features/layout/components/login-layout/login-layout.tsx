@@ -3,7 +3,7 @@
 import { Footer } from '@/components'
 import { Logo } from '@/features/login'
 import { makeStyles, shorthands } from '@fluentui/react-components'
-import React, { ReactNode } from 'react'
+import React, { CSSProperties, ReactNode } from 'react'
 
 const useStyles = makeStyles({
   root: {
@@ -23,10 +23,13 @@ const useStyles = makeStyles({
   },
 })
 
-export default function LoginLayout({ children }: { children: ReactNode }) {
+export default function LoginLayout({
+  children,
+  ...rest
+}: React.JSX.IntrinsicElements['div']) {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
+    <div className={classes.root} {...rest}>
       <div className={classes.children}>
         <Logo style={{ marginTop: '80px' }} />
         {children}
