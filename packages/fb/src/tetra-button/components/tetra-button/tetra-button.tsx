@@ -9,7 +9,7 @@ import { jsx } from 'react/jsx-runtime'
 import { TetraText } from '@fb/tetra-text'
 import isBlueprintStylesEnabled from '@fb/utils/is-blueprint-styles-enabled'
 import { mergeRefs } from '@fb/hooks/use-merge-refs'
-import { useSizeStyles, useStyles } from './styles'
+import { useBlueprintStyles, useStyles } from './styles'
 
 type TetraButtonProps = {
   addOnPrimary?: ReactNode
@@ -167,7 +167,7 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
     ref,
   ) => {
     const classes = useStyles()
-    const sizeClasses = useSizeStyles()
+    const sizeClasses = useBlueprintStyles()
 
     const H = getColor(
       type,
@@ -180,13 +180,13 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
 
     const { iconColor, overlayPressedStyle, textColor } = H as any
 
-    const K = useRef<any>(null)
+    const internalRef = useRef<any>(null)
 
     // const _label = rest['ariaLabel'] ? rest['ariaLabel'] : label
     // const _ariabLabel =
     //   useContext(CometGHLRenderingContext) && linkProps ? undefined : _label
 
-    const d = jsx(
+    const tetraButtonChildren = jsx(
       BaseStyledButton,
       Object.assign({}, rest, {
         addOnEnd: addOnSecondary,
@@ -203,12 +203,16 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
         contentXstyle: mergeClasses(
           type === 'overlay' && disabled && classes.contentDisabled,
           // type === 'overlay' && L,
-          size === 'medium' && isBlueprintStylesEnabled()
-            ? sizeClasses.sizeMedium
-            : classes.sizeMedium,
-          size === 'large' && isBlueprintStylesEnabled()
-            ? sizeClasses.sizeLarge
-            : classes.sizeLarge,
+          size === 'medium'
+            ? isBlueprintStylesEnabled()
+              ? sizeClasses.sizeMedium
+              : classes.sizeMedium
+            : undefined,
+          size === 'large'
+            ? isBlueprintStylesEnabled()
+              ? sizeClasses.sizeLarge
+              : classes.sizeLarge
+            : undefined,
           // @ts-ignore
           icon && labelIsHidden && classes.paddingIconOnly,
         ),
@@ -232,7 +236,7 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
         onPressOut,
         overlayPressedStyle,
         padding,
-        ref: mergeRefs(K, ref),
+        ref: mergeRefs(internalRef, ref),
         suppressHydrationWarning,
         testOnly_pressed,
         className: mergeClasses(
@@ -262,7 +266,7 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
     //     })
     //   : d
 
-    return d
+    return tetraButtonChildren
   },
 )
 

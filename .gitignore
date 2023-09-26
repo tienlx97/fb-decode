@@ -71,3 +71,9 @@ amplifytools.xcconfig
 **.sample
 #amplify-do-not-edit-end
 .vercel
+
+# 
+
+apps/web/package.json
+packages/fb/package.json
+packages/ui/package.json

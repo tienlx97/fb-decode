@@ -20,7 +20,7 @@
     "@react-email/components": "0.0.7",
     "client-only": "0.0.1",
     "fb": "workspace:*",
-    "next": "link:/home/tienlx97/work/next.js/packages/next",
+    "next": "link:/home/tienlx97/Private/work/SLEEKLINGO/next.js/packages/next",
     "next-auth": "0.0.0-manual.ffd05533",
     "prisma": "5.2.0",
     "react": "workspace:*",

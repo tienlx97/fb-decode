@@ -82,7 +82,7 @@ export const useStyles = makeStyles({
   },
 })
 
-export const useSizeStyles = makeStyles({
+export const useBlueprintStyles = makeStyles({
   sizeLarge: {
     ...shorthands.borderRadius('var(--button-corner-radius-large)'),
     height: 'var(--blueprint-button-height-large)',
