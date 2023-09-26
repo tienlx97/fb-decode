@@ -10,3 +10,4 @@ export {
 export * from './components'
 
 export * from './tetra-text'
+export * from './tetra-button'

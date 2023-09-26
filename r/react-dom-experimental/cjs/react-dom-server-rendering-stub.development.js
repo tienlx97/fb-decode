@@ -14,9 +14,9 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = require("next/dist/compiled/react-experimental");
+var React = require('next/dist/compiled/react-experimental');
 
-var ReactVersion = '18.3.0-experimental-2807d781a-20230918';
+var ReactVersion = '18.3.0-experimental-56b14477e-20230921';
 
 var Internals = {
   usingClientEntryPoint: false,

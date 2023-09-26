@@ -23,10 +23,8 @@ if (
 ) {
   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
 }
-
-var React = require("next/dist/compiled/react-experimental");
-var Scheduler = require("next/dist/compiled/scheduler-experimental");
-
+          var React = require('next/dist/compiled/react-experimental');
+var Scheduler = require('scheduler');
 
 var Internals = {
   usingClientEntryPoint: false,
@@ -3633,15 +3631,24 @@ function restoreControlledInputState(element, props) {
 
       if (!otherProps) {
         throw new Error('ReactDOMInput: Mixing React and non-React radio inputs with the ' + 'same `name` is not supported.');
-      } // We need update the tracked value on the named cousin since the value
-      // was changed but the input saw no event or value set
-
-
-      updateValueIfChanged(otherNode); // If this is a controlled radio button group, forcing the input that
+      } // If this is a controlled radio button group, forcing the input that
       // was previously checked to update will cause it to be come re-checked
       // as appropriate.
 
+
       updateInput(otherNode, otherProps.value, otherProps.defaultValue, otherProps.defaultValue, otherProps.checked, otherProps.defaultChecked, otherProps.type, otherProps.name);
+    } // If any updateInput() call set .checked to true, an input in this group
+    // (often, `rootNode` itself) may have become unchecked
+
+
+    for (var _i = 0; _i < group.length; _i++) {
+      var _otherNode = group[_i];
+
+      if (_otherNode.form !== rootNode.form) {
+        continue;
+      }
+
+      updateValueIfChanged(_otherNode);
     }
   }
 } // In Chrome, assigning defaultValue to certain input types triggers input validation.
@@ -28529,8 +28536,7 @@ identifierPrefix, onRecoverableError, transitionCallbacks, formState) {
   return root;
 }
 
-var ReactVersion = '18.3.0-experimental-2807d781a-20230918';
-// var ReactVersion = '18.3.0-experimental-2b3d58268-20230920';
+var ReactVersion = '18.3.0-experimental-56b14477e-20230921';
 
 function createPortal$1(children, containerInfo, // TODO: figure out the API for cross-renderer implementation.
 implementation) {
@@ -39090,4 +39096,3 @@ if (
         
   })();
 }
-// @lexuantien

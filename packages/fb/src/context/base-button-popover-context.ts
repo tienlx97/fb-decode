@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-type BaseButtonPopoverContextProps = any
+type BaseButtonPopoverContextProps = {}
 
 const BaseButtonPopoverContext = createContext<
   BaseButtonPopoverContextProps | undefined

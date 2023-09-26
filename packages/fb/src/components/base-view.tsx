@@ -1,5 +1,14 @@
 import React, { forwardRef } from 'react'
 import { LegacyHidden } from './legacy-hidden'
+
+// const LegacyHidden = dynamic(
+//   // @ts-ignore
+//   () => import('./legacy-hidden').then(r => r.LegacyHidden),
+//   {
+//     ssr: false,
+//   },
+// )
+
 import { makeStyles, mergeClasses } from '@fluentui/react-components'
 
 type BaseViewReactProps = {

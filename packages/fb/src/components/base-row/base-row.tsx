@@ -1,7 +1,7 @@
 import React, { forwardRef, ReactNode, useMemo } from 'react'
 
 import { BaseRowContext } from '@fb/context/base-row-context'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@fluentui/react-components'
 
 import BaseView from '../base-view'
 import {

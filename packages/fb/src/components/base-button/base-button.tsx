@@ -3,9 +3,15 @@ import React, { forwardRef, useContext } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { Pressable } from '../pressable'
+// import { Pressable } from '../pressable'
+
+const Pressable = dynamic(() => import('../pressable').then(r => r.Pressable), {
+  ssr: false,
+})
+
 import { PressableText } from '../pressable-text'
 import BaseButtonPopoverContext from '@fb/context/base-button-popover-context'
+import dynamic from 'next/dynamic'
 
 type BaseButtonProps = any
 
@@ -82,7 +88,7 @@ const BaseButton = forwardRef<HTMLElement, BaseButtonProps>((props, ref) => {
       current: ariaCurrent,
       describedby: ariaDescribedby,
       haspopup:
-        baseButtonPopoverContextValue !== null && ariaHaspopup == null
+        baseButtonPopoverContextValue && ariaHaspopup
           ? baseButtonPopoverContextValue.haspopup
           : ariaHaspopup,
       labelledby: ariaLabelledby,
@@ -91,7 +97,7 @@ const BaseButton = forwardRef<HTMLElement, BaseButtonProps>((props, ref) => {
       checked: ariaChecked,
       disabled: disabled,
       expanded:
-        baseButtonPopoverContextValue !== null && ariaExpanded == null
+        baseButtonPopoverContextValue && ariaExpanded
           ? baseButtonPopoverContextValue.expanded
           : ariaExpanded,
       hidden: ariaHidden,

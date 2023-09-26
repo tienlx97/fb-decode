@@ -57,9 +57,14 @@ type CometPressableProps = {
   testid?: any
   onContextMenu?: (...props: any) => any
   id?: string
+  focusable?: boolean
+  suppressHydrationWarning?: boolean
 }
 
-const CometPressable = forwardRef<HTMLElement, CometPressableProps>(
+const CometPressable = forwardRef<
+  HTMLElement,
+  CometPressableProps & HTMLElement
+>(
   (
     {
       allowClickEventPropagation,
@@ -174,7 +179,8 @@ const CometPressable = forwardRef<HTMLElement, CometPressableProps>(
 
     const _classNameWith =
       typeof className === 'function'
-        ? className({
+        ? // @ts-ignore
+          className({
             disabled,
             focused: focusedState,
             focusVisible: focusVisibleState,
