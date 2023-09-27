@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React, { ReactNode, forwardRef, useContext, useRef } from 'react'
+import React, { ReactNode, forwardRef, useRef } from 'react'
 
 import { mergeClasses } from '@fluentui/react-components'
 import CometGHLRenderingContext from '@fb/context/comet-ghl-rendering-context'
@@ -10,10 +10,11 @@ import { TetraText } from '@fb/tetra-text'
 import isBlueprintStylesEnabled from '@fb/utils/is-blueprint-styles-enabled'
 import { mergeRefs } from '@fb/hooks/use-merge-refs'
 import { useBlueprintStyles, useStyles } from './styles'
+import CometIcon from '@fb/components/comet-icon'
 
 type TetraButtonProps = {
-  addOnPrimary?: ReactNode
-  addOnSecondary?: ReactNode
+  addOnPrimary?: any
+  addOnSecondary?: any
   disabled?: boolean
   icon?: any
   id?: string
@@ -219,11 +220,11 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
         disabled,
         icon:
           icon &&
-          jsx(icon, {
+          jsx(CometIcon, {
             color: iconColor,
-            width: 16,
-            height: 16,
-            className: classes.displayBlock,
+            size: 16,
+            icon,
+            // className: classes.displayBlock,
           }), // color: iconColor, size: 16, icon
         id,
         linkProps,

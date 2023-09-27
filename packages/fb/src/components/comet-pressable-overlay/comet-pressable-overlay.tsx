@@ -86,6 +86,7 @@ export default function CometPressableOverlay({
           : undefined
       }
     >
+      {/* TODO */}
       {/* showGridSignifiers ? CometCompositeItemFocusIndicator.react : null */}
       {showGridSignifiers ? <></> : <></>}
     </div>

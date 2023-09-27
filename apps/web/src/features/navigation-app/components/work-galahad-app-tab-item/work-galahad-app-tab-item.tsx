@@ -2,10 +2,10 @@
 
 import { usePathname } from 'next/navigation'
 import React, { forwardRef, useMemo } from 'react'
-import { Icon } from 'ui'
 
 import { WorkGalahadUIAppsListItem } from '../work-galahad-ui-apps-list-item'
 import { WorkGalahadUIAppNavButton } from '../work-galahad-ui-app-nav-button'
+import { WorkGalahadUIAppTabSelectorIcon } from '../work-galahad-ui-app-tab-selector-Icon'
 
 type Props = {
   title: string
@@ -32,9 +32,7 @@ const WorkGalahadAppTabItem = forwardRef<HTMLDivElement, Props>(
     const preventLocalNavigation = I ? !1 : !selected
 
     const Icon = useMemo(
-      () => (
-        <WorkGalahadUIAppTabSelectorIcon iconName={icon} selected={selected} />
-      ),
+      () => <WorkGalahadUIAppTabSelectorIcon icon={icon} selected={selected} />,
       [selected, icon],
     )
 
@@ -60,39 +58,39 @@ export default WorkGalahadAppTabItem
 
 // WorkGalahadAppTabItem.react WorkGalahadUIAppTabSelectorIcon.react
 
-type WorkGalahadUIAppTabSelectorIconProps = {
-  selected: boolean
-  iconName: string
-}
+// type WorkGalahadUIAppTabSelectorIconProps = {
+//   selected: boolean
+//   iconName: string
+// }
 
-const WorkGalahadUIAppTabSelectorIcon = ({
-  iconName,
-  selected,
-}: WorkGalahadUIAppTabSelectorIconProps) => {
-  // return (
-  //   <IconWith
-  //     color={
-  //       selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
-  //     }
-  //     fill={
-  //       selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
-  //     }
-  //     name={iconName}
-  //     width={32}
-  //     height={32}
-  //   />
-  // )
-  return (
-    <Icon
-      color={
-        selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
-      }
-      fill={
-        selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
-      }
-      name={(iconName + `${selected ? '-fill' : '-outline'}`) as any}
-      width={32}
-      height={32}
-    />
-  )
-}
+// const WorkGalahadUIAppTabSelectorIcon = ({
+//   iconName,
+//   selected,
+// }: WorkGalahadUIAppTabSelectorIconProps) => {
+//   // return (
+//   //   <IconWith
+//   //     color={
+//   //       selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
+//   //     }
+//   //     fill={
+//   //       selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
+//   //     }
+//   //     name={iconName}
+//   //     width={32}
+//   //     height={32}
+//   //   />
+//   // )
+//   return (
+//     <Icon
+//       color={
+//         selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
+//       }
+//       fill={
+//         selected ? 'var(--primary-button-background)' : 'var(--secondary-icon)'
+//       }
+//       name={(iconName + `${selected ? '-fill' : '-outline'}`) as any}
+//       width={32}
+//       height={32}
+//     />
+//   )
+// }

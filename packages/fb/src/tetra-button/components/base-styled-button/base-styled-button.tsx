@@ -118,26 +118,26 @@ const BaseStyledButton = forwardRef<HTMLDivElement, BaseStyledButtonProps>(
               addOnStart
                 ? jsx(BaseRowItem, {
                     useDeprecatedStyles: true,
-                    xstyle: N,
+                    className: N,
                     children: addOnStart,
                   })
                 : icon
                 ? jsx(BaseRowItem, {
                     useDeprecatedStyles: true,
-                    xstyle: N,
+                    className: N,
                     children: icon,
                   })
                 : null,
               content &&
                 jsx(BaseRowItem, {
                   useDeprecatedStyles: true,
-                  xstyle: N,
+                  className: N,
                   children: content,
                 }),
               addOnEnd &&
                 jsx(BaseRowItem, {
                   useDeprecatedStyles: true,
-                  xstyle: N,
+                  className: N,
                   children: addOnEnd,
                 }),
             ],

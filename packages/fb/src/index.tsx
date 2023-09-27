@@ -11,3 +11,6 @@ export * from './components'
 
 export * from './tetra-text'
 export * from './tetra-button'
+export * from './icons'
+
+export * from './utils'

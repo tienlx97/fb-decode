@@ -19,21 +19,21 @@ const WORK_APP_TAB_SET: WorkAppTabSet[] = [
     id: 'home',
     title: 'Trang chủ',
     href: '/home',
-    tabIconName: 'home',
+    tabIconName: 'HOME',
     badgeRenderer: WorkGalahadAppTabKeyUpdatesBadgeRenderer,
   },
   {
     id: 'notifications',
     title: 'Thông báo',
     href: '/notifications',
-    tabIconName: 'notification',
+    tabIconName: 'NOTIFICATIONS',
     badgeRenderer: WorkGalahadAppTabNotificationsBadgeRenderer,
   },
   {
     id: 'knowledge_library',
     title: 'Thư viện kiến thức',
     href: '/knowledge',
-    tabIconName: 'document',
+    tabIconName: 'KNOWLEDGE_LIBRARY',
   },
 ]
 
