@@ -5,7 +5,7 @@ import {
   CometSvgIcon,
 } from './comet-svg-icon'
 
-type CometIconProps = {
+export type CometIconProps = {
   color: CometSVGIconColor
   icon: any
   size: CometSVGIconSize

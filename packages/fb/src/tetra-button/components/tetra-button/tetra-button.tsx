@@ -10,7 +10,7 @@ import { TetraText } from '@fb/tetra-text'
 import isBlueprintStylesEnabled from '@fb/utils/is-blueprint-styles-enabled'
 import { mergeRefs } from '@fb/hooks/use-merge-refs'
 import { useBlueprintStyles, useStyles } from './styles'
-import CometIcon from '@fb/components/comet-icon'
+import { CometIcon } from '@fb/tetra-icon'
 
 type TetraButtonProps = {
   addOnPrimary?: any

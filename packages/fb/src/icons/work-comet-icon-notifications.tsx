@@ -3,7 +3,7 @@ import {
   CometSVGIconColor,
   CometSVGIconSize,
   CometSvgIcon,
-} from '../components'
+} from '@fb/tetra-icon'
 
 type Props = {
   size: CometSVGIconSize
