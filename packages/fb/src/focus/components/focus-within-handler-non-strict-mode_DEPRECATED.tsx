@@ -10,18 +10,21 @@ import React, {
   useState,
   // @ts-ignore
   unstable_Scope,
+  ReactNode,
 } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
 type FocusWithinHandlerNonStrictModeReactProps = {
-  children?: any
+  children?: ReactNode | ((isFocus: boolean, isFocusVisible: boolean) => any)
   onFocusChange?: (...props: any) => any
   onFocusVisibleChange?: (...props: any) => any
   onFocusWithin?: (...props: any) => any
   onBlurWithin?: (...props: any) => any
   testOnly?: any
 }
+
+export type FocusWithinHandlerChildren = {}
 
 export default function FocusWithinHandlerNonStrictMode_DEPRECATEDReact({
   onBlurWithin,

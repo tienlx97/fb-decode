@@ -8,15 +8,21 @@ import {
   CaretDownSvg,
   CometCircleButton,
   legacySVGIcon,
+  CometFormTextArea,
 } from 'fb'
 
-export const Default = () => (
-  <div style={{ width: '440px' }}>
-    <TetraText color="secondary" align="center" type="body2">
-      You're all caught up for now. Be sure to check for more updates soon.
-    </TetraText>
+export const Default = () => {
+  const [state, setState] = React.useState(
+    'だれでもない。だれ　でもいたくないです。',
+  )
 
-    {/* <TetraButton
+  return (
+    <div style={{ width: '440px' }}>
+      <TetraText color="secondary" align="center" type="body2">
+        You're all caught up for now. Be sure to check for more updates soon.
+      </TetraText>
+
+      {/* <TetraButton
       label="Create"
       reduceEmphasis
       addOnSecondary={<CaretDownFilled color="highlight" size={16} />}
@@ -24,11 +30,24 @@ export const Default = () => (
       icon={CaretDownSvg}
     /> */}
 
-    <CometCircleButton
+      {/* <CometCircleButton
       icon={CaretDownSvg}
       size={40}
       type="primary-background-overlay"
       color="baseLime"
-    />
-  </div>
-)
+    /> */}
+
+      <div style={{ margin: '1rem' }}>
+        <CometFormTextArea
+          label="Favorite quotes"
+          disabled={false}
+          value={state}
+          onValueChange={(val, e) => {
+            setState(val)
+          }}
+          minRows={3}
+        />
+      </div>
+    </div>
+  )
+}

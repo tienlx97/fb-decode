@@ -15,3 +15,4 @@ export * from './icons'
 
 export * from './utils'
 export * from './tetra-icon'
+export * from './textarea'

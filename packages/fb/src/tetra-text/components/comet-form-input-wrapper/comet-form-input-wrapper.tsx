@@ -113,8 +113,7 @@ export default function CometFormInputWrapper({
   const W = (bool: any) => {
     return labelLocation_INTERNALOutside
       ? jsx('label', {
-          className:
-            'x1jchvi3 x1fcty0u x132q4wb x193iq5w x1al4vs7 xgqhv05 x1e56ztr x1n2onr6',
+          className: classes.labelInternal,
           suppressHydrationWarning: true,
           children: label,
         })
@@ -162,7 +161,7 @@ export default function CometFormInputWrapper({
   }, [comboboxKeyDown])
 
   return jsxs('div', {
-    className: 'x78zum5 xdt5ytf xh8yej3',
+    className: classes.dummy,
     ref: wrapperRef,
     children: [
       labelLocation_INTERNALOutside && W(false),
@@ -215,11 +214,11 @@ export default function CometFormInputWrapper({
                 tabIndex: onPress ? 0 : void 0,
                 children: [
                   jsxs('div', {
-                    className: 'x78zum5 xh8yej3',
+                    className: classes.dummy2,
                     children: [
                       addOnStart,
                       jsxs('div', {
-                        className: 'xjbqb8w x1iyjqo2 x193iq5w xeuugli x1n2onr6',
+                        className: classes.dummy3,
                         children: [
                           withHeaderMask &&
                             !disabled &&
@@ -253,7 +252,7 @@ export default function CometFormInputWrapper({
                       }),
                       (auxContent || validationState) &&
                         jsxs('div', {
-                          className: 'x78zum5',
+                          className: classes.dummy4,
                           children: [
                             validationState &&
                               jsx('div', {
@@ -280,13 +279,12 @@ export default function CometFormInputWrapper({
       helperText &&
         (helperTextIsHidden
           ? jsx('div', {
-              className:
-                'xzpqnlu x1hyvwdk xjm9jq1 x6ikm8r x10wlt62 x10l6tqk x1i1rx1s',
+              className: classes.helperTextIsHidden,
               id: id2,
               children: helperText,
             })
           : jsx('div', {
-              className: 'x1xmf6yo',
+              className: classes.dummy5,
               id: id2,
               children: jsx(CometFormInputWrapperHelperText, {
                 validationState,

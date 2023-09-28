@@ -13,7 +13,7 @@ import { mergeClasses } from '@fluentui/react-components'
 import { useStyles } from './styles'
 
 type BaseInputProps = {
-  onValueChange?: (value: any, event: any) => void
+  onValueChange?: (value: string, event: React.ChangeEvent<HTMLElement>) => void
   testid?: string
   type?: HTMLInputTypeAttribute | 'switch'
 } & React.JSX.IntrinsicElements['textarea'] &

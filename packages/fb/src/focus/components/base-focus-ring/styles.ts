@@ -1,4 +1,4 @@
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles, shorthands } from '@fluentui/react-components'
 
 export const useStyles = makeStyles({
   default: {
@@ -20,5 +20,12 @@ export const useStyles = makeStyles({
 
   unfocused: {
     outlineStyle: 'none',
+  },
+
+  focused: {
+    ...shorthands.outline('2px', 'solid', 'Highlight'),
+    '@media (-webkit-min-device-pixel-ratio: 0)': {
+      ...shorthands.outline('5px', 'auto', '-webkit-focus-ring-color'),
+    },
   },
 })

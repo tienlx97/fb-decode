@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
@@ -7,14 +7,14 @@ import FocusWithinHandler from '../focus-within-handler'
 import { useStyles } from './styles'
 
 type BaseFosusRingProps = {
-  children?: any
+  children: (className: string) => any
   focusRingPosition?: 'default' | 'inset'
   mode?: any
   suppressFocusRing?: boolean
   testOnly?: any
 }
 
-const k = true // gkx.k('1721477') || gkx.k('1459')
+const fbDynamicValue = true // gkx.k('1721477') || gkx.k('1459')
 
 export default function BaseFocusRing({
   focusRingPosition = 'default',
@@ -26,26 +26,39 @@ export default function BaseFocusRing({
   const classes = useStyles()
 
   return jsx(FocusWithinHandler, {
-    testOnly,
-    children: (a: any, c: any) => {
-      let d = false
-      suppressFocusRing ||
-        (a && c ? (d = true) : a && mode === 'focus' && (d = true))
+    testOnly, // isFocus: boolean, isFocusVisible: boolean
+    children: (isFocus: boolean, isFocusVisible: boolean) => {
+      let _focus = false
+
+      if (suppressFocusRing && isFocus) {
+        if (isFocusVisible || mode === 'focus') {
+          _focus = true
+        }
+      }
+
+      // suppressFocusRing ||
+      //   (isFocus && isFocusVisible
+      //     ? (d = true)
+      //     : isFocus && mode === 'focus' && (d = true))
 
       return children(
-        focusRingPosition
-          ? k
+        _focus
+          ? fbDynamicValue
             ? classes[focusRingPosition]
-            : 'focused'
+            : classes.focused
           : classes.unfocused,
       )
     },
   })
 }
 
-BaseFocusRing.focusRingXStyle = k ? 'newFocused' : 'focused'
-BaseFocusRing.focusRingInsetXStyle = k ? 'newFocusedInset' : 'focused'
-BaseFocusRing.linkFocusRingXStyle = k ? 'newFocusedLink' : 'focused'
+BaseFocusRing.focusRingXStyle = fbDynamicValue ? 'newFocused' : 'focused'
+BaseFocusRing.focusRingInsetXStyle = fbDynamicValue
+  ? 'newFocusedInset'
+  : 'focused'
+BaseFocusRing.linkFocusRingXStyle = fbDynamicValue
+  ? 'newFocusedLink'
+  : 'focused'
 
 // __d(
 //   'BaseFocusRing.react',

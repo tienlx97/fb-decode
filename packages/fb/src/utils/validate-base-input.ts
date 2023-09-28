@@ -1,7 +1,14 @@
 import { processBaseInputValidators } from './process-base-input-validators'
 
-export default function validateBaseInput(a: any, value: any, d: any) {
-  const allResults = d != null && !a ? processBaseInputValidators(value, d) : []
+export default function validateBaseInput(
+  isPristine: any,
+  value: any,
+  validator: any,
+) {
+  const allResults =
+    validator != null && !isPristine
+      ? processBaseInputValidators(value, validator)
+      : []
   if (allResults.length === 0)
     return {
       allResults: allResults,

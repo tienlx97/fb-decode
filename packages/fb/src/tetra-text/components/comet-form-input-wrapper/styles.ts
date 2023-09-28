@@ -194,6 +194,56 @@ export const useStyles = makeStyles({
     backgroundColor:
       'hsla(var(--warning-h),var(--warning-s),var(--warning-l),.05)',
   },
+
+  //
+
+  labelInternal: {
+    fontSize: '1rem',
+    fontWeight: 'normal',
+    lineHeight: 1.25,
+    maxWidth: '100%',
+    transformOrigin: 'top left',
+    color: 'var(--text-input-outside-label)',
+    marginBottom: '8px',
+    position: 'relative',
+  },
+
+  helperTextIsHidden: {
+    clip: 'rect(0,0,0,0)',
+    clipPath: 'inset(50%)',
+    height: '1px',
+    overflowX: 'hidden',
+    overflowY: 'hidden',
+    position: 'absolute',
+    width: '1px',
+  },
+
+  dummy5: {
+    marginTop: '8px',
+  },
+
+  dummy4: {
+    display: 'flex',
+  },
+
+  dummy2: {
+    display: 'flex',
+    width: '100%',
+  },
+
+  dummy3: {
+    backgroundColor: 'transparent',
+    flexGrow: 1,
+    maxWidth: '100%',
+    minWidth: 0,
+    position: 'relative',
+  },
+
+  dummy: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+  },
 })
 
 export const useCursorStyles = makeStyles({
