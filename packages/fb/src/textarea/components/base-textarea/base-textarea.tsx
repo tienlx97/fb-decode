@@ -1,3 +1,105 @@
+import { BaseFocusRing } from '@fb/focus/components/base-focus-ring'
+import { mergeRefs } from '@fb/hooks/use-merge-refs'
+import usePrevious from '@fb/hooks/usePrevious'
+import React, { forwardRef, useLayoutEffect, useMemo, useRef } from 'react'
+
+// @ts-ignore
+import { jsx } from 'react/jsx-runtime'
+
+import { BaseInput } from '../base-input'
+import { mergeClasses } from '@fluentui/react-components'
+import { useStyles } from './styles'
+
+type BaseTextareaProp = {
+  maxRows?: number
+  minRows?: number
+  suppressFocusRing?: boolean
+  unresizable?: boolean
+  value?: any
+  className?: string
+} & React.JSX.IntrinsicElements['textarea']
+
+const BaseTextArea = forwardRef<HTMLTextAreaElement, BaseTextareaProp>(
+  (
+    {
+      maxRows = 200,
+      minRows = 1,
+      suppressFocusRing,
+      unresizable = false,
+      value,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
+    const classes = useStyles()
+
+    const normalizeValue = value ? String(value) : value
+
+    const internalRef = useRef<HTMLTextAreaElement | undefined>(undefined)
+
+    const previousMaxRows = usePrevious(maxRows)
+    const previousValue = usePrevious(normalizeValue)
+
+    useLayoutEffect(() => {
+      const val = internalRef?.current
+
+      if (val) {
+        if (
+          !previousMaxRows ||
+          !previousValue ||
+          !normalizeValue ||
+          maxRows < previousMaxRows ||
+          normalizeValue.length < previousValue.length
+        ) {
+          val.rows = Math.min(Math.max(minRows, 1), maxRows)
+        }
+
+        let { clientHeight } = val
+
+        while (val.rows < maxRows && clientHeight < val.scrollHeight) {
+          val.rows += 1
+
+          const clientHeightChange = clientHeight
+
+          if (clientHeight === clientHeightChange) {
+            break
+          }
+
+          clientHeight = clientHeightChange
+        }
+
+        val.style.overflow = val.rows < maxRows ? 'hidden' : 'auto'
+      }
+    }, [maxRows, minRows, previousMaxRows, previousValue])
+
+    var baseInputRef = useMemo(() => mergeRefs(internalRef, ref), [ref])
+
+    return jsx(BaseFocusRing, {
+      suppressFocusRing,
+      children: (param: any) => {
+        return jsx(
+          BaseInput,
+          Object.assign({}, rest, {
+            ref: baseInputRef,
+            type: 'textarea',
+            value: normalizeValue,
+            className: mergeClasses(
+              param,
+              unresizable && classes.unresizable,
+              className,
+            ),
+          }),
+        )
+      },
+    })
+  },
+)
+
+export default BaseTextArea
+
+/*
+
 __d(
   'BaseTextArea.react',
   [
@@ -38,19 +140,19 @@ __d(
           'value',
           'xstyle',
         ]),
-        p = value != null ? String(value) : value,
-        q = useRef(null),
-        r = c('usePrevious')(_maxRows),
-        s = c('usePrevious')(p)
+        normalizeValue = value != null ? String(value) : value,
+        internalRef = useRef(null),
+        previousMaxRows = c('usePrevious')(_maxRows),
+        previousValue = c('usePrevious')(normalizeValue)
       useLayoutEffect(
         function () {
-          var a = q.current
+          var a = internalRef.current
           if (a != null) {
-            ;(r == null ||
-              s == null ||
-              p == null ||
-              _maxRows < r ||
-              p.length < s.length) &&
+            ;(previousMaxRows == null ||
+              previousValue == null ||
+              normalizeValue == null ||
+              _maxRows < previousMaxRows ||
+              normalizeValue.length < previousValue.length) &&
               (a.rows = Math.min(Math.max(_minRows, 1), _maxRows))
             var b = a.clientHeight
             while (a.rows < _maxRows && b < a.scrollHeight) {
@@ -62,11 +164,11 @@ __d(
             a.style.overflowY = a.rows < _maxRows ? 'hidden' : 'auto'
           }
         },
-        [_maxRows, _minRows, r, s, p],
+        [_maxRows, _minRows, previousMaxRows, previousValue, normalizeValue],
       )
       var t = useMemo(
         function () {
-          return c('mergeRefs')(q, b)
+          return c('mergeRefs')(internalRef, b)
         },
         [b],
       )
@@ -78,7 +180,7 @@ __d(
             babelHelpers['extends']({}, o, {
               ref: t,
               type: 'textarea',
-              value: p,
+              value: normalizeValue,
               xstyle: [a, unresizable && l.unresizable, xstyle],
             }),
           )
@@ -91,3 +193,5 @@ __d(
   },
   98,
 )
+
+*/

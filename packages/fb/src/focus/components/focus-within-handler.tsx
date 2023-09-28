@@ -5,7 +5,7 @@ import FocusWithinHandlerNonStrictMode_DEPRECATED from './focus-within-handler-n
 
 const gkx3696 = false
 
-export default function FocusWithinHandlerReact(props: any) {
+export default function FocusWithinHandler(props: any) {
   if (gkx3696) {
     return <FocusWithinHandlerStrictModeReact {...props} />
   } else {
