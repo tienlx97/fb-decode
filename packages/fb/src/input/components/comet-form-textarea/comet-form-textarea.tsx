@@ -25,7 +25,7 @@ type CometFormTextAreaProps = {
   onBlur?: (props: any) => any
   onFocus?: (props: any) => any
   onValueChange?: (value: string, event?: React.ChangeEvent<HTMLElement>) => any
-  placeholder?: any
+  placeholder?: string
   suppressFocusRing?: boolean
   testid?: string
   validationState?: string

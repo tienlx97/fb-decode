@@ -7,13 +7,14 @@
  * @providesModule VersionRange
  */
 
-"use strict";
+'use strict'
 
-const componentRegex = /\./;
-const orRegex = /\|\|/;
-const rangeRegex = /\s+\-\s+/;
-const modifierRegex = /^(<=|<|=|>=|~>|~|>|)?\s*(.+)/;
-const numericRegex = /^(\d*)(.*)/;
+const componentRegex = /\./
+const orRegex = /\|\|/
+// eslint-disable-next-line no-useless-escape
+const rangeRegex = /\s+\-\s+/
+const modifierRegex = /^(<=|<|=|>=|~>|~|>|)?\s*(.+)/
+const numericRegex = /^(\d*)(.*)/
 
 /**
  * Splits input `range` on "||" and returns true if any subrange matches
@@ -24,13 +25,13 @@ const numericRegex = /^(\d*)(.*)/;
  * @returns {boolean}
  */
 function checkOrExpression(range, version) {
-  const expressions = range.split(orRegex);
+  const expressions = range.split(orRegex)
 
   if (expressions.length > 1) {
-    return expressions.some((range) => VersionRange.contains(range, version));
+    return expressions.some(range => VersionRange.contains(range, version))
   } else {
-    range = expressions[0].trim();
-    return checkRangeExpression(range, version);
+    range = expressions[0].trim()
+    return checkRangeExpression(range, version)
   }
 }
 
@@ -43,26 +44,26 @@ function checkOrExpression(range, version) {
  * @returns {boolean}
  */
 function checkRangeExpression(range, version) {
-  const expressions = range.split(rangeRegex);
+  const expressions = range.split(rangeRegex)
 
   if (!(expressions.length > 0 && expressions.length <= 2)) {
-    throw new Error('the "-" operator expects exactly 2 operands');
+    throw new Error('the "-" operator expects exactly 2 operands')
   }
 
   if (expressions.length === 1) {
-    return checkSimpleExpression(expressions[0], version);
+    return checkSimpleExpression(expressions[0], version)
   } else {
-    const [startVersion, endVersion] = expressions;
+    const [startVersion, endVersion] = expressions
     if (!(isSimpleVersion(startVersion) && isSimpleVersion(endVersion))) {
       throw new Error(
-        'operands to the "-" operator must be simple (no modifiers)'
-      );
+        'operands to the "-" operator must be simple (no modifiers)',
+      )
     }
 
     return (
-      checkSimpleExpression(">=" + startVersion, version) &&
-      checkSimpleExpression("<=" + endVersion, version)
-    );
+      checkSimpleExpression('>=' + startVersion, version) &&
+      checkSimpleExpression('<=' + endVersion, version)
+    )
   }
 }
 
@@ -75,27 +76,27 @@ function checkRangeExpression(range, version) {
  * @returns {boolean}
  */
 function checkSimpleExpression(range, version) {
-  range = range.trim();
-  if (range === "") {
-    return true;
+  range = range.trim()
+  if (range === '') {
+    return true
   }
 
-  const versionComponents = version.split(componentRegex);
-  const { modifier, rangeComponents } = getModifierAndComponents(range);
+  const versionComponents = version.split(componentRegex)
+  const { modifier, rangeComponents } = getModifierAndComponents(range)
   switch (modifier) {
-    case "<":
-      return checkLessThan(versionComponents, rangeComponents);
-    case "<=":
-      return checkLessThanOrEqual(versionComponents, rangeComponents);
-    case ">=":
-      return checkGreaterThanOrEqual(versionComponents, rangeComponents);
-    case ">":
-      return checkGreaterThan(versionComponents, rangeComponents);
-    case "~":
-    case "~>":
-      return checkApproximateVersion(versionComponents, rangeComponents);
+    case '<':
+      return checkLessThan(versionComponents, rangeComponents)
+    case '<=':
+      return checkLessThanOrEqual(versionComponents, rangeComponents)
+    case '>=':
+      return checkGreaterThanOrEqual(versionComponents, rangeComponents)
+    case '>':
+      return checkGreaterThan(versionComponents, rangeComponents)
+    case '~':
+    case '~>':
+      return checkApproximateVersion(versionComponents, rangeComponents)
     default:
-      return checkEqual(versionComponents, rangeComponents);
+      return checkEqual(versionComponents, rangeComponents)
   }
 }
 
@@ -107,7 +108,7 @@ function checkSimpleExpression(range, version) {
  * @returns {boolean}
  */
 function checkLessThan(a, b) {
-  return compareComponents(a, b) === -1;
+  return compareComponents(a, b) === -1
 }
 
 /**
@@ -118,8 +119,8 @@ function checkLessThan(a, b) {
  * @returns {boolean}
  */
 function checkLessThanOrEqual(a, b) {
-  const result = compareComponents(a, b);
-  return result === -1 || result === 0;
+  const result = compareComponents(a, b)
+  return result === -1 || result === 0
 }
 
 /**
@@ -130,7 +131,7 @@ function checkLessThanOrEqual(a, b) {
  * @returns {boolean}
  */
 function checkEqual(a, b) {
-  return compareComponents(a, b) === 0;
+  return compareComponents(a, b) === 0
 }
 
 /**
@@ -141,8 +142,8 @@ function checkEqual(a, b) {
  * @returns {boolean}
  */
 function checkGreaterThanOrEqual(a, b) {
-  const result = compareComponents(a, b);
-  return result === 1 || result === 0;
+  const result = compareComponents(a, b)
+  return result === 1 || result === 0
 }
 
 /**
@@ -153,7 +154,7 @@ function checkGreaterThanOrEqual(a, b) {
  * @returns {boolean}
  */
 function checkGreaterThan(a, b) {
-  return compareComponents(a, b) === 1;
+  return compareComponents(a, b) === 1
 }
 
 /**
@@ -166,19 +167,19 @@ function checkGreaterThan(a, b) {
  * @returns {boolean}
  */
 function checkApproximateVersion(a, b) {
-  const lowerBound = b.slice();
-  const upperBound = b.slice();
+  const lowerBound = b.slice()
+  const upperBound = b.slice()
 
   if (upperBound.length > 1) {
-    upperBound.pop();
+    upperBound.pop()
   }
-  const lastIndex = upperBound.length - 1;
-  const numeric = parseInt(upperBound[lastIndex], 10);
+  const lastIndex = upperBound.length - 1
+  const numeric = parseInt(upperBound[lastIndex], 10)
   if (isNumber(numeric)) {
-    upperBound[lastIndex] = numeric + 1 + "";
+    upperBound[lastIndex] = numeric + 1 + ''
   }
 
-  return checkGreaterThanOrEqual(a, lowerBound) && checkLessThan(a, upperBound);
+  return checkGreaterThanOrEqual(a, lowerBound) && checkLessThan(a, upperBound)
 }
 
 /**
@@ -192,16 +193,16 @@ function checkApproximateVersion(a, b) {
  * @returns {object}
  */
 function getModifierAndComponents(range) {
-  const rangeComponents = range.split(componentRegex);
-  const matches = rangeComponents[0].match(modifierRegex);
+  const rangeComponents = range.split(componentRegex)
+  const matches = rangeComponents[0].match(modifierRegex)
   if (!matches) {
-    throw new Error("expected regex to match but it did not");
+    throw new Error('expected regex to match but it did not')
   }
 
   return {
     modifier: matches[1],
     rangeComponents: [matches[2]].concat(rangeComponents.slice(1)),
-  };
+  }
 }
 
 /**
@@ -211,7 +212,7 @@ function getModifierAndComponents(range) {
  * @returns {boolean}
  */
 function isNumber(number) {
-  return !isNaN(number) && isFinite(number);
+  return !isNaN(number) && isFinite(number)
 }
 
 /**
@@ -222,7 +223,7 @@ function isNumber(number) {
  * @returns {boolean}
  */
 function isSimpleVersion(range) {
-  return !getModifierAndComponents(range).modifier;
+  return !getModifierAndComponents(range).modifier
 }
 
 /**
@@ -233,7 +234,7 @@ function isSimpleVersion(range) {
  */
 function zeroPad(array, length) {
   for (let i = array.length; i < length; i++) {
-    array[i] = "0";
+    array[i] = '0'
   }
 }
 
@@ -251,29 +252,29 @@ function zeroPad(array, length) {
  * @returns {array<array<string>>}
  */
 function normalizeVersions(a, b) {
-  a = a.slice();
-  b = b.slice();
+  a = a.slice()
+  b = b.slice()
 
-  zeroPad(a, b.length);
+  zeroPad(a, b.length)
 
   // mark "x" and "*" components as equal
   for (let i = 0; i < b.length; i++) {
-    const matches = b[i].match(/^[x*]$/i);
+    const matches = b[i].match(/^[x*]$/i)
     if (matches) {
-      b[i] = a[i] = "0";
+      b[i] = a[i] = '0'
 
       // final "*" greedily zeros all remaining components
-      if (matches[0] === "*" && i === b.length - 1) {
+      if (matches[0] === '*' && i === b.length - 1) {
         for (let j = i; j < a.length; j++) {
-          a[j] = "0";
+          a[j] = '0'
         }
       }
     }
   }
 
-  zeroPad(b, a.length);
+  zeroPad(b, a.length)
 
-  return [a, b];
+  return [a, b]
 }
 
 /**
@@ -287,15 +288,15 @@ function normalizeVersions(a, b) {
  * or greater than `b`, respectively
  */
 function compareNumeric(a, b) {
-  const aPrefix = a.match(numericRegex)[1];
-  const bPrefix = b.match(numericRegex)[1];
-  const aNumeric = parseInt(aPrefix, 10);
-  const bNumeric = parseInt(bPrefix, 10);
+  const aPrefix = a.match(numericRegex)[1]
+  const bPrefix = b.match(numericRegex)[1]
+  const aNumeric = parseInt(aPrefix, 10)
+  const bNumeric = parseInt(bPrefix, 10)
 
   if (isNumber(aNumeric) && isNumber(bNumeric) && aNumeric !== bNumeric) {
-    return compare(aNumeric, bNumeric);
+    return compare(aNumeric, bNumeric)
   } else {
-    return compare(a, b);
+    return compare(a, b)
   }
 }
 
@@ -309,15 +310,15 @@ function compareNumeric(a, b) {
  */
 function compare(a, b) {
   if (typeof a !== typeof b) {
-    throw new Error('"a" and "b" must be of the same type');
+    throw new Error('"a" and "b" must be of the same type')
   }
 
   if (a > b) {
-    return 1;
+    return 1
   } else if (a < b) {
-    return -1;
+    return -1
   } else {
-    return 0;
+    return 0
   }
 }
 
@@ -330,16 +331,16 @@ function compare(a, b) {
  * or greater than `b`, respectively
  */
 function compareComponents(a, b) {
-  const [aNormalized, bNormalized] = normalizeVersions(a, b);
+  const [aNormalized, bNormalized] = normalizeVersions(a, b)
 
   for (let i = 0; i < bNormalized.length; i++) {
-    const result = compareNumeric(aNormalized[i], bNormalized[i]);
+    const result = compareNumeric(aNormalized[i], bNormalized[i])
     if (result) {
-      return result;
+      return result
     }
   }
 
-  return 0;
+  return 0
 }
 
 const VersionRange = {
@@ -375,8 +376,8 @@ const VersionRange = {
    * @returns {boolean}
    */
   contains(range, version) {
-    return checkOrExpression(range.trim(), version.trim());
+    return checkOrExpression(range.trim(), version.trim())
   },
-};
+}
 
-module.exports = VersionRange;
+module.exports = VersionRange

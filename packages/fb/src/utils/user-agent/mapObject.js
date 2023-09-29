@@ -7,9 +7,9 @@
  * @providesModule mapObject
  */
 
-"use strict";
+'use strict'
 
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+var hasOwnProperty = Object.prototype.hasOwnProperty
 
 /**
  * Executes the provided `callback` once for each enumerable own property in the
@@ -35,15 +35,15 @@ var hasOwnProperty = Object.prototype.hasOwnProperty;
  */
 function mapObject(object, callback, context) {
   if (!object) {
-    return null;
+    return null
   }
-  var result = {};
+  var result = {}
   for (var name in object) {
     if (hasOwnProperty.call(object, name)) {
-      result[name] = callback.call(context, object[name], name, object);
+      result[name] = callback.call(context, object[name], name, object)
     }
   }
-  return result;
+  return result
 }
 
-module.exports = mapObject;
+module.exports = mapObject

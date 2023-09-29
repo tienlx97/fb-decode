@@ -18,19 +18,19 @@
  * Others are going to be harder.
  */
 
-const UAParser = require("ua-parser-js");
+const UAParser = require('ua-parser-js')
 
-const UNKNOWN = "Unknown";
+const UNKNOWN = 'Unknown'
 
 const PLATFORM_MAP = {
-  "Mac OS": "Mac OS X",
-};
+  'Mac OS': 'Mac OS X',
+}
 
 /**
  * Convert from UAParser platform name to what we expect.
  */
 function convertPlatformName(name) {
-  return PLATFORM_MAP[name] || name;
+  return PLATFORM_MAP[name] || name
 }
 
 /**
@@ -41,26 +41,26 @@ function convertPlatformName(name) {
 function getBrowserVersion(version) {
   if (!version) {
     return {
-      major: "",
-      minor: "",
-    };
+      major: '',
+      minor: '',
+    }
   }
-  const parts = version.split(".");
+  const parts = version.split('.')
   return {
     major: parts[0],
     minor: parts[1],
-  };
+  }
 }
 
 /**
  * Get the UA data fom UAParser and then convert it to the format we're
  * expecting for our APIS.
  */
-const parser = new UAParser();
-const results = parser.getResult();
+const parser = new UAParser()
+const results = parser.getResult()
 
 // Do some conversion first.
-const browserVersionData = getBrowserVersion(results.browser.version);
+const browserVersionData = getBrowserVersion(results.browser.version)
 const uaData = {
   browserArchitecture: results.cpu.architecture || UNKNOWN,
   browserFullVersion: results.browser.version || UNKNOWN,
@@ -74,6 +74,6 @@ const uaData = {
   platformName: convertPlatformName(results.os.name) || UNKNOWN,
   platformVersion: results.os.version || UNKNOWN,
   platformFullVersion: results.os.version || UNKNOWN,
-};
+}
 
-module.exports = uaData;
+module.exports = uaData

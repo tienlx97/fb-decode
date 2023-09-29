@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const mapObject = require("./mapObject");
-const memoizeStringOnly = require("./memoizeStringOnly");
-const UserAgentData = require("./userAgentData");
-const VersionRange = require("./VersionRange");
+const mapObject = require('./mapObject')
+const memoizeStringOnly = require('./memoizeStringOnly')
+const UserAgentData = require('./userAgentData')
+const VersionRange = require('./VersionRange')
 
 /**
  * Checks to see whether `name` and `version` satisfy `query`.
@@ -22,22 +22,22 @@ const VersionRange = require("./VersionRange");
 function compare(name, version, query, normalizer) {
   // check for exact match with no version
   if (name === query) {
-    return true;
+    return true
   }
 
   // check for non-matching names
   if (!query.startsWith(name)) {
-    return false;
+    return false
   }
 
   // full comparison with version
-  let range = query.slice(name.length);
+  let range = query.slice(name.length)
   if (version) {
-    range = normalizer ? normalizer(range) : range;
-    return VersionRange.contains(range, version);
+    range = normalizer ? normalizer(range) : range
+    return VersionRange.contains(range, version)
   }
 
-  return false;
+  return false
 }
 
 /**
@@ -50,11 +50,11 @@ function compare(name, version, query, normalizer) {
  * @return {string}
  */
 function normalizePlatformVersion(version) {
-  if (UserAgentData.platformName === "Windows") {
-    return version.replace(/^\s*NT/, "");
+  if (UserAgentData.platformName === 'Windows') {
+    return version.replace(/^\s*NT/, '')
   }
 
-  return version;
+  return version
 }
 
 /**
@@ -109,8 +109,8 @@ const UserAgent = {
     return compare(
       UserAgentData.browserName,
       UserAgentData.browserFullVersion,
-      query
-    );
+      query,
+    )
   },
 
   /**
@@ -122,7 +122,7 @@ const UserAgent = {
    * @return {boolean}
    */
   isBrowserArchitecture(query) {
-    return compare(UserAgentData.browserArchitecture, null, query);
+    return compare(UserAgentData.browserArchitecture, null, query)
   },
 
   /**
@@ -150,7 +150,7 @@ const UserAgent = {
    * @return {boolean}
    */
   isDevice(query) {
-    return compare(UserAgentData.deviceName, null, query);
+    return compare(UserAgentData.deviceName, null, query)
   },
 
   /**
@@ -176,11 +176,7 @@ const UserAgent = {
    * @return {boolean}
    */
   isEngine(query) {
-    return compare(
-      UserAgentData.engineName,
-      UserAgentData.engineVersion,
-      query
-    );
+    return compare(UserAgentData.engineName, UserAgentData.engineVersion, query)
   },
 
   /**
@@ -223,8 +219,8 @@ const UserAgent = {
       UserAgentData.platformName,
       UserAgentData.platformFullVersion,
       query,
-      normalizePlatformVersion
-    );
+      normalizePlatformVersion,
+    )
   },
 
   /**
@@ -236,9 +232,9 @@ const UserAgent = {
    * @return {boolean}
    */
   isPlatformArchitecture(query) {
-    return compare(UserAgentData.platformArchitecture, null, query);
+    return compare(UserAgentData.platformArchitecture, null, query)
   },
-};
+}
 
-const _UserAgent = mapObject(UserAgent, memoizeStringOnly);
-module.exports = _UserAgent;
+const _UserAgent = mapObject(UserAgent, memoizeStringOnly)
+module.exports = _UserAgent

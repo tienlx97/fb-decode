@@ -9,19 +9,20 @@
  * @typechecks static-only
  */
 
-"use strict";
+'use strict'
 
 /**
  * Memoizes the return value of a function that accepts one string argument.
  */
 function memoizeStringOnly(callback) {
-  const cache = {};
+  const cache = {}
   return function (string) {
+    // eslint-disable-next-line no-prototype-builtins
     if (!cache.hasOwnProperty(string)) {
-      cache[string] = callback.call(this, string);
+      cache[string] = callback.call(this, string)
     }
-    return cache[string];
-  };
+    return cache[string]
+  }
 }
 
-module.exports = memoizeStringOnly;
+module.exports = memoizeStringOnly
