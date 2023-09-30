@@ -9,6 +9,9 @@ import React, { forwardRef, useState } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { BaseTextInput } from '../base-text-input'
+import { useStyles } from './styles'
+import { ImageIconSource } from '@fb/tetra-icon'
+import CometFormInputPasswordStateIcon from '@fb/tetra-icon/components/comet-form-input-password-state-icon'
 
 type CometFormTextInputProps = {
   autoFocus_PLEASE_USE_FOCUS_REGION_INSTEAD?: boolean
@@ -55,11 +58,12 @@ const CometFormTextInput = forwardRef<
       validator,
       value,
       className,
+      autoComplete,
       ...rest
     },
     ref,
   ) => {
-    //
+    const classes = useStyles()
 
     const { topResultReason, topResultType } = useBaseInputValidators({
       validator,
@@ -73,30 +77,30 @@ const CometFormTextInput = forwardRef<
     const isPasswordIcon = isPassword && Boolean(value)
 
     const PasswordIcon = isPasswordIcon ? (
-      <div className="x78zum5">
-        <div className="x1pi30zi x109j2v6">
+      <div className={classes.dummy1}>
+        <div className={classes.dummy2}>
           <CometPressable onPress={() => setPress(!isPress)} overlayDisabled>
-            {/* CometFormInputPasswordStateIcon  isVisible: H,*/}
+            <CometFormInputPasswordStateIcon isVisible={isPress} />
           </CometPressable>
         </div>
       </div>
     ) : null
 
-    var typeAfterChange = isPassword ? (isPress ? 'text' : 'password') : type
-    var normalTopResultType =
+    const typeAfterChange = isPassword ? (isPress ? 'text' : 'password') : type
+    const normalTopResultType =
       topResultType !== 'CORRECT' ? topResultType : validationState
 
     return jsx(CometFormInputWrapper, {
       addOnStart:
         (icon &&
-          icon instanceof 'ImageIconSource' &&
+          icon instanceof ImageIconSource &&
           icon.height === 40 &&
           jsx('div', {
             className: mergeClasses(classes.icon, classes.largeImageIcon),
             children: jsx('CometImage', {
-              height: parseInt(icon.height, 10),
+              height: parseInt(icon.height.toString(), 10),
               src: icon.src,
-              width: parseInt(icon.width, 10),
+              width: parseInt(icon.width.toString(), 10),
               className: classes.imageIcon,
             }),
           })) ||
@@ -447,6 +451,5 @@ __d(
   },
   98,
 )
-
 
 */

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import CometIcon, { CometIconProps } from './comet-icon'
+import CometIcon, { CometIconProps } from './comet-icon/comet-icon'
 
 type TetraIconProps = CometIconProps
 

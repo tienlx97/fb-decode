@@ -276,7 +276,7 @@ export default function CometFormInputWrapper({
           })
         },
       }),
-      helperText &&
+      helperText !== undefined &&
         (helperTextIsHidden
           ? jsx('div', {
               className: classes.helperTextIsHidden,
