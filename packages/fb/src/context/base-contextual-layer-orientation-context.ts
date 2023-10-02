@@ -1,8 +1,8 @@
 import { createContext } from 'react'
 
 type BaseContextualLayerOrientationContextProps = {
-  align?: string
-  position?: string
+  align: 'end' | 'middle' | 'start' | 'stretch'
+  position: 'above' | 'below' | 'end' | 'start'
 }
 
 const initial: BaseContextualLayerOrientationContextProps = {
@@ -10,8 +10,7 @@ const initial: BaseContextualLayerOrientationContextProps = {
   position: 'below',
 }
 
-const BaseContextualLayerOrientationContext = createContext<
-  BaseContextualLayerOrientationContextProps | undefined
->(initial)
+const BaseContextualLayerOrientationContext =
+  createContext<BaseContextualLayerOrientationContextProps>(initial)
 
 export default BaseContextualLayerOrientationContext

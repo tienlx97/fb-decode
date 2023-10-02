@@ -1,3 +1,195 @@
+import React, { forwardRef, ReactNode, useContext, useMemo } from 'react'
+// @ts-ignore
+import { jsx, jsxs } from 'react/jsx-runtime'
+
+import BaseContextualLayerContextSizeContext from '@fb/context/base-contextual-layer-context-size-context'
+import BaseContextualLayerLayerAdjustmentContext from '@fb/context/base-contextual-layer-layer-adjustment-context'
+import BaseContextualLayerOrientationContext from '@fb/context/base-contextual-layer-orientation-context'
+import { mergeClasses } from '@fluentui/react-components'
+
+import BasePopoverDownEdgeArrow from '../base-popover-down-edge-arrow'
+import BasePopoverDownInsetArrow from '../base-popover-down-inset-arrow'
+import BasePopoverRightEdgeArrow from '../base-popover-right-edge-arrow'
+import BasePopoverRightInsetArrow from '../base-popover-right-inset-arrow'
+import {
+  useAlign1,
+  useAlign2,
+  useArrowStyles,
+  usePopoverStyles,
+  usePositionStyles,
+} from './styles'
+
+type BasePopoverSVGArrowContainerProps = {
+  arrowAlignment?: string
+  children?: ReactNode
+  label?: string
+  labelledby?: string
+  testid?: string
+  className?: string
+  // align: string
+  // position: 'above' | 'below' | 'start' | 'end'
+} & React.JSX.IntrinsicElements['div']
+
+const k = 3
+const l = false // isRTL
+const m = 25
+
+const BasePopoverSVGArrowContainer = forwardRef<
+  HTMLElement,
+  BasePopoverSVGArrowContainerProps
+>(
+  (
+    {
+      arrowAlignment = 'center',
+      children,
+      label,
+      labelledby,
+      testid,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
+    const p = usePositionStyles()
+    const r = useAlign2()
+    const q = useAlign1()
+    const n = useArrowStyles()
+    const o = usePopoverStyles()
+
+    const { align, position } = useContext(
+      BaseContextualLayerOrientationContext,
+    )
+    const y = useContext(BaseContextualLayerContextSizeContext)
+    const v = getArrowComponent(position, align)
+
+    const z = useContext(BaseContextualLayerLayerAdjustmentContext) ?? 0
+
+    const d = useMemo(() => {
+      var a = l ? 'start' : 'end',
+        b = l ? 'end' : 'start',
+        c = (align === 'end' && !l) || (align === 'start' && l),
+        d = 1,
+        e = 1,
+        g = 0,
+        h = 0
+      switch (position) {
+        case 'above':
+          g += -z
+          if (c) {
+            d = -1
+          }
+          break
+        case 'below':
+          g += -z
+          e = -1
+          if (c) {
+            d = -1
+          }
+          break
+        case b:
+          h += -z
+          if (align === 'start') {
+            e = -1
+          }
+          break
+        case a:
+          h += -z
+          d = -1
+          if (align === 'start') {
+            e = -1
+          }
+          break
+      }
+      return {
+        arrowStyle: {
+          transform:
+            'scale(' + d + ', ' + e + ') translate(' + g + 'px, ' + h + 'px)',
+        },
+        containerStyle: getContainerStyle(position, align, arrowAlignment, y),
+      }
+    }, [align, arrowAlignment, y, z, position])
+
+    const { arrowStyle, containerStyle } = d
+
+    return jsxs(
+      'div',
+      Object.assign(
+        {},
+        rest,
+        {
+          'aria-label': label,
+          'aria-labelledby': labelledby,
+          className: mergeClasses(n.container, o[position], className),
+          ref,
+          style: containerStyle,
+        },
+        {
+          children: [
+            children,
+            jsx(v, {
+              className: mergeClasses(
+                n.arrow,
+                p[position],
+                (position === 'start' || position === 'end') && r[align],
+                (position === 'above' || position === 'below') && q[align],
+              ),
+              fill: 'var(--card-background)',
+              style: arrowStyle,
+            }),
+          ],
+        },
+      ),
+    )
+  },
+)
+
+function getArrowComponent(position?: string, align?: string) {
+  return position === 'above' || position === 'below'
+    ? align === 'middle'
+      ? BasePopoverDownInsetArrow
+      : BasePopoverDownEdgeArrow
+    : align === 'middle'
+    ? BasePopoverRightInsetArrow
+    : BasePopoverRightEdgeArrow
+}
+
+function getContainerStyle(
+  position: any,
+  align: any,
+  arrowAlignment: any,
+  baseContextualLayerContextSizeContext: any,
+) {
+  if (arrowAlignment === 'edge' || !baseContextualLayerContextSizeContext) {
+    return {}
+  }
+  const positionBelowOrAbove = position === 'below' || position === 'above'
+  const widthOrHeight = positionBelowOrAbove
+    ? baseContextualLayerContextSizeContext.width
+    : baseContextualLayerContextSizeContext.height
+  const dummy = widthOrHeight > 0 ? widthOrHeight / 2 : 0
+  if (dummy === 0) {
+    return {}
+  }
+  position = s(positionBelowOrAbove, align, align === 'middle' ? m / 2 : dummy)
+  return {
+    transform: positionBelowOrAbove
+      ? 'translateX(' + position + 'px)'
+      : 'translateY(' + position + 'px)',
+  }
+}
+
+function s(positionBelowOrAbove: boolean, align: string, c: number) {
+  c = c - k
+  if (!positionBelowOrAbove) {
+    return align === 'end' || align === 'middle' ? c * -1 : c
+  }
+  return (l && align === 'start') || (!l && align === 'end') ? c * -1 : c
+}
+
+export default BasePopoverSVGArrowContainer
+
+/*
+
 __d(
   'BasePopoverSVGArrowContainer.react',
   [
@@ -238,143 +430,4 @@ __d(
   98,
 )
 
-import BaseContextualLayerContextSizeContext from '@fb/context/base-contextual-layer-context-size-context'
-import BaseContextualLayerOrientationContext from '@fb/context/base-contextual-layer-orientation-context'
-import React, { ReactNode, forwardRef, useContext, useMemo } from 'react'
-import BasePopoverDownInsetArrow from '../base-popover-down-inset-arrow'
-import BasePopoverDownEdgeArrow from '../base-popover-down-edge-arrow'
-import BasePopoverRightInsetArrow from '../base-popover-right-inset-arrow'
-import BasePopoverRightEdgeArrow from '../base-popover-right-edge-arrow'
-import BaseContextualLayerLayerAdjustmentContext from '@fb/context/base-contextual-layer-layer-adjustment-context'
-
-type BasePopoverSVGArrowContainerProps = {
-  arrowAlignment?: string
-  children?: ReactNode
-  label?: string
-  labelledby?: string
-  testid?: string
-  className?: string
-  align: string
-  position: 'above' | 'below' | 'start' | 'end'
-}
-
-const k = 3
-const l = false // isRTL
-const m = 25
-
-const BasePopoverSVGArrowContainer = forwardRef<
-  HTMLElement,
-  BasePopoverSVGArrowContainerProps
->(
-  (
-    {
-      arrowAlignment = 'center',
-      children,
-      label,
-      labelledby,
-      testid,
-      className,
-      ...rest
-    },
-    ref,
-  ) => {
-    const { align, position } = rest
-
-    const v = useContext(BaseContextualLayerOrientationContext)
-    const y = useContext(BaseContextualLayerContextSizeContext)
-    const v = getArrowComponent(position, align)
-
-    const z = useContext(BaseContextualLayerLayerAdjustmentContext) ?? 0
-
-    const d = useMemo(() => {
-      var a = l ? 'start' : 'end',
-        b = l ? 'end' : 'start',
-        c = (align === 'end' && !l) || (align === 'start' && l),
-        d = 1,
-        e = 1,
-        g = 0,
-        h = 0
-      switch (position) {
-        case 'above':
-          g += -z
-          if (c) {
-            d = -1
-          }
-          break
-        case 'below':
-          g += -z
-          e = -1
-          if (c) {
-            d = -1
-          }
-          break
-        case b:
-          h += -z
-          if (align === 'start') {
-            e = -1
-          }
-          break
-        case a:
-          h += -z
-          d = -1
-          if (align === 'start') {
-            e = -1
-          }
-          break
-      }
-      return {
-        arrowStyle: {
-          transform:
-            'scale(' + d + ', ' + e + ') translate(' + g + 'px, ' + h + 'px)',
-        },
-        containerStyle: getContainerStyle(position, align, arrowAlignment, y),
-      }
-    }, [align, arrowAlignment, y, z, position])
-
-    var A = d.arrowStyle
-    d = d.containerStyle
-  },
-)
-
-function getArrowComponent(position: string, align: string) {
-  return position === 'above' || position === 'below'
-    ? align === 'middle'
-      ? BasePopoverDownInsetArrow
-      : BasePopoverDownEdgeArrow
-    : align === 'middle'
-    ? BasePopoverRightInsetArrow
-    : BasePopoverRightEdgeArrow
-}
-
-function getContainerStyle(
-  position: any,
-  align: any,
-  arrowAlignment: any,
-  baseContextualLayerContextSizeContext: any,
-) {
-  if (arrowAlignment === 'edge' || !baseContextualLayerContextSizeContext) {
-    return {}
-  }
-  const positionBelowOrAbove = position === 'below' || position === 'above'
-  const widthOrHeight = positionBelowOrAbove
-    ? baseContextualLayerContextSizeContext.width
-    : baseContextualLayerContextSizeContext.height
-  const dummy = widthOrHeight > 0 ? widthOrHeight / 2 : 0
-  if (dummy === 0) {
-    return {}
-  }
-  position = s(positionBelowOrAbove, align, align === 'middle' ? m / 2 : dummy)
-  return {
-    transform: positionBelowOrAbove
-      ? 'translateX(' + position + 'px)'
-      : 'translateY(' + position + 'px)',
-  }
-}
-
-function s(positionBelowOrAbove: boolean, align: string, c: number) {
-  c = c - k
-  if (!positionBelowOrAbove) {
-    return align === 'end' || align === 'middle' ? c * -1 : c
-  }
-  return (l && align === 'start') || (!l && align === 'end') ? c * -1 : c
-}
+*/

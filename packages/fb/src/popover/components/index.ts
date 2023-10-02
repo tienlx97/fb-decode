@@ -1,17 +1,17 @@
 /*
 
-__d("CometPopover.react", 
-  ["BaseContextualLayerOrientationContext", 
-  "BasePopover.react", 
-  "BasePopoverSVGArrowContainer.react", 
+__d("CometPopover.react", //
+  ["BaseContextualLayerOrientationContext", //
+  "BasePopover.react", //
+  "BasePopoverSVGArrowContainer.react", //
   "cr:1941981", "cr:1941982", 
-  "isBlueprintStylesEnabled", 
+  "isBlueprintStylesEnabled", //
   "react", "stylex", 
   "useCometDisplayTimingTrackerForInteraction"], (function(a, b, c, d, e, f, g) {
 
 __d("BasePopover.react", ["react", "stylex", "testID"], (function(a, b, c, d, e, f, g) {
 
-  __d("BasePopoverSVGArrowContainer.react", 
+  __d("BasePopoverSVGArrowContainer.react", //
   ["BaseContextualLayerContextSizeContext", //
   "BaseContextualLayerLayerAdjustmentContext", //
   "BaseContextualLayerOrientationContext",// 
@@ -73,9 +73,64 @@ __d("CometMenuBaseWithPopover.react",
 ["BaseContextualLayerAvailableHeightContext", 
 "BaseMultiPageView.react", 
 "CometMenuBase.react", 
-"CometPopover.react", 
+"CometPopover.react", //
 "CometPopoverLoadingStateContent.react", 
 "react"], (function(a, b, c, d, e, f, g) {
+
+
+  __d("CometMenuBase.react", 
+  ["fbt", "ix", 
+  "BaseScrollableArea.react", 
+  "CometErrorBoundary.react", 
+  "CometFocusGroupFirstLetterNavigation", 
+  "CometListCellStrict.react", 
+  "CometMenuFocusGroup",  // 
+  "CometMenuItemBaseRoleContext", //
+  "CometSeparatorMenuItem.react",  //
+  "FocusRegion.react", //
+  "TetraTextPairing.react", //
+  "fbicon", //
+  "focusScopeQueries",//
+  "react", "stylex"], (function(a, b, c, d, e, f, g, h, i) {
+
+
+__d("CometMenuFocusGroup",  //
+  ["fbt", "CometComponentWithKeyCommands.react", 
+  "CometKeys", 
+  "FocusGroup.react", 
+  "focusScopeQueries", 
+  "react"], (function(a, b, c, d, e, f, g, h) {
+
+
+__d("CometListCellStrict.react", 
+["CometCompositeStructureContext", 
+"CometDensityAwarenessContext", 
+"CometDensityModeContext", 
+"CometFocusGroupContext", 
+"CometFocusTableContext", 
+"CometIcon.react", 
+"CometImageFromIXValueRelayWrapper.react", 
+"CometPressable.react", 
+"CometProfilePhoto.react", 
+"CometProfilePhotoForActor.react", 
+"CometProgressSkittleIndeterminate.react", 
+"CometSkittleEmoji.react", 
+"CometSkittleIcon.react", 
+"CometVisualCompletionAttributes", 
+"MWJewelThreadFacepile.react", 
+"TetraText.react", 
+"TetraTextPairing.react", 
+"getItemRoleFromCompositeRole", //
+ "getListCellAddOn.react", 
+ "react", "stylex"], (function(a, b, c, d, e, f, g) {
+
+
+__d("getListCellAddOn.react", 
+["fbt", "ix", 
+"CometIcon.react", 
+"CometSwitch.react", 
+"Locale", 
+"TetraButton.react", "fbicon", "react"], (function(a, b, c, d, e, f, g, h, i) {
 
 
 */

@@ -10,6 +10,7 @@ import {
   legacySVGIcon,
   CometFormTextArea,
   CometFormTextInput,
+  CometSwitch,
 } from 'fb'
 
 export const Default = () => {
@@ -18,6 +19,8 @@ export const Default = () => {
   )
 
   const [password, setPassword] = React.useState('Lexuantien1997')
+
+  const [switchVal, setSwitchVal] = React.useState(true)
 
   return (
     <div style={{ width: '440px' }}>
@@ -65,6 +68,15 @@ export const Default = () => {
           testid={undefined}
         />
       </div>
+
+      <CometSwitch
+        disabled={false}
+        size="small"
+        value={switchVal}
+        onClick={() => setSwitchVal(!switchVal)}
+      >
+        Works at Freelancer
+      </CometSwitch>
     </div>
   )
 }
