@@ -118,10 +118,10 @@ __d("CometListCellStrict.react",
 "CometSkittleIcon.react", 
 "CometVisualCompletionAttributes", 
 "MWJewelThreadFacepile.react", 
-"TetraText.react", 
-"TetraTextPairing.react", 
+"TetraText.react", //
+"TetraTextPairing.react", //
 "getItemRoleFromCompositeRole", //
- "getListCellAddOn.react", 
+ "getListCellAddOn.react",  //
  "react", "stylex"], (function(a, b, c, d, e, f, g) {
 
 
@@ -132,5 +132,67 @@ __d("getListCellAddOn.react",
 "Locale", 
 "TetraButton.react", "fbicon", "react"], (function(a, b, c, d, e, f, g, h, i) {
 
+
+__d("MWJewelThreadFacepile.react", 
+["CometProfilePhotoAvailabilityBadge.react", 
+"CometProfilePhotoLastActiveTimeBadge.react", 
+"CometSSRReplaceContentOnHydrationAndBreakEventReplaying.react", 
+"TetraProfilePhoto.react", 
+"profilePhotoUtils", "react", "stylex", "unrecoverableViolation"], (function(a, b, c, d, e, f, g) {
+
+
+__d("TetraProfilePhoto.react", ["CometProfilePhoto.react", "react"], (function(a, b, c, d, e, f, g) {
+__d("CometProfilePhoto.react", 
+["BaseSvgImage.react", 
+"CometErrorBoundary.react", 
+"CometImage.react", 
+"CometLoadingAnimation.react", 
+"CometPlaceholder.react", "CometPressable.react", 
+"CometPressableChildrenWithOverlay.react", "CometPressableOverlay.react", 
+"CometProfilePhotoAvailabilityBadge.react", 
+"CometProfilePhotoLastActiveTimeBadge.react", 
+"CometProfilePhotoNotificationBadge.react", 
+"CometSSRReplaceContentOnHydrationAndBreakEventReplaying.react", 
+"CometSSRSuspendOnServer.react", 
+"CometTrackingNodeProvider.react", 
+"CometVisualCompletionAttributes", 
+"LazyCometProfileVideoSection.react", 
+"profilePhotoUtils", "react", "stylex", 
+"useSetAttributeRef"], (function(a, b, c, d, e, f, g) {
+
+
+__d("CometFormSelectOnlyCombobox.react", 
+["ix", 
+"BaseContextualLayer.react", 
+"CometComponentWithKeyCommands.react", 
+"CometFormComboboxMenuItem.react", 
+"CometFormInputWrapper.react", 
+"CometIcon.react", 
+"CometMenu.react", 
+"CometProfilePhoto.react", 
+"FocusInertRegion.react", 
+"FocusWithinHandler.react", 
+"emptyFunction", "fbicon", "focusScopeQueries", "react", "stylex", "useCometFormSelectMenuTriggerKeyDownHandler", "useCometFormSelectOnlyComboboxKeyConfigs"], (function(a, b, c, d, e, f, g, h) {
+
+
+__d("useViewportDuration", 
+  ["BaseViewportMarginsContext", 
+  "CometVisibilityUserActivityMonitor", 
+  "HiddenSubtreePassiveContext", 
+  "Run", 
+  "getIntersectionMarginFromViewportMargin", 
+  "getStyleProperty", "gkx", 
+  "intersectionObserverEntryIsIntersecting", 
+  "nullIntersectionObserverEntryLogger", "react", 
+  "useDoubleEffectHack_DO_NOT_USE_THIS_IS_TRACKED", 
+  "useIntersectionObserver"], (function(a, b, c, d, e, f, g) {
+
+
+__d("useIntersectionObserver", 
+  ["DOMRectReadOnly", 
+  "ExecutionEnvironment", 
+  "JSScheduler", 
+  "observeIntersection", "react", 
+  "useDynamicCallbackDANGEROUS"], (function(a, b, c, d, e, f, g) {
 
 */
