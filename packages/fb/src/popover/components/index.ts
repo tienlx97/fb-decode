@@ -82,8 +82,8 @@ __d("CometMenuBaseWithPopover.react",
   ["fbt", "ix", 
   "BaseScrollableArea.react", 
   "CometErrorBoundary.react", 
-  "CometFocusGroupFirstLetterNavigation", 
-  "CometListCellStrict.react", 
+  "CometFocusGroupFirstLetterNavigation", //
+  "CometListCellStrict.react",  //
   "CometMenuFocusGroup",  // 
   "CometMenuItemBaseRoleContext", //
   "CometSeparatorMenuItem.react",  //
@@ -94,12 +94,32 @@ __d("CometMenuBaseWithPopover.react",
   "react", "stylex"], (function(a, b, c, d, e, f, g, h, i) {
 
 
+__d("BaseScrollableArea.react", 
+  ["BaseScrollableAreaContext", 
+  "CometDebounce", 
+  "CometVisualCompletionAttributes", "Locale", "UserAgent", "gkx", "react", 
+  "resize-observer-polyfill", "stylex", 
+  "useUnsafeRef_DEPRECATED", "useVisibilityObserver"], (function(a, b, c, d, e, f, g) {
+
+
 __d("CometMenuFocusGroup",  //
   ["fbt", "CometComponentWithKeyCommands.react", 
   "CometKeys", 
   "FocusGroup.react", 
   "focusScopeQueries", 
   "react"], (function(a, b, c, d, e, f, g, h) {
+
+__d("useViewportDuration", 
+  ["BaseViewportMarginsContext", 
+  "CometVisibilityUserActivityMonitor", 
+  "HiddenSubtreePassiveContext", 
+  "Run", 
+  "getIntersectionMarginFromViewportMargin", 
+  "getStyleProperty", "gkx", 
+  "intersectionObserverEntryIsIntersecting", 
+  "nullIntersectionObserverEntryLogger", "react", 
+  "useDoubleEffectHack_DO_NOT_USE_THIS_IS_TRACKED", 
+  "useIntersectionObserver"], (function(a, b, c, d, e, f, g) {
 
 
 __d("CometListCellStrict.react", 

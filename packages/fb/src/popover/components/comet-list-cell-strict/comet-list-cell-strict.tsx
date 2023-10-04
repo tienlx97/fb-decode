@@ -5,7 +5,7 @@ import CometDensityAwarenessContext from '@fb/context/comet-density-awareness-co
 import { CometDensityModeContext } from '@fb/context/comet-density-mode-context'
 import CometFocusGroupContext from '@fb/context/comet-focus-group-context'
 import CometFocusTableContext from '@fb/context/comet-focus-table-context'
-import { TetraTextPairing } from '@fb/tetra-text'
+import { TetraText, TetraTextPairing } from '@fb/tetra-text'
 import { getItemRoleFromCompositeRole } from '@fb/utils/get-item-role-from-composite-role'
 import { mergeClasses } from '@fluentui/react-components'
 import React, { forwardRef, useContext } from 'react'
@@ -13,10 +13,13 @@ import React, { forwardRef, useContext } from 'react'
 // @ts-ignore
 import { jsxs, jsx } from 'react/jsx-runtime'
 import {
+  useDummyStyles,
   useEndVerticalAlignStyles,
   useStartVerticalAlignStyles,
   useStyles,
 } from './styles'
+import { CometIcon, CometSkittleIcon } from '@fb/tetra-icon'
+import { getEndAddOn } from '../get-list-cell-add-on'
 
 type CometListCellStrictProps = {
   addOnBottom?: any
@@ -124,6 +127,7 @@ const CometListCellStrict = forwardRef<HTMLElement, CometListCellStrictProps>(
     const classes = useStyles()
     const startVerticalAlignClasses = useStartVerticalAlignStyles()
     const endVerticalAlignClasses = useEndVerticalAlignStyles()
+    const dymmyClasses = useDummyStyles()
 
     let disabledInternal = disabled
     let onPressInternal = onPress
@@ -212,15 +216,14 @@ const CometListCellStrict = forwardRef<HTMLElement, CometListCellStrictProps>(
               ),
               'data-testid': undefined,
               id: addOnStartCssSelectionId,
-              children: jsx(m, {
+              children: jsx(AddOnStartComp, {
                 addOnStart,
                 disabled: addOnStartDisabled ?? disabledInternal, // (A = s) != null ? A : a,
               }),
             })
           : null,
         jsxs('div', {
-          className:
-            'x6s0dn4 xkh2ocl x1q0q8m5 x1qhh985 xu3j5b3 xcfux6l x26u7qi xm0m39n x13fuv20 x972fbf x9f619 x78zum5 x1q0g3np x1iyjqo2 xs83m0k x1qughib xat24cr x11i5rnm x1mh8g0r xdj266r x2lwn1j xeuugli x18d9i69 x4uap5 xkhd6sd xexx8yu x1n2onr6 x1ja2u2z',
+          className: dymmyClasses.dummy1,
           children: [
             jsxs('div', {
               className: mergeClasses(
@@ -266,8 +269,8 @@ const CometListCellStrict = forwardRef<HTMLElement, CometListCellStrictProps>(
                       addOnBottomTypeIsButton && classes.responsiveButtons,
                     ),
                     children: jsx('div', {
-                      className: 'x193iq5w',
-                      children: jsx(n, {
+                      className: dymmyClasses.dummy2,
+                      children: jsx(AddOnBottomComp, {
                         addOnBottom,
                       }),
                     }),
@@ -287,7 +290,7 @@ const CometListCellStrict = forwardRef<HTMLElement, CometListCellStrictProps>(
                   ),
                   'data-testid': undefined,
                   ref: addOnEndRef,
-                  children: jsx(o, {
+                  children: jsx(AddOnEndComp, {
                     addOn: addOnEnd,
                     disabled: addOnEndDisabled ?? disabledInternal, // (t = f) != null ? t : a,
                     level,
@@ -296,8 +299,7 @@ const CometListCellStrict = forwardRef<HTMLElement, CometListCellStrictProps>(
               : null,
             hasBottomDivider ?? false //  ((u = ba) != null ? u : !1)
               ? jsx('div', {
-                  className:
-                    'x14nfmen x1ey2m1c xds687c xjm9jq1 x10l6tqk x17qophe',
+                  className: dymmyClasses.dummy3,
                 })
               : null,
           ],
@@ -438,120 +440,151 @@ const CometListCellStrict = forwardRef<HTMLElement, CometListCellStrictProps>(
   },
 )
 
-function m(a) {
-  var b = a.addOnStart
-  a = a.disabled
-  switch (b.type) {
-    case 'icon':
-      b.type
-      var d = babelHelpers.objectWithoutPropertiesLoose(b, ['type'])
-      return h.jsx(
-        c('CometIcon.react'),
-        babelHelpers['extends']({}, d, {
-          disabled: a,
+function AddOnStartComp(props: any) {
+  const { addOnStart, disabled } = props
+
+  switch (addOnStart.type) {
+    case 'icon': {
+      const { type, ...rest } = addOnStart
+
+      return jsx(
+        CometIcon,
+        Object.assign({}, rest, {
+          disabled: disabled,
         }),
       )
-    case 'profile-photo':
-      b.type
-      d = babelHelpers.objectWithoutPropertiesLoose(b, ['type'])
-      return h.jsx(c('CometProfilePhoto.react'), babelHelpers['extends']({}, d))
-    case 'profile-photo-for-actor':
-      b.type
-      d = babelHelpers.objectWithoutPropertiesLoose(b, ['type'])
-      return h.jsx(
-        c('CometProfilePhotoForActor.react'),
-        babelHelpers['extends']({}, d),
-      )
-    case 'contained-icon':
-      d = b.color
-      d = d === void 0 ? 'gray' : d
-      b.type
-      var e = babelHelpers.objectWithoutPropertiesLoose(b, ['color', 'type'])
-      return h.jsx(
-        c('CometSkittleIcon.react'),
-        babelHelpers['extends'](
-          {
-            color: d,
-          },
-          e,
-          {
-            disabled: a,
-          },
-        ),
-      )
-    case 'contained-progress-ring-indeterminate':
-      return h.jsx(c('CometProgressSkittleIndeterminate.react'), {})
-    case 'messenger-facepile':
-      b.type
-      d = babelHelpers.objectWithoutPropertiesLoose(b, ['type'])
-      return h.jsx(
-        c('MWJewelThreadFacepile.react'),
-        babelHelpers['extends']({}, d),
-      )
-    case 'override':
-      return b.component
-    case 'emoji':
-      e = b.color
-      a = e === void 0 ? 'gray' : e
-      d = b.emoji
-      e = b.emojiSize
-      e = e === void 0 ? 20 : e
-      var f = b.size
-      f = f === void 0 ? 40 : f
-      return h.jsx(c('CometSkittleEmoji.react'), {
-        color: a,
-        emoji: d,
-        emojiSize: e,
-        size: f,
-      })
-    case 'sprite':
-      a = b.sprite
-      return h.jsx(c('CometImageFromIXValueRelayWrapper.react'), {
-        sprite: a,
-      })
-    default:
-      b.type
+    }
+    case 'profile-photo': {
+      // addOnStart.type
+      // d = babelHelpers.objectWithoutPropertiesLoose(addOnStart, ['type'])
+      // return h.jsx(c('CometProfilePhoto.react'), babelHelpers['extends']({}, d))
       return null
+    }
+    case 'profile-photo-for-actor': {
+      // addOnStart.type
+      // d = babelHelpers.objectWithoutPropertiesLoose(addOnStart, ['type'])
+      // return h.jsx(
+      //   c('CometProfilePhotoForActor.react'),
+      //   babelHelpers['extends']({}, d),
+      // )
+      return null
+    }
+    case 'contained-icon': {
+      const { color = 'gray', type, ...rest } = addOnStart
+
+      return jsx(CometSkittleIcon, Object.assign({ color }, rest, { disabled }))
+      // d = addOnStart.color
+      // d = d === void 0 ? 'gray' : d
+      // addOnStart.type
+      // var e = babelHelpers.objectWithoutPropertiesLoose(addOnStart, [
+      //   'color',
+      //   'type',
+      // ])
+      // return h.jsx(
+      //   c('CometSkittleIcon.react'),
+      //   babelHelpers['extends'](
+      //     {
+      //       color: d,
+      //     },
+      //     e,
+      //     {
+      //       disabled: disabled,
+      //     },
+      //   ),
+      // )
+    }
+    case 'contained-progress-ring-indeterminate': {
+      // return h.jsx(c('CometProgressSkittleIndeterminate.react'), {})
+      return null
+    }
+    case 'messenger-facepile': {
+      // addOnStart.type
+      // d = babelHelpers.objectWithoutPropertiesLoose(addOnStart, ['type'])
+      // return h.jsx(
+      //   c('MWJewelThreadFacepile.react'),
+      //   babelHelpers['extends']({}, d),
+      // )
+      return null
+    }
+    case 'override': {
+      return addOnStart.component
+    }
+    case 'emoji': {
+      // e = addOnStart.color
+      // disabled = e === void 0 ? 'gray' : e
+      // d = addOnStart.emoji
+      // e = addOnStart.emojiSize
+      // e = e === void 0 ? 20 : e
+      // var f = addOnStart.size
+      // f = f === void 0 ? 40 : f
+      // return h.jsx(c('CometSkittleEmoji.react'), {
+      //   color: disabled,
+      //   emoji: d,
+      //   emojiSize: e,
+      //   size: f,
+      // })
+      return null
+    }
+    case 'sprite': {
+      // disabled = addOnStart.sprite
+      // return h.jsx(c('CometImageFromIXValueRelayWrapper.react'), {
+      //   sprite: disabled,
+      // })
+
+      return null
+    }
+    default: {
+      addOnStart.type
+      return null
+    }
   }
 }
 
-function n(a) {
-  a = a.addOnBottom
-  switch (a.type) {
+function AddOnBottomComp(props: any) {
+  const { addOnBottom } = props
+  switch (addOnBottom.type) {
     case 'facepile':
-      return a.facepile
+      return addOnBottom.facepile
     default:
-      return a.component
+      return addOnBottom.component
   }
 }
 
-function o(a) {
-  var b = a.addOn,
-    e = a.disabled
-  a = a.level
-  var f = d('getListCellAddOn.react').getEndAddOn(b, e, a),
-    g = b.type === 'disclosure' && b.text != null ? b.text : null
-  return h.jsxs('div', {
-    className: c('stylex')(j.addOn, b.type === 'switch' && j.visualSwitch),
+function AddOnEndComp(props: any) {
+  const { addOn, disabled, level } = props
+  const classes = useStyles()
+
+  const dummyClasses = useDummyStyles()
+
+  const f = getEndAddOn(addOn, disabled, level)
+  const g = addOn.type === 'disclosure' && addOn.text ? addOn.text : undefined
+
+  return jsxs('div', {
+    clasName: mergeClasses(
+      classes.addOn,
+      addOn.type === 'switch' && classes.visualSwitch,
+    ),
     children: [
-      g != null &&
-        h.jsx('div', {
-          className: 'x2lah0s',
-          children: h.jsx(c('TetraText.react'), {
-            color: e ? 'disabled' : 'secondary',
+      g &&
+        jsx('div', {
+          className: dummyClasses.dummy4,
+          children: jsx(TetraText, {
+            color: disabled ? 'disabled' : 'secondary',
             numberOfLines: 1,
-            type: a === 3 ? 'body2' : 'body3',
+            type: level === 3 ? 'body2' : 'body3',
             children: g,
           }),
         }),
-      h.jsx('div', {
-        className: c('stylex')(
-          b.type === 'expander' && j.addOnWithExpander,
-          g != null && j.addOnWithText,
-          b.type === 'icon' && j.addOnWithIcon,
+      jsx('div', {
+        className: mergeClasses(
+          addOn.type === 'expander' && classes.addOnWithExpander,
+          g && classes.addOnWithText,
+          addOn.type === 'icon' && classes.addOnWithIcon,
         ),
         children: f,
       }),
     ],
   })
 }
+
+export default CometListCellStrict

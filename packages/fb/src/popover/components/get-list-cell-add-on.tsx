@@ -7,30 +7,30 @@ import React, { createElement } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-export function getEndAddOn(props: any, disabled: boolean, c: any) {
-  switch (props.type) {
+export function getEndAddOn(addOn: any, disabled: boolean, level: any) {
+  switch (addOn.type) {
     case 'checkbox':
-      return checkboxComp(props, disabled)
+      return checkboxComp(addOn, disabled)
     case 'radio':
-      return radioComp(props, disabled)
+      return radioComp(addOn, disabled)
     case 'disclosure':
-      return disclosureComp(props, disabled, c)
+      return disclosureComp(addOn, disabled, level)
     case 'expander':
-      return expanderComp(props, disabled, c)
+      return expanderComp(addOn, disabled, level)
     case 'icon':
-      return iconComp(props, disabled)
+      return iconComp(addOn, disabled)
     case 'primary-button':
-      return buttonComp(props, disabled)
+      return buttonComp(addOn, disabled)
     case 'secondary-button':
-      return buttonComp(props, disabled)
+      return buttonComp(addOn, disabled)
     case 'switch':
-      return switchComp(props, disabled)
+      return switchComp(addOn, disabled)
     case 'more':
-      return moreOrCloseComp(props, disabled)
+      return moreOrCloseComp(addOn, disabled)
     case 'close':
-      return moreOrCloseComp(props, disabled)
+      return moreOrCloseComp(addOn, disabled)
     case 'body':
-      return props.addOn
+      return addOn.addOn
   }
 }
 

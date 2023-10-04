@@ -1,103 +1,72 @@
-import { MaybeRef, _document, noop, unRef } from '@fb/utils/_ssr.config'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { useIsSupported } from './use-is-supported'
-import { useUnMount } from './use-unmount'
+import DOM from '../utils/dom-rect-read-only'
 
-export interface IntersectionObserverOptions {
-  /**
-   * The Element or Document whose bounds are used as the bounding box when testing for intersection.
-   *
-   * @default document
-   */
-  root?: MaybeRef<Element | Document | undefined | null>
+const k = {
+    bottom: 0,
+    left: 0,
+    right: 0,
+    top: 0,
+  },
+  l = DOM.fromRect(),
+  m = {
+    bottom: 0,
+    height: 0,
+    left: 0,
+    right: 0,
+    top: 0,
+    width: 0,
+    x: 0,
+    y: 0,
+  }
 
-  /**
-   * A string which specifies a set of offsets to add to the root's bounding_box when calculating intersections.
-   *
-   * @default '0px'
-   */
-  rootMargin?: string
+function n(a: any) {
+  var b
+  if (a == null) {
+    b = k
+  } else if (typeof a === 'string') {
+    return a
+  } else
+    typeof a === 'number'
+      ? (b = {
+          bottom: a,
+          left: a,
+          right: a,
+          top: a,
+        })
+      : (b = Object.assign({}, k, a))
+  a = b
+  b = a.bottom
+  var c = a.left,
+    d = a.right
+  a = a.top
 
-  /**
-   * Either a single number or an array of numbers between 0.0 and 1.
-   *
-   * @default 0
-   */
-  threshold?: number | number[]
+  return a + 'px ' + d + 'px ' + b + 'px ' + c + 'px'
 }
 
-/**
- * Reactive intersection observer.
- *
- * @param target - React ref or DOM node
- * @param options - Options passed to mutation observer
- * @param callback - callback to execute when mutations are observed
- *
- * @see https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver IntersectionObserver MDN
- * @see https://react-hooks-library.vercel.app/core/useIntersectionObserver
- */
-export function useIntersectionObserver(
-  target: MaybeRef<Element | undefined | null>,
-  options: IntersectionObserverOptions = {},
-  // eslint-disable-next-line no-undef
-  callback: IntersectionObserverCallback = noop,
-) {
-  const { root = _document, rootMargin = '0px', threshold = 0 } = options
-
-  const [inView, setInView] = useState(false)
-  const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null)
-  const isSupported = useIsSupported(() => 'IntersectionObserver' in window)
-
-  const observer = useRef<IntersectionObserver | null>(null)
-
-  const stop = useCallback(() => {
-    if (!observer.current) return
-
-    observer.current.disconnect()
-    observer.current = null
-  }, [])
-
-  useUnMount(stop)
-
-  useEffect(() => {
-    const el = unRef(target)
-    const rootEl = unRef(root)
-
-    if (!(isSupported && el && rootEl)) return
-
-    observer.current = new window.IntersectionObserver(
-      (
-        entries: IntersectionObserverEntry[],
-        observer: IntersectionObserver,
-      ) => {
-        const thresholds = Array.isArray(threshold) ? threshold : [threshold]
-
-        entries.forEach(entry => {
-          const inView =
-            entry.isIntersecting &&
-            thresholds.some(threshold => entry.intersectionRatio >= threshold)
-
-          setInView(inView)
-          setEntry(entry)
-        })
-        callback(entries, observer)
-      },
-      {
-        root: rootEl,
-        rootMargin,
-        threshold,
-      },
-    )
-
-    observer.current?.observe(el)
-
-    return stop
-  }, [callback, isSupported, root, rootMargin, stop, target, threshold])
-
-  return {
-    isSupported,
-    stop,
-    inView,
-    entry,
+function o(a: any, b: any, d: any, e: any) {
+  var f = b.root,
+    g = b.rootMargin,
+    h = b.threshold
+  f = f === null ? null : f()
+  var i =
+    a == null ||
+    a.element !== d ||
+    a.onIntersect !== e ||
+    a.observedRoot !== f ||
+    a.rootMargin !== g ||
+    a.threshold !== h
+  if (i) {
+    a && a.subscription.remove()
+    i = c('observeIntersection')(d, e, {
+      root: f,
+      rootMargin: n(g),
+      threshold: h,
+    })
+    return Object.assign({}, b, {
+      element: d,
+      observedRoot: f,
+      onIntersect: e,
+      subscription: i,
+    })
   }
+  return a
 }

@@ -1,6 +1,6 @@
-var g = new Map()
-function getIntersectionMarginFromViewportMargin(a: any) {
-  var b =
+const g = new Map()
+export function getIntersectionMarginFromViewportMargin(a: any) {
+  let b =
       'bottom:' +
       a.bottom +
       '|top:' +

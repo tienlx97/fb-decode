@@ -41,6 +41,8 @@ export type CometIconProps = {
   className?: string
   testid?: string
   'aria-label'?: string
+  iconAria?: any
+  iconBadgeAria?: any
 }
 
 const CometIcon = forwardRef<HTMLElement, CometIconProps>(

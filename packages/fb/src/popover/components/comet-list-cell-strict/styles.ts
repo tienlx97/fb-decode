@@ -210,6 +210,50 @@ export const useStyles = makeStyles({
   },
 })
 
+export const useDummyStyles = makeStyles({
+  dummy1: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    ...shorthands.borderStyle('solid'),
+    ...shorthands.borderWidth('0'),
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'row',
+    flexGrow: 1,
+    flexShrink: 1,
+    justifyContent: 'space-between',
+    marginBottom: 0,
+    marginRight: 0,
+    marginLeft: 0,
+    marginTop: 0,
+    minHeight: 0,
+    minWidth: 0,
+    paddingBottom: 0,
+    paddingRight: 0,
+    paddingLeft: 0,
+    paddingTop: 0,
+    position: 'relative',
+    zIndex: 0,
+  },
+
+  dummy2: {
+    maxWidth: '100%',
+  },
+
+  dummy3: {
+    backgroundColor: 'var(--divider)',
+    bottom: 0,
+    right: 0,
+    height: '1px',
+    position: 'absolute',
+    left: 0,
+  },
+
+  dummy4: {
+    flexShrink: 0,
+  },
+})
+
 export const useStartVerticalAlignStyles = makeStyles({
   center: {
     alignSelf: 'center',

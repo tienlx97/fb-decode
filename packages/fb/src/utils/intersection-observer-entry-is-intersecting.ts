@@ -1,4 +1,4 @@
-function intersectionObserverEntryIsIntersecting(props: any) {
+export function intersectionObserverEntryIsIntersecting(props: any) {
   return props.isIntersecting != null
     ? props.isIntersecting
     : props.intersectionRatio > 0 ||
