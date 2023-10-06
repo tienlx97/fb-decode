@@ -3,7 +3,7 @@ import { getRingColor, getRingGifUrl } from '../comet-progress-ring-utils'
 import BaseLoadingStateElement from '@fb/glimmer/components/base-loading-state-element'
 import { mergeClasses } from '@fluentui/react-components'
 import CometImageFromIXValue from '@fb/tetra-icon/components/comet-image-from-ix-value'
-import { useStyles } from './styles'
+import { useDummyStyles, useStyles } from './styles'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
@@ -24,6 +24,8 @@ function CometProgressRingIndeterminate({
 }: CometProgressRingIndeterminateProps) {
   const i = useStyles()
 
+  const dummyClasses = useDummyStyles()
+
   const foregroundColor = getRingColor(color)
   var strokeDasharray = (size - strokeWidth) * Math.PI
   const isDark = useCurrentDisplayMode() === 'dark'
@@ -38,10 +40,7 @@ function CometProgressRingIndeterminate({
     children:
       color === 'dark'
         ? jsx('svg', {
-            className: mergeClasses(
-              defaultClassName,
-              'x1c74tu6 xa4qsjk x1kfoseq x1bndym7 x1u6ievf x1wnkzza',
-            ),
+            className: mergeClasses(defaultClassName, dummyClasses.dumm1),
             height: size,
             viewBox: '0 0 ' + size + ' ' + size,
             width: size,

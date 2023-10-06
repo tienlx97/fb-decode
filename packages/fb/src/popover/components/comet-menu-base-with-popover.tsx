@@ -6,6 +6,7 @@ import { jsx } from 'react/jsx-runtime'
 import { CometPopover } from './comet-popover'
 import BaseMultiPageView from './base-multi-page-view'
 import CometMenuBase from './comet-menu-base/comet-menu-base'
+import { CometPopoverLoadingStateContent } from './comet-popover-loading-state-content'
 
 const j = 15,
   k = 'menu'
@@ -64,8 +65,7 @@ const CometMenuBaseWithPopover = forwardRef<
           children: jsx(BaseMultiPageView, {
             disableAutoFocus: !0,
             disableFocusContainment: !0,
-            fallback:
-              fallback ?? jsx('CometPopoverLoadingStateContent.react', {}),
+            fallback: fallback ?? jsx(CometPopoverLoadingStateContent, {}),
             children: jsx(
               CometMenuBase,
               Object.assign({}, rest, {
