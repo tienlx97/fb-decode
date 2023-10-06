@@ -69,18 +69,43 @@ __d("BaseContextualLayerAnchorRoot.react",
 "BaseDOMContainer.react",
  "ExecutionEnvironment", "react", "useStable", "useUnsafeRef_DEPRECATED"], (function(a, b, c, d, e, f, g) {
 
+__d("CometPopoverLoadingStateContent.react", 
+  ["CometProgressRingIndeterminate.react", "react", "stylex"], (function(a, b, c, d, e, f, g) {
+
+    __d("CometProgressRingIndeterminate.react", 
+  ["BaseLoadingStateElement.react", 
+  "CometImageFromIXValue.react", 
+  "CometProgressRingUtils", "react", "stylex", //
+  "useCurrentDisplayMode"], (function(a, b, c, d, e, f, g) {
+
+
 __d("CometMenuBaseWithPopover.react", 
-["BaseContextualLayerAvailableHeightContext", 
-"BaseMultiPageView.react", 
-"CometMenuBase.react", 
+["BaseContextualLayerAvailableHeightContext", //
+"BaseMultiPageView.react", //
+"CometMenuBase.react", //
 "CometPopover.react", //
 "CometPopoverLoadingStateContent.react", 
 "react"], (function(a, b, c, d, e, f, g) {
 
 
-  __d("CometMenuBase.react", 
+__d("BaseMultiPageView.react", 
+["BaseMultiPageViewContainer.react", 
+"BaseMultiPageViewReducer", "react"], (function(a, b, c, d, e, f, g) {
+
+__d("BaseMultiPageViewContainer.react", 
+["BaseMultiPageViewContext", //
+"FocusInertRegion.react",  //
+"FocusRegion.react", 
+"HiddenSubtreeContextProvider.react", //
+"Locale", //
+"emptyFunction", //
+"focusScopeQueries", // 
+"getPrefersReducedMotion", "gkx", //
+"mergeRefs", "react", "stylex", "testID"], (function(a, b, c, d, e, f, g) {
+
+  __d("CometMenuBase.react",  //
   ["fbt", "ix", 
-  "BaseScrollableArea.react", 
+  "BaseScrollableArea.react", //
   "CometErrorBoundary.react", 
   "CometFocusGroupFirstLetterNavigation", //
   "CometListCellStrict.react",  //
@@ -99,7 +124,8 @@ __d("BaseScrollableArea.react",
   "CometDebounce", 
   "CometVisualCompletionAttributes", "Locale", "UserAgent", "gkx", "react", 
   "resize-observer-polyfill", "stylex", 
-  "useUnsafeRef_DEPRECATED", "useVisibilityObserver"], (function(a, b, c, d, e, f, g) {
+  "useUnsafeRef_DEPRECATED", //
+  "useVisibilityObserver"], (function(a, b, c, d, e, f, g) { //
 
 
 __d("CometMenuFocusGroup",  //

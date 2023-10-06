@@ -7,12 +7,12 @@ export const getFirstLetterNavigationTag = function (a: any) {
 }
 
 export const useFirstLetterNavigationTag = function (a: any) {
-  var b = useState(void 0),
+  let b = useState(void 0),
     d = b[0],
     e = b[1]
   useEffect(
     function () {
-      var b
+      let b
       b = a == null ? void 0 : (b = a.current) == null ? void 0 : b.innerText
       isStringNullOrEmpty(b) || e(getFirstLetterNavigationTag(b))
     },
@@ -24,7 +24,7 @@ export const useFirstLetterNavigationTag = function (a: any) {
 export const handleFirstLetterNavigation = function (a: any) {
   if (a.type === 'PRINT_CHAR') {
     a.event.stopPropagation()
-    var b = a.event.key.toLowerCase()
+    let b = a.event.key.toLowerCase()
     b = a.getItemByTag(b)
     b != null && a.focusItem(b)
   }

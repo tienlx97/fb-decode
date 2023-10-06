@@ -5,18 +5,23 @@ import React, {
   useMemo,
   useRef,
 } from 'react'
-import { intersectionObserverEntryIsIntersecting } from '@fb/utils/intersection-observer-entry-is-intersecting'
+
+import BaseViewportMarginsContext from '@fb/context/base-viewport-margins-context'
 import HiddenSubtreePassiveContext from '@fb/context/hidden-subtree-passive-context'
 import cometVisibilityUserActivityMonitor from '@fb/event/utils/comet-visibility-user-activity-monitor'
-import { getStyleProperty } from '@fb/utils/get-style-property'
-import useDoubleEffectHack_DO_NOT_USE_THIS_IS_TRACKED from './use-double-effect-hack_DO_NOT_USE_THIS_IS_TRACKED'
 import { onBeforeUnload } from '@fb/utils/comet-run'
-import BaseViewportMarginsContext from '@fb/context/base-viewport-margins-context'
 import { getIntersectionMarginFromViewportMargin } from '@fb/utils/get-intersection-margin-from-viewport-margin'
-import { useIntersectionObserver } from './use-intersection-observer'
+import { getStyleProperty } from '@fb/utils/get-style-property'
+import { intersectionObserverEntryIsIntersecting } from '@fb/utils/intersection-observer-entry-is-intersecting'
 
-export default function useViewportDuration(entry: IntersectionObserverEntry) {
-  var b,
+// eslint-disable-next-line camelcase
+import useDoubleEffectHack_DO_NOT_USE_THIS_IS_TRACKED from './use-double-effect-hack_DO_NOT_USE_THIS_IS_TRACKED'
+import useIntersectionObserver from './use-intersection-observer'
+
+export default function useViewportDuration(
+  entry: IntersectionObserverEntry & any,
+) {
+  let b,
     e,
     f,
     g = arguments,
@@ -46,10 +51,10 @@ export default function useViewportDuration(entry: IntersectionObserverEntry) {
         ? v.activityMonitorOverride
         : cometVisibilityUserActivityMonitor
 
-  var H = useCallback(
+  let H = useCallback(
     function (a: any) {
       if (G && !G.isUserActive()) return 'USER_INACTIVE'
-      var b = F.getCurrentState()
+      let b = F.getCurrentState()
       if (b.hidden) return 'PUSH_VIEW_HIDDEN'
       if (b.backgrounded) return 'BACKGROUNDED'
       if (B.current === !1) return 'NOT_IN_VIEWPORT'
@@ -72,9 +77,9 @@ export default function useViewportDuration(entry: IntersectionObserverEntry) {
 
   const J = useCallback(
     (a: any, b: any, c: any) => {
-      var d: any = A.current != null
+      let d: any = A.current != null
       if (!d && c) {
-        var e: any = Date.now()
+        let e: any = Date.now()
         // @ts-ignore
         A.current = e
         t != null &&
@@ -120,13 +125,13 @@ export default function useViewportDuration(entry: IntersectionObserverEntry) {
     // @ts-ignore
   }, [])
 
-  var L = useCallback(
+  let L = useCallback(
     function (a: any) {
       // c('nullIntersectionObserverEntryLogger')(
       //   a,
       //   'IntersectionObserverEntry is null. num_arguments=' + g.length,
       // )
-      var b = (B.current = z(a))
+      let b = (B.current = z(a))
       r &&
         r({
           entry: a,
@@ -179,11 +184,11 @@ export default function useViewportDuration(entry: IntersectionObserverEntry) {
         ? p
         : getIntersectionMarginFromViewportMargin(N)
 
-  // return useIntersectionObserver(L, {
-  //   root: O,
-  //   rootMargin: P,
-  //   threshold: w,
-  // })
+  return useIntersectionObserver(L, {
+    root: O,
+    rootMargin: P,
+    threshold: w,
+  })
 }
 
 const m = function (a: any) {

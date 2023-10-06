@@ -65,14 +65,14 @@ export function tableCellTabbableContentScopeQuery(a: any, b: any) {
 export function headerOrTabbableScopeQuery(a: any, b: any) {
   return headerAndSpinnerFocusScopeQuery(a, b) || tabbableScopeQuery(a, b)
 }
-export var topLoadingScopeQuery = function (a: any, b: any) {
+export let topLoadingScopeQuery = function (a: any, b: any) {
   return b['data-focus-target'] === !0 &&
     (b['aria-busy'] === !0 || b.role === 'progressbar')
     ? !0
     : !1
 }
 
-export var headerFirstTabbableSecondScopeQuery = [
+export let headerFirstTabbableSecondScopeQuery = [
   headerAndSpinnerFocusScopeQuery,
   tabbableScopeQuery,
 ]

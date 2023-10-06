@@ -1,6 +1,6 @@
 import { useCallback, useLayoutEffect, useRef } from 'react'
 
-export function useDynamicCallbackDANGEROUS(value: any) {
+export function useDynamicCallbackDANGEROUS(value) {
   var b = useRef(value)
   useLayoutEffect(() => {
     b.current = value

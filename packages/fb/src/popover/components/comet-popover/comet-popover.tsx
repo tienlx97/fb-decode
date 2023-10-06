@@ -2,8 +2,6 @@ import BaseContextualLayerOrientationContext from '@fb/context/base-contextual-l
 import React, { ReactNode, forwardRef, useContext } from 'react'
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { BasePopover } from '../components/base-popover'
-import { BasePopoverSVGArrowContainer } from '../components/base-popover-svg-arrow-container'
 import { mergeClasses } from '@fluentui/react-components'
 import {
   useAboveStyles,
@@ -12,6 +10,8 @@ import {
   useStartStyles,
   useStyles,
 } from './styles'
+import { BasePopover } from '../base-popover'
+import { BasePopoverSVGArrowContainer } from '../base-popover-svg-arrow-container'
 
 type CometPopoverProps = {
   animatedPopover?: boolean

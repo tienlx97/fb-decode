@@ -82,11 +82,11 @@ importers:
         specifier: workspace:*
         version: link:../../packages/fb
       next:
-        specifier: link:/home/tienlx97/Private/work/SLEEKLINGO/next.js/packages/next
-        version: link:../../../../../../../tienlx97/Private/work/SLEEKLINGO/next.js/packages/next
+        specifier: link:/home/tienlx97/work/next.js/packages/next
+        version: link:../../../next.js/packages/next
       next-auth:
         specifier: 0.0.0-manual.ffd05533
-        version: 0.0.0-manual.ffd05533(next@..+..+..+..+tienlx97+Private+work+SLEEKLINGO+next.js+packages+next)(react@packages+react)
+        version: 0.0.0-manual.ffd05533(next@next.js+packages+next)(react@packages+react)
       prisma:
         specifier: 5.2.0
         version: 5.2.0
@@ -220,18 +220,18 @@ importers:
       '@types/react':
         specifier: 18.2.21
         version: 18.2.21
-      '@types/react-dom':
-        specifier: 18.2.7
-        version: 18.2.7
       next:
-        specifier: link:/home/tienlx97/Private/work/SLEEKLINGO/next.js/packages/next
-        version: link:../../../../../../../tienlx97/Private/work/SLEEKLINGO/next.js/packages/next
+        specifier: link:/home/tienlx97/work/next.js/packages/next
+        version: link:../../../next.js/packages/next
       react:
         specifier: workspace:*
         version: link:../react
       react-dom:
         specifier: workspace:*
         version: link:../react-dom
+      resize-observer-polyfill:
+        specifier: 1.5.1
+        version: 1.5.1
     devDependencies:
       '@portal/eslint-config-react':
         specifier: workspace:*
@@ -283,8 +283,8 @@ importers:
         specifier: 18.2.21
         version: 18.2.21
       next:
-        specifier: link:/home/tienlx97/Private/work/SLEEKLINGO/next.js/packages/next
-        version: link:../../../../../../../tienlx97/Private/work/SLEEKLINGO/next.js/packages/next
+        specifier: link:/home/tienlx97/work/next.js/packages/next
+        version: link:../../../next.js/packages/next
       react:
         specifier: workspace:*
         version: link:../react
@@ -5166,7 +5166,7 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: false
 
-  /next-auth@0.0.0-manual.ffd05533(next@..+..+..+..+tienlx97+Private+work+SLEEKLINGO+next.js+packages+next)(react@packages+react):
+  /next-auth@0.0.0-manual.ffd05533(next@next.js+packages+next)(react@packages+react):
     resolution: {integrity: sha512-oTdpOP93rzABms/Qgp3z0udQG3tCZ3JxOCnwU04xLgX/xnC8+HuDHct7IcEpz+zxhZp6jxN0tdVkMCs5kubUfw==}
     peerDependencies:
       next: ^13.4.13
@@ -5177,7 +5177,7 @@ packages:
         optional: true
     dependencies:
       '@auth/core': 0.14.0
-      next: link:../../../../../tienlx97/Private/work/SLEEKLINGO/next.js/packages/next
+      next: link:../next.js/packages/next
       react: link:packages/react
     dev: false
 
@@ -5888,6 +5888,10 @@ packages:
       type-fest: 3.13.0
     transitivePeerDependencies:
       - encoding
+    dev: false
+
+  /resize-observer-polyfill@1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
     dev: false
 
   /resolve-from@4.0.0:
