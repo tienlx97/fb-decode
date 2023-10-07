@@ -7,9 +7,7 @@ type HiddenSubtreeContextProps = {
   hiddenOrBackgrounded_FIXME: boolean
 }
 
-const HiddenSubtreeContext = createContext<
-  HiddenSubtreeContextProps | undefined
->({
+const HiddenSubtreeContext = createContext<HiddenSubtreeContextProps>({
   backgrounded: !1,
   hidden: !1,
   hiddenOrBackgrounded: !1,

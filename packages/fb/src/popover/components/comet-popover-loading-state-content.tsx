@@ -11,12 +11,12 @@ type CometPopoverLoadingStateContentProps = {
 
 const useStyles = makeStyles({
   root: {
-    alignItems: 'x6s0dn4',
-    display: 'x78zum5',
-    height: 'xnnlda6',
-    justifyContent: 'xl56j7k',
-    minWidth: 'x53cq04',
-    width: 'xh8yej3',
+    alignItems: 'center',
+    display: 'flex',
+    height: '56px',
+    justifyContent: 'center',
+    minWidth: '334px',
+    width: '100%',
   },
 })
 

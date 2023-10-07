@@ -1,3 +1,5 @@
+import CometMenuItemBase from '@fb/popover/components/comet-menu-item-base'
+import CometMenuItemIcon from '@fb/popover/components/comet-menu-item-icon'
 import { CometIcon, fbicon } from '@fb/tetra-icon'
 import React, { useMemo } from 'react'
 
@@ -24,7 +26,7 @@ export default function CometFormComboboxMenuItem({
   isSelected,
   ...rest
 }: CometFormComboboxMenuItemProps) {
-  const k = useMemo(() => {
+  const aux = useMemo(() => {
     let Comp = null
 
     if (isSelected) {
@@ -33,8 +35,8 @@ export default function CometFormComboboxMenuItem({
         icon: fbicon(
           {
             sprited: 2,
-            spi: 'yTUMQJovBsj.png',
-            _spi: 'yTUMQJovBsj.png',
+            spi: '/assets/fb/yTUMQJovBsj.png',
+            _spi: '/assets/fb/yTUMQJovBsj.png',
             w: 20,
             h: 20,
             p: '-21px -84px',
@@ -51,11 +53,34 @@ export default function CometFormComboboxMenuItem({
           Comp = isSelected
             ? jsx(CometIcon, {
                 color: 'highlight',
-                icon: d('fbicon')._(h('621400'), 24),
+                icon: fbicon(
+                  {
+                    sprited: 2,
+                    spi: '/assets/fb/0XBuIwVU_TA.png',
+                    _spi: '/assets/fb/0XBuIwVU_TA.png',
+                    w: 24,
+                    h: 24,
+                    p: '0 -50px',
+                    sz: 'auto',
+                  },
+                  24,
+                ),
               })
             : jsx(CometIcon, {
                 color: 'primary',
-                icon: d('fbicon')._(h('545519'), 24),
+                icon: fbicon(
+                  {
+                    sprited: 2,
+                    spi: '/assets/fb/0XBuIwVU_TA.png',
+                    _spi: '/assets/fb/0XBuIwVU_TA.png',
+                    w: 24,
+                    h: 24,
+                    p: '0 -75px',
+                    sz: 'auto',
+                    loggingID: '545519',
+                  },
+                  24,
+                ),
               })
           break
       }
@@ -64,5 +89,21 @@ export default function CometFormComboboxMenuItem({
     return Comp
   }, [auxItemType, isSelected])
 
-  // return jsx(CometMenuItem)
+  return jsx(
+    CometMenuItemBase,
+    Object.assign({}, rest, {
+      'aria-selected': isSelected,
+      aux,
+      iconNode: icon
+        ? jsx(CometMenuItemIcon, {
+            icon: icon,
+            use:
+              iconType === 'profile-picture'
+                ? 'contained'
+                : 'contained_small_icon',
+          })
+        : null,
+      role: 'option',
+    }),
+  )
 }

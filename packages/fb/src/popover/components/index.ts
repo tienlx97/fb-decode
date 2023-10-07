@@ -241,4 +241,31 @@ __d("useIntersectionObserver",
   "observeIntersection", "react", 
   "useDynamicCallbackDANGEROUS"], (function(a, b, c, d, e, f, g) {
 
+
+
+__d("BaseContextualLayer.react", 
+["BaseContextualLayerAnchorRoot.react", //
+"BaseContextualLayerAnchorRootContext",  //
+"BaseContextualLayerAvailableHeightContext", //
+"BaseContextualLayerContextSizeContext", // 
+"BaseContextualLayerDefaultContainer.react", //
+"BaseContextualLayerLayerAdjustmentContext", //
+"BaseContextualLayerOrientationContext", //
+"BaseLinkNestedPressableContext", "BasePortal.react", //
+"BaseScrollableAreaContext", 
+"BaseViewportMarginsContext", 
+"CometTextContext", 
+"FocusRegion.react", "HiddenSubtreeContext", 
+"LayoutAnimationBoundaryContext", //
+"LayoutAnimationEvents", "Locale", //
+"calculateBaseContextualLayerPosition",  //
+"focusScopeQueries", "getComputedStyle",
+ "isElementFixedOrSticky", "mergeRefs", "react", 
+ "useLayoutAnimationEvents",
+  "useResizeObserver"], (function(a, b, c, d, e, f, g) {
+
+__d("useLayoutAnimationEvents", 
+  ["LayoutAnimationBoundaryContext", 
+  "LayoutAnimationEvents", "react"], (function(a, b, c, d, e, f, g) {
+
 */
