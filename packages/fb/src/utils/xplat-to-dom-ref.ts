@@ -1,20 +1,26 @@
-const g = window.HTMLElement
+// TODO
+// const g = window.HTMLElement
 
-export function xplatToDOMRef(a: any) {
-  return function (b: any) {
-    b = g && b instanceof g ? b : null
-    typeof a === 'function'
-      ? a(b)
-      : a != null && typeof a === 'object' && (a.current = b)
+export function xplatToDOMRef(target: any) {
+  return function (node: any) {
+    node =
+      window.HTMLElement && node instanceof window.HTMLElement ? node : null
+    typeof target === 'function'
+      ? target(node)
+      : target != null && typeof target === 'object' && (target.current = node)
   }
 }
-const h = window.HTMLInputElement
+// TODO
+// const h = window.HTMLInputElement
 
-export function xplatToInputRef(a: any) {
-  return function (b: any) {
-    b = h && b instanceof h ? b : null
-    typeof a === 'function'
-      ? a(b)
-      : a != null && typeof a === 'object' && (a.current = b)
+export function xplatToInputRef(target: any) {
+  return function (node: any) {
+    node =
+      window.HTMLInputElement && node instanceof window.HTMLInputElement
+        ? node
+        : null
+    typeof target === 'function'
+      ? target(node)
+      : target != null && typeof target === 'object' && (target.current = node)
   }
 }

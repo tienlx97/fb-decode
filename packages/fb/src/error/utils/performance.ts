@@ -1,11 +1,14 @@
+// TODO
 const performance =
-  window.performance ||
-  // @ts-ignore
-  window.msPerformance ||
-  // @ts-ignore
-  window.webkitPerformance ||
-  // @ts-ignore
-  window.mozPerformance ||
-  {}
+  typeof window !== 'undefined'
+    ? window.performance ||
+      // @ts-ignore
+      window.msPerformance ||
+      // @ts-ignore
+      window.webkitPerformance ||
+      // @ts-ignore
+      window.mozPerformance ||
+      {}
+    : {}
 
 export default performance

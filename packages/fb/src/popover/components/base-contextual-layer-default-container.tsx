@@ -22,8 +22,8 @@ const BaseContextualLayerDefaultContainer = forwardRef<
         className,
         onClick:
           stopClickPropagation === !0
-            ? function (a: any) {
-                return a.stopPropagation()
+            ? function (event: any) {
+                return event.stopPropagation()
               }
             : void 0,
       },

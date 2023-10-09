@@ -1,6 +1,18 @@
+'use-client'
+
 import React, { useCallback, useId, useRef, useState } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
+
+// import BaseContextualLayer from '@fb/components/base-contextual-layer'
+
+const BaseContextualLayer = dynamic(
+  // @ts-ignore
+  () => import('@fb/components/base-contextual-layer'),
+  {
+    ssr: false,
+  },
+)
 
 import FocusInertRegion from '@fb/focus/components/focus-inert-region'
 import FocusWithinHandler from '@fb/focus/components/focus-within-handler'
@@ -17,10 +29,10 @@ import {
   shorthands,
 } from '@fluentui/react-components'
 
-import CometFormComboboxMenuItem from '../comet-form-combobox-menu-item'
 import useCometFormSelectMenuTriggerKeyDownHandler from '../../hooks/use-comet-form-select-menu-trigger-key-down-handler'
 import useCometFormSelectOnlyComboboxKeyConfigs from '../../hooks/use-comet-form-select-only-combobox-key-configs'
-import BaseContextualLayer from '@fb/components/base-contextual-layer'
+import CometFormComboboxMenuItem from '../comet-form-combobox-menu-item'
+import dynamic from 'next/dynamic'
 
 type CometFormSelectOnlyComboboxProps = {
   align?: any
@@ -391,7 +403,6 @@ export default function CometFormSelectOnlyCombobox({
                     truncate,
                     children: options.map((option: any, key: number) => {
                       const isSelected = option.value === value
-
                       return jsx(
                         CometFormComboboxMenuItem,
                         {

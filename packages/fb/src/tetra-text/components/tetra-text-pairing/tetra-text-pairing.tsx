@@ -178,28 +178,52 @@ export default function TetraTextPairingReact({
     </div>
   )
 
-  return jsxs('div', {
-    'data-testid': undefined,
-    children: [
-      metaLocation === 'above' && Meta,
-      Headline,
-      body !== null &&
-        jsxs('div', {
-          className: className,
-          children: jsxs(TetraText, {
-            align: textAlign,
-            color: bodyColor,
-            dir,
-            isSemanticHeading: false,
-            numberOfLines: bodyLineLimit,
-            ref: bodyRef,
-            truncationTooltip: bodyTruncationTooltip,
-            type: bodyType,
-            children: body,
-          }),
-        }),
+  return (
+    <div data-testid={undefined}>
+      {metaLocation === 'above' && Meta}
+      {Headline}
+      {body && (
+        <div className={className}>
+          <TetraText
+            align={textAlign}
+            color={bodyColor}
+            dir={dir}
+            isSemanticHeading={false}
+            numberOfLines={bodyLineLimit}
+            ref={bodyRef}
+            truncationTooltip={bodyTruncationTooltip}
+            type={bodyType}
+          >
+            {body}
+          </TetraText>
+        </div>
+      )}
+      {metaLocation === 'below' && Meta}
+    </div>
+  )
 
-      metaLocation === 'below' && Meta,
-    ],
-  })
+  // return jsxs('div', {
+  //   'data-testid': undefined,
+  //   children: [
+  //     metaLocation === 'above' && Meta,
+  //     Headline,
+  //     body !== null &&
+  //       jsxs('div', {
+  //         className: className,
+  //         children: jsxs(TetraText, {
+  //           align: textAlign,
+  //           color: bodyColor,
+  //           dir,
+  //           isSemanticHeading: false,
+  //           numberOfLines: bodyLineLimit,
+  //           ref: bodyRef,
+  //           truncationTooltip: bodyTruncationTooltip,
+  //           type: bodyType,
+  //           children: body,
+  //         }),
+  //       }),
+
+  //     metaLocation === 'below' && Meta,
+  //   ],
+  // })
 }

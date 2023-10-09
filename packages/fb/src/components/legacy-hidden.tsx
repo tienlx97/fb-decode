@@ -14,7 +14,7 @@ import { jsx } from 'react/jsx-runtime'
 type LegacyHiddenOrLegacyHiddenOffscreenProps = {
   children?: ReactNode
   htmlAttributes: any
-  mode: string
+  mode: 'hidden' | 'visible'
   suppressHydrationWarning?: boolean
 }
 

@@ -6,8 +6,7 @@ import { useStyles } from './styles'
 
 type BasePopoverProps = {
   arrowImpl?: any
-  children?: ReactNode
-  label: string
+  label?: string
   arrowAlignment?: string
   labelledby?: string
   testid?: string
@@ -19,7 +18,6 @@ const BasePopover = forwardRef<HTMLDivElement, BasePopoverProps>(
       label,
       arrowAlignment,
       arrowImpl,
-      children,
       className,
       role = 'dialog',
       id,

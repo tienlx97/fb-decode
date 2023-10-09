@@ -14,7 +14,7 @@
  */
 
 'use strict'
-require('SchedulerFeatureFlags')
+// require('SchedulerFeatureFlags')
 function push(heap, node) {
   var index = heap.length
   heap.push(node)

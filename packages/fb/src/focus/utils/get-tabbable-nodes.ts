@@ -43,7 +43,10 @@ function getTabbableNodes(a: any, b: any) {
       h.name != null
     ) {
       // @ts-ignore
-      d[h.name] = [].concat((i = d[h.name]) != null ? i : [], [h])
+      d[h.name] = [].concat(
+        (useLayoutEffect = d[h.name]) != null ? useLayoutEffect : [],
+        [h],
+      )
     }
   }
   var j = Object.values(d)
@@ -65,13 +68,13 @@ function getTabbableNodes(a: any, b: any) {
     return !j.includes(a)
   })
   // @ts-ignore
-  i = b[0]
+  useLayoutEffect = b[0]
   h = b[b.length - 1]
   g = b.indexOf(c)
   f = null
   g !== -1 && (f = b[g])
   // @ts-ignore
-  return [b, i, h, g, f]
+  return [b, useLayoutEffect, h, g, f]
 }
 
 export default getTabbableNodes

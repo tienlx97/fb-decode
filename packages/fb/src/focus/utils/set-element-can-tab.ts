@@ -1,11 +1,19 @@
-let c = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'tabIndex')
-let d = Object.getOwnPropertyDescriptor(SVGElement.prototype, 'tabIndex')
+// TODO
+// let c = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'tabIndex')
+// let d = Object.getOwnPropertyDescriptor(SVGElement.prototype, 'tabIndex')
+
 let e = function (a: any) {
   return a
 }
-let g = c ? c.set : e,
-  h = d ? d.set : e
+// let g = c ? c.set : e,
+//   h = d ? d.set : e
+
 function i(a: any) {
+  let c = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'tabIndex')
+  let d = Object.getOwnPropertyDescriptor(SVGElement.prototype, 'tabIndex')
+  let g = c ? c.set : e
+  let h = d ? d.set : e
+
   return a instanceof SVGElement ? h : g
 }
 export function setElementCanTab(a: any, b: any, c?: any) {

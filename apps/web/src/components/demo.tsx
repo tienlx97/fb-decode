@@ -27,9 +27,9 @@ export const Default = () => {
 
   return (
     <div style={{ width: '440px' }}>
-      <TetraText color="secondary" align="center" type="body2">
+      {/* <TetraText color="secondary" align="center" type="body2">
         You're all caught up for now. Be sure to check for more updates soon.
-      </TetraText>
+      </TetraText> */}
 
       {/* <TetraButton
         label="Create"
@@ -58,7 +58,7 @@ export const Default = () => {
         />
       </div> */}
 
-      <div style={{ margin: '1rem' }}>
+      {/* <div style={{ margin: '1rem' }}>
         <CometFormTextInput
           label="Password"
           type="password"
@@ -70,16 +70,16 @@ export const Default = () => {
           helperText=""
           testid={undefined}
         />
-      </div>
+      </div> */}
 
-      <CometSwitch
+      {/* <CometSwitch
         disabled={false}
         size="small"
         value={switchVal}
         onClick={() => setSwitchVal(!switchVal)}
       >
         Works at Freelancer
-      </CometSwitch>
+      </CometSwitch> */}
 
       <div style={{ margin: '1rem' }}>
         <CometFormSelectOnlyCombobox

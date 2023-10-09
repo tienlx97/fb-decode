@@ -1,7 +1,8 @@
 import { LogTypeString, NormalizeErrorProps } from './types'
 
 let j = false
-const console = window.console
+// TODO
+// const console = window.console
 
 const errorListener = (nError: NormalizeErrorProps, loggingSource?: string) => {
   const logType = // @ts-ignore

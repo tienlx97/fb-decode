@@ -5,9 +5,9 @@ type BaseDOMContainerProps = {
   node?: HTMLDivElement
 }
 
-const BaseDOMContainer = forwardRef<HTMLElement, BaseDOMContainerProps>(
+const BaseDOMContainer = forwardRef<any, BaseDOMContainerProps>(
   ({ node }, ref) => {
-    const storeRef = useRef<HTMLElement | undefined>(undefined)
+    const storeRef = useRef<any | undefined>(undefined)
     useLayoutEffect(() => {
       if (node && storeRef.current) {
         storeRef.current.appendChild(node)

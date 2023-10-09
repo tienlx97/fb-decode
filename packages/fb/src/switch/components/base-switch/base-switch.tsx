@@ -27,7 +27,7 @@ const BaseSwitch = forwardRef<HTMLInputElement, BaseSwitchProps>(
             jsx(
               BaseInput,
               Object.assign({}, rest, {
-                'aria-check': rest.checked ?? false,
+                'aria-checked': rest.checked ?? false,
                 ref,
                 role: 'switch',
                 type: 'checkbox',

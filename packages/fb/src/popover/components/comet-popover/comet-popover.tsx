@@ -18,7 +18,12 @@ type CometPopoverProps = {
   children?: ReactNode
   popoverName?: string
   withArrow?: boolean
-  label: string
+  label?: string
+  arrowAlignment?: any
+  id?: string
+  labelledby?: any
+  role?: any
+  testid?: string
 }
 
 const CometPopover = forwardRef<HTMLDivElement, CometPopoverProps>(
@@ -50,6 +55,7 @@ const CometPopover = forwardRef<HTMLDivElement, CometPopoverProps>(
         ref,
         className: withArrow && classses.popoverWithArrow,
         children: jsx('div', {
+          children,
           className: mergeClasses(
             classses.card,
             classses.cardBackground,
@@ -67,7 +73,6 @@ const CometPopover = forwardRef<HTMLDivElement, CometPopoverProps>(
               ),
           ),
           // ref,
-          children,
         }),
       }),
     )

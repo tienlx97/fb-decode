@@ -1,15 +1,7 @@
-import BaseContextualLayerAnchorRootContext from '@fb/context/base-contextual-layer-anchor-root-context'
-import BaseScrollableAreaContext from '@fb/context/base-scrollable-area-context'
-import BaseViewportMarginsContext from '@fb/context/base-viewport-margins-context'
-import HiddenSubtreeContext from '@fb/context/hidden-subtree-context'
-import LayoutAnimationBoundaryContext from '@fb/context/layout-animation-boundary-context'
-import useLayoutAnimationEvents from '@fb/hooks/use-layout-animation-events'
-import { useResizeObserver } from '../hooks/use-resize-observer'
-import BaseContextualLayerDefaultContainer from '@fb/popover/components/base-contextual-layer-default-container'
-import calculateBaseContextualLayerPosition from '@fb/utils/calculate-base-contextual-layer-position'
-import { isElementFixedOrSticky } from '@fb/utils/is-element-fixed-or-sticky'
-import { LayoutAnimationEventType } from '@fb/utils/layout-animation-events'
-import {
+/* eslint-disable react/no-children-prop */
+'use-client'
+
+import React, {
   forwardRef,
   useCallback,
   useContext,
@@ -21,25 +13,36 @@ import {
   useRef,
   useState,
 } from 'react'
-
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeRefs } from '@fb/hooks/use-merge-refs'
-import BasePortal from '@fb/portal/components/base-portal'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import BaseContextualLayerAnchorRootContext from '@fb/context/base-contextual-layer-anchor-root-context'
+import BaseContextualLayerAvailableHeightContext from '@fb/context/base-contextual-layer-available-height-context'
+import BaseContextualLayerContextSizeContext from '@fb/context/base-contextual-layer-context-size-context'
+import BaseContextualLayerLayerAdjustmentContext from '@fb/context/base-contextual-layer-layer-adjustment-context'
+import BaseContextualLayerOrientationContext from '@fb/context/base-contextual-layer-orientation-context'
+import BaseLinkNestedPressableContext from '@fb/context/base-link-nested-pressable-context'
+import BaseScrollableAreaContext from '@fb/context/base-scrollable-area-context'
+import BaseViewportMarginsContext from '@fb/context/base-viewport-margins-context'
+import { CometTextContext } from '@fb/context/comet-text-context'
+import HiddenSubtreeContext from '@fb/context/hidden-subtree-context'
+import LayoutAnimationBoundaryContext from '@fb/context/layout-animation-boundary-context'
 import { FocusRegion } from '@fb/focus/components/focus-region'
 import {
   headerFirstTabbableSecondScopeQuery,
   tabbableScopeQuery,
 } from '@fb/focus/utils/focus-scope-queries'
+import useLayoutAnimationEvents from '@fb/hooks/use-layout-animation-events'
+import { mergeRefs } from '@fb/hooks/use-merge-refs'
+import BaseContextualLayerDefaultContainer from '@fb/popover/components/base-contextual-layer-default-container'
+import BasePortal from '@fb/portal/components/base-portal'
+import calculateBaseContextualLayerPosition from '@fb/utils/calculate-base-contextual-layer-position'
+import { isElementFixedOrSticky } from '@fb/utils/is-element-fixed-or-sticky'
+import { LayoutAnimationEventType } from '@fb/utils/layout-animation-events'
+import { makeStyles, mergeClasses } from '@fluentui/react-components'
+
+import { useResizeObserver } from '../hooks/use-resize-observer.js'
 import BaseContextualLayerAnchorRoot from './base-contextual-layer-anchor-root'
-import BaseContextualLayerContextSizeContext from '@fb/context/base-contextual-layer-context-size-context'
-import BaseContextualLayerLayerAdjustmentContext from '@fb/context/base-contextual-layer-layer-adjustment-context'
-import BaseContextualLayerAvailableHeightContext from '@fb/context/base-contextual-layer-available-height-context'
-import BaseContextualLayerOrientationContext from '@fb/context/base-contextual-layer-orientation-context'
-import BaseLinkNestedPressableContext from '@fb/context/base-link-nested-pressable-context'
-import { CometTextContext } from '@fb/context/comet-text-context'
 
 type BaseContextualLayerProps = {
   align?: any
@@ -108,7 +111,10 @@ const BaseContextualLayer = forwardRef<HTMLElement, BaseContextualLayerProps>(
       J,
     ] = useReducer(ca, position, ba)
 
-    const K = useContext(BaseContextualLayerAnchorRootContext)
+    const baseContextualLayerAnchorRootValue = useContext(
+      BaseContextualLayerAnchorRootContext,
+    )
+
     const L = useContext(BaseScrollableAreaContext)
     const M = useContext(BaseViewportMarginsContext)
     const N = useContext(LayoutAnimationBoundaryContext)
@@ -196,14 +202,20 @@ const BaseContextualLayer = forwardRef<HTMLElement, BaseContextualLayerProps>(
     const V = useCallback(
       function () {
         let a: any = document.documentElement,
-          b: any = K.current,
+          b: any = baseContextualLayerAnchorRootValue.current,
           d: any = T(),
           e = S()
-        if (a == null || b == null || d == null || e == null) return
+        if (!a || !b || !d || !e) {
+          return
+        }
         const h = t(b)
-        if (h == null) return
+        if (!h) {
+          return
+        }
         b = isElementFixedOrSticky(b)
+
         b = !b && e.nodeType === 1 && isElementFixedOrSticky(e)
+
         e = L.map(function (a: any) {
           return a.getDOMNode()
         })
@@ -241,12 +253,12 @@ const BaseContextualLayer = forwardRef<HTMLElement, BaseContextualLayerProps>(
         a = b.adjustment
         d = b.style
         b = Q.current
-        if (b != null) {
+        if (b) {
           const i = Object.keys(d)
           for (let j = 0; j < i.length; j++) {
             const k = i[j],
               l = d[k]
-            l != null ? b.style.setProperty(k, l) : b.style.removeProperty(k)
+            l ? b.style.setProperty(k, l) : b.style.removeProperty(k)
           }
         }
         J({
@@ -258,7 +270,16 @@ const BaseContextualLayer = forwardRef<HTMLElement, BaseContextualLayerProps>(
           type: 'reposition',
         })
       },
-      [K, T, S, L, disableAutoAlign, align, I, onIndeterminatePosition],
+      [
+        baseContextualLayerAnchorRootValue,
+        T,
+        S,
+        L,
+        disableAutoAlign,
+        align,
+        I,
+        onIndeterminatePosition,
+      ],
     )
 
     const W = useCallback(
@@ -393,58 +414,60 @@ const BaseContextualLayer = forwardRef<HTMLElement, BaseContextualLayerProps>(
 
     const $ = hidden || H
 
-    return jsx(BasePortal, {
-      target: K.current,
-      children: jsx(customContainer, {
-        hidden: hidden || H || a,
-        presencePayload: presencePayload,
-        ref: _ref,
-        stopClickPropagation: stopClickPropagation,
-        testid: void 0,
-        className: mergeClasses(classes.root, className),
-        children: jsx(FocusRegion, {
-          autoFocusQuery:
-            !$ && containFocus ? headerFirstTabbableSecondScopeQuery : null,
-          autoRestoreFocus: !$,
-          containFocusQuery: !$ && containFocus ? tabbableScopeQuery : null,
-          onEscapeFocusRegion: onEscapeFocusRegion,
-          recoverFocusQuery: $ ? null : headerFirstTabbableSecondScopeQuery,
-          children: jsx(BaseContextualLayerAnchorRoot, {
-            children: jsx(BaseContextualLayerContextSizeContext.Provider, {
-              value: baseContextualLayerContextSizeValue,
-              children: jsx(
-                BaseContextualLayerLayerAdjustmentContext.Provider,
-                {
-                  value: baseContextualLayerLayerAdjustmentValue,
-                  children: jsx(
-                    BaseContextualLayerAvailableHeightContext.Provider,
-                    {
-                      value: baseContextualLayerAvailableHeightValue,
-                      children: jsx(
-                        BaseContextualLayerOrientationContext.Provider,
-                        {
-                          value: baseContextualLayerOrientationValue,
-                          children: jsx(
-                            BaseLinkNestedPressableContext.Provider,
-                            {
-                              value: !1,
-                              children: jsx(CometTextContext.Provider, {
-                                value: null,
-                                children: children,
-                              }),
-                            },
-                          ),
-                        },
-                      ),
-                    },
-                  ),
-                },
-              ),
+    return (
+      <BasePortal
+        target={baseContextualLayerAnchorRootValue.current}
+        children={jsx(customContainer, {
+          hidden: hidden || H || a,
+          presencePayload: presencePayload,
+          ref: _ref,
+          stopClickPropagation: stopClickPropagation,
+          testid: void 0,
+          className: mergeClasses(classes.root, className),
+          children: jsx(FocusRegion, {
+            autoFocusQuery:
+              !$ && containFocus ? headerFirstTabbableSecondScopeQuery : null,
+            autoRestoreFocus: !$,
+            containFocusQuery: !$ && containFocus ? tabbableScopeQuery : null,
+            onEscapeFocusRegion: onEscapeFocusRegion,
+            recoverFocusQuery: $ ? null : headerFirstTabbableSecondScopeQuery,
+            children: jsx(BaseContextualLayerAnchorRoot, {
+              children: jsx(BaseContextualLayerContextSizeContext.Provider, {
+                value: baseContextualLayerContextSizeValue,
+                children: jsx(
+                  BaseContextualLayerLayerAdjustmentContext.Provider,
+                  {
+                    value: baseContextualLayerLayerAdjustmentValue,
+                    children: jsx(
+                      BaseContextualLayerAvailableHeightContext.Provider,
+                      {
+                        value: baseContextualLayerAvailableHeightValue,
+                        children: jsx(
+                          BaseContextualLayerOrientationContext.Provider,
+                          {
+                            value: baseContextualLayerOrientationValue,
+                            children: jsx(
+                              BaseLinkNestedPressableContext.Provider,
+                              {
+                                value: !1,
+                                children: jsx(CometTextContext.Provider, {
+                                  value: null,
+                                  children: children,
+                                }),
+                              },
+                            ),
+                          },
+                        ),
+                      },
+                    ),
+                  },
+                ),
+              }),
             }),
           }),
-        }),
-      }),
-    })
+        })}
+      />
+    )
   },
 )
 

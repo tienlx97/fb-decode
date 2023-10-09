@@ -1,4 +1,6 @@
-import { forwardRef, useCallback, useReducer } from 'react'
+'use-client'
+
+import React, { ReactNode, forwardRef, useCallback, useReducer } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
@@ -7,11 +9,16 @@ import {
   reducer as BaseMultiPageViewReducer,
 } from '@fb/reducer/base-multi-page-view-reducer'
 
-import { BaseMultiPageViewContainer } from './base-multi-page-view-container'
+import { BaseMultiPageViewContainer } from '../base-multi-page-view-container'
 
-type BaseMultiPageViewProps = any
+type BaseMultiPageViewProps = {
+  disableAutoFocus: boolean
+  disableFocusContainment: boolean
+  fallback?: any
+  children?: ReactNode
+}
 
-const BaseMultiPageView = forwardRef<HTMLElement, BaseMultiPageViewProps>(
+const BaseMultiPageView = forwardRef<any, BaseMultiPageViewProps>(
   (props, ref) => {
     const [pageHistory, dispatch] = useReducer(
       BaseMultiPageViewReducer,

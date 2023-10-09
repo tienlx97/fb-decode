@@ -1,3 +1,5 @@
+'use-client'
+
 import React, { ReactNode } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'

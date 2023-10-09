@@ -1,7 +1,9 @@
+'use-client'
+
 import { createContext } from 'react'
 
 type BaseContextualLayerAnchorRootContextProps = {
-  current: HTMLElement
+  current: any
 }
 
 const BaseContextualLayerAnchorRootContext =

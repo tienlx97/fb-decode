@@ -1,4 +1,6 @@
-import React from 'react'
+'use-client'
+
+import React, { useRef } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
@@ -16,11 +18,13 @@ type BaseContextualLayerAnchorRootProps = {
 function BaseContextualLayerAnchorRoot({
   children,
 }: BaseContextualLayerAnchorRootProps) {
-  const el = useStable(function () {
+  const el = useStable(() => {
     return executionEnvironment.canUseDOM ? document.createElement('div') : null
   })
 
   const baseContextualLayerAnchorRootValue = useUnsafeRef_DEPRECATED(el)
+
+  // const baseContextualLayerAnchorRootValue = useRef(el)
 
   return jsxs(React.Fragment, {
     children: [
@@ -33,6 +37,17 @@ function BaseContextualLayerAnchorRoot({
       }),
     ],
   })
+
+  // return (
+  //   <React.Fragment>
+  //     <BaseContextualLayerAnchorRootContext.Provider
+  //       value={baseContextualLayerAnchorRootValue}
+  //     >
+  //       {children}
+  //     </BaseContextualLayerAnchorRootContext.Provider>
+  //     <BaseDOMContainer node={el} />
+  //   </React.Fragment>
+  // )
 }
 
 export default BaseContextualLayerAnchorRoot
