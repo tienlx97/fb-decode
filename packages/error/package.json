@@ -1,18 +1,22 @@
 {
-  "name": "ui",
+  "name": "@metamon/error",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "./src/index.tsx",
-  "types": "./src/index.tsx",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "dependencies": {
-    "@fluentui/react-components": "9.30.4",
     "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.11",
     "next": "link:/home/yugi0h/Private/work/SLEEKLINGO/next.js/packages/next",
     "react": "workspace:*",
-    "react-dom": "workspace:*"
+    "react-dom": "workspace:*",
+    "@metamon/context": "workspace:*",
+    "@metamon/util": "workspace:*"
   },
   "devDependencies": {
     "@portal/eslint-config-react": "workspace:*",
+    "@types/node": "20.6.2",
+    "node": "20.6.0",
     "tsconfig": "workspace:*",
     "typescript": "5.2.2"
   },
