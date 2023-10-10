@@ -15,6 +15,7 @@ import { FocusGroup } from '@fb/focus/components/comet-menu-focus-group'
 import { handleFirstLetterNavigation } from '@fb/focus/components/comet-focus-group-first-letter-navigation'
 import { useStyles, usedummyStyles } from './styles'
 import { fbicon } from '@fb/tetra-icon'
+import { mergeClasses } from '@fluentui/react-components'
 
 type CometMenuBaseProps = {
   children?: any
@@ -38,7 +39,7 @@ function CometMenuBase({
   header,
   maxHeight,
   role = 'menu',
-  size,
+  size = 'normal',
 }: CometMenuBaseProps) {
   let p = 0
 
@@ -74,12 +75,12 @@ function CometMenuBase({
             }
           : undefined,
         vertical: true,
-        className: [
+        className: mergeClasses(
           classes.root,
           size === 'full' && classes.sizeFull,
           size === 'normal' && classes.sizeNormal,
           size === 'small' && classes.sizeSmall,
-        ],
+        ),
         children: jsxs(CometMenuItemBaseRoleContext.Provider, {
           value: cometMenuItemBaseRoleValue,
           children: [

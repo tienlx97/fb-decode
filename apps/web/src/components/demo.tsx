@@ -23,7 +23,7 @@ export const Default = () => {
 
   const [switchVal, setSwitchVal] = React.useState(true)
 
-  const [comboboxValue, setComboboxValue] = React.useState('NICKNAME')
+  const [comboboxValue, setComboboxValue] = React.useState('MARRIED_NAME')
 
   return (
     <div style={{ width: '440px' }}>
@@ -125,6 +125,18 @@ export const Default = () => {
               value: 'OTHER',
             },
           ]}
+        />
+      </div>
+
+      <div style={{ margin: '1rem' }}>
+        <CometFormTextArea
+          label="Favorite quotes"
+          disabled={false}
+          value={state}
+          onValueChange={(val, e) => {
+            setState(val)
+          }}
+          minRows={3}
         />
       </div>
     </div>

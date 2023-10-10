@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect } from 'react'
 import { createKeyCommandWrapper } from './create-key-command-wrapper'
+import { recoverableViolation } from '@fb/error/errorguard'
 
 export default function createKeyCommandWidget(isFocusCapture = true) {
   const context = createContext<any>(undefined)
@@ -7,19 +8,19 @@ export default function createKeyCommandWidget(isFocusCapture = true) {
 
   function useKeyCommands(commands: any, d?: any, dependencies?: any) {
     d === void 0 && (d = !1)
-    var contextValue = useContext(context)
+    const contextValue = useContext(context)
     useEffect(() => {
       if (!contextValue) {
-        if (!d) {
-          console.error(
-            "Attempting to register a key command outside of its widget scope. Calls to useKeyCommand must be within its widget's wrapper.",
-          )
-        }
-        // d ||
-        //   c('recoverableViolation')(
+        // if (!d) {
+        //   console.error(
         //     "Attempting to register a key command outside of its widget scope. Calls to useKeyCommand must be within its widget's wrapper.",
-        //     'comet_ax',
         //   )
+        // }
+        d ||
+          recoverableViolation(
+            "Attempting to register a key command outside of its widget scope. Calls to useKeyCommand must be within its widget's wrapper.",
+            'comet_ax',
+          )
         return
       }
       if (commands) {

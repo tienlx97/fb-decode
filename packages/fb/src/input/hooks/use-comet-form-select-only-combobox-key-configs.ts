@@ -61,14 +61,14 @@ export default function useCometFormSelectOnlyComboboxKeyConfigs({
         command: {
           key: cometKeys.ENTER,
         },
-        description: `h._('__JHASH__H9r-54XFgGX__JHASH__')`,
+        description: 'Select option',
         handler: onPress,
       },
       {
         command: {
           key: cometKeys.SPACE,
         },
-        description: `h._('__JHASH__H9r-54XFgGX__JHASH__')`,
+        description: 'Select option',
         handler: onPress,
       },
       {
@@ -76,14 +76,14 @@ export default function useCometFormSelectOnlyComboboxKeyConfigs({
           alt: !0,
           key: cometKeys.UP,
         },
-        description: `h._('__JHASH__H9r-54XFgGX__JHASH__')`,
+        description: 'Select option',
         handler: onPress,
       },
       {
         command: {
           key: cometKeys.ESCAPE,
         },
-        description: `h._('__JHASH__gx0C5Qpg34W__JHASH__')`,
+        description: 'Close listbox',
         handler: function () {
           isMenuVisible && onHide()
         },
@@ -93,7 +93,7 @@ export default function useCometFormSelectOnlyComboboxKeyConfigs({
         command: {
           key: cometKeys.TAB,
         },
-        description: `h._('__JHASH__H9r-54XFgGX__JHASH__')`,
+        description: 'Select option',
         handler: onPress,
         shouldPreventDefault: !1,
       },
@@ -101,21 +101,21 @@ export default function useCometFormSelectOnlyComboboxKeyConfigs({
         command: {
           key: cometKeys.DOWN,
         },
-        description: `h._('__JHASH__cxFOlaY4tQA__JHASH__')`,
+        description: 'Select Next item',
         handler: handlerKey2,
       },
       {
         command: {
           key: cometKeys.UP,
         },
-        description: `h._('__JHASH__JvfQjzZTBTU__JHASH__')`,
+        description: 'Select Previous item',
         handler: handlerKey1,
       },
       {
         command: {
           key: cometKeys.HOME,
         },
-        description: `h._('__JHASH__YCFt2LFLOyX__JHASH__')`,
+        description: 'Select First item',
         handler: function () {
           isMenuVisible || onShow(), setActiveValue(filteredOptions[0].value)
         },
@@ -124,7 +124,7 @@ export default function useCometFormSelectOnlyComboboxKeyConfigs({
         command: {
           key: cometKeys.END,
         },
-        description: `h._('__JHASH__8RbNJUNJiJ5__JHASH__')`,
+        description: 'Select last item',
         handler: function () {
           isMenuVisible || onShow(),
             setActiveValue(filteredOptions[filteredOptions.length - 1].value)
@@ -134,7 +134,7 @@ export default function useCometFormSelectOnlyComboboxKeyConfigs({
         command: {
           key: cometKeys.PAGE_UP,
         },
-        description: `h._('__JHASH__P9EEfGTJGkw__JHASH__')`,
+        description: 'Page up',
         handler: function () {
           var a = filteredOptions.findIndex(function (a: any) {
             return a.value === activeValue
@@ -151,7 +151,7 @@ export default function useCometFormSelectOnlyComboboxKeyConfigs({
         command: {
           key: cometKeys.PAGE_DOWN,
         },
-        description: `h._('__JHASH__c0Qyjhx5Cbn__JHASH__')`,
+        description: 'Page down',
         handler: function () {
           var a = filteredOptions.findIndex(function (a: any) {
             return a.value === activeValue

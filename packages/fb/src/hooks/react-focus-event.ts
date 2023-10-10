@@ -54,12 +54,13 @@ function trackGlobalFocusVisible() {
     window.addEventListener(
       type,
       handleGlobalFocusVisibleEvent,
-      checkPassiveEventsSupported
-        ? {
-            capture: true,
-            passive: true,
-          }
-        : true,
+      // checkPassiveEventsSupported
+      //   ? {
+      //       capture: true,
+      //       passive: true,
+      //     }
+      //   :
+      true,
     )
   })
 }
@@ -151,10 +152,13 @@ function useFocusVisibleInputHandles() {
 
 function useFocusLifecycles() {
   useEffect(() => {
-    if (!hasTrackedGlobalFocusVisible) {
-      hasTrackedGlobalFocusVisible = true
-      trackGlobalFocusVisible()
-    }
+    // if (!hasTrackedGlobalFocusVisible) {
+    //   hasTrackedGlobalFocusVisible = true
+    //   trackGlobalFocusVisible()
+    // }
+
+    hasTrackedGlobalFocusVisible ||
+      ((hasTrackedGlobalFocusVisible = true), trackGlobalFocusVisible())
   }, [])
 }
 
@@ -403,7 +407,7 @@ export function useFocusWithin<T>(
 
       const state = stateRef.current
 
-      if (focusWithinTarget !== null && state !== null) {
+      if (focusWithinTarget && state) {
         // Handle focus visible
         setFocusVisibleListeners(
           focusVisibleHandles,
@@ -476,7 +480,7 @@ export function useFocusWithin<T>(
         blurHandle.setListener(
           focusWithinTarget as any,
           function (event: FocusEvent) {
-            if (disabled) {
+            if (!gkx5403 && disabled) {
               return
             }
             const { relatedTarget } = event.nativeEvent as any
@@ -511,7 +515,7 @@ export function useFocusWithin<T>(
         beforeBlurHandle.setListener(
           focusWithinTarget as any,
           (event: FocusEvent) => {
-            if (disabled) {
+            if (!gkx5403 && disabled) {
               return
             }
 

@@ -17,10 +17,11 @@ export const useOStyles = makeStyles({
     marginTop: '-50px',
   },
   default: {
+    WebkitOverflowScrolling: 'touch',
+    //
     MsOverflowStyle: 'x2atdfe',
     MsScrollChaining: 'xb57i2i',
     MsScrollRails: 'x1q594ok',
-    WebkitOverflowScrolling: 'touch',
     display: 'flex',
     flexDirection: 'column',
     overflowX: 'hidden',
@@ -144,7 +145,7 @@ export const useDummyStyles = makeStyles({
     ':after': {
       height: '16px',
       boxShadow: 'var(--scroll-shadow)',
-      content: "''",
+      content: '""',
       position: 'absolute',
       top: '-16px',
       width: '100%',

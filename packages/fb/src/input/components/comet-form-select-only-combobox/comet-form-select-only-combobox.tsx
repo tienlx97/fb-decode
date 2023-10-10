@@ -1,6 +1,7 @@
+/* eslint-disable react/no-children-prop */
 'use-client'
 
-import React, { useCallback, useId, useRef, useState } from 'react'
+import React, { useCallback, useId, useMemo, useRef, useState } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
@@ -15,7 +16,6 @@ const BaseContextualLayer = dynamic(
 )
 
 import FocusInertRegion from '@fb/focus/components/focus-inert-region'
-import FocusWithinHandler from '@fb/focus/components/focus-within-handler'
 import { tabbableScopeQuery } from '@fb/focus/utils/focus-scope-queries'
 import { CometComponentWithKeyCommands } from '@fb/key-command/components/comet-component-with-key-commands'
 import CometMenuBaseWithPopover from '@fb/popover/components/comet-menu-base-with-popover'
@@ -33,6 +33,8 @@ import useCometFormSelectMenuTriggerKeyDownHandler from '../../hooks/use-comet-f
 import useCometFormSelectOnlyComboboxKeyConfigs from '../../hooks/use-comet-form-select-only-combobox-key-configs'
 import CometFormComboboxMenuItem from '../comet-form-combobox-menu-item'
 import dynamic from 'next/dynamic'
+import FocusWithinHandler from '@fb/focus/components/focus-within-handler'
+import FocusWithinHandlerNonStrictMode_DEPRECATED from '@fb/focus/components/focus-within-handler-non-strict-mode_DEPRECATED'
 
 type CometFormSelectOnlyComboboxProps = {
   align?: any
@@ -176,16 +178,18 @@ export default function CometFormSelectOnlyCombobox({
   const [show, setShow] = useState(false)
   const [activeValue, setActiveValue] = useState(null)
 
-  const isMenuVisible = show && options.length > 0
+  const isMenuVisible = useMemo(
+    () => show && options.length > 0,
+    [show, options],
+  )
+  // show && options.length > 0
 
   const contextRef = useRef(null)
 
-  const filteredOptions = options.filter(function (option: any) {
-    return !option.disabled
-  })
-  const activeValueIndex = options.findIndex(function (option: any) {
-    return option.value === activeValue
-  })
+  const filteredOptions = options.filter((option: any) => !option.disabled)
+  const activeValueIndex = options.findIndex(
+    (option: any) => option.value === activeValue,
+  )
 
   const defaultOptionIconData = !defaultIcon
     ? undefined
@@ -197,9 +201,7 @@ export default function CometFormSelectOnlyCombobox({
   let selectedOptionIcon: any = null
   let selectedOptionLabel: any = null
 
-  const selectedOptions = options.find(function (option: any) {
-    return option.value === value
-  })
+  const selectedOptions = options.find((option: any) => option.value === value)
 
   if (value && selectedOptions) {
     selectedOptionIcon = selectedOptions.icon
@@ -222,13 +224,10 @@ export default function CometFormSelectOnlyCombobox({
 
   const normalizeIcon = selectedOptionIconData ?? defaultOptionIconData
 
-  const onShowCb = useCallback(
-    function () {
-      setShow(true)
-      onVisibilityChange(true)
-    },
-    [onVisibilityChange],
-  )
+  const onShowCb = useCallback(() => {
+    setShow(true)
+    onVisibilityChange(true)
+  }, [onVisibilityChange])
 
   const onHideCb = useCallback(() => {
     setActiveValue(null)
@@ -237,8 +236,11 @@ export default function CometFormSelectOnlyCombobox({
   }, [onVisibilityChange])
 
   const onFocusChange = useCallback(
-    function (a: any) {
-      a || onHideCb()
+    (focusValue: any) => {
+      if (!focusValue) {
+        onHideCb()
+      }
+      // focusValue || onHideCb()
     },
     [onHideCb],
   )
@@ -249,9 +251,9 @@ export default function CometFormSelectOnlyCombobox({
 
   const onPressCb = useCallback(() => {
     if (isMenuVisible)
-      activeValue != null
+      activeValue
         ? onValueChange(activeValue)
-        : activeValue == null && onNullValue && onNullValue(null),
+        : !activeValue && onNullValue && onNullValue(null),
         onHideCb()
     else {
       setActiveValue(value ?? null)
@@ -342,7 +344,9 @@ export default function CometFormSelectOnlyCombobox({
           labelLocation_INTERNAL,
           labelRef,
           onPress: function (a: any) {
-            if (a.target === contextRef.current) return
+            if (a.target === contextRef.current) {
+              return
+            }
             onShowCb()
           },
           role: 'combobox',
@@ -416,7 +420,7 @@ export default function CometFormSelectOnlyCombobox({
                           iconType,
                           id: mergeIds(id1, key),
                           isSelected,
-                          onClick: function () {
+                          onClick: () => {
                             onValueChange(option.value)
                             onHideCb()
                           },

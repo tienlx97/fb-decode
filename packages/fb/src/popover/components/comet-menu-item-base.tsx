@@ -70,6 +70,12 @@ const useStyles = makeStyles({
   },
 })
 
+const useDummyStyles = makeStyles({
+  dummy1: {
+    marginLeft: '12px',
+  },
+})
+
 const o = true
 
 type CometMenuItemBaseProps = {
@@ -150,6 +156,7 @@ const CometMenuItemBase = forwardRef<HTMLElement, CometMenuItemBaseProps>(
     ref,
   ) => {
     const classes = useStyles()
+    const dummyClasses = useDummyStyles()
 
     const T = useRef<any>(null)
     const cometMenuContextValue = useContext(CometMenuContext)
@@ -185,17 +192,25 @@ const CometMenuItemBase = forwardRef<HTMLElement, CometMenuItemBaseProps>(
     )
     let E
     const G = role ?? cometMenuItemBaseRoleContextValue
-    const _role = G ?? void 0
+    const _role = G ?? undefined
     const V = useRef(autoScrollOnLoad)
 
     useEffect(function () {
-      const a = T.current
-      V.current &&
-        a != null &&
-        ((V.current = !1),
-        a.scrollIntoView({
+      // const a = T.current
+
+      if (V.current && T.current) {
+        V.current = !1
+        T.current.scrollIntoView({
           block: 'nearest',
-        }))
+        })
+      }
+
+      // V.current &&
+      //   a &&
+      //   ((V.current = !1),
+      //   a.scrollIntoView({
+      //     block: 'nearest',
+      //   }))
     }, [])
 
     const headlineRef = useRef(null)
@@ -208,7 +223,7 @@ const CometMenuItemBase = forwardRef<HTMLElement, CometMenuItemBaseProps>(
       [ref],
     )
 
-    const Y = badge
+    const HeadLine = badge
       ? typeof badge === 'number'
         ? jsxs(React.Fragment, {
             children: [
@@ -250,19 +265,14 @@ const CometMenuItemBase = forwardRef<HTMLElement, CometMenuItemBaseProps>(
           role: _role,
           suppressFocusRing: true,
           testid: undefined,
-          xstyle: [
+          className: mergeClasses(
             classes.listItem,
             alignCenter && classes.listItemAlignedCenter,
-            iconNode != null && classes.listItemWithIcon,
+            iconNode && classes.listItemWithIcon,
             disabled && classes.disabled,
             !o && visuallyFocused && BaseFocusRing.focusRingXStyle,
-          ],
-          children: function ({
-            focused,
-            focusVisible,
-            hovered,
-            pressed,
-          }: any) {
+          ),
+          children: ({ focused, focusVisible, hovered, pressed }: any) => {
             // const b = a.focused,
             //   d = a.focusVisible,
             //   e = a.hovered
@@ -275,13 +285,13 @@ const CometMenuItemBase = forwardRef<HTMLElement, CometMenuItemBaseProps>(
                   className: mergeClasses(
                     classes.content,
                     //  (b = x) != null ? b : !1) &&
-                    (isIconAnImage ?? false) && classes.extraHorizontalPadding,
+                    isIconAnImage && classes.extraHorizontalPadding,
                   ),
                   children: [
                     jsx(TetraTextPairing, {
                       body: bodyText,
                       bodyColor: disabled ? 'disabled' : bodyColor,
-                      headline: Y,
+                      headline: HeadLine,
                       headlineColor: disabled ? 'disabled' : primaryColor,
                       headlineRef: headlineRef,
                       level: 4,
@@ -289,9 +299,9 @@ const CometMenuItemBase = forwardRef<HTMLElement, CometMenuItemBaseProps>(
                       metaColor: disabled ? 'disabled' : secondaryColor,
                       reduceEmphasis: true,
                     }),
-                    aux != null &&
+                    aux &&
                       jsx('div', {
-                        className: 'x16n37ib',
+                        className: dummyClasses.dummy1,
                         children: aux,
                       }),
                   ],
@@ -383,15 +393,15 @@ __d("CometMenuItemBase.react", ["BaseFocusRing.react", "CometFocusGroupFirstLett
       , o = c("gkx")("1721477") || c("gkx")("1459");
     function a(a, b) {
         var e = a.alignCenter;
-        e = e === void 0 ? !1 : e;
+        e = e === undefined ? !1 : e;
         var f = a.autoScrollOnLoad;
-        f = f === void 0 ? !1 : f;
+        f = f === undefined ? !1 : f;
         var g = a.aux
           , p = a.badge
           , q = a.bodyColor
           , r = a.bodyText
           , s = a.disabled
-          , t = s === void 0 ? !1 : s;
+          , t = s === undefined ? !1 : s;
         s = a.download;
         var u = a.href
           , v = a.iconNode
@@ -404,11 +414,11 @@ __d("CometMenuItemBase.react", ["BaseFocusRing.react", "CometFocusGroupFirstLett
           , C = a.onHoverOut
           , D = a.onPressIn
           , E = a.overlayRadius
-          , F = E === void 0 ? 4 : E;
+          , F = E === undefined ? 4 : E;
         E = a.passthroughProps;
         var G = a.prefetchQueriesOnHover
           , H = a.preventClosingMenuOnSelect;
-        H = H === void 0 ? !1 : H;
+        H = H === undefined ? !1 : H;
         var I = a.preventLocalNavigation
           , J = a.primaryColor
           , K = a.primaryText
@@ -420,7 +430,7 @@ __d("CometMenuItemBase.react", ["BaseFocusRing.react", "CometFocusGroupFirstLett
           , Q = a.testid;
         Q = a.traceParams;
         var R = a.visuallyFocused
-          , S = R === void 0 ? !1 : R;
+          , S = R === undefined ? !1 : R;
         R = babelHelpers.objectWithoutPropertiesLoose(a, ["alignCenter", "autoScrollOnLoad", "aux", "badge", "bodyColor", "bodyText", "disabled", "download", "href", "iconNode", "id", "isIconAnImage", "onClick", "onFocusIn", "onFocusOut", "onHoverIn", "onHoverOut", "onPressIn", "overlayRadius", "passthroughProps", "prefetchQueriesOnHover", "preventClosingMenuOnSelect", "preventLocalNavigation", "primaryColor", "primaryText", "role", "routeTarget", "secondaryColor", "secondaryText", "target", "testid", "traceParams", "visuallyFocused"]);
         var T = m(null);
         a = j(c("CometMenuContext"));
@@ -434,13 +444,13 @@ __d("CometMenuItemBase.react", ["BaseFocusRing.react", "CometFocusGroupFirstLett
             target: P,
             traceParams: Q,
             url: u
-        } : void 0;
+        } : undefined;
         a = i(function(a) {
             U != null && U(),
             y && y(a)
         }, [y, U]);
         s = j(c("CometMenuItemBaseRoleContext"));
-        I = (G = (E = L) != null ? E : s) != null ? G : void 0;
+        I = (G = (E = L) != null ? E : s) != null ? G : undefined;
         var V = m(f);
         k(function() {
             var a = T.current;
@@ -491,7 +501,7 @@ __d("CometMenuItemBase.react", ["BaseFocusRing.react", "CometFocusGroupFirstLett
                 ref: P,
                 role: I,
                 suppressFocusRing: !0,
-                testid: void 0,
+                testid: undefined,
                 xstyle: [n.listItem, e && n.listItemAlignedCenter, v != null && n.listItemWithIcon, t && n.disabled, !o && S && c("BaseFocusRing.react").focusRingXStyle],
                 children: function(a) {
                     var b = a.focused

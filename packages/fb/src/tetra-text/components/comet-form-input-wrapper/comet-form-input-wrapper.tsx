@@ -45,7 +45,7 @@ type CometFormInputWrapperProps = {
   onPress?: any
   role?: any
   shrinkLabelOnFocus?: boolean
-  suppressFocusRing: boolean
+  suppressFocusRing?: boolean
   validationState: any
   value: any
   withHeaderMask?: boolean

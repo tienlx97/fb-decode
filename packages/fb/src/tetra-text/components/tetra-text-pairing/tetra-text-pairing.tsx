@@ -129,7 +129,7 @@ export default function TetraTextPairingReact({
   // @ts-ignore
   const className = mergeClasses(classes.item, levelClasses[level])
 
-  const Headline = headline !== null && (
+  const Headline = headline && (
     <div className={className}>
       {headlineAddOn ? (
         <CometHeadlineWithAddOn
