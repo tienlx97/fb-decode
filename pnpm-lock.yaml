@@ -255,6 +255,117 @@ importers:
         specifier: 1.0.36
         version: 1.0.36
 
+  packages/metamon-context:
+    dependencies:
+      '@metamon/style':
+        specifier: workspace:*
+        version: link:../metamon-style
+      '@types/react':
+        specifier: 18.2.21
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: 18.2.11
+        version: 18.2.11
+      next:
+        specifier: link:/home/tienlx97/work/next.js/packages/next
+        version: link:../../../../next.js/packages/next
+      react:
+        specifier: workspace:*
+        version: link:../react
+      react-dom:
+        specifier: workspace:*
+        version: link:../react-dom
+    devDependencies:
+      '@portal/eslint-config-react':
+        specifier: workspace:*
+        version: link:../eslint-config-react
+      '@types/node':
+        specifier: 20.6.2
+        version: 20.6.2
+      node:
+        specifier: 20.6.0
+        version: 20.6.0
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
+  packages/metamon-style:
+    dependencies:
+      '@metamon/util':
+        specifier: workspace:*
+        version: link:../metamon-util
+      '@types/react':
+        specifier: 18.2.21
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: 18.2.11
+        version: 18.2.11
+      next:
+        specifier: link:/home/tienlx97/work/next.js/packages/next
+        version: link:../../../../next.js/packages/next
+      react:
+        specifier: workspace:*
+        version: link:../react
+      react-dom:
+        specifier: workspace:*
+        version: link:../react-dom
+    devDependencies:
+      '@portal/eslint-config-react':
+        specifier: workspace:*
+        version: link:../eslint-config-react
+      '@types/node':
+        specifier: 20.6.2
+        version: 20.6.2
+      node:
+        specifier: 20.6.0
+        version: 20.6.0
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
+  packages/metamon-util:
+    dependencies:
+      '@types/react':
+        specifier: 18.2.21
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: 18.2.11
+        version: 18.2.11
+      next:
+        specifier: link:/home/tienlx97/work/next.js/packages/next
+        version: link:../../../../next.js/packages/next
+      react:
+        specifier: workspace:*
+        version: link:../react
+      react-dom:
+        specifier: workspace:*
+        version: link:../react-dom
+    devDependencies:
+      '@portal/eslint-config-react':
+        specifier: workspace:*
+        version: link:../eslint-config-react
+      '@types/node':
+        specifier: 20.6.2
+        version: 20.6.2
+      node:
+        specifier: 20.6.0
+        version: 20.6.0
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+      ua-parser-js:
+        specifier: 1.0.36
+        version: 1.0.36
+
   packages/prettier-config: {}
 
   packages/react:
