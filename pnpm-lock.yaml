@@ -1221,6 +1221,76 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
 
+  packages/metamon/tooltip:
+    dependencies:
+      '@fluentui/react-components':
+        specifier: latest
+        version: 9.34.2(@types/react-dom@18.2.11)(@types/react@18.2.21)(react-dom@packages+react-dom)(react@packages+react)(scheduler@0.20.2)
+      '@metamon/common':
+        specifier: workspace:*
+        version: link:../common
+      '@metamon/context':
+        specifier: workspace:*
+        version: link:../context
+      '@metamon/focus':
+        specifier: workspace:*
+        version: link:../focus
+      '@metamon/hooks':
+        specifier: workspace:*
+        version: link:../hooks
+      '@metamon/image':
+        specifier: workspace:*
+        version: link:../image
+      '@metamon/keyboards':
+        specifier: workspace:*
+        version: link:../keyboards
+      '@metamon/popover':
+        specifier: workspace:*
+        version: link:../popover
+      '@metamon/pressable':
+        specifier: workspace:*
+        version: link:../pressable
+      '@metamon/styles':
+        specifier: workspace:*
+        version: link:../styles
+      '@metamon/text':
+        specifier: workspace:*
+        version: link:../text
+      '@metamon/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@types/react':
+        specifier: 18.2.21
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: 18.2.11
+        version: 18.2.11
+      next:
+        specifier: link:/home/tienlx97/work/next.js/packages/next
+        version: link:../../../../../next.js/packages/next
+      react:
+        specifier: workspace:*
+        version: link:../../react
+      react-dom:
+        specifier: workspace:*
+        version: link:../../react-dom
+    devDependencies:
+      '@portal/eslint-config-react':
+        specifier: workspace:*
+        version: link:../../eslint-config-react
+      '@types/node':
+        specifier: 20.6.2
+        version: 20.6.2
+      node:
+        specifier: 20.6.0
+        version: 20.6.0
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../tsconfig
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
   packages/metamon/utils:
     dependencies:
       '@types/react':
