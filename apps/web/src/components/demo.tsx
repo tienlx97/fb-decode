@@ -1,17 +1,23 @@
 'use client'
 
 import * as React from 'react'
-import { TetraText } from '@fb/tetra-text'
-import { TetraButton } from '@fb/tetra-button'
+import { TetraText } from '@metamon/text'
+import { TetraButton, CometCircleButton } from '@metamon/button'
+import { CometFormTextArea } from '@metamon/textarea'
+import { CometFormTextInput } from '@metamon/input'
+import { CometSwitch } from '@metamon/switch'
+import { CometFormSelectOnlyCombobox } from '@metamon/combobox'
+
+// import { TetraButton } from '@fb/tetra-button'
 import {
   CaretDownFilled,
   CaretDownSvg,
-  CometCircleButton,
-  legacySVGIcon,
-  CometFormTextArea,
-  CometFormTextInput,
-  CometSwitch,
-  CometFormSelectOnlyCombobox,
+  // CometCircleButton,
+  // legacySVGIcon,
+  // CometFormTextArea,
+  // CometFormTextInput,
+  // CometSwitch,
+  // CometFormSelectOnlyCombobox,
 } from 'fb'
 
 export const Default = () => {
@@ -27,25 +33,22 @@ export const Default = () => {
 
   return (
     <div style={{ width: '440px' }}>
-      {/* <TetraText color="secondary" align="center" type="body2">
+      <TetraText color="secondary" align="center" type="body2">
         You're all caught up for now. Be sure to check for more updates soon.
-      </TetraText> */}
-
-      {/* <TetraButton
+      </TetraText>
+      <TetraButton
         label="Create"
         reduceEmphasis
         addOnSecondary={<CaretDownFilled color="highlight" size={16} />}
         addOnPrimary={<CaretDownFilled color="highlight" size={16} />}
         icon={CaretDownSvg}
       />
-
       <CometCircleButton
         icon={CaretDownSvg}
         size={40}
         // type="primary-background-overlay"
         color="black"
       />
-
       <div style={{ margin: '1rem' }}>
         <CometFormTextArea
           label="Favorite quotes"
@@ -56,9 +59,9 @@ export const Default = () => {
           }}
           minRows={3}
         />
-      </div> */}
+      </div>
 
-      {/* <div style={{ margin: '1rem' }}>
+      <div style={{ margin: '1rem' }}>
         <CometFormTextInput
           label="Password"
           type="password"
@@ -70,16 +73,16 @@ export const Default = () => {
           helperText=""
           testid={undefined}
         />
-      </div> */}
+      </div>
 
-      {/* <CometSwitch
+      <CometSwitch
         disabled={false}
         size="small"
         value={switchVal}
         onClick={() => setSwitchVal(!switchVal)}
       >
         Works at Freelancer
-      </CometSwitch> */}
+      </CometSwitch>
 
       <div style={{ margin: '1rem' }}>
         <CometFormSelectOnlyCombobox
@@ -125,18 +128,6 @@ export const Default = () => {
               value: 'OTHER',
             },
           ]}
-        />
-      </div>
-
-      <div style={{ margin: '1rem' }}>
-        <CometFormTextArea
-          label="Favorite quotes"
-          disabled={false}
-          value={state}
-          onValueChange={(val, e) => {
-            setState(val)
-          }}
-          minRows={3}
         />
       </div>
     </div>

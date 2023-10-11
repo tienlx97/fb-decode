@@ -5,10 +5,10 @@
   "main": "./src/index.tsx",
   "types": "./src/index.tsx",
   "dependencies": {
-    "@fluentui/react-components": "9.30.4",
+    "@fluentui/react-components": "latest",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.11",
-    "next": "link:/home/yugi0h/Private/work/SLEEKLINGO/next.js/packages/next",
+    "next": "link:/home/tienlx97/work/next.js/packages/next",
     "react": "workspace:*",
     "react-dom": "workspace:*",
     "resize-observer-polyfill": "1.5.1"

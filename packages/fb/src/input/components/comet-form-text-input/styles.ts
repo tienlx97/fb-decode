@@ -32,9 +32,11 @@ export const useStyles = makeStyles({
     lineHeight: 1.25,
     ...shorthands.padding('26px', '16px', '10px', '16px'),
     width: '100%',
+
     '::-ms-clear': {
       display: 'none',
     },
+
     '::-ms-reveal': {
       display: 'none',
     },
