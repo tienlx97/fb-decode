@@ -16,6 +16,7 @@
     "@auth/prisma-adapter": "1.0.2",
     "@fluentui/react-components": "latest",
     "@hookform/resolvers": "3.3.1",
+    "@metamon/react-components": "workspace:*",
     "@prisma/client": "5.2.0",
     "@react-email/components": "0.0.7",
     "client-only": "0.0.1",
@@ -30,13 +31,7 @@
     "sharp": "^0.32.4",
     "ua-parser-js": "1.0.35",
     "ui": "workspace:*",
-    "zod": "3.22.2",
-    "@metamon/text": "workspace:*",
-    "@metamon/button": "workspace:*",
-    "@metamon/textarea": "workspace:*",
-    "@metamon/input": "workspace:*",
-    "@metamon/switch": "workspace:*",
-    "@metamon/combobox": "workspace:*"
+    "zod": "3.22.2"
   },
   "devDependencies": {
     "@portal/eslint-config-next": "workspace:*",

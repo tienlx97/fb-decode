@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["src/*"],
       "@ui/*": ["../../packages/ui/src/*"],
-      "@fb/*": ["../../packages/fb/src/*"]
+      "@fb/*": ["../../packages/fb/src/*"],
+      "@metamon/*": ["../../packages/metamon/src/*"]
     },
     "strict": true,
     "plugins": [

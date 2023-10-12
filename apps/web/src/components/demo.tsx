@@ -1,12 +1,12 @@
 'use client'
 
 import * as React from 'react'
-import { TetraText } from '@metamon/text'
-import { TetraButton, CometCircleButton } from '@metamon/button'
-import { CometFormTextArea } from '@metamon/textarea'
-import { CometFormTextInput } from '@metamon/input'
-import { CometSwitch } from '@metamon/switch'
-import { CometFormSelectOnlyCombobox } from '@metamon/combobox'
+// import { TetraText } from '@metamon/text'
+import { TetraButton } from '@metamon/react-components'
+// import { CometFormTextArea } from '@metamon/textarea'
+// import { CometFormTextInput } from '@metamon/input'
+// import { CometSwitch } from '@metamon/switch'
+// import { CometFormSelectOnlyCombobox } from '@metamon/combobox'
 
 // import { TetraButton } from '@fb/tetra-button'
 import {
@@ -33,15 +33,16 @@ export const Default = () => {
 
   return (
     <div style={{ width: '440px' }}>
-      <div style={{ margin: '3rem' }}>
+      <div style={{ margin: '5rem' }}>
         <TetraButton
+          type="primary"
           tooltip="Fake tooltip"
-          tooltipPosition="end"
+          tooltipPosition="above"
           label="Create"
-          reduceEmphasis
-          addOnSecondary={<CaretDownFilled color="highlight" size={16} />}
-          addOnPrimary={<CaretDownFilled color="highlight" size={16} />}
-          icon={CaretDownSvg}
+          // reduceEmphasis
+          // addOnSecondary={<CaretDownFilled color="highlight" size={16} />}
+          // addOnPrimary={<CaretDownFilled color="highlight" size={16} />}
+          // icon={CaretDownSvg}
         />
       </div>
 

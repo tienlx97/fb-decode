@@ -1,1 +1,0 @@
-export { BaseTooltipGroup } from './BaseTooltipGroup'

@@ -4,8 +4,7 @@
 	"private": true,
 	"workspaces": [
 		"apps/*",
-		"packages/*",
-		"packages/metamon/*"
+		"packages/*"
 	],
 	"scripts": {
 		"build": "turbo run build --parallel",

@@ -1,3 +1,5 @@
+import '@metamon/react-components/src/styles/theme.css'
+
 import '../styles/index.css'
 
 // eslint-disable-next-line camelcase
@@ -20,7 +22,7 @@ export const metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html id="portal" lang="vi" dir="ltr">
+    <html className="__fb-light-mode" id="portal" lang="vi" dir="ltr">
       <link
         rel="preload"
         href="/assets/icons/sprite.svg"
