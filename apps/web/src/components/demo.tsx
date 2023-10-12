@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 // import { TetraText } from '@metamon/text'
-import { TetraButton } from '@metamon/react-components'
+import { TetraButton, TetraText } from '@metamon/react-components'
 // import { CometFormTextArea } from '@metamon/textarea'
 // import { CometFormTextInput } from '@metamon/input'
 // import { CometSwitch } from '@metamon/switch'
@@ -45,6 +45,10 @@ export const Default = () => {
           // icon={CaretDownSvg}
         />
       </div>
+
+      <TetraText color="secondary" align="center" type="body2">
+        You're all caught up for now. Be sure to check for more updates soon.
+      </TetraText>
 
       {/* <TetraText color="secondary" align="center" type="body2">
         You're all caught up for now. Be sure to check for more updates soon.

@@ -1,11 +1,26 @@
-import React, { CSSProperties, ReactNode, forwardRef, useRef } from 'react'
+import React, {
+  CSSProperties,
+  ReactNode,
+  forwardRef,
+  useCallback,
+  useContext,
+  useRef,
+  useState,
+} from 'react'
+
+// @ts-ignore
+import { jsx, jsxs } from 'react/jsx-runtime'
+
 import { mergeClasses } from '@fluentui/react-components'
 
 import { CometTextTypography, TypeKeys } from '@metamon/styles'
 
 import { useStyles } from './styles'
-import { useCometTextContext } from '../../context'
+import { CometTextContext } from '../../context'
 import cssUserAgentSupports from '@metamon/utils/common/css-useragent-supports'
+import { CometPlaceholder } from '@metamon/placeholder'
+import { CometTooltip } from '@metamon/tooltip'
+import { useMergeRefs } from '@metamon/hooks'
 
 type CometLineClampProps = {
   children?: ReactNode
@@ -14,7 +29,7 @@ type CometLineClampProps = {
   testid?: string
   useAutomaticTextDirection?: boolean
   className?: string
-  truncationTooltip?: boolean
+  truncationTooltip?: any
 }
 
 const notSupportWebkitLineClamp = cssUserAgentSupports.webkitLineClamp()
@@ -40,16 +55,38 @@ const CometLineClamp = forwardRef<HTMLElement, CometLineClampProps>(
   ) => {
     const classes = useStyles()
 
-    const cometTextContextValue = useCometTextContext()
+    const cometTextContextValue = useContext(CometTextContext)
+
+    const [w, x] = useState(false)
+    const y = useRef<any>(null)
+
+    console.log({ w })
 
     let internalStyle: CSSProperties | undefined
     let childrenClone = children
 
-    //   t = useCallback(function(a:any) {
-    //     if (a == null || truncationTooltip == null)
-    //         return;
-    //     n.preload()
-    // }, [truncationTooltip]);
+    const onMouseEneterWithTooltip = () => {
+      const curr = y.current
+      if (curr == null || lines < 1) {
+        return
+      }
+      x(
+        curr.offsetWidth < curr.scrollWidth ||
+          curr.offsetHeight < curr.scrollHeight,
+      )
+    }
+
+    const fallback = useCallback(
+      (a: any) => {
+        if (!a || !truncationTooltip) {
+          return
+        }
+        // n.preload()
+      },
+      [truncationTooltip],
+    )
+
+    const ref = useMergeRefs(externalRef, y)
 
     if (lines > 1) {
       if (notSupportWebkitLineClamp) {
@@ -71,37 +108,74 @@ const CometLineClamp = forwardRef<HTMLElement, CometLineClampProps>(
           top: lineHeight * (lines - 1),
         }
 
-        childrenClone = (
-          <React.Fragment>
-            {childrenClone}
-            <span
-              aria-hidden={true}
-              className={classes.supportLineHeight}
-              style={calculateSize}
-            >
-              &#8230;
-            </span>
-          </React.Fragment>
-        )
+        childrenClone = jsxs(React.Fragment, {
+          children: [
+            childrenClone,
+            jsx('span', {
+              'aria-hidden': true,
+              className: classes.supportLineHeight,
+              style: calculateSize,
+              children: '\u2026',
+            }),
+          ],
+        })
+
+        // (
+        //   <React.Fragment>
+        //     {childrenClone}
+        //     <span
+        //       aria-hidden={true}
+        //       className={classes.supportLineHeight}
+        //       style={calculateSize}
+        //     >
+        //       &#8230;
+        //     </span>
+        //   </React.Fragment>,
+        // )
       }
     }
 
-    return (
-      <span
-        className={mergeClasses(
-          classes.root,
-          lines === 1 && classes.oneLine,
-          className,
-        )}
-        data-testid={undefined}
-        dir={useAutomaticTextDirection ? 'auto' : undefined}
-        id={id}
-        style={internalStyle}
-        ref={externalRef}
-      >
-        {childrenClone}
-      </span>
-    )
+    const LineComp = jsx('span', {
+      className: mergeClasses(
+        classes.root,
+        lines === 1 && classes.oneLine,
+        className,
+      ),
+      'data-testid': undefined,
+      dir: useAutomaticTextDirection ? 'auto' : undefined,
+      onMouseEnter: truncationTooltip ? onMouseEneterWithTooltip : undefined,
+      id,
+      style: internalStyle,
+      ref: ref,
+      children: childrenClone,
+    })
+    // (
+    //   <span
+    //     className={mergeClasses(
+    //       classes.root,
+    //       lines === 1 && classes.oneLine,
+    //       className,
+    //     )}
+    //     data-testid={undefined}
+    //     dir={useAutomaticTextDirection ? 'auto' : undefined}
+    //     onMouseEnter={truncationTooltip ? onMouseEneterWithTooltip : undefined}
+    //     id={id}
+    //     style={internalStyle}
+    //     ref={externalRef}
+    //   >
+    //     {childrenClone}
+    //   </span>,
+    // )
+
+    return w
+      ? jsx(CometPlaceholder, {
+          fallback,
+          children: jsx(CometTooltip, {
+            tooltip: truncationTooltip,
+            children: LineComp,
+          }),
+        })
+      : LineComp
 
     // CometTextContextValue = React.jsx(
     //   "span",

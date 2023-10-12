@@ -1,13 +1,16 @@
 'use client'
 
-import React, { forwardRef, ReactNode, useMemo } from 'react'
+import React, { forwardRef, ReactNode, useContext, useMemo } from 'react'
 
 import {
   BaseTextContextProvider,
   useBaseTextContext,
   CometTextContext,
 } from '../../context'
-import { useCometDensityModeContext } from '@metamon/context'
+import {
+  CometDensityModeContext,
+  useCometDensityModeContext,
+} from '@metamon/context'
 import { CometTextTypography, TypeKeys } from '@metamon/styles'
 import { mergeClasses } from '@fluentui/react-components'
 
@@ -69,7 +72,7 @@ type TetraTextProps = {
   numberOfLines?: number
   preserveNewLines?: boolean
   suppressHydrationWarning?: boolean
-  truncationTooltip?: boolean
+  truncationTooltip?: any
   type: TypeKeys
 }
 
@@ -87,6 +90,7 @@ const TetraText = forwardRef<HTMLSpanElement, TetraTextProps>(
       preserveNewLines = false,
       suppressHydrationWarning,
       type,
+      truncationTooltip,
     },
     ref,
   ) => {
@@ -100,7 +104,8 @@ const TetraText = forwardRef<HTMLSpanElement, TetraTextProps>(
     const classes8 = useNestedAfterOffsetStyles()
     const classes9 = useOffsetValueStyles()
 
-    const [densityMode, _] = useCometDensityModeContext()
+    const [densityMode, _] = useContext(CometDensityModeContext)
+
     const typo = CometTextTypography[type]
 
     const {
@@ -165,6 +170,7 @@ const TetraText = forwardRef<HTMLSpanElement, TetraTextProps>(
             {numberOfLines ? (
               <CometLineClamp
                 lines={numberOfLines}
+                truncationTooltip={truncationTooltip}
                 // @ts-ignore
                 className={offsetsValue !== 0 && classes9[offsetsValue]}
               >

@@ -15,7 +15,7 @@ import { CometPopoverLoadingStateContent } from './comet-popover-loading-state-c
 
 const DEFAULT_HEIGHT = 15
 
-type CometMenuBaseWithPopoverProps = {
+export type CometMenuBaseWithPopoverProps = {
   children?: React.ReactNode
   'aria-labelledby': any
   fallback?: any
