@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
-import React, { forwardRef, ReactNode, useRef } from 'react'
+import React, { forwardRef, ReactNode, useContext, useRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
 import { mergeClasses } from '@fluentui/react-components'
-import { mergeRefs } from '@metamon/hooks'
+import { mergeRefs, useCometTheme } from '@metamon/hooks'
 import { CometIcon } from '@metamon/image'
 import { TetraText } from '@metamon/text'
 import isBlueprintStylesEnabled from '@metamon/utils/common/is-blueprint-styles-enabled'
@@ -12,6 +12,8 @@ import isBlueprintStylesEnabled from '@metamon/utils/common/is-blueprint-styles-
 // import CometGHLRenderingContext from '@fb/context/comet-ghl-rendering-context'
 import BaseStyledButton from '../base-styled-button'
 import { useBlueprintStyles, useStyles } from './styles'
+import { CometTooltip } from '@metamon/tooltip'
+import { CometGHLRenderingContext } from '@metamon/context'
 
 type TetraButtonProps = {
   addOnPrimary?: any
@@ -44,6 +46,13 @@ type TetraButtonProps = {
     | 'fdsOverride_positive'
     | 'fdsOverride_collaborativePostCTA'
     | 'dark-overlay'
+
+  'aria-label'?: string
+
+  //
+
+  tooltip?: any
+  tooltipPosition?: 'end' | 'start' | 'above' | 'below'
 }
 
 function q(colorType: string, classes: Record<string, string>) {
@@ -164,6 +173,8 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
       testid,
       testOnly_pressed,
       type = 'primary',
+      tooltip,
+      tooltipPosition = 'above',
       ...rest
     },
     ref,
@@ -171,7 +182,7 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
     const classes = useStyles()
     const sizeClasses = useBlueprintStyles()
 
-    const H = getColor(
+    const colorProps = getColor(
       type,
       {
         disabled,
@@ -180,9 +191,15 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
       classes,
     )
 
-    const { iconColor, overlayPressedStyle, textColor } = H as any
+    const [ThemeWrapper, themeClassName] = useCometTheme('light')
+
+    const { iconColor, overlayPressedStyle, textColor } = colorProps as any
 
     const internalRef = useRef<any>(null)
+
+    const cometGHLRenderingWithLink =
+      linkProps && useContext(CometGHLRenderingContext)
+    const _label = rest['aria-label'] ?? label
 
     // const _label = rest['ariaLabel'] ? rest['ariaLabel'] : label
     // const _ariabLabel =
@@ -193,7 +210,7 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
       Object.assign({}, rest, {
         addOnEnd: addOnSecondary,
         addOnStart: addOnPrimary,
-        // 'aria-label': _ariabLabel,
+        'aria-label': cometGHLRenderingWithLink ? undefined : _label,
         content: labelIsHidden
           ? null
           : jsx(TetraText, {
@@ -204,7 +221,7 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
             }),
         contentXstyle: mergeClasses(
           type === 'overlay' && disabled && classes.contentDisabled,
-          // type === 'overlay' && L,
+          type === 'overlay' && themeClassName,
           size === 'medium'
             ? isBlueprintStylesEnabled()
               ? sizeClasses.sizeMedium
@@ -268,7 +285,20 @@ const TetraButton = forwardRef<HTMLElement, TetraButtonProps>(
     //     })
     //   : d
 
-    return tetraButtonChildren
+    const tetraButtonChildrenNormalize =
+      type === 'overlay'
+        ? jsx(ThemeWrapper, {
+            children: tetraButtonChildren,
+          })
+        : tetraButtonChildren
+
+    return tooltip ? (
+      <CometTooltip position={tooltipPosition} tooltip={tooltip}>
+        {tetraButtonChildrenNormalize}
+      </CometTooltip>
+    ) : (
+      tetraButtonChildrenNormalize
+    )
   },
 )
 

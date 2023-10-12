@@ -33,16 +33,22 @@ export const Default = () => {
 
   return (
     <div style={{ width: '440px' }}>
-      <TetraText color="secondary" align="center" type="body2">
+      <div style={{ margin: '3rem' }}>
+        <TetraButton
+          tooltip="Fake tooltip"
+          tooltipPosition="end"
+          label="Create"
+          reduceEmphasis
+          addOnSecondary={<CaretDownFilled color="highlight" size={16} />}
+          addOnPrimary={<CaretDownFilled color="highlight" size={16} />}
+          icon={CaretDownSvg}
+        />
+      </div>
+
+      {/* <TetraText color="secondary" align="center" type="body2">
         You're all caught up for now. Be sure to check for more updates soon.
       </TetraText>
-      <TetraButton
-        label="Create"
-        reduceEmphasis
-        addOnSecondary={<CaretDownFilled color="highlight" size={16} />}
-        addOnPrimary={<CaretDownFilled color="highlight" size={16} />}
-        icon={CaretDownSvg}
-      />
+
       <CometCircleButton
         icon={CaretDownSvg}
         size={40}
@@ -129,7 +135,7 @@ export const Default = () => {
             },
           ]}
         />
-      </div>
+      </div> */}
     </div>
   )
 }

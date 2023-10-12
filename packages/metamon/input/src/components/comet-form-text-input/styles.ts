@@ -33,12 +33,12 @@ export const useStyles = makeStyles({
     ...shorthands.padding('26px', '16px', '10px', '16px'),
     width: '100%',
     // TODO
-    // '::-ms-clear': {
-    //   display: 'none',
-    // },
-    // '::-ms-reveal': {
-    //   display: 'none',
-    // },
+    '::-ms-clear': {
+      display: 'none',
+    },
+    '::-ms-reveal': {
+      display: 'none',
+    },
   },
   largeImageIcon: {
     alignItems: 'center',

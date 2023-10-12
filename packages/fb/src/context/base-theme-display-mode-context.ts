@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-type BaseThemeDisplayModeContextProps = any
+type BaseThemeDisplayModeContextProps = string
 const BaseThemeDisplayModeContext = createContext<
   BaseThemeDisplayModeContextProps | undefined
 >(undefined)

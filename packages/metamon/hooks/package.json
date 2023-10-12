@@ -12,7 +12,8 @@
     "react-dom": "workspace:*",
     "@metamon/utils": "workspace:*",
     "@metamon/context": "workspace:*",
-    "@metamon/event": "workspace:*"
+    "@metamon/event": "workspace:*",
+    "resize-observer-polyfill": "1.5.1"
   },
   "devDependencies": {
     "@portal/eslint-config-react": "workspace:*",

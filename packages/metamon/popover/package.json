@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@fluentui/react-components": "latest",
-    "@metamon/button": "workspace:*",
     "@metamon/common": "workspace:*",
     "@metamon/context": "workspace:*",
     "@metamon/error": "workspace:*",
@@ -22,6 +21,8 @@
     "@metamon/switch": "workspace:*",
     "@metamon/text": "workspace:*",
     "@metamon/utils": "workspace:*",
+    "@metamon/portal": "workspace:*",
+    "@metamon/cell": "workspace:*",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.11",
     "next": "link:/home/tienlx97/work/next.js/packages/next",

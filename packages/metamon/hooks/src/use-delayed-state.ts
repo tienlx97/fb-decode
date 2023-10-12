@@ -1,28 +1,39 @@
 import { emptyFunction } from '@metamon/utils/common/empty-function'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export default function useDelayedState(val: any) {
-  const [b, d] = useState(val)
-  const e = useRef<any>(null)
+export default function useDelayedState(initialValue: boolean) {
+  const [state, setState] = useState(initialValue)
+  const timeoutRef = useRef<any>(undefined)
+
   useEffect(() => {
-    return function () {
-      return clearTimeout(e.current)
+    return () => {
+      clearTimeout(timeoutRef.current)
     }
   }, [])
 
-  const cb = useCallback(function (a: any, b: any, f: any) {
-    b === void 0 && (b = 0),
-      f === void 0 && (f = emptyFunction),
-      clearTimeout(e.current),
-      (e.current = null),
-      b === 0
-        ? (d(a), f(a))
-        : (e.current = setTimeout(function () {
-            d(a), f(a), (e.current = null)
-          }, b))
-  }, [])
+  const setDelayedState = useCallback(
+    (newValue: boolean, delay: number | undefined, callback?: any) => {
+      if (delay === undefined) delay = 0
+      if (callback === undefined) callback = emptyFunction
 
-  return [b, cb]
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = undefined
+
+      if (delay === 0) {
+        setState(newValue)
+        callback(newValue)
+      } else {
+        timeoutRef.current = setTimeout(() => {
+          setState(newValue)
+          callback(newValue)
+          timeoutRef.current = undefined
+        }, delay)
+      }
+    },
+    [],
+  )
+
+  return [state, setDelayedState] as const
 }
 
 /*

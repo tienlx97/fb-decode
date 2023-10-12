@@ -7,7 +7,7 @@ import CometSeparatorMenuItem from '../comet-separator-menu-item'
 import { CometErrorBoundary } from '@metamon/error'
 import { BaseScrollableArea } from '../base-scrollable-area'
 import { CometMenuItemBaseRoleContext } from '@metamon/context'
-import { CometListCellStrict } from '../comet-list-cell-strict'
+import { CometListCellStrict } from '@metamon/cell'
 import { TetraTextPairing } from '@metamon/text'
 import {
   FocusRegion,

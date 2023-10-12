@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-type HeroCurrentInteractionForLoggingContextProps = {
+export type HeroCurrentInteractionForLoggingContextProps = {
   current: any
 }
 

@@ -1,9 +1,10 @@
 /* eslint-disable camelcase */
 
+import React, { createElement } from 'react'
 import { CometSwitch } from '@metamon/switch'
 import { TetraButton } from '@metamon/button'
 import { CometIcon, fbicon } from '@metamon/image'
-import React, { createElement } from 'react'
+
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 

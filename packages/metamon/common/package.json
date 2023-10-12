@@ -10,7 +10,8 @@
     "next": "link:/home/tienlx97/work/next.js/packages/next",
     "react": "workspace:*",
     "react-dom": "workspace:*",
-    "@fluentui/react-components": "latest"
+    "@fluentui/react-components": "latest",
+    "@metamon/context":"workspace:*"
   },
   "devDependencies": {
     "@portal/eslint-config-react": "workspace:*",

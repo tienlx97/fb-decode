@@ -1,0 +1,31 @@
+{
+  "name": "@metamon/placeholder",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "latest",
+    "@metamon/common": "workspace:*",
+    "@metamon/context": "workspace:*",
+    "@metamon/hooks": "workspace:*",
+    "@metamon/styles": "workspace:*",
+    "@metamon/utils": "workspace:*",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.11",
+    "next": "link:/home/tienlx97/work/next.js/packages/next",
+    "react": "workspace:*",
+    "react-dom": "workspace:*",
+    "@metamon/focus": "workspace:*"
+  },
+  "devDependencies": {
+    "@portal/eslint-config-react": "workspace:*",
+    "@types/node": "20.6.2",
+    "node": "20.6.0",
+    "tsconfig": "workspace:*",
+    "typescript": "5.2.2"
+  }
+}
