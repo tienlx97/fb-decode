@@ -1,7 +1,7 @@
 import performanceNavigationStart from './performance-navigation-start'
 import performanceNow from './performance-now'
 
-function getCurrentQueueTime(a?: any) {
+export function getCurrentQueueTime(a?: any) {
   let b = performanceNow(),
     d = null,
     e =

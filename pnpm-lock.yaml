@@ -85,11 +85,11 @@ importers:
         specifier: workspace:*
         version: link:../../packages/fb
       next:
-        specifier: link:/home/tienlx97/work/next.js/packages/next
-        version: link:../../../../next.js/packages/next
+        specifier: link:/home/yugi0h/Private/work/SLEEKLINGO/next.js/packages/next
+        version: link:../../../next.js/packages/next
       next-auth:
         specifier: 0.0.0-manual.ffd05533
-        version: 0.0.0-manual.ffd05533(next@..+next.js+packages+next)(react@packages+style-lint+react)
+        version: 0.0.0-manual.ffd05533(next@next.js+packages+next)(react@packages+style-lint+react)
       prisma:
         specifier: 5.2.0
         version: 5.2.0
@@ -152,8 +152,8 @@ importers:
         specifier: 18.2.11
         version: 18.2.11
       next:
-        specifier: link:/home/tienlx97/work/next.js/packages/next
-        version: link:../../../../next.js/packages/next
+        specifier: link:/home/yugi0h/Private/work/SLEEKLINGO/next.js/packages/next
+        version: link:../../../next.js/packages/next
       react:
         specifier: workspace:*
         version: link:../style-lint/react
@@ -195,8 +195,8 @@ importers:
         specifier: 18.2.11
         version: 18.2.11
       next:
-        specifier: link:/home/tienlx97/work/next.js/packages/next
-        version: link:../../../../next.js/packages/next
+        specifier: link:/home/yugi0h/Private/work/SLEEKLINGO/next.js/packages/next
+        version: link:../../../next.js/packages/next
       react:
         specifier: workspace:*
         version: link:../style-lint/react
@@ -332,8 +332,8 @@ importers:
         specifier: 18.2.21
         version: 18.2.21
       next:
-        specifier: link:/home/tienlx97/work/next.js/packages/next
-        version: link:../../../../next.js/packages/next
+        specifier: link:/home/yugi0h/Private/work/SLEEKLINGO/next.js/packages/next
+        version: link:../../../next.js/packages/next
       react:
         specifier: workspace:*
         version: link:../style-lint/react
@@ -6382,7 +6382,7 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: false
 
-  /next-auth@0.0.0-manual.ffd05533(next@..+next.js+packages+next)(react@packages+style-lint+react):
+  /next-auth@0.0.0-manual.ffd05533(next@next.js+packages+next)(react@packages+style-lint+react):
     resolution: {integrity: sha512-oTdpOP93rzABms/Qgp3z0udQG3tCZ3JxOCnwU04xLgX/xnC8+HuDHct7IcEpz+zxhZp6jxN0tdVkMCs5kubUfw==}
     peerDependencies:
       next: ^13.4.13
@@ -6393,7 +6393,7 @@ packages:
         optional: true
     dependencies:
       '@auth/core': 0.14.0
-      next: link:../../next.js/packages/next
+      next: link:../next.js/packages/next
       react: link:packages/style-lint/react
     dev: false
 
