@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export * from './base-multi-page-view-container'
 export * from './base-popover'
 export * from './base-popover-svg-arrow-container'
@@ -28,3 +29,7 @@ export { default as BaseContextualLayerAnchorRoot } from './base-contextual-laye
 export { default as BaseContextualLayerDefaultContainer } from './base-contextual-layer-default-container'
 export { default as CometMenu } from './comet-menu'
 export { BasePopoverLayerVisibility } from './base-popover-layer-visibility'
+export { CometPrerenderer } from './comet-prerenderer'
+export * from './base-popover-trigger'
+export { CometPopoverLoadingState } from './comet-popover-loading-state'
+export { CometMenuItemSelectable_DEPRECATED } from './comet-menu-item-selectable_DEPRECATED'

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 // import { TetraText } from '@metamon/text'
-import { TetraButton, TetraText } from '@metamon/react-components'
+import { CometTab, TetraButton, TetraText } from '@metamon/react-components'
 // import { CometFormTextArea } from '@metamon/textarea'
 // import { CometFormTextInput } from '@metamon/input'
 // import { CometSwitch } from '@metamon/switch'
@@ -33,6 +33,10 @@ export const Default = () => {
 
   return (
     <div style={{ width: '440px' }}>
+      <div style={{ margin: '3rem' }}>
+        <CometTab aria-haspopup="menu" />
+      </div>
+
       <div style={{ margin: '5rem' }}>
         <TetraButton
           type="primary"

@@ -1,59 +1,83 @@
 import { useCallback, useState } from 'react'
+import { useCometPreloaderImpl } from './use-comet-preloader-impl'
+import { emptyFunction } from '@metamon/utils/common/empty-function'
 
 export function useCometPrerendererImpl(
-  a: any,
-  b: any,
-  d: any,
+  popoverRenderer: any,
+  isVisible: any,
+  popoverPreloadResource: any,
   e: any,
-  f: any,
+  f?: any,
 ) {
   var [j, k] = useState(!1)
 
   const [l, m] = useState(!1)
 
-  const [n, o, p, q] = useCometPreloader(a, d, e, f)
+  const [n, o, p, q] = useCometPreloaderImpl(
+    popoverRenderer,
+    popoverPreloadResource,
+    e,
+    f,
+  )
 
-  d = useCallback(
+  popoverPreloadResource = useCallback(
     (b: any) => {
-      var c = function () {
-          a === 'tooltip' && k(!0)
-        },
-        d = function () {
-          a === 'button_aggressive' && k(!0)
+      const c = () => {
+        if (popoverRenderer === 'tooltip') {
+          k(!0)
         }
+      }
+      const d = () => {
+        if (popoverRenderer === 'button_aggressive') {
+          k(!0)
+        }
+      }
       n(b, c, d)
     },
-    [n, a],
+    [n, popoverRenderer],
   )
   e = useCallback(() => {
-    o(), k(!1)
+    o()
+    k(!1)
   }, [o])
+
   f = useCallback(
     (b: any) => {
-      p(b), (a === 'button' || a === 'button_aggressive') && k(!0)
+      p(b)
+      if (
+        popoverRenderer === 'button' ||
+        popoverRenderer === 'button_aggressive'
+      ) {
+        k(!0)
+      }
     },
-    [p, a],
+    [p, popoverRenderer],
   )
+
   const g = useCallback(
     (a: any) => {
-      q(a), m(a)
+      q(a)
+      m(a)
     },
     [q],
   )
-  if (a == null)
+
+  if (!popoverRenderer) {
     return [
       {
-        isVisible: b,
+        isVisible: isVisible,
         shouldPrerender: !1,
       },
-      c('emptyFunction'),
-      c('emptyFunction'),
-      c('emptyFunction'),
-      c('emptyFunction'),
+      emptyFunction,
+      emptyFunction,
+      emptyFunction,
+      emptyFunction,
     ]
-  b = {
-    isVisible: b,
+  }
+  const option = {
+    isVisible: isVisible,
     shouldPrerender: j || l,
   }
-  return [b, d, e, f, g]
+
+  return [option, popoverPreloadResource, e, f, g]
 }

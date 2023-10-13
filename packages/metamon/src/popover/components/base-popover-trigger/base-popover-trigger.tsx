@@ -1,16 +1,40 @@
-import { CometPlaceholder } from '@metamon/placeholder'
-import { getCurrentQueueTime } from '@metamon/utils/common/comet-event-timings'
 import React, {
   ReactNode,
   useCallback,
+  useContext,
   useImperativeHandle,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react'
-
 // @ts-ignore
-import { jsx } from 'react/jsx-runtime'
+import { jsx, jsxs } from 'react/jsx-runtime'
+
+import {
+  CometHeroInteractionWithDiv,
+  HeroInteractionContextPassthrough,
+} from '@metamon/common'
+import {
+  BaseButtonPopoverContext,
+  BaseScrollableAreaContext,
+  CometMenuContext,
+} from '@metamon/context'
+import { CometErrorBoundary } from '@metamon/error'
+import {
+  useMergeRefs,
+  useOnOutsideClick,
+  useVisibilityObserver,
+} from '@metamon/hooks'
+import { CometHideLayerOnEscape } from '@metamon/keyboards'
+import { CometPlaceholder } from '@metamon/placeholder'
+import { useCometPrerendererImpl } from '@metamon/popover/hooks'
+import { getCurrentQueueTime } from '@metamon/utils/common/comet-event-timings'
+
+import BaseContextualLayer from '../base-contextual-layer'
+import BaseContextualLayerDefaultContainer from '../base-contextual-layer-default-container'
+import { BasePopoverLayerVisibility } from '../base-popover-layer-visibility'
+import { CometPrerenderer } from '../comet-prerenderer'
 
 // p = c('gkx')('8058')
 const p = true
@@ -22,7 +46,7 @@ function q({ content, fallback }: any) {
   })
 }
 
-function r({ contextualLayerRef }: any) {
+function repositionContetual({ contextualLayerRef }: any) {
   useLayoutEffect(() => {
     const curr = contextualLayerRef.current
     curr &&
@@ -34,7 +58,7 @@ function r({ contextualLayerRef }: any) {
 }
 
 type BasePopoverTriggerProps = {
-  children?: ReactNode
+  children?: any
   doNotCloseOnOutsideClick?: boolean
   fallback?: ReactNode
   imperativeRef?: any
@@ -44,7 +68,7 @@ type BasePopoverTriggerProps = {
   onVisibilityChange?: any
   popover?: any
   popoverRenderer?: any
-  popoverPreloadResource?: ReactNode
+  popoverPreloadResource?: any
   popoverProps?: any
   popoverType?: string
   preloadTrigger?: any
@@ -53,7 +77,7 @@ type BasePopoverTriggerProps = {
   triggerOutsideClickOnDrag?: any
 }
 
-export function BasePopoverTrigger({
+function BasePopoverTrigger({
   children,
   doNotCloseOnOutsideClick = false,
   fallback,
@@ -77,8 +101,8 @@ export function BasePopoverTrigger({
   const [I, J] = useState(false)
 
   const [K, L] = useState(null)
-  const M = useRef(null)
-  const N = useRef(null)
+  const contextRef = useRef<any>(null)
+  const N = useRef<any>(null)
   const O = useCallback(
     (a: any) => {
       J(a)
@@ -89,7 +113,7 @@ export function BasePopoverTrigger({
     [onVisibilityChange],
   )
 
-  const P = useCallback(() => {
+  const onCloseCb = useCallback(() => {
     O(!1)
     L(null)
     N.current = null
@@ -126,18 +150,19 @@ export function BasePopoverTrigger({
     function () {
       return {
         hide: function () {
-          P()
+          onCloseCb()
         },
         show: function () {
           Q()
         },
       }
     },
-    [Q, P],
+    [Q, onCloseCb],
   )
 
-  const D = useCallback(
+  const cometInteractionVCRef = useCallback(
     (a: any) => {
+      // CometInteractionVC
       // b('cr:1791018') &&
       //   a != null &&
       //   K != null &&
@@ -146,11 +171,181 @@ export function BasePopoverTrigger({
     [K],
   )
 
-  const R = useRef(null)
-  useCometPreloaderImpl = useCometPrerenderer(
+  const imperativeContextLayerRef = useRef(null)
+  const [prerenderingProps, y, u, S, a] = useCometPrerendererImpl(
     popoverRenderer,
     I,
     popoverPreloadResource,
     onHighIntentPreload,
   )
+
+  useLayoutEffect(() => {
+    if (visibleOnLoad === !0 && H.current === !1) {
+      H.current = !0
+      Q()
+    }
+    // visibleOnLoad === !0 && H.current === !1 && ((H.current = !0), Q())
+  }, [Q, visibleOnLoad])
+
+  const T = useContext(BaseScrollableAreaContext)
+
+  const U = useVisibilityObserver({
+    onHidden: useCallback(
+      ({ hiddenReason }: any) => {
+        if (hiddenReason === 'COMPONENT_UNMOUNTED') {
+          return
+        }
+        T[T.length - 1] != null && onCloseCb()
+      },
+      [onCloseCb, T],
+    ),
+  })
+
+  const baseButtonPopoverContextValue = useMemo(() => {
+    switch (popoverType) {
+      case 'menu':
+        return {
+          expanded: I,
+          haspopup: 'menu',
+        }
+      case 'dialog':
+      default:
+        return null
+    }
+  }, [I, popoverType])
+
+  const W = useCallback(
+    (a: any) => {
+      contextRef.current = a != null ? a : null
+      U(a)
+    },
+    [U],
+  )
+
+  const X = () => {
+    const b = N.current == null ? void 0 : N.current.getTrace()
+    if (N.current == null || b == null) {
+      return
+    }
+    let { traceStatus } = b
+    if (traceStatus != null && traceStatus !== 'START') {
+      return
+    }
+    traceStatus = !0
+    N.current.cancelTrace('close_popover', traceStatus)
+  }
+
+  const Y = useCallback(() => {
+    doNotCloseOnOutsideClick || (p && X(), onCloseCb())
+  }, [doNotCloseOnOutsideClick, onCloseCb])
+
+  const outSideClickRef = useOnOutsideClick(
+    I ? Y : null,
+    useMemo(
+      function () {
+        return {
+          isTargetEligible: (a: any) => {
+            const b = contextRef.current
+            return b != null ? !b.contains(a) : !0
+          },
+          triggerOutsideClickOnDrag: triggerOutsideClickOnDrag,
+        }
+      },
+      [triggerOutsideClickOnDrag],
+    ),
+  )
+
+  const Z = useCallback(
+    (a: any) => {
+      I ? onCloseCb() : Q(a)
+    },
+    [I, onCloseCb, Q],
+  )
+
+  const baseContextualLayerRef = useMergeRefs(
+    outSideClickRef,
+    cometInteractionVCRef,
+  )
+
+  const cometMenuContextValue = useMemo(() => {
+    return {
+      onClose: onCloseCb,
+    }
+  }, [onCloseCb])
+
+  const isPopoverTypeMenu = popoverType === 'menu'
+
+  return jsxs(React.Fragment, {
+    children: [
+      jsx(BaseButtonPopoverContext.Provider, {
+        value: baseButtonPopoverContextValue,
+        children: children(W, Z, onCloseCb, y, u, S, a, I),
+      }),
+      jsx(CometErrorBoundary, {
+        children: jsx(CometPrerenderer, {
+          prerenderingProps: prerenderingProps,
+          children: (a: any) => {
+            return React.createElement(
+              BaseContextualLayer,
+              Object.assign({}, a, rest, {
+                containFocus: !0,
+                contextRef: contextRef,
+                customContainer: BaseContextualLayerDefaultContainer, // BaseContextualLayerDefaultContainer
+                imperativeRef: imperativeContextLayerRef,
+                key: 'popover',
+                onEscapeFocusRegion: isPopoverTypeMenu ? onCloseCb : void 0,
+                ref: baseContextualLayerRef,
+              }),
+              jsx(CometHideLayerOnEscape, {
+                onHide: onCloseCb,
+                children: jsx(CometMenuContext.Provider, {
+                  value: cometMenuContextValue,
+                  children: jsx(HeroInteractionContextPassthrough, {
+                    clear: true,
+                    children: jsx(CometHeroInteractionWithDiv, {
+                      interactionDesc:
+                        'popover_' +
+                        (popoverPreloadResource != null
+                          ? popoverPreloadResource.getModuleId()
+                          : 'Unknown'),
+
+                      interactionUUID: K,
+                      children: jsx(BasePopoverLayerVisibility, {
+                        onLayerDetached: onLayerDetached,
+                        children: popoverRenderer({
+                          content: jsxs(React.Fragment, {
+                            children: [
+                              jsx(repositionContetual, {
+                                contextualLayerRef: imperativeContextLayerRef,
+                              }),
+                              jsx(
+                                popover,
+                                Object.assign({}, popoverProps, {
+                                  onClose: onCloseCb,
+                                }),
+                              ),
+                            ],
+                          }),
+                          fallback: jsxs(React.Fragment, {
+                            children: [
+                              jsx(repositionContetual, {
+                                contextualLayerRef: imperativeContextLayerRef,
+                              }),
+                              fallback,
+                            ],
+                          }),
+                        }),
+                      }),
+                    }),
+                  }),
+                }),
+              }),
+            )
+          },
+        }),
+      }),
+    ],
+  })
 }
+
+export default BasePopoverTrigger
