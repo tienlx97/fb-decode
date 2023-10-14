@@ -18,7 +18,8 @@
 		"start": "turbo run start --parallel",
 		"test": "turbo run test --parallel",
 		"dev": "turbo run dev --parallel",
-		"git-add": "git add --all -- ':!apps/web/package.json' ':!packages/fb/package.json' ':!packages/ui/package.json' ':!packages/metamon/package.json'"
+		"git-add": "git add --all -- ':!apps/web/package.json' ':!packages/fb/package.json' ':!packages/ui/package.json' ':!packages/metamon/package.json'",
+		"postinstall": "bash ./postinstall.sh"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.2",
@@ -29,7 +30,8 @@
 		"husky": "^8.0.0",
 		"lint-staged": "14.0.1",
 		"turbo": "latest",
-		"typescript": "5.2.2"
+		"typescript": "5.2.2",
+		"next": "13.5.3"
 	},
 	"packageManager": "pnpm@8.6.10",
 	"engines": {
