@@ -7,10 +7,10 @@ import { useColumnStyles, useStyles, useVerticalAlignStyles } from './styles'
 type BaseRowItemReactProps = {
   expanding?: boolean
   useDeprecatedStyles?: boolean
-  verticalAlign: string
+  verticalAlign?: 'bottom' | 'top' | 'center' | 'stretch'
 }
 
-const BaseRowItemReact = forwardRef<
+const BaseRowItem = forwardRef<
   HTMLDivElement,
   BaseRowItemReactProps & React.JSX.IntrinsicElements['div']
 >(
@@ -41,7 +41,7 @@ const BaseRowItemReact = forwardRef<
           // @ts-ignore
           columns > 0 && columnsClasses[columns],
           // @ts-ignore
-          verticalAlign != null && verticalAlignClasses[verticalAlign],
+          verticalAlign && verticalAlignClasses[verticalAlign],
           className,
         )}
       />
@@ -49,9 +49,9 @@ const BaseRowItemReact = forwardRef<
   },
 )
 
-BaseRowItemReact.displayName = 'BaseRowItem.react'
+BaseRowItem.displayName = 'BaseRowItem.react'
 
-export default BaseRowItemReact
+export default BaseRowItem
 
 // __d(
 //   'BaseRowItem.react',

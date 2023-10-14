@@ -59,12 +59,11 @@ type CometPressableProps = {
   id?: string
   focusable?: boolean
   suppressHydrationWarning?: boolean
+} & {
+  [key: string]: any
 }
 
-const CometPressable = forwardRef<
-  HTMLElement,
-  CometPressableProps & HTMLElement
->(
+const CometPressable = forwardRef<HTMLElement, CometPressableProps>(
   (
     {
       allowClickEventPropagation,

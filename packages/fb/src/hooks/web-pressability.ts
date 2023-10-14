@@ -3,7 +3,7 @@ import { useHover } from './react-hover-event'
 import { usePress } from './react-press-event'
 import { useContextMenu } from './react-context-menuEvent.react'
 
-export function usePressability(target: any, options: any) {
+export function usePressability(targetRef: any, options: any) {
   const {
     disabled,
     onBlur,
@@ -22,7 +22,7 @@ export function usePressability(target: any, options: any) {
     preventContextMenu,
   } = options
 
-  useHover(target, {
+  useHover(targetRef, {
     disabled,
     onHoverChange,
     onHoverEnd,
@@ -30,7 +30,7 @@ export function usePressability(target: any, options: any) {
     onHoverStart,
   })
 
-  usePress(target, {
+  usePress(targetRef, {
     disabled,
     onPressChange,
     onPressEnd,
@@ -38,7 +38,7 @@ export function usePressability(target: any, options: any) {
     onPressStart,
   })
 
-  useFocus(target, {
+  useFocus(targetRef, {
     disabled,
     onBlur,
     onFocus,
@@ -46,7 +46,7 @@ export function usePressability(target: any, options: any) {
     onFocusVisibleChange,
   })
 
-  useContextMenu(target, {
+  useContextMenu(targetRef, {
     disabled,
     onContextMenu,
     preventDefault: preventContextMenu || false,

@@ -13,8 +13,8 @@ type CometComponentWithKeyCommandsProps = {
   commandConfigs: any[]
   elementType?: ReactNode
   className?: string
-  isWrapperFocusable: boolean
-  debugName: string
+  isWrapperFocusable?: boolean
+  debugName?: string
 }
 
 function j(props: any) {

@@ -114,16 +114,13 @@ const TetraText = forwardRef<HTMLSpanElement, TetraTextProps>(
     const offsetsValue = offsets.length === 3 ? offsets[2] : 0
 
     const typoColor = getTypoColor(
-      color !== undefined ? color : defaultColor,
+      color ?? defaultColor,
       type === 'button1' || type === 'button2',
     )
 
-    const CometTextContextValue = useMemo(
-      function () {
-        return { color: typoColor, type: type }
-      },
-      [typoColor, type],
-    )
+    const CometTextContextValue = useMemo(() => {
+      return { color: typoColor, type }
+    }, [typoColor, type])
 
     const baseTextContextValue = useBaseTextContext()
 

@@ -1,3 +1,5 @@
+'use-client'
+
 import React, { forwardRef } from 'react'
 
 // @ts-ignore
@@ -7,6 +9,15 @@ import { useStyles } from './styles'
 import { mergeClasses } from '@fluentui/react-components'
 import { CometPlaceholder, CometPressable } from '@fb/components'
 import { WorkGalahadUIBaseAppTabBadge } from '../work-galahad-app-tab-key-updates-badge-renderer'
+import ErrorBoundaryReact from '@fb/error/errorguard/ErrorBoundary.react'
+
+const CometTooltip = dynamic(() =>
+  import('@metamon/tooltip').then(r => r.CometTooltip),
+)
+
+// import { CometTooltip } from '@metamon/tooltip'
+
+import dynamic from 'next/dynamic'
 
 type WorkGalahadUIAppNavButtonProps = {
   href: string
@@ -14,7 +25,7 @@ type WorkGalahadUIAppNavButtonProps = {
   label: string
   selected: boolean
   preventLocalNavigation: boolean
-  addOn?: React.ReactNode
+  addOn?: any
   badgeRenderer?: React.ReactNode
   largeAddOn?: React.ReactNode
   useGreyBadging?: boolean
@@ -22,6 +33,7 @@ type WorkGalahadUIAppNavButtonProps = {
   onHoverOut?: (...param: any) => any
   onPressIn?: (...param: any) => any
   onPress?: (...param: any) => any
+  tooltipHidden?: boolean
 }
 
 const WorkGalahadUIAppNavButton = forwardRef<
@@ -43,6 +55,7 @@ const WorkGalahadUIAppNavButton = forwardRef<
       largeAddOn,
       badgeRenderer,
       useGreyBadging = false,
+      tooltipHidden = false,
     },
     ref,
   ) => {
@@ -85,15 +98,17 @@ const WorkGalahadUIAppNavButton = forwardRef<
                 >
                   {addOn}
                   {badgeRenderer ? (
-                    <CometPlaceholder
-                      fallback={null}
-                      // eslint-disable-next-line react/no-children-prop
-                      children={jsx(badgeRenderer, {
-                        hovered,
-                        selected,
-                        useGreyBadging,
-                      })}
-                    />
+                    <ErrorBoundaryReact fallback={() => null}>
+                      <CometPlaceholder
+                        fallback={null}
+                        // eslint-disable-next-line react/no-children-prop
+                        children={jsx(badgeRenderer, {
+                          hovered,
+                          selected,
+                          useGreyBadging,
+                        })}
+                      />
+                    </ErrorBoundaryReact>
                   ) : (
                     <WorkGalahadUIBaseAppTabBadge
                       count={0}
@@ -111,7 +126,19 @@ const WorkGalahadUIAppNavButton = forwardRef<
       />
     )
 
-    return <span className={classes.wfull}>{children}</span>
+    return (
+      <span className={classes.wfull}>
+        {/* {children} */}
+        {tooltipHidden ? (
+          children
+        ) : (
+          // @ts-ignore
+          <CometTooltip position="end" tooltip={label} delayMs={0}>
+            {children}
+          </CometTooltip>
+        )}
+      </span>
+    )
   },
 )
 

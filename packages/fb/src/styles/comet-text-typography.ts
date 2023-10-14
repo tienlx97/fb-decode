@@ -216,7 +216,7 @@ export const TYPORAPHY_STYLES = {
   } as TyporaphyStyle,
 }
 
-const offsets1: [string, number[]][] = [
+const notGeckoOffsets: [string, number[]][] = [
   ['body1', [5, 5]],
   ['body2', [4, 4]],
   ['body3', [4, 4]],
@@ -245,7 +245,7 @@ const offsets1: [string, number[]][] = [
   ['meta4', [3, 3]],
 ]
 
-const offsets2: [string, number[]][] = [
+const geckoOffsets: [string, number[]][] = [
   ['body1', [5, 5]],
   ['body2', [4, 4]],
   ['body3', [5, 4]],
@@ -274,7 +274,7 @@ const offsets2: [string, number[]][] = [
   ['meta4', [4, 3]],
 ]
 
-const offsetsTypo3: [string, number[]][] = [
+const windowOffsets: [string, number[]][] = [
   ['body1', [6, 4, 1]],
   ['body2', [5, 3, 1]],
   ['body3', [5, 4]],
@@ -305,32 +305,32 @@ const offsetsTypo3: [string, number[]][] = [
 
 export type TyporaphyType = keyof typeof TYPORAPHY_STYLES
 
-function calculateOffset() {
+function calculateOffsetBaseOnOs() {
   if (isPlatform('Windows >= 6'))
     // return { fontFamily: FONT_FAMILY.segoe, offsets: offsets3 };
-    return { fontFamily: 'segoe', offsets: offsetsTypo3 }
+    return { fontFamily: 'segoe', offsets: windowOffsets }
   return (isPlatform('Mac OS X >= 10.11') && !isBrowser('Firefox < 55')) ||
     isPlatform('iOS >= 9')
     ? {
         // fontFamily: FONT_FAMILY.apple,
         fontFamily: 'apple',
-        offsets: isEngine('Gecko') ? offsets2 : offsets1,
+        offsets: isEngine('Gecko') ? geckoOffsets : notGeckoOffsets,
       }
     : null
 }
 
 function a() {
   const typoClone = Object.assign({}, TYPORAPHY_STYLES)
-  const offsetBaseOnOS = calculateOffset()
+  const offsetBaseOnOS = calculateOffsetBaseOnOs()
 
-  if (offsetBaseOnOS !== null) {
+  if (offsetBaseOnOS) {
     const { fontFamily, offsets } = offsetBaseOnOS
     const maps: Map<keyof typeof TYPORAPHY_STYLES, number[]> = new Map(
       offsets as any,
     )
-    maps.forEach(function (offsetsValue, key) {
+    maps.forEach((offsetsValue, key) => {
       typoClone[key] = Object.assign({}, typoClone[key], {
-        fontFamily: fontFamily,
+        fontFamily,
         offsets: offsetsValue as number[],
       })
     })

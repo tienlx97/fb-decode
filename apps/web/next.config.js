@@ -9,6 +9,8 @@ module.exports = {
     serverComponentsExternalPackages: ['@prisma/client'],
   },
 
+  reactStrictMode: false,
+
   async redirects() {
     return [
       {
