@@ -165,7 +165,7 @@ export function focusPrevious(a: any, b: any, d: any) {
     })
 }
 
-export function focusNextContained(a: any, b: any, d: any, e: any, f: any) {
+export function focusNextContained(a: any, b: any, d: any, e: any, f?: any) {
   a = getTabbableNodes(a, b)
   b = a[0]
   var g = a[1],
@@ -180,7 +180,13 @@ export function focusNextContained(a: any, b: any, d: any, e: any, f: any) {
     : (focusElement(b[i + 1]), d.preventDefault(), d.stopPropagation())
 }
 
-export function focusPreviousContained(a: any, b: any, d: any, e: any, f: any) {
+export function focusPreviousContained(
+  a: any,
+  b: any,
+  d: any,
+  e: any,
+  f?: any,
+) {
   a = getTabbableNodes(a, b)
   b = a[0]
   var g = a[1],

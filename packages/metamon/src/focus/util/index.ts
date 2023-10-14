@@ -29,3 +29,22 @@ export {
 } from './focus-scope-queries'
 export { getTabbableNodes } from './get-tabbable-nodes'
 export { canElementTab, setElementCanTab } from './set-element-can-tab'
+export {
+  checkRowForMatch,
+  focusCell,
+  focusCellByColumnIndex,
+  focusRow,
+  getCellByColumnIndex,
+  getCellIndexes,
+  getCellSingleInteractiveContentNode,
+  getLength,
+  getRowCells,
+  getRowCellsWithIndexes,
+  getRows,
+  getRowsWithIndex,
+  handleOnNavigateBehavior,
+  hasModifierKey,
+  hasUnassociatedLeafNodes,
+  isArrowKeyLessOperationElement,
+  isPrintableCharacter,
+} from './focus-table-utils'

@@ -15,3 +15,11 @@ export { default as FocusWithinHandlerNonStrictMode_DEPRECATED } from './focus-w
 export { default as FocusWithinHandlerStrictMode } from './focus-within-handler-strict-mode-react'
 export { CometCompositeFocusIndicator } from './comet-composite-focus-indicator'
 export { CometFocusGroup } from './comet-focus-group'
+export { createFocusTable } from './focus-table'
+
+export {
+  ChannelGeminiFocusableTable,
+  WorkGalahadChannelFocusableScopeQuery,
+  WorkGalahadChannelFocusableTableCell,
+  WorkGalahadChannelFocusableTableRow,
+} from './channel-gemini-focusable-table'

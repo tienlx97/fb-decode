@@ -32,3 +32,4 @@ export { default as HiddenSubtreePassiveContext } from './hidden-subtree-passive
 export { default as LayoutAnimationBoundaryContext } from './layout-animation-boundary-context'
 export { default as CometErrorProjectContext } from './comet-error-project-context'
 export { default as RelayProfilerContext } from './relay-profiler-context'
+export { default as WorkCometInteractiveElementContext } from './work-comet-interactive-element-context'

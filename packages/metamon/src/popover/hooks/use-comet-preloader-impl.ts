@@ -11,7 +11,7 @@ function conditionallyInvokeOrPreload(a: any) {
 
 const m = 50
 
-export function useCometPreloaderImpl(a: any, b: any, d: any, e: any) {
+export function useCometPreloaderImpl(a: any, b: any, d: any, e?: any) {
   const f = useRef<any>(null)
   const g = useRef<any>(null)
   const n = useRef<any>(null)
@@ -36,7 +36,7 @@ export function useCometPreloaderImpl(a: any, b: any, d: any, e: any) {
     )
   }
   const p = useCallback(
-    (e: any, f: any, g: any) => {
+    (e: any, f?: any, g?: any) => {
       if (
         a === 'tooltip' ||
         ((a === 'button' || a === 'button_aggressive') && b != null)
