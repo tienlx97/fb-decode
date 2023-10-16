@@ -77,7 +77,7 @@ importers:
         version: 3.3.1(react-hook-form@7.46.1)
       '@negiganaito/react-components':
         specifier: workspace:*
-        version: link:../../packages/metamon
+        version: link:../../packages/negiganaito
       '@prisma/client':
         specifier: 5.2.0
         version: 5.2.0(prisma@5.2.0)
@@ -183,7 +183,7 @@ importers:
         specifier: 1.0.36
         version: 1.0.36
 
-  packages/metamon:
+  packages/negiganaito:
     dependencies:
       '@griffel/react':
         specifier: 1.5.16
