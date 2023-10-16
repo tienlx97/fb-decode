@@ -1,19 +1,22 @@
+'use client'
+
 import React, { useMemo } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { GeminiLayoutPage } from '@/features/layout'
-import { makeStyles } from '@fluentui/react-components'
-import { useStable } from '@metamon/hooks'
-import { CometSearchKeyCommandWrapper } from '@metamon/keyboards'
-import { CometPlaceholder } from '@metamon/placeholder'
-import { CometContextualLayerAnchorRoot } from '@metamon/popover'
-import { BaseDOMContainer, BasePortalTargetContext } from '@metamon/portal'
-import executionEnvironment from '@metamon/utils/common/execution-environment'
+import { makeStyles } from '@griffel/react'
+import { useStable } from '@negiganaito/hooks'
+import { CometSearchKeyCommandWrapper } from '@negiganaito/keyboards'
+import { CometPlaceholder } from '@negiganaito/placeholder'
+import { CometContextualLayerAnchorRoot } from '@negiganaito/popover'
+import { BaseDOMContainer, BasePortalTargetContext } from '@negiganaito/portal'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
 
 import ChannelGeminiContainer from './channel-gemini-container'
 import { GeminiAppsGlimmer } from './gemini-apps-glimmer'
+import { GeminiLayoutPage } from './gemini-layout-page'
 import { WorkGalahadUIAppsRoot } from './work-galahad-ui-apps-root'
+import { WorkNavigationClassicRenderer } from './work-navigation-classic-renderer'
 
 const useStyles = makeStyles({
   contentContainer: {
@@ -27,18 +30,24 @@ const useStyles = makeStyles({
   },
 })
 
-export default function GeminiAppViewStack() {
+type GeminiAppViewStackProps = {
+  children?: any
+}
+
+export default function GeminiAppViewStack({
+  children,
+}: GeminiAppViewStackProps) {
   const classes = useStyles()
 
   const basePortalTargetContextValue = useStable(function () {
     return executionEnvironment.canUseDOM ? document.createElement('div') : null
   })
 
-  const MainNavContentComp = useMemo(function () {
+  const MainNavContentComp = useMemo(() => {
     return jsx(WorkGalahadUIAppsRoot, {
       children: jsx(CometPlaceholder, {
         fallback: jsx(GeminiAppsGlimmer, {}),
-        // children: jsx(WorkNavigation, {}),
+        children: jsx(WorkNavigationClassicRenderer, {}),
       }),
     })
   }, [])
@@ -54,11 +63,14 @@ export default function GeminiAppViewStack() {
         children: [
           jsx(CometContextualLayerAnchorRoot, {
             children: jsx(GeminiLayoutPage, {
+              // side nav 2
               channelContent: ChannelContentComp,
+              // side nav 1
               mainNavContent: MainNavContentComp,
               navContentAndChannelContainer: NavContentAndChannelContainer,
               children: jsx(CometSearchKeyCommandWrapper, {
                 className: classes.contentContainer,
+                children,
                 // children: jsx(o, {
                 //   routerState: a,
                 // }),
@@ -74,14 +86,15 @@ export default function GeminiAppViewStack() {
   })
 }
 
-const m = undefined
+// m = b("cr:3561") == null ? void 0 : b("cr:3561").GalileoNavExternalAppDrawerNuxProvider
+const DynamicNavContentAndChannelContainer = undefined
 
 function NavContentAndChannelContainer(props: any) {
   const { children } = props
   return jsx(React.Fragment, {
-    children: !m
+    children: !DynamicNavContentAndChannelContainer
       ? children
-      : jsx(m, {
+      : jsx(DynamicNavContentAndChannelContainer, {
           children,
         }),
   })

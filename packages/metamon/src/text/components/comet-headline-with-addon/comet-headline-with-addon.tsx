@@ -1,7 +1,7 @@
 import React, { forwardRef, ReactNode } from 'react'
 
-import { BaseRow, BaseRowItem } from '@metamon/common'
-import { TypeKeys } from '@metamon/styles'
+import { BaseRow, BaseRowItem } from '@negiganaito/common'
+import { TypeKeys } from '@negiganaito/styles'
 
 import { TetraText } from '../tetra-text'
 import { useDirectionStyles, useStyles } from './styles'

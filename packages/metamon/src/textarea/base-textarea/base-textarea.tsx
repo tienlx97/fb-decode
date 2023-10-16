@@ -1,12 +1,12 @@
-import { BaseFocusRing } from '@metamon/focus'
-import { mergeRefs, usePrevious } from '@metamon/hooks'
+import { BaseFocusRing } from '@negiganaito/focus'
+import { mergeRefs, usePrevious } from '@negiganaito/hooks'
 import React, { forwardRef, useLayoutEffect, useMemo, useRef } from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { BaseInput } from '@metamon/input'
-import { mergeClasses } from '@fluentui/react-components'
+import { BaseInput } from '@negiganaito/input'
+import { mergeClasses } from '@griffel/react'
 import { useStyles } from './styles'
 
 type BaseTextareaProp = {

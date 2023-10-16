@@ -6,7 +6,7 @@ import {
 } from '@fb/focus/utils/focus-scope-queries'
 import { mergeRefs } from '@fb/hooks/use-merge-refs'
 import { emptyFunction } from '@fb/utils/empty-function'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React, {
   forwardRef,
   useCallback,

@@ -1,5 +1,5 @@
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
-import { useCurrentDisplayMode } from '@metamon/hooks'
+import { makeStyles, mergeClasses } from '@griffel/react'
+import { useCurrentDisplayMode } from '@negiganaito/hooks'
 
 import React from 'react'
 // @ts-ignore

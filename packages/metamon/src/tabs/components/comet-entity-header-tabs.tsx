@@ -2,7 +2,7 @@ import React from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles } from '@griffel/react'
 
 import { CometTabs } from './comet-tabs'
 

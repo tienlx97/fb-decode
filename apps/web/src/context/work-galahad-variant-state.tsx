@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from 'react'
-// @ts-ignore
-import { jsx } from 'react/jsx-runtime'
+'use client'
+
+import React, { createContext, useContext, useState } from 'react'
 
 const context = createContext({
   hasNotifPriorityBadgeCount: !0,
@@ -85,10 +85,7 @@ const Provider = ({ children }: WorkGalahadVariantStateProvider) => {
     rhcApprovalsCollapsed: false,
   })
 
-  return jsx(context.Provider, {
-    value: val,
-    children,
-  })
+  return <context.Provider value={val}>{children}</context.Provider>
 }
 
 export const WorkGalahadVariantState = {

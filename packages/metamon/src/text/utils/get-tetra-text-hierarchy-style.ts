@@ -1,4 +1,4 @@
-import memoizeWithArgs from '@metamon/utils/common/memoize-with-args' // Import the correct path for memoizeWithArgs
+import memoizeWithArgs from '@negiganaito/utils/common/memoize-with-args' // Import the correct path for memoizeWithArgs
 
 interface TetraTextHierarchyStyle {
   bodyType: string

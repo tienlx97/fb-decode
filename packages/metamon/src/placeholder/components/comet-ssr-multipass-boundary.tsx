@@ -4,8 +4,8 @@ import { CometPlaceholder } from './placeholder'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import executionEnvironment from '@metamon/utils/common/execution-environment'
-import { FBLogger, unrecoverableViolation } from '@metamon/error'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
+import { FBLogger, unrecoverableViolation } from '@negiganaito/error'
 import {
   isEnabledBoundary,
   tryGetBoundaryPromise,

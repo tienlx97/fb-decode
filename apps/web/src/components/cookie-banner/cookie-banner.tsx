@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 import { getLocalStorage, setLocalStorage } from '@/utils/storage'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { useStyles } from './styles'
 

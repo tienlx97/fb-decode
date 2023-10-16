@@ -15,7 +15,7 @@ import { FocusGroup } from '@fb/focus/components/comet-menu-focus-group'
 import { handleFirstLetterNavigation } from '@fb/focus/components/comet-focus-group-first-letter-navigation'
 import { useStyles, usedummyStyles } from './styles'
 import { fbicon } from '@fb/tetra-icon'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 type CometMenuBaseProps = {
   children?: any

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { useStyles } from './styles'
 

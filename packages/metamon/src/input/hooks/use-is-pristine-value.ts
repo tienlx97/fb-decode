@@ -1,4 +1,4 @@
-import { useStable } from '@metamon/hooks'
+import { useStable } from '@negiganaito/hooks'
 import React, { useState } from 'react'
 
 export default function useIsPristineValue(

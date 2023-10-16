@@ -8,7 +8,7 @@ import React, {
 import { jsx } from 'react/jsx-runtime'
 
 import CometContainerPressableContext from '@fb/context/comet-container-pressable-context'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { useStyles } from './styles'
 

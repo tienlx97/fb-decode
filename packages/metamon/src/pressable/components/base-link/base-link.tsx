@@ -9,7 +9,7 @@ const Pressable = dynamic(() => import('../pressable').then(r => r.Pressable), {
   ssr: false,
 })
 
-import { mergeRefs } from '@metamon/hooks'
+import { mergeRefs } from '@negiganaito/hooks'
 import { PressableText } from '../pressable-text'
 import dynamic from 'next/dynamic'
 

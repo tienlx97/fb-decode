@@ -4,7 +4,7 @@ import React from 'react'
 import { CometLink } from 'ui'
 
 import { siteConfig } from '@/config'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { useStyles } from './styles'
 

@@ -1,4 +1,4 @@
-import { LegacyHidden } from '@metamon/common'
+import { LegacyHidden } from '@negiganaito/common'
 import { ReactNode, forwardRef } from 'react'
 
 //@ts-ignore

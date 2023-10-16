@@ -1,12 +1,12 @@
 import { getRingColor, getRingGifUrl } from '../comet-progress-ring-utils'
 import BaseLoadingStateElement from '../base-loading-state-element'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useDummyStyles, useStyles } from './styles'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { useCurrentDisplayMode } from '@metamon/hooks'
-import { CometImageFromIXValue } from '@metamon/image'
+import { useCurrentDisplayMode } from '@negiganaito/hooks'
+import { CometImageFromIXValue } from '@negiganaito/image'
 
 type CometProgressRingIndeterminateProps = {
   color: string

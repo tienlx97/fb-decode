@@ -1,15 +1,15 @@
-import { mergeClasses } from '@fluentui/react-components'
-import { WorkCometInteractiveElementContext } from '@metamon/context'
+import { mergeClasses } from '@griffel/react'
+import { WorkCometInteractiveElementContext } from '@negiganaito/context'
 import {
   BaseFocusRing,
   WorkGalahadChannelFocusableTableCell,
   WorkGalahadChannelFocusableTableRow,
-} from '@metamon/focus'
-import { useHoverAndFocusState } from '@metamon/hooks'
-import { useCometPreloaderImpl } from '@metamon/popover'
-import { CometPressable, CometPressableOverlay } from '@metamon/pressable'
-import { TetraTextPairing } from '@metamon/text'
-import { emptyFunction } from '@metamon/utils/common/empty-function'
+} from '@negiganaito/focus'
+import { useHoverAndFocusState } from '@negiganaito/hooks'
+import { useCometPreloaderImpl } from '@negiganaito/popover'
+import { CometPressable, CometPressableOverlay } from '@negiganaito/pressable'
+import { TetraTextPairing } from '@negiganaito/text'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 import React, { forwardRef, useCallback, useMemo, useState } from 'react'
 
 // @ts-ignore

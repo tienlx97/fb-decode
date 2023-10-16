@@ -1,10 +1,10 @@
 import {
-  WorkCometIconWorkplace,
-  WorkCometIconNotificationsFilled,
-  WorkCometIconNotifications,
   WorkCometIconKnowledgeLibrary,
   WorkCometIconKnowledgeLibraryFilled,
-} from 'fb'
+  WorkCometIconNotifications,
+  WorkCometIconNotificationsFilled,
+  WorkCometIconWorkplace,
+} from '@negiganaito/icons'
 import React from 'react'
 
 type WorkGalahadUIAppTabSelectorSVGIconProps = {

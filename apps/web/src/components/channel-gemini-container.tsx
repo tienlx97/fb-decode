@@ -1,4 +1,4 @@
-import { BaseHeadingContextWrapper } from '@metamon/text'
+import { BaseHeadingContextWrapper } from '@negiganaito/text'
 import React from 'react'
 
 const j = false // c("gkx")("7823");

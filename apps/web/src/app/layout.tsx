@@ -1,4 +1,4 @@
-import '@metamon/react-components/src/styles/theme.css'
+import '@negiganaito/react-components/src/styles/theme.css'
 
 import '../styles/index.css'
 
@@ -6,8 +6,10 @@ import '../styles/index.css'
 // import { Space_Grotesk } from 'next/font/google'
 import React from 'react'
 
-import { AuthProvider, CookieBanner, GoogleAnalytics } from '@/components'
 import AppProvider from '@/utils/registry'
+import { GoogleAnalytics } from '@/components/google-analystic'
+import AuthProvider from '@/components/auth-provider'
+import { CookieBanner } from '@/components/cookie-banner'
 
 // If loading a variable font, you don't need to specify the font weight
 // const spaceGrotesk = Space_Grotesk({
@@ -30,12 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         type="image/svg+xml"
       />
       <GoogleAnalytics />
-      <body
-        // style={{
-        //   fontFamily: `${spaceGrotesk.style.fontFamily} !important`,
-        // }}
-        className="body-custom system-fonts--body segoe"
-      >
+      <body className="body-custom system-fonts--body segoe">
         <AuthProvider>
           {/* @ts-ignore */}
           <AppProvider className="app-custom">

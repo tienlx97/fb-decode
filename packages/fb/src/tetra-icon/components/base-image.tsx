@@ -6,7 +6,7 @@ import { RecoverableViolationWithComponentStack } from '@fb/error/errorguard'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 type BaseImageProps = React.JSX.IntrinsicElements['img'] & {
   alt?: boolean

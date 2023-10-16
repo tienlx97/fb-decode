@@ -1,5 +1,5 @@
-import { HiddenSubtreePassiveContext } from '@metamon/context'
-import { emptyFunction } from '@metamon/utils/common/empty-function'
+import { HiddenSubtreePassiveContext } from '@negiganaito/context'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 import { ReactNode, useContext, useEffect, useRef } from 'react'
 
 type BasePopoverLayerVisibilityProps = {

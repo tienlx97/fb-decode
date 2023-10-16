@@ -3,17 +3,17 @@ import React, { forwardRef, ReactNode, useContext, useRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { mergeRefs, useCometTheme } from '@metamon/hooks'
-import { CometIcon } from '@metamon/image'
-import { TetraText } from '@metamon/text'
-import isBlueprintStylesEnabled from '@metamon/utils/common/is-blueprint-styles-enabled'
+import { mergeClasses } from '@griffel/react'
+import { mergeRefs, useCometTheme } from '@negiganaito/hooks'
+import { CometIcon } from '@negiganaito/image'
+import { TetraText } from '@negiganaito/text'
+import isBlueprintStylesEnabled from '@negiganaito/utils/common/is-blueprint-styles-enabled'
 
 // import CometGHLRenderingContext from '@fb/context/comet-ghl-rendering-context'
 import BaseStyledButton from '../base-styled-button'
 import { useBlueprintStyles, useStyles } from './styles'
-import { CometTooltip } from '@metamon/tooltip'
-import { CometGHLRenderingContext } from '@metamon/context'
+import { CometTooltip } from '@negiganaito/tooltip'
+import { CometGHLRenderingContext } from '@negiganaito/context'
 
 type TetraButtonProps = {
   addOnPrimary?: any

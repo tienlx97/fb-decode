@@ -11,16 +11,16 @@ import React, {
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
-import { CometTextTypography, TypeKeys } from '@metamon/styles'
+import { CometTextTypography, TypeKeys } from '@negiganaito/styles'
 
 import { useStyles } from './styles'
 import { CometTextContext } from '../../context'
-import cssUserAgentSupports from '@metamon/utils/common/css-useragent-supports'
-import { CometPlaceholder } from '@metamon/placeholder'
-import { CometTooltip } from '@metamon/tooltip'
-import { useMergeRefs } from '@metamon/hooks'
+import cssUserAgentSupports from '@negiganaito/utils/common/css-useragent-supports'
+import { CometPlaceholder } from '@negiganaito/placeholder'
+import { CometTooltip } from '@negiganaito/tooltip'
+import { useMergeRefs } from '@negiganaito/hooks'
 
 type CometLineClampProps = {
   children?: ReactNode

@@ -7,8 +7,8 @@ import React, {
   useState,
 } from 'react'
 
-import { FocusWithinHandler } from '@metamon/focus'
-import { mergeClasses } from '@fluentui/react-components'
+import { FocusWithinHandler } from '@negiganaito/focus'
+import { mergeClasses } from '@griffel/react'
 import { useStyles } from './styles'
 
 type BaseTooltipTargetWrapperProps = {

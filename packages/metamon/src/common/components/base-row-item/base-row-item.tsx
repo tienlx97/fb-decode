@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext } from 'react'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { BaseRowContext } from '../../context'
 import BaseView from '../base-view'
 import { useColumnStyles, useStyles, useVerticalAlignStyles } from './styles'

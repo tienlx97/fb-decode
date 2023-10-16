@@ -1,6 +1,6 @@
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
-import { useVisibilityObserver } from '@metamon/hooks'
-import { BaseLoadingStateElement } from '@metamon/popover'
+import { makeStyles, mergeClasses } from '@griffel/react'
+import { useVisibilityObserver } from '@negiganaito/hooks'
+import { BaseLoadingStateElement } from '@negiganaito/popover'
 import { useCallback, useState } from 'react'
 
 // @ts-ignore

@@ -1,5 +1,5 @@
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
-import { BaseView, CometNonBreakingSpace } from '@metamon/common'
+import { makeStyles, mergeClasses } from '@griffel/react'
+import { BaseView, CometNonBreakingSpace } from '@negiganaito/common'
 import React, { CSSProperties, ReactNode } from 'react'
 
 // @ts-ignore

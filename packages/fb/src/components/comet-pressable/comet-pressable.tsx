@@ -12,7 +12,7 @@ import CometContainerPressableContext from '@fb/context/comet-container-pressabl
 import CometDangerouslySuppressInteractiveElementsContext from '@fb/context/comet-dangerously-suppress-interactive-elements-context'
 import { useMergeRefs } from '@fb/hooks/use-merge-refs'
 import { BaseLink } from '../base-link'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import BaseButton from '../base-button/base-button'
 import { useStyles } from './styles'
 

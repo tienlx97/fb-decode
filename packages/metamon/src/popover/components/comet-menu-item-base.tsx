@@ -9,21 +9,25 @@ import React, {
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
-import { CometPressable, CometPressableOverlay } from '@metamon/pressable'
-import { CometNonBreakingSpace } from '@metamon/common'
+import { makeStyles, mergeClasses } from '@griffel/react'
+import { CometPressable, CometPressableOverlay } from '@negiganaito/pressable'
+import { CometNonBreakingSpace } from '@negiganaito/common'
 import {
   CometMenuContext,
   CometMenuItemBaseRoleContext,
   CometMenuItemHighlightContext,
-} from '@metamon/context'
+} from '@negiganaito/context'
 import {
   BaseFocusRing,
   FocusItem,
   useFirstLetterNavigationTag,
-} from '@metamon/focus'
-import { mergeRefs } from '@metamon/hooks'
-import { CometTextWithIcon, TetraText, TetraTextPairing } from '@metamon/text'
+} from '@negiganaito/focus'
+import { mergeRefs } from '@negiganaito/hooks'
+import {
+  CometTextWithIcon,
+  TetraText,
+  TetraTextPairing,
+} from '@negiganaito/text'
 
 const useStyles = makeStyles({
   aux: {

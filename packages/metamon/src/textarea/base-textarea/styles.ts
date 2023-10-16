@@ -1,4 +1,4 @@
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles } from '@griffel/react'
 
 export const useStyles = makeStyles({
   unresizable: {

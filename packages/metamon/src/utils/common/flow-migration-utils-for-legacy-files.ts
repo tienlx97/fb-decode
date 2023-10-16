@@ -1,4 +1,4 @@
-import { FBLogger } from '@metamon/error'
+import { FBLogger } from '@negiganaito/error'
 
 const projectName = 'flow_typing_for_legacy_code'
 

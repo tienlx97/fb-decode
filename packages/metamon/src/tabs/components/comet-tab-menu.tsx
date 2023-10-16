@@ -1,6 +1,9 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { CometMenu, CometMenuItemSelectable_DEPRECATED } from '@metamon/popover'
+import {
+  CometMenu,
+  CometMenuItemSelectable_DEPRECATED,
+} from '@negiganaito/popover'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'

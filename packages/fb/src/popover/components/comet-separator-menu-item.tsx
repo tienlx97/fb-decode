@@ -1,9 +1,5 @@
 import CometMenuItemBaseRoleContext from '@fb/context/comet-menu-item-base-role-context'
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
 import React, { forwardRef, useContext } from 'react'
 
 type CometSeparatorMenuItemProps = {} & React.JSX.IntrinsicElements['div']

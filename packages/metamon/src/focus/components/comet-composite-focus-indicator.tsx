@@ -1,11 +1,14 @@
 import { useMemo } from 'react'
-import { CometComponentWithKeyCommands, cometKeys } from '@metamon/keyboards'
+import {
+  CometComponentWithKeyCommands,
+  cometKeys,
+} from '@negiganaito/keyboards'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { CometCompositeStructureContext } from '@metamon/context'
+import { CometCompositeStructureContext } from '@negiganaito/context'
 import { BaseFocusRing } from './base-focus-ring'
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles } from '@griffel/react'
 
 const useStyles = makeStyles({
   noOutline: {

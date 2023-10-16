@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useCometPreloaderImpl } from './use-comet-preloader-impl'
-import { emptyFunction } from '@metamon/utils/common/empty-function'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 
 export function useCometPrerendererImpl(
   popoverRenderer: any,

@@ -5,9 +5,9 @@ import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { makeEventOptions } from '@metamon/utils/common/passive-event-listener-util'
-import { isBrowser } from '@metamon/utils/user-agent'
+import { mergeClasses } from '@griffel/react'
+import { makeEventOptions } from '@negiganaito/utils/common/passive-event-listener-util'
+import { isBrowser } from '@negiganaito/utils/user-agent'
 
 import { WebPressableGroupContext } from '../../context'
 import { usePressability } from '../../hooks'

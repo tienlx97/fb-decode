@@ -4,16 +4,12 @@ import React from 'react'
 
 import {
   RendererProvider,
-  SSRProvider,
   createDOMRenderer,
   renderToStyleElements,
-  FluentProvider,
-  teamsLightTheme,
-  FluentProviderProps,
-} from '@fluentui/react-components'
+} from '@griffel/react'
 import { useServerInsertedHTML } from 'next/navigation'
 
-type AppProviderProps = React.PropsWithChildren & FluentProviderProps
+type AppProviderProps = React.PropsWithChildren
 
 /**
  * // https://nextjs.org/docs/app/building-your-application/styling/css-in-js#configuring-css-in-js-in-app
@@ -32,13 +28,5 @@ export default function AppProvider({ children, ...props }: AppProviderProps) {
   })
 
   // A Client Component that wraps your app with the style registry during initial server-side rendering.
-  return (
-    <RendererProvider renderer={renderer}>
-      <SSRProvider>
-        <FluentProvider theme={teamsLightTheme} {...props}>
-          {children}
-        </FluentProvider>
-      </SSRProvider>
-    </RendererProvider>
-  )
+  return <RendererProvider renderer={renderer}>{children}</RendererProvider>
 }

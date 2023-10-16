@@ -7,8 +7,8 @@ import React, {
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { CometContainerPressableContext } from '@metamon/pressable'
+import { mergeClasses } from '@griffel/react'
+import { CometContainerPressableContext } from '@negiganaito/pressable'
 
 import { useStyles } from './styles'
 

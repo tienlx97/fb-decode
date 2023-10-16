@@ -3,8 +3,8 @@ import React from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { CometGlimmer } from '@metamon/react-components'
-import { makeStyles } from '@fluentui/react-components'
+import { CometGlimmer } from '@negiganaito/react-components'
+import { makeStyles } from '@griffel/react'
 
 const useStyles = makeStyles({
   root: {

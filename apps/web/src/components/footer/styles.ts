@@ -1,4 +1,4 @@
-import { makeStyles, shorthands } from '@fluentui/react-components'
+import { makeStyles, shorthands } from '@griffel/react'
 import { TYPO_STYLES } from '@ui/theme'
 
 export const useStyles = makeStyles({

@@ -27,23 +27,23 @@ import {
   BaseViewportMarginsContext,
   HiddenSubtreeContext,
   LayoutAnimationBoundaryContext,
-} from '@metamon/context'
+} from '@negiganaito/context'
 
-import calculateBaseContextualLayerPosition from '@metamon/utils/common/calculate-base-contextual-layer-position'
-import { isElementFixedOrSticky } from '@metamon/utils/common/is-element-fixed-or-sticky'
-import { LayoutAnimationEventType } from '@metamon/utils/common/layout-animation-events'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import calculateBaseContextualLayerPosition from '@negiganaito/utils/common/calculate-base-contextual-layer-position'
+import { isElementFixedOrSticky } from '@negiganaito/utils/common/is-element-fixed-or-sticky'
+import { LayoutAnimationEventType } from '@negiganaito/utils/common/layout-animation-events'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 import { useResizeObserver } from '../hooks/use-resize-observer'
-import { CometTextContext } from '@metamon/text'
+import { CometTextContext } from '@negiganaito/text'
 import {
   FocusRegion,
   headerFirstTabbableSecondScopeQuery,
   tabbableScopeQuery,
-} from '@metamon/focus'
-import { mergeRefs, useLayoutAnimationEvents } from '@metamon/hooks'
+} from '@negiganaito/focus'
+import { mergeRefs, useLayoutAnimationEvents } from '@negiganaito/hooks'
 import BaseContextualLayerDefaultContainer from './base-contextual-layer-default-container'
-import { BasePortal } from '@metamon/portal'
+import { BasePortal } from '@negiganaito/portal'
 import BaseContextualLayerAnchorRoot from './base-contextual-layer-anchor-root'
 
 type BaseContextualLayerProps = {

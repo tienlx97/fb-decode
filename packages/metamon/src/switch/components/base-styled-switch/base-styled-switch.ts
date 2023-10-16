@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 import { BaseSwitch } from '../base-switch'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useStyles } from './styles'
-import { BaseRow, BaseRowItem, BaseView } from '@metamon/common'
+import { BaseRow, BaseRowItem, BaseView } from '@negiganaito/common'
 
 // @ts-ignore
 interface BaseStyledSwitchProps

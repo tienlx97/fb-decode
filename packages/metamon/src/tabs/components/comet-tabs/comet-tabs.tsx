@@ -2,13 +2,16 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { CometFocusGroup, tabbableScopeQuery } from '@metamon/focus'
-import { mergeRefs } from '@metamon/hooks'
-import { TriangleDownFilled20 } from '@metamon/icons'
-import { CometComponentWithKeyCommands, cometKeys } from '@metamon/keyboards'
-import { CometDeferredPopoverTrigger } from '@metamon/popover/components/comet-deferred-popover-trigger'
-import { svgIcon } from '@metamon/utils/common/svg-icon'
+import { mergeClasses } from '@griffel/react'
+import { CometFocusGroup, tabbableScopeQuery } from '@negiganaito/focus'
+import { mergeRefs } from '@negiganaito/hooks'
+import { TriangleDownFilled20 } from '@negiganaito/icons'
+import {
+  CometComponentWithKeyCommands,
+  cometKeys,
+} from '@negiganaito/keyboards'
+import { CometDeferredPopoverTrigger } from '@negiganaito/popover/components/comet-deferred-popover-trigger'
+import { svgIcon } from '@negiganaito/utils/common/svg-icon'
 
 import { CometTab } from '../comet-tab'
 import { CometTabMenu } from '../comet-tab-menu'

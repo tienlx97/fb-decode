@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import Link, { LinkProps } from 'next/link'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useStyles } from './styles'
 
 const CometLink = forwardRef<
@@ -13,6 +13,7 @@ const CometLink = forwardRef<
   const classes = useStyles()
 
   return (
+    // @ts-ignore
     <Link
       href={href}
       className={mergeClasses(

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { getBadgePosition } from '@metamon/utils/common/profile-photo-utils'
+import { mergeClasses } from '@griffel/react'
+import { getBadgePosition } from '@negiganaito/utils/common/profile-photo-utils'
 
 import { CometIcon } from '../comet-icon'
 import {

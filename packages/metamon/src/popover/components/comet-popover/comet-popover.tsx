@@ -2,8 +2,8 @@ import React, { forwardRef, ReactNode, useContext } from 'react'
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { BaseContextualLayerOrientationContext } from '@metamon/context'
+import { mergeClasses } from '@griffel/react'
+import { BaseContextualLayerOrientationContext } from '@negiganaito/context'
 
 import { BasePopover } from '../base-popover'
 import { BasePopoverSVGArrowContainer } from '../base-popover-svg-arrow-container'

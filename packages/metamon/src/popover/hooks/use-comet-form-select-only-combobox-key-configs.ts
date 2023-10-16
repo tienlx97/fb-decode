@@ -1,4 +1,4 @@
-import { cometKeys } from '@metamon/keyboards'
+import { cometKeys } from '@negiganaito/keyboards'
 import { useCallback, useMemo } from 'react'
 
 export default function useCometFormSelectOnlyComboboxKeyConfigs({

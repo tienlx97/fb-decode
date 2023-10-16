@@ -1,15 +1,15 @@
 /* eslint-disable camelcase */
-import { mergeClasses } from '@fluentui/react-components'
-import { CometNonBreakingSpace } from '@metamon/common'
-import { CometFocusGroupContext } from '@metamon/context'
+import { mergeClasses } from '@griffel/react'
+import { CometNonBreakingSpace } from '@negiganaito/common'
+import { CometFocusGroupContext } from '@negiganaito/context'
 import {
   useIntersectionObserver,
   useMergeRefs,
   useUnsafeRef_DEPRECATED,
-} from '@metamon/hooks'
-import { CometIcon } from '@metamon/image'
-import { CometPressable } from '@metamon/pressable'
-import { CometTextWithIcon, TetraText } from '@metamon/text'
+} from '@negiganaito/hooks'
+import { CometIcon } from '@negiganaito/image'
+import { CometPressable } from '@negiganaito/pressable'
+import { CometTextWithIcon, TetraText } from '@negiganaito/text'
 import React, { forwardRef, useCallback, useContext, useState } from 'react'
 import { flushSync } from 'react-dom'
 

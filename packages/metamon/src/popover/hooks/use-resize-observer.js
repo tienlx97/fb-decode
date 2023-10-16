@@ -1,8 +1,8 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable no-self-assign */
 /* eslint-disable camelcase */
-import { FBLogger } from '@metamon/error'
-import { uniqueID } from '@metamon/utils/common/unique-id'
+import { FBLogger } from '@negiganaito/error'
+import { uniqueID } from '@negiganaito/utils/common/unique-id'
 import { useCallback, useLayoutEffect, useRef } from 'react'
 import { unstable_batchedUpdates } from 'react-dom'
 import ResizeObserver from 'resize-observer-polyfill'

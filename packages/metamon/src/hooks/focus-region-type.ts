@@ -1,3 +1,3 @@
-import { InternalEnum } from '@metamon/utils/common/$InternalEnum'
+import { InternalEnum } from '@negiganaito/utils/common/$InternalEnum'
 
 export const RecoverFocusStrategy = InternalEnum.Mirrored(['Nearest', 'First'])

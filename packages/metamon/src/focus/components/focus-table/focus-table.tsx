@@ -16,9 +16,9 @@ import {
   isArrowKeyLessOperationElement,
   isPrintableCharacter,
   setElementCanTab,
-} from '@metamon/focus/util'
-import { useKeyboard } from '@metamon/keyboards'
-import { useFocusWithin } from '@metamon/keyboards/hooks/react-focus-event'
+} from '@negiganaito/focus/util'
+import { useKeyboard } from '@negiganaito/keyboards'
+import { useFocusWithin } from '@negiganaito/keyboards/hooks/react-focus-event'
 import React, { createContext, useContext, useMemo, useRef } from 'react'
 
 // @ts-ignore

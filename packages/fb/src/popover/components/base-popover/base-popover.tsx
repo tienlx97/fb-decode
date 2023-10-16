@@ -1,4 +1,4 @@
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React, { ReactNode, forwardRef } from 'react'
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'

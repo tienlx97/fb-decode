@@ -3,7 +3,7 @@ import React, { forwardRef, memo } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { BaseInput } from '../base-input'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useStyles } from './styles'
 
 type BaseTextInputProps = {

@@ -6,7 +6,7 @@ import { jsx } from 'react/jsx-runtime'
 import { createFocusGroup } from './focus-group'
 import { tabbableScopeQuery } from '../util'
 import { CometCompositeFocusIndicator } from './comet-composite-focus-indicator'
-import { CometFocusGroupContext } from '@metamon/context'
+import { CometFocusGroupContext } from '@negiganaito/context'
 
 const [FocusContainer, FocusItem] = createFocusGroup(tabbableScopeQuery)
 

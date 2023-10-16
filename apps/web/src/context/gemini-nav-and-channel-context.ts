@@ -1,5 +1,7 @@
-import { useHover } from '@metamon/hooks'
-import { emptyFunction } from '@metamon/utils/common/empty-function'
+'use-client'
+
+import { useHover } from '@negiganaito/hooks'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 import { createContext, useContext, useMemo, useState } from 'react'
 
 // @ts-ignore

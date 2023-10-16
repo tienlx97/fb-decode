@@ -8,11 +8,11 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { useDelayedState, useStable } from '@metamon/hooks'
+import { useDelayedState, useStable } from '@negiganaito/hooks'
 
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
-import { recoverableViolation } from '@metamon/error'
+import { recoverableViolation } from '@negiganaito/error'
 import { BaseTooltipTargetWrapper } from '../base-tooltip-target-wrapper'
 
 type ContainerProps = {

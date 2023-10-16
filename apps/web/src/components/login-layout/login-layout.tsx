@@ -2,7 +2,7 @@
 
 import { Footer } from '@/components'
 import { Logo } from '@/features/login'
-import { makeStyles, shorthands } from '@fluentui/react-components'
+import { makeStyles, shorthands } from '@griffel/react'
 import React, { CSSProperties, ReactNode } from 'react'
 
 const useStyles = makeStyles({

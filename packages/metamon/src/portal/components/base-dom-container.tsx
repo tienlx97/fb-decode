@@ -1,4 +1,4 @@
-import { useMergeRefs } from '@metamon/hooks'
+import { useMergeRefs } from '@negiganaito/hooks'
 import React, { forwardRef, memo, useLayoutEffect, useRef } from 'react'
 
 type BaseDOMContainerProps = {

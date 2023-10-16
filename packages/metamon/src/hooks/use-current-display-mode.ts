@@ -1,4 +1,4 @@
-import { BaseThemeDisplayModeContext } from '@metamon/context'
+import { BaseThemeDisplayModeContext } from '@negiganaito/context'
 import { useContext } from 'react'
 
 const defaultTheme = 'light'

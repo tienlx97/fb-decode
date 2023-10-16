@@ -1,4 +1,4 @@
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles } from '@griffel/react'
 
 export type CometSVGIconColor =
   | 'active-tab'

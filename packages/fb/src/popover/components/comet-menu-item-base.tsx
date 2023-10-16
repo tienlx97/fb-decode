@@ -20,7 +20,7 @@ import { FocusItem } from '@fb/focus/components/comet-menu-focus-group'
 import { mergeRefs } from '@fb/hooks/use-merge-refs'
 import CometTextWithIcon from '@fb/input/components/comet-text-with-icon'
 import { TetraText, TetraTextPairing } from '@fb/tetra-text'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 const useStyles = makeStyles({
   aux: {

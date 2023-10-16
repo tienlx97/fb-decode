@@ -8,25 +8,21 @@ import React, { useCallback, useId, useMemo, useRef, useState } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
 import {
   FocusInertRegion,
   FocusWithinHandler,
   tabbableScopeQuery,
-} from '@metamon/focus'
-import { CometIcon, fbicon } from '@metamon/image'
-import { CometComponentWithKeyCommands } from '@metamon/keyboards'
+} from '@negiganaito/focus'
+import { CometIcon, fbicon } from '@negiganaito/image'
+import { CometComponentWithKeyCommands } from '@negiganaito/keyboards'
 import {
   CometMenuBaseWithPopover,
   useCometFormSelectMenuTriggerKeyDownHandler,
   useCometFormSelectOnlyComboboxKeyConfigs,
-} from '@metamon/popover'
-import { CometFormInputWrapper } from '@metamon/text'
-import { emptyFunction } from '@metamon/utils/common/empty-function'
+} from '@negiganaito/popover'
+import { CometFormInputWrapper } from '@negiganaito/text'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 
 import CometFormComboboxMenuItem from './comet-form-combobox-menu-item'
 

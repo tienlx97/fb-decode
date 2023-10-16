@@ -1,4 +1,4 @@
-import executionEnvironment from '@metamon/utils/common/execution-environment'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
 import { addImage } from './comet-ssr-preload-image-collection'
 
 export function processSpritedImagesForSSRPreload(a: any) {

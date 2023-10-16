@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react'
-import { useEvent as ReactUseEvent } from '@metamon/hooks'
+import { useEvent as ReactUseEvent } from '@negiganaito/hooks'
 import {
   hasPointerEvents,
   isMac,
-} from '@metamon/utils/common/react-event-helpers'
+} from '@negiganaito/utils/common/react-event-helpers'
 import {
   hasEventHookPropagationStopped,
   stopEventHookPropagation,
-} from '@metamon/utils/common/react-event-hook-propagation'
+} from '@negiganaito/utils/common/react-event-hook-propagation'
 
 const eventOptions = {
   passive: !0,

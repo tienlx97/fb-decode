@@ -5,7 +5,7 @@ import { jsx, jsxs } from 'react/jsx-runtime'
 import BaseContextualLayerContextSizeContext from '@fb/context/base-contextual-layer-context-size-context'
 import BaseContextualLayerLayerAdjustmentContext from '@fb/context/base-contextual-layer-layer-adjustment-context'
 import BaseContextualLayerOrientationContext from '@fb/context/base-contextual-layer-orientation-context'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import BasePopoverDownEdgeArrow from '../base-popover-down-edge-arrow'
 import BasePopoverDownInsetArrow from '../base-popover-down-inset-arrow'

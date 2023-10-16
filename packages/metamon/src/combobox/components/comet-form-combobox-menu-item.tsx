@@ -2,8 +2,8 @@ import React, { useMemo } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { CometIcon, fbicon } from '@metamon/image'
-import { CometMenuItemBase, CometMenuItemIcon } from '@metamon/popover'
+import { CometIcon, fbicon } from '@negiganaito/image'
+import { CometMenuItemBase, CometMenuItemIcon } from '@negiganaito/popover'
 
 type CometFormComboboxMenuItemProps = {
   'aria-disabled'?: string

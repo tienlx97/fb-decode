@@ -1,4 +1,4 @@
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles } from '@griffel/react'
 import { TYPO_STYLES } from '@ui/theme'
 
 export const useStyles = makeStyles({

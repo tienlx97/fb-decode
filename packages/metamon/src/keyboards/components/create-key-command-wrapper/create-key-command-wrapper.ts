@@ -2,8 +2,8 @@ import React, { useCallback, useContext, useMemo, useRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { useStable } from '@metamon/hooks'
+import { mergeClasses } from '@griffel/react'
+import { useStable } from '@negiganaito/hooks'
 
 import {
   CometKeyCommandContext,

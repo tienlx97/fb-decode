@@ -6,13 +6,13 @@ import { toReadableMessage } from './error-serializer'
 
 import { NormalizeErrorProps, StackItemProps } from './types'
 import { ErrorMetadata } from './error-metadata'
-// import { TAALOpcodes, expect, getSimpleHash, performanceNow } from '@metamon/utils'
+// import { TAALOpcodes, expect, getSimpleHash, performanceNow } from '@negiganaito/utils'
 
 import TAALOpcodes from '../utils/taal-opcodes'
 import expect from '../utils/expect'
 import { getSimpleHash } from '../utils/get-simple-hash'
 
-import { performanceNow } from '@metamon/utils/common/performance-now'
+import { performanceNow } from '@negiganaito/utils/common/performance-now'
 
 const stackLineRegex = [
     /\(([^\s\)\()]+):(\d+):(\d+)\)$/,

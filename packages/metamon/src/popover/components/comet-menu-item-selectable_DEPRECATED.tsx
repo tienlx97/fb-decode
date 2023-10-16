@@ -4,9 +4,9 @@ import React, { forwardRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import CometMenuItemBase from './comet-menu-item-base'
-import { CometIcon, fbicon } from '@metamon/image'
+import { CometIcon, fbicon } from '@negiganaito/image'
 import CometMenuItemIcon from './comet-menu-item-icon'
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles } from '@griffel/react'
 
 type CometMenuItemSelectable_DEPRECATEDProps = {
   aux?: any

@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-import executionEnvironment from '@metamon/utils/common/execution-environment'
-import { getLeft } from '@metamon/utils/common/scroll'
-import { supportsCSSSticky } from '@metamon/utils/common/supports-css-sticky'
-import { getDocumentScrollElement } from '@metamon/utils/common/get-document-scroll-element'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
+import { getLeft } from '@negiganaito/utils/common/scroll'
+import { supportsCSSSticky } from '@negiganaito/utils/common/supports-css-sticky'
+import { getDocumentScrollElement } from '@negiganaito/utils/common/get-document-scroll-element'
 
 const m = executionEnvironment.canUseDOM ? supportsCSSSticky : !0
 const n = createContext(0)

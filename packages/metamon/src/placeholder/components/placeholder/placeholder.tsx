@@ -9,10 +9,10 @@ import {
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { cometSuspenseHUDReact } from '@metamon/common'
+import { cometSuspenseHUDReact } from '@negiganaito/common'
 // import cometSSRHydrationMarkerUtils from '@ui/etc/CometSSRHydrationMarkerUtils'
-import { useStable } from '@metamon/hooks'
-import executionEnvironment from '@metamon/utils/common/execution-environment'
+import { useStable } from '@negiganaito/hooks'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
 
 import HeroPlaceholder from '../hero-placeholder'
 

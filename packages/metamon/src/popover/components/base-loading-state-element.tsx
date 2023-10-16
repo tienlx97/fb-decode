@@ -7,12 +7,8 @@ import React, {
   useMemo,
 } from 'react'
 import { getLoadingStateAriaProps } from './get-loading-state-aria-props'
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
-import { mergeRefs } from '@metamon/hooks'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
+import { mergeRefs } from '@negiganaito/hooks'
 
 type BaseLoadingStateElementProps = {
   children?: ReactNode

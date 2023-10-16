@@ -1,6 +1,6 @@
-import { makeStyles, shorthands } from '@fluentui/react-components'
+import { makeStyles, shorthands } from '@griffel/react'
 
-import { TYPO_STYLES } from 'ui'
+import { TYPO_STYLES } from '@negiganaito/react-components'
 
 export const useStyles = makeStyles({
   badge: {

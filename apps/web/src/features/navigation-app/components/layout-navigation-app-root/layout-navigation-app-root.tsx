@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useStyles } from './styles'
 
 type LayoutNavigationAppRootProps = React.JSX.IntrinsicElements['div']

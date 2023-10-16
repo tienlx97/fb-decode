@@ -14,13 +14,13 @@ import {
   mergeClasses,
   useId,
   useToastController,
-} from '@fluentui/react-components'
+} from '@griffel/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import Link from 'next/link'
 import { registerUser, Inputs } from './action'
 import { useStyles } from './styles'
-import { InputField } from '@/components'
+import { InputField } from '@/components/input-field'
 
 export default function RegisterScreen() {
   const classes = useStyles()

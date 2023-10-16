@@ -12,7 +12,7 @@ import {
   useColorTypeStyles,
   useDisableStyles,
 } from './styles'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { CometIcon, CometSVGIconColor } from '@fb/tetra-icon'
 
 type CometCircleButtonProps = {

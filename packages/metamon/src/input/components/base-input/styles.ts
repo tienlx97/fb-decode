@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { makeStyles } from '@fluentui/react-components'
+import { makeStyles } from '@griffel/react'
 
 export const useStyles = makeStyles({
   root: {

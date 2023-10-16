@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import { TypeKeys } from '@metamon/styles'
+import { TypeKeys } from '@negiganaito/styles'
 
 type CometTextContextProps = {
   color: string

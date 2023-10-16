@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { CometPressable } from '@metamon/pressable'
+import { CometPressable } from '@negiganaito/pressable'
 import {
   useOverLayPressStyles,
   iconRatioLarge,
@@ -12,8 +12,8 @@ import {
   useColorTypeStyles,
   useDisableStyles,
 } from './styles'
-import { mergeClasses } from '@fluentui/react-components'
-import { CometIcon, CometSVGIconColor } from '@metamon/image'
+import { mergeClasses } from '@griffel/react'
+import { CometIcon, CometSVGIconColor } from '@negiganaito/image'
 
 type CometCircleButtonProps = {
   icon?: any

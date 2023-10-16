@@ -1,4 +1,9 @@
-import { VoyageUILayerContext, useVoyageUILayerContext } from '@/context'
+'use-client'
+
+import {
+  VoyageUILayerContext,
+  useVoyageUILayerContext,
+} from '@/context/voyage-user-journey-ui-layer-context'
 import React, { useLayoutEffect, useMemo, useRef } from 'react'
 
 type VoyageUserJourneyUILayerProviderProps = {

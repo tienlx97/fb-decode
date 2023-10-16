@@ -4,13 +4,9 @@ import React, { CSSProperties, forwardRef, ReactNode, useRef } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
-import { BaseRow, BaseRowItem } from '@metamon/common'
-import { CometPressable } from '@metamon/pressable'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
+import { BaseRow, BaseRowItem } from '@negiganaito/common'
+import { CometPressable } from '@negiganaito/pressable'
 
 const j = 0.96,
   k = 10

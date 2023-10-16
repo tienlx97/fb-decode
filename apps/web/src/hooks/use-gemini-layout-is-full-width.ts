@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import { useGeminiLayoutUserSettingsFullWidthMode } from '@/context'
-import executionEnvironment from '@metamon/utils/common/execution-environment'
-import { supportsCSSSticky } from '@metamon/utils/common/supports-css-sticky'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
+import { supportsCSSSticky } from '@negiganaito/utils/common/supports-css-sticky'
+import { useGeminiLayoutUserSettingsFullWidthMode } from '@/context/gemini-layout-full-width-mode-context'
 
 const l = executionEnvironment.canUseDOM ? supportsCSSSticky : !0
 
 export function useGeminiLayoutIsFullWidth() {
-  const a = useGeminiLayoutUserSettingsFullWidthMode(),
-    b = useState(function () {
+  const a = useGeminiLayoutUserSettingsFullWidthMode()
+  const b = useState(function () {
       let a
       return (a =
         window &&

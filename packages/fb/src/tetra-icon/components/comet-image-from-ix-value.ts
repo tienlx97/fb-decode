@@ -9,7 +9,7 @@ import coerceImageishURL from '../utils/coerce-imageish-url'
 import BaseImage from './base-image'
 import { xplatToDOMRef } from '@fb/utils/xplat-to-dom-ref'
 import { RecoverableViolationWithComponentStack } from '@fb/error/errorguard'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 type CometImageFromIXValueProps = {
   alt?: string

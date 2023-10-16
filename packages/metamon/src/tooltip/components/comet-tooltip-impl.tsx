@@ -1,4 +1,4 @@
-import { CometPlaceholder } from '@metamon/placeholder'
+import { CometPlaceholder } from '@negiganaito/placeholder'
 import React, { ReactNode } from 'react'
 import CometTooltipDeferredImpl from './comet-tooltip-deferred-impl'
 

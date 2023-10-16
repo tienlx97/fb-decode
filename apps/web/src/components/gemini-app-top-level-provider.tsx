@@ -1,9 +1,9 @@
-import { WorkGalahadVariantState } from '@/context'
-import { FocusAppWrapper } from '@metamon/focus'
+'use client'
+
 import React, { memo } from 'react'
 
-// @ts-ignore
-import { jsx } from 'react/jsx-runtime'
+import { WorkGalahadVariantState } from '@/context/work-galahad-variant-state'
+import { FocusAppWrapper } from '@negiganaito/focus'
 
 type GeminiAppTopLevelProviderProps = {
   children?: any
@@ -13,13 +13,11 @@ type GeminiAppTopLevelProviderProps = {
 const _GeminiAppTopLevelProvider = ({
   children,
 }: GeminiAppTopLevelProviderProps) => {
-  return jsx(WorkGalahadVariantState.Provider, {
-    children: jsx(React.Fragment, {
-      children: jsx(FocusAppWrapper, {
-        children,
-      }),
-    }),
-  })
+  return (
+    <WorkGalahadVariantState.Provider>
+      <FocusAppWrapper>{children}</FocusAppWrapper>
+    </WorkGalahadVariantState.Provider>
+  )
 }
 
 const Provider = memo(_GeminiAppTopLevelProvider)

@@ -1,4 +1,4 @@
-import { isPlatform, isBrowser, isEngine } from '@metamon/utils/user-agent'
+import { isPlatform, isBrowser, isEngine } from '@negiganaito/utils/user-agent'
 
 export const FONT_FAMILY = {
   apple: {

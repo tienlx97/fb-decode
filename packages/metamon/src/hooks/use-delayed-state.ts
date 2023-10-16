@@ -1,4 +1,4 @@
-import { emptyFunction } from '@metamon/utils/common/empty-function'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 export default function useDelayedState(initialValue: boolean) {

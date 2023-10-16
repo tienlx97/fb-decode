@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react'
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { TintableIconSource } from '../../utils'
 import BaseImage_DEPRECATED from '../base-image_DEPRECATED'

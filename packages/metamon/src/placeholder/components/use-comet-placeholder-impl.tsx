@@ -3,9 +3,9 @@ import React, { useCallback, useLayoutEffect, useRef } from 'react'
 import { jsx, jsxs } from 'react/jsx-runtime'
 
 /* eslint-disable camelcase */
-import { cometSuspenseHUDReact } from '@metamon/common'
-import { useStable } from '@metamon/hooks'
-import executionEnvironment from '@metamon/utils/common/execution-environment'
+import { cometSuspenseHUDReact } from '@negiganaito/common'
+import { useStable } from '@negiganaito/hooks'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
 
 import HeroPlaceholder from './hero-placeholder'
 

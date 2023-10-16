@@ -3,17 +3,13 @@ import {
   IconSource,
   ImageIconSource,
   CometImage,
-} from '@metamon/image'
+} from '@negiganaito/image'
 import {
   EmojiIcon,
   LegacySVGIcon,
   SVGIcon,
-} from '@metamon/utils/common/svg-icon'
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
+} from '@negiganaito/utils/common/svg-icon'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
 import React, { useMemo } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'

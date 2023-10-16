@@ -1,10 +1,8 @@
 /* eslint-disable camelcase */
-import { ActiveFocusRegionUtilsContext } from '@metamon/context'
-import { useUnsafeRef_DEPRECATED } from '@metamon/hooks'
-import { useCallback, useRef } from 'react'
+import { ActiveFocusRegionUtilsContext } from '@negiganaito/context'
+import { useUnsafeRef_DEPRECATED } from '@negiganaito/hooks'
+import React, { useCallback, useRef } from 'react'
 
-// @ts-ignore
-import { jsx } from 'react/jsx-runtime'
 import { FocusRegion } from './focus-region'
 
 type FocusAppWrapperProps = {
@@ -29,11 +27,12 @@ export function FocusAppWrapper({ children }: FocusAppWrapperProps) {
     getActiveFocusRegion: getActiveFocusRegion,
     setActiveFocusRegion: setActiveFocusRegion,
   })
-  return jsx(ActiveFocusRegionUtilsContext.Provider, {
-    // @ts-ignore
-    value: activeFocusRegionUtilsValue.current,
-    children: jsx(FocusRegion, {
-      children,
-    }),
-  })
+  return (
+    <ActiveFocusRegionUtilsContext.Provider
+      value={activeFocusRegionUtilsValue.current}
+    >
+      {/*@ts-ignore */}
+      <FocusRegion>{children}</FocusRegion>
+    </ActiveFocusRegionUtilsContext.Provider>
+  )
 }

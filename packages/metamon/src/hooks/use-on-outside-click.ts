@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from 'react'
-import { HiddenSubtreePassiveContext } from '@metamon/context'
-import { isWithinThreshold } from '@metamon/utils/common/pointer-event-distance'
+import { HiddenSubtreePassiveContext } from '@negiganaito/context'
+import { isWithinThreshold } from '@negiganaito/utils/common/pointer-event-distance'
 
 export function useOnOutsideClick(a: any, b: any) {
   const e = useRef<any>(null)

@@ -4,7 +4,7 @@ import React, { ReactNode, useCallback, useContext, useId, useRef } from 'react'
 import { jsx } from 'react/jsx-runtime'
 
 import { BaseTooltipGroup } from '../base-tooltip-group'
-import { useDelayedState } from '@metamon/hooks'
+import { useDelayedState } from '@negiganaito/hooks'
 import { BaseTooltipTargetWrapper } from '../base-tooltip-target-wrapper'
 
 type BaseTooltipProps = {

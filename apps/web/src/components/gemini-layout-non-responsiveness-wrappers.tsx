@@ -1,6 +1,6 @@
-import { useGeminiLayoutUserSettingsFullWidthMode } from '@/context'
+import { useGeminiLayoutUserSettingsFullWidthMode } from '@/context/gemini-layout-full-width-mode-context'
 import { useNavUIState } from '@/context/gemini-nav-and-channel-context'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 import { forwardRef } from 'react'
 
 // @ts-ignore
@@ -51,7 +51,9 @@ const useStyles = makeStyles({
     position: 'relative',
     minWidth: '96px',
     maxWidth: '96px',
-    zIndex: 3,
+    // TODO : bug
+    zIndex: 0,
+    // zIndex: 3,
     '@media print': {
       display: 'none',
     },
@@ -81,11 +83,13 @@ export function GeminiLayoutPageWrapper({
   const { isAutoHideEnabled } = useNavUIState()
   const pageContainerFixedWidth = useGeminiLayoutUserSettingsFullWidthMode()
   return children(
-    classes.pageContainer,
-    k && classes.pageContainerWP4MAppBar,
-    isAutoHideEnabled && classes.pageContainerWithoutChannel,
-    k && isAutoHideEnabled && classes.pageContainerWithoutChannelWP4MAppBar,
-    !pageContainerFixedWidth && classes.pageContainerFixedWidth,
+    mergeClasses(
+      classes.pageContainer,
+      k && classes.pageContainerWP4MAppBar,
+      isAutoHideEnabled && classes.pageContainerWithoutChannel,
+      k && isAutoHideEnabled && classes.pageContainerWithoutChannelWP4MAppBar,
+      !pageContainerFixedWidth && classes.pageContainerFixedWidth,
+    ),
   )
 }
 

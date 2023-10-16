@@ -5,7 +5,7 @@ import { jsx } from 'react/jsx-runtime'
 import { BaseHeadingContext } from '@fb/context/base-heading-context'
 import { useBaseTextContext } from '@fb/context/base-text-context'
 // @ts-ignore
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { useStyles } from './styles'
 

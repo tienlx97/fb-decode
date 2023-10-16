@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useEvent } from '@metamon/hooks'
+import { useEvent } from '@negiganaito/hooks'
 
 const i = {
   passive: !0,

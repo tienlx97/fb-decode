@@ -3,11 +3,11 @@ import React, { useLayoutEffect, useRef } from 'react'
 import { jsx, jsxs } from 'react/jsx-runtime'
 import { useTooltipDelayedContent } from '../../hooks'
 
-import { HeroInteractionContextPassthrough } from '@metamon/common'
-import { useFadeEffect } from '@metamon/hooks'
-import { BaseContextualLayer } from '@metamon/popover'
-import { mergeClasses } from '@fluentui/react-components'
-import { CometPlaceholder } from '@metamon/placeholder'
+import { HeroInteractionContextPassthrough } from '@negiganaito/common'
+import { useFadeEffect } from '@negiganaito/hooks'
+import { BaseContextualLayer } from '@negiganaito/popover'
+import { mergeClasses } from '@griffel/react'
+import { CometPlaceholder } from '@negiganaito/placeholder'
 import { useDummyStyles, useStyles } from './styles'
 
 type BaseTooltipImplProps = {
