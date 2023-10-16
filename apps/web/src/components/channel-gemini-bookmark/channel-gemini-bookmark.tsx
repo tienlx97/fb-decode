@@ -6,12 +6,12 @@ import { BookmarkIcon } from '@/icons/channel-gemini-item-icon'
 
 type ChannelGeminiBookmarkProps = {
   addOnSecondary?: any
-  entityKey?: any
+  entityKey?: string
   href?: string
   icon?: any
   meta?: any
   onPress?: any
-  selected?: boolean
+  selected: boolean
   subtitle?: any
   testid?: string
   title?: string
@@ -34,16 +34,16 @@ export function ChannelGeminiBookmark({
       name={'bookmark' + (entityKey ? '.' + serialize(entityKey) : '')}
     >
       <WorkGalahadUIChannelItem
-        addOnPrimary={icon == null ? void 0 : <BookmarkIcon image={icon} />}
+        addOnPrimary={!icon ? undefined : <BookmarkIcon image={icon} />}
         linkProps={
-          href != null
+          href
             ? {
                 url: href,
               }
-            : void 0
+            : undefined
         }
-        onPress={(a: any) => {
-          onPress && onPress(a)
+        onPress={(event: any) => {
+          onPress && onPress(event)
         }}
         selected={selected}
         headline={title}

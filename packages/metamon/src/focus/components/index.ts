@@ -23,3 +23,4 @@ export {
   WorkGalahadChannelFocusableTableCell,
   WorkGalahadChannelFocusableTableRow,
 } from './channel-gemini-focusable-table'
+export { FocusAppWrapper } from './focus-app-wrapper'
