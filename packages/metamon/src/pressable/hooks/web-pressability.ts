@@ -1,4 +1,9 @@
-import { useFocus, useHover, usePress, useContextMenu } from '@metamon/focus'
+import {
+  useFocus,
+  useHoverfocus,
+  usePress,
+  useContextMenu,
+} from '@negiganaito/focus'
 
 export function usePressability(targetRef: any, options: any) {
   const {
@@ -19,7 +24,7 @@ export function usePressability(targetRef: any, options: any) {
     preventContextMenu,
   } = options
 
-  useHover(targetRef, {
+  useHoverfocus(targetRef, {
     disabled,
     onHoverChange,
     onHoverEnd,

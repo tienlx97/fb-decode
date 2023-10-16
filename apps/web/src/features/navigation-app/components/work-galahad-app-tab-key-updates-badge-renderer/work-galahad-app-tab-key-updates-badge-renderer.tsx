@@ -1,4 +1,4 @@
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React from 'react'
 import { useStyles } from './styles'
 

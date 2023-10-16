@@ -13,9 +13,9 @@ import React, {
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { useUnsafeRef_DEPRECATED } from '@metamon/hooks'
-import { useKeyboard } from '@metamon/keyboards'
-import { stopEventHookPropagation } from '@metamon/utils/common/react-event-hook-propagation'
+import { useUnsafeRef_DEPRECATED } from '@negiganaito/hooks'
+import { useKeyboard } from '@negiganaito/keyboards'
+import { stopEventHookPropagation } from '@negiganaito/utils/common/react-event-hook-propagation'
 
 import { useFocusWithin } from '../hooks'
 import {
@@ -28,7 +28,7 @@ import {
   RecoverFocusStrategy,
   setElementCanTab,
 } from '../util'
-import { ActiveFocusRegionUtilsContext } from '@metamon/context'
+import { ActiveFocusRegionUtilsContext } from '@negiganaito/context'
 
 type FocusRegionProps = {
   autoFocusQuery?: any

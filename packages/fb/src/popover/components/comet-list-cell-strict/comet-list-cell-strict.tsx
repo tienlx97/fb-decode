@@ -7,7 +7,7 @@ import CometFocusGroupContext from '@fb/context/comet-focus-group-context'
 import CometFocusTableContext from '@fb/context/comet-focus-table-context'
 import { TetraText, TetraTextPairing } from '@fb/tetra-text'
 import { getItemRoleFromCompositeRole } from '@fb/utils/get-item-role-from-composite-role'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React, { forwardRef, useContext } from 'react'
 
 // @ts-ignore

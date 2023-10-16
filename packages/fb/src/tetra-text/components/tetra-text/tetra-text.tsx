@@ -9,7 +9,7 @@ import {
 import { useCometDensityModeContext } from '@fb/context/comet-density-mode-context'
 import { CometTextContext } from '@fb/context/comet-text-context'
 import { CometTextTypography, TypeKeys } from '@fb/styles'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { BaseHeading } from '../base-heading'
 import { CometLineClamp } from '../comet-line-clamp'

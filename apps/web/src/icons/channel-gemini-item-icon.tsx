@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { makeStyles } from '@fluentui/react-components'
-import { CometImage } from '@metamon/image'
+import { makeStyles } from '@griffel/react'
+import { CometImage } from '@negiganaito/image'
 
 type BookmarkIconProps = {
   image?: any

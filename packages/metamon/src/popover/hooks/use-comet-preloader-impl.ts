@@ -1,5 +1,5 @@
-import { CometMouseActivity } from '@metamon/utils/common/comet-mouse-activity'
-import JSScheduler from '@metamon/utils/common/jss-scheduler'
+import { CometMouseActivity } from '@negiganaito/utils/common/comet-mouse-activity'
+import JSScheduler from '@negiganaito/utils/common/jss-scheduler'
 import { useCallback, useEffect, useRef } from 'react'
 
 function isMousePointerType(a: any) {

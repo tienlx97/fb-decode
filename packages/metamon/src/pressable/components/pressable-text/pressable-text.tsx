@@ -3,11 +3,11 @@ import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { WebPressableGroupContext } from '../../context'
-import { useMergeRefs } from '@metamon/hooks'
-import { makeEventOptions } from '@metamon/utils/common/passive-event-listener-util'
-import { isBrowser } from '@metamon/utils/user-agent'
+import { useMergeRefs } from '@negiganaito/hooks'
+import { makeEventOptions } from '@negiganaito/utils/common/passive-event-listener-util'
+import { isBrowser } from '@negiganaito/utils/user-agent'
 
 import { usePressability } from '../../hooks'
 import { useStyles } from './styles'

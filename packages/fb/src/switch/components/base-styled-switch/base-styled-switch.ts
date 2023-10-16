@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 import { BaseSwitch } from '../base-switch'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import BaseView from '@fb/components/base-view'
 import { BaseRow } from '@fb/components/base-row'
 import { BaseRowItem } from '@fb/components/base-row-item'

@@ -7,7 +7,7 @@
     "noEmit": true,
     "types": ["node"],
     "paths": {
-      "@metamon/*": ["./src/*"]
+      "@negiganaito/*": ["./src/*"]
     },
     "allowJs": true,
     "rootDir": "."

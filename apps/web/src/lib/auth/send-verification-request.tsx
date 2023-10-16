@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SignInEmail } from '@/components'
+import { SignInEmail } from '@/components/signin-email'
 import { siteConfig } from '@/config'
 import { db } from '@/lib/db'
 import { emailClient } from '@/lib/email'

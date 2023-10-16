@@ -1,11 +1,7 @@
 import { CometIcon, IconSource, ImageIconSource } from '@fb/tetra-icon'
 import CometImage from '@fb/tetra-icon/components/comet-image'
 import { EmojiIcon, LegacySVGIcon, SVGIcon } from '@fb/utils'
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
 import React, { useMemo } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'

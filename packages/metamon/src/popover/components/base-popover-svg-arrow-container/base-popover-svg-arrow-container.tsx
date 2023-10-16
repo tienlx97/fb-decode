@@ -2,12 +2,12 @@ import React, { forwardRef, ReactNode, useContext, useMemo } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import {
   BaseContextualLayerContextSizeContext,
   BaseContextualLayerLayerAdjustmentContext,
   BaseContextualLayerOrientationContext,
-} from '@metamon/context'
+} from '@negiganaito/context'
 
 import BasePopoverDownEdgeArrow from '../base-popover-down-edge-arrow'
 import BasePopoverDownInsetArrow from '../base-popover-down-inset-arrow'

@@ -5,7 +5,7 @@
   "main": "./src/index.tsx",
   "types": "./src/index.tsx",
   "dependencies": {
-    "@fluentui/react-components": "latest",
+    "@griffel/react": "1.5.16",
     "@types/react": "18.2.21",
     "next": "link:/home/tienlx97/work/next.js/packages/next",
     "react": "workspace:*",

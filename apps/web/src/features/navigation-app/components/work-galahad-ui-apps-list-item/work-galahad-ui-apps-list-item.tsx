@@ -1,5 +1,5 @@
 import React, { ReactNode, forwardRef } from 'react'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 type WorkGalahadUIAppsListItemProps = {
   withTopSpacing: boolean

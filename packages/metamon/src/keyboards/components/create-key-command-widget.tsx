@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect } from 'react'
 import { createKeyCommandWrapper } from './create-key-command-wrapper'
-import { recoverableViolation } from '@metamon/error'
+import { recoverableViolation } from '@negiganaito/error'
 
 export default function createKeyCommandWidget(isFocusCapture = true) {
   const context = createContext<any>(undefined)

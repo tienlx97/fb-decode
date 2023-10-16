@@ -23,11 +23,7 @@ import { CometIcon, fbicon } from '@fb/tetra-icon'
 import { CometFormInputWrapper } from '@fb/tetra-text'
 /* eslint-disable camelcase */
 import { emptyFunction } from '@fb/utils/empty-function'
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
 
 import useCometFormSelectMenuTriggerKeyDownHandler from '../../hooks/use-comet-form-select-menu-trigger-key-down-handler'
 import useCometFormSelectOnlyComboboxKeyConfigs from '../../hooks/use-comet-form-select-only-combobox-key-configs'

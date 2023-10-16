@@ -2,9 +2,9 @@ import React from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { useCometTheme } from '@metamon/hooks'
-import { CometProgressRingIndeterminate } from '@metamon/popover'
-import { TetraTextPairing } from '@metamon/text'
+import { useCometTheme } from '@negiganaito/hooks'
+import { CometProgressRingIndeterminate } from '@negiganaito/popover'
+import { TetraTextPairing } from '@negiganaito/text'
 
 import { BaseTooltipImpl } from './base-tooltip-impl'
 

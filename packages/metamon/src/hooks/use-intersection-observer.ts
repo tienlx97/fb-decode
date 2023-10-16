@@ -1,9 +1,9 @@
 import { useCallback, useLayoutEffect, useRef } from 'react'
 
-import DOM from '@metamon/utils/common/dom-rect-read-only'
-import executionEnvironment from '@metamon/utils/common/execution-environment'
-import JSScheduler from '@metamon/utils/common/jss-scheduler'
-import { observeIntersection } from '@metamon/utils/common/observe-intersection'
+import DOM from '@negiganaito/utils/common/dom-rect-read-only'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
+import JSScheduler from '@negiganaito/utils/common/jss-scheduler'
+import { observeIntersection } from '@negiganaito/utils/common/observe-intersection'
 
 import { useDynamicCallbackDANGEROUS } from './use-dynamic-callback-DANGEROUS'
 

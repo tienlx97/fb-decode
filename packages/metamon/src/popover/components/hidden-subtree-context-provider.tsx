@@ -14,9 +14,9 @@ import { jsx } from 'react/jsx-runtime'
 import {
   HiddenSubtreeContext,
   HiddenSubtreePassiveContext,
-} from '@metamon/context'
-import { removeFromArray } from '@metamon/utils/common/remove-from-array'
-import { useUnsafeRef_DEPRECATED } from '@metamon/hooks'
+} from '@negiganaito/context'
+import { removeFromArray } from '@negiganaito/utils/common/remove-from-array'
+import { useUnsafeRef_DEPRECATED } from '@negiganaito/hooks'
 
 function o(a: any, b: any) {
   return a.backgrounded === b.backgrounded && a.hidden === b.hidden

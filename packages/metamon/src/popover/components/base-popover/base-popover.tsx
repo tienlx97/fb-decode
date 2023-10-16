@@ -2,7 +2,7 @@ import React, { forwardRef, ReactNode } from 'react'
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { useStyles } from './styles'
 

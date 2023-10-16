@@ -6,16 +6,16 @@ import React, { forwardRef } from 'react'
 import { jsx } from 'react/jsx-runtime'
 
 import { useStyles } from './styles'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { CometPlaceholder, CometPressable } from '@fb/components'
 import { WorkGalahadUIBaseAppTabBadge } from '../work-galahad-app-tab-key-updates-badge-renderer'
 import ErrorBoundaryReact from '@fb/error/errorguard/ErrorBoundary.react'
 
 const CometTooltip = dynamic(() =>
-  import('@metamon/tooltip').then(r => r.CometTooltip),
+  import('@negiganaito/tooltip').then(r => r.CometTooltip),
 )
 
-// import { CometTooltip } from '@metamon/tooltip'
+// import { CometTooltip } from '@negiganaito/tooltip'
 
 import dynamic from 'next/dynamic'
 

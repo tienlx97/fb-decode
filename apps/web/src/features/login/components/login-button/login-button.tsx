@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import { SpinnerIcon } from 'ui'
+import SpinnerIcon from '@/icons/spinner'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { useStyles } from './styles'
 

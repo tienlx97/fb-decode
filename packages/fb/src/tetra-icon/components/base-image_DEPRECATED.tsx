@@ -12,7 +12,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 type BaseImage_DEPRECATEDProps = {
   alt: string

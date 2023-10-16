@@ -1,7 +1,7 @@
-import { mergeRefs } from '@metamon/hooks'
+import { mergeRefs } from '@negiganaito/hooks'
 import { forwardRef, useMemo, useRef } from 'react'
 import BaseImage from './base-image'
-import { xplatToDOMRef } from '@metamon/utils/common/xplat-to-dom-ref'
+import { xplatToDOMRef } from '@negiganaito/utils/common/xplat-to-dom-ref'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'

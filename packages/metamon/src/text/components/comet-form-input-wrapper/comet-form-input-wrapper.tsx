@@ -11,10 +11,10 @@ import React, {
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { BaseFocusRing, FocusWithinHandler } from '@metamon/focus'
-import { useMergeRefs } from '@metamon/hooks'
-import isBlueprintStylesEnabled from '@metamon/utils/common/is-blueprint-styles-enabled'
+import { mergeClasses } from '@griffel/react'
+import { BaseFocusRing, FocusWithinHandler } from '@negiganaito/focus'
+import { useMergeRefs } from '@negiganaito/hooks'
+import isBlueprintStylesEnabled from '@negiganaito/utils/common/is-blueprint-styles-enabled'
 
 import CometFormInputWrapperHelperText from '../comet-form-input-wrapper-helper-text'
 

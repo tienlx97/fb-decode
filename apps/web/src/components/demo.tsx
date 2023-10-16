@@ -1,24 +1,14 @@
 'use client'
 
 import * as React from 'react'
-// import { TetraText } from '@metamon/text'
-import { CometTab, TetraButton, TetraText } from '@metamon/react-components'
-// import { CometFormTextArea } from '@metamon/textarea'
-// import { CometFormTextInput } from '@metamon/input'
-// import { CometSwitch } from '@metamon/switch'
-// import { CometFormSelectOnlyCombobox } from '@metamon/combobox'
+// import { TetraText } from '@negiganaito/text'
+import { CometTab, TetraButton, TetraText } from '@negiganaito/react-components'
+// import { CometFormTextArea } from '@negiganaito/textarea'
+// import { CometFormTextInput } from '@negiganaito/input'
+// import { CometSwitch } from '@negiganaito/switch'
+// import { CometFormSelectOnlyCombobox } from '@negiganaito/combobox'
 
 // import { TetraButton } from '@fb/tetra-button'
-import {
-  CaretDownFilled,
-  CaretDownSvg,
-  // CometCircleButton,
-  // legacySVGIcon,
-  // CometFormTextArea,
-  // CometFormTextInput,
-  // CometSwitch,
-  // CometFormSelectOnlyCombobox,
-} from 'fb'
 
 export const Default = () => {
   const [state, setState] = React.useState(

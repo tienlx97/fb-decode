@@ -9,7 +9,7 @@ import { LegacyHidden } from './legacy-hidden'
 //   },
 // )
 
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 type BaseViewReactProps = {
   suppressHydrationWarning?: boolean

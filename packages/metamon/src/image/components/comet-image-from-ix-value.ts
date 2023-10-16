@@ -7,9 +7,9 @@ import { processSpritedImagesForSSRPreload } from '../utils'
 import coerceImageishSprited from '../utils/coerce-imageish-sprited'
 import coerceImageishURL from '../utils/coerce-imageish-url'
 import BaseImage from './base-image'
-import { xplatToDOMRef } from '@metamon/utils/common/xplat-to-dom-ref'
-import { RecoverableViolationWithComponentStack } from '@metamon/error'
-import { mergeClasses } from '@fluentui/react-components'
+import { xplatToDOMRef } from '@negiganaito/utils/common/xplat-to-dom-ref'
+import { RecoverableViolationWithComponentStack } from '@negiganaito/error'
+import { mergeClasses } from '@griffel/react'
 
 type CometImageFromIXValueProps = {
   alt?: string

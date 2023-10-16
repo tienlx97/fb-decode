@@ -1,5 +1,5 @@
 /* eslint-disable no-self-assign */
-import { filterNulls } from '@metamon/utils/common/filter-nulls'
+import { filterNulls } from '@negiganaito/utils/common/filter-nulls'
 import { tableCellScopeQuery } from './focus-scope-queries'
 import { setElementCanTab } from './set-element-can-tab'
 import { focusElement } from './focus-manager'

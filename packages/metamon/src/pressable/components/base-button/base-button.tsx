@@ -10,7 +10,7 @@ const Pressable = dynamic(() => import('../pressable').then(r => r.Pressable), {
 })
 
 import { PressableText } from '../pressable-text'
-import { BaseButtonPopoverContext } from '@metamon/context'
+import { BaseButtonPopoverContext } from '@negiganaito/context'
 import dynamic from 'next/dynamic'
 
 type BaseButtonProps = any

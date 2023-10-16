@@ -1,4 +1,4 @@
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 import React from 'react'
 
 // @ts-ignore

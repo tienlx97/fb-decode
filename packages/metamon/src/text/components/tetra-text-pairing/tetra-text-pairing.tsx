@@ -4,7 +4,7 @@ import { getTetraTextHierarchyStyle } from '../../utils'
 
 import { CometHeadlineWithAddOn } from '../comet-headline-with-addon'
 import { TetraText } from '../tetra-text'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useLevelStyles, useStyles } from './styles'
 
 type TetraTextPairingProps = {

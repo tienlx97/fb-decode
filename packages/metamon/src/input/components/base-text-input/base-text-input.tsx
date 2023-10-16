@@ -2,8 +2,8 @@ import React, { forwardRef, memo } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { BaseFocusRing } from '@metamon/focus'
+import { mergeClasses } from '@griffel/react'
+import { BaseFocusRing } from '@negiganaito/focus'
 
 import { BaseInput } from '../base-input'
 import { useStyles } from './styles'

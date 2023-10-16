@@ -9,12 +9,12 @@ import React, {
 import {
   BaseViewportMarginsContext,
   HiddenSubtreePassiveContext,
-} from '@metamon/context'
-import { cometVisibilityUserActivityMonitor } from '@metamon/event'
-import { getStyleProperty } from '@metamon/utils/common//get-style-property'
-import { onBeforeUnload } from '@metamon/utils/common/comet-run'
-import { getIntersectionMarginFromViewportMargin } from '@metamon/utils/common/get-intersection-margin-from-viewport-margin'
-import { intersectionObserverEntryIsIntersecting } from '@metamon/utils/common/intersection-observer-entry-is-intersecting'
+} from '@negiganaito/context'
+import { cometVisibilityUserActivityMonitor } from '@negiganaito/event'
+import { getStyleProperty } from '@negiganaito/utils/common//get-style-property'
+import { onBeforeUnload } from '@negiganaito/utils/common/comet-run'
+import { getIntersectionMarginFromViewportMargin } from '@negiganaito/utils/common/get-intersection-margin-from-viewport-margin'
+import { intersectionObserverEntryIsIntersecting } from '@negiganaito/utils/common/intersection-observer-entry-is-intersecting'
 
 // eslint-disable-next-line camelcase
 import useDoubleEffectHack_DO_NOT_USE_THIS_IS_TRACKED from './use-double-effect-hack_DO_NOT_USE_THIS_IS_TRACKED'

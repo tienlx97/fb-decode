@@ -4,6 +4,7 @@ import React, { SVGProps } from 'react'
 
 export default function Logo(props: SVGProps<SVGSVGElement>) {
   return (
+    // @ts-ignore
     <svg
       width={250}
       height={40}

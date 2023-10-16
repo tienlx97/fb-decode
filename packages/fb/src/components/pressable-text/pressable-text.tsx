@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import WebPressableGroupContext from '@fb/context/web-pressable-group-context'
 import { useMergeRefs } from '@fb/hooks/use-merge-refs'
 import { usePressability } from '@fb/hooks/web-pressability'

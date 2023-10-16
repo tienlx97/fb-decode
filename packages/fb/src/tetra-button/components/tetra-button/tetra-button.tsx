@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React, { ReactNode, forwardRef, useRef } from 'react'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import CometGHLRenderingContext from '@fb/context/comet-ghl-rendering-context'
 import BaseStyledButton from '../base-styled-button/base-styled-button'
 // @ts-ignore

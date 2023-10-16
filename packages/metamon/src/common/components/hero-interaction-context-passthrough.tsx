@@ -3,7 +3,7 @@ import {
   HeroCurrentInteractionForLoggingContext,
   HeroCurrentInteractionForLoggingContextProps,
   RelayProfilerContext,
-} from '@metamon/context'
+} from '@negiganaito/context'
 
 import {
   HERO_INTERACTION_DEFAULT_CONTEXT_VALUE,

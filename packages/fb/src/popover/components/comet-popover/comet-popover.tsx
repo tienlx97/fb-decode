@@ -2,7 +2,7 @@ import BaseContextualLayerOrientationContext from '@fb/context/base-contextual-l
 import React, { ReactNode, forwardRef, useContext } from 'react'
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import {
   useAboveStyles,
   useBelowStyles,

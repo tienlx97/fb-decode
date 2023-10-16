@@ -9,10 +9,10 @@ import React, {
 } from 'react'
 import { CometPressableOverlay } from '../comet-pressable-overlay'
 import { CometContainerPressableContext } from '../../context'
-import { CometDangerouslySuppressInteractiveElementsContext } from '@metamon/context'
-import { useMergeRefs } from '@metamon/hooks'
+import { CometDangerouslySuppressInteractiveElementsContext } from '@negiganaito/context'
+import { useMergeRefs } from '@negiganaito/hooks'
 import { BaseLink } from '../base-link'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import BaseButton from '../base-button/base-button'
 import { useStyles } from './styles'
 

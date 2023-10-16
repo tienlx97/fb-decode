@@ -18,7 +18,7 @@ import useVisibilityObserver from '@fb/hooks/use-visibility-observer'
 import useUnsafeRef_DEPRECATED from '@fb/hooks/useUnsafeRef_DEPRECATED'
 import { CometDebounce } from '@fb/utils/comet-debounce'
 import { isBrowser, isPlatform } from '@fb/utils/user-agent'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useDummyStyles, useOStyles, usePStyles, useTStyles } from './styles'
 
 type BaseScrollableAreaProps = {

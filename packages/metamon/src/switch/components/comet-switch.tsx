@@ -2,7 +2,7 @@ import React, { ReactNode, forwardRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { BaseStyledSwitch } from './base-styled-switch'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 // @ts-ignore
 interface CometSwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {

@@ -4,20 +4,20 @@ import React, { ReactNode } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 import CometSeparatorMenuItem from '../comet-separator-menu-item'
-import { CometErrorBoundary } from '@metamon/error'
+import { CometErrorBoundary } from '@negiganaito/error'
 import { BaseScrollableArea } from '../base-scrollable-area'
-import { CometMenuItemBaseRoleContext } from '@metamon/context'
-import { CometListCellStrict } from '@metamon/cell'
-import { TetraTextPairing } from '@metamon/text'
+import { CometMenuItemBaseRoleContext } from '@negiganaito/context'
+import { CometListCellStrict } from '@negiganaito/cell'
+import { TetraTextPairing } from '@negiganaito/text'
 import {
   FocusRegion,
   tabbableScopeQuery,
   FocusGroup,
   handleFirstLetterNavigation,
-} from '@metamon/focus'
+} from '@negiganaito/focus'
 import { useStyles, usedummyStyles } from './styles'
-import { fbicon } from '@metamon/image'
-import { mergeClasses } from '@fluentui/react-components'
+import { fbicon } from '@negiganaito/image'
+import { mergeClasses } from '@griffel/react'
 
 type CometMenuBaseProps = {
   children?: any

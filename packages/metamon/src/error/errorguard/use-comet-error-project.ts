@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CometErrorProjectContext } from '@metamon/context'
+import { CometErrorProjectContext } from '@negiganaito/context'
 
 function useCometErrorProject() {
   return useContext(CometErrorProjectContext)

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import isStringNullOrEmpty from '@metamon/utils/common/is-string-null-or-empty'
+import isStringNullOrEmpty from '@negiganaito/utils/common/is-string-null-or-empty'
 
 export const getFirstLetterNavigationTag = function (a: any) {
   return a.slice(0, 1).toLowerCase()

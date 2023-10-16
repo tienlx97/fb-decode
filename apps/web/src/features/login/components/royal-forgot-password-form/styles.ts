@@ -1,4 +1,4 @@
-import { makeStyles, shorthands } from '@fluentui/react-components'
+import { makeStyles, shorthands } from '@griffel/react'
 
 const FORGOT_PASSWORD_WIDTH = '500px'
 

@@ -15,7 +15,7 @@ import { BaseFocusRing } from '@fb/focus/components/base-focus-ring'
 import FocusWithinHandler from '@fb/focus/components/focus-within-handler'
 import { useMergeRefs } from '@fb/hooks/use-merge-refs'
 import isBlueprintStylesEnabled from '@fb/utils/is-blueprint-styles-enabled'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import CometFormInputWrapperHelperText from '../comet-form-input-wrapper-helper-text'
 import { useBluePrintStyles, useCursorStyles, useStyles } from './styles'

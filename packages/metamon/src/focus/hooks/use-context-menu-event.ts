@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 
-import { useEvent as ReactUseEvent } from '@metamon/hooks'
+import { useEvent as ReactUseEvent } from '@negiganaito/hooks'
 import {
   hasEventHookPropagationStopped,
   stopEventHookPropagation,
-} from '@metamon/utils/common/react-event-hook-propagation'
+} from '@negiganaito/utils/common/react-event-hook-propagation'
 
 export function useContextMenu(target: any, options: any) {
   const { disabled, onContextMenu, preventDefault } = options

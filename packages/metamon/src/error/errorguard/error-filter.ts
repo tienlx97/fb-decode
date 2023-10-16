@@ -1,5 +1,5 @@
 /* eslint-disable prefer-const */
-import { performanceNow } from '@metamon/utils/common/performance-now'
+import { performanceNow } from '@negiganaito/utils/common/performance-now'
 import { NormalizeErrorProps } from './types'
 
 interface ErrorFilterProp {

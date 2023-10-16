@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { jsx } from 'react/jsx-runtime'
 
 import { useCurrentDisplayMode } from './use-current-display-mode'
-import { BaseThemeDisplayModeContext } from '@metamon/context'
+import { BaseThemeDisplayModeContext } from '@negiganaito/context'
 
 const THEME_CLASSES = {
   dark: '__fb-dark-mode ',

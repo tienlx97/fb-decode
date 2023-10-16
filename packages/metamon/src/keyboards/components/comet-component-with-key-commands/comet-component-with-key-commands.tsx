@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react'
 import { jsx, jsxs } from 'react/jsx-runtime'
 
 import CometKeyCommandWrapper from '../comet-key-command-wrapper'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import useKeyCommands from '../../hooks/use-key-commands'
 import { useStyles } from './styles'
 

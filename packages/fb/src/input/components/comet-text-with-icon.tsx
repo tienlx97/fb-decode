@@ -1,6 +1,6 @@
 import BaseView from '@fb/components/base-view'
 import CometNonBreakingSpace from '@fb/components/comet-non-breaking-space'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 import React, { CSSProperties, ReactNode } from 'react'
 
 // @ts-ignore

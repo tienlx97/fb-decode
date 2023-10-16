@@ -1,5 +1,8 @@
 import React from 'react'
-import { cometKeys, CometComponentWithKeyCommands } from '@metamon/keyboards'
+import {
+  cometKeys,
+  CometComponentWithKeyCommands,
+} from '@negiganaito/keyboards'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { createFocusGroup } from './focus-group'

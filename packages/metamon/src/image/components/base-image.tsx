@@ -1,12 +1,12 @@
-import { mergeRefs } from '@metamon/hooks'
-import executionEnvironment from '@metamon/utils/common/execution-environment'
+import { mergeRefs } from '@negiganaito/hooks'
+import executionEnvironment from '@negiganaito/utils/common/execution-environment'
 import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
 import { addImage } from '../utils'
-import { RecoverableViolationWithComponentStack } from '@metamon/error'
+import { RecoverableViolationWithComponentStack } from '@negiganaito/error'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 type BaseImageProps = React.JSX.IntrinsicElements['img'] & {
   alt?: boolean

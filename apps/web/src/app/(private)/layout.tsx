@@ -2,7 +2,8 @@ import React from 'react'
 import { redirect } from 'next/navigation'
 
 import { getCurrentUser } from '@/lib/auth'
-import { PrivateLayout } from '@/features/layout'
+
+import GeminiApp from '@/components/gemini-app'
 
 async function getData() {
   const user = await getCurrentUser()
@@ -19,10 +20,5 @@ interface Props {
 export default async function AuthLayout({ children }: Props) {
   await getData()
 
-  return (
-    <PrivateLayout>
-      {/* @ts-ignore */}
-      {children}
-    </PrivateLayout>
-  )
+  return <GeminiApp>{children}</GeminiApp>
 }

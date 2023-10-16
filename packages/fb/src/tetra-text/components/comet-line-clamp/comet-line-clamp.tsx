@@ -1,5 +1,5 @@
 import React, { CSSProperties, ReactNode, forwardRef, useRef } from 'react'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { CometTextTypography, TypeKeys } from '@fb/styles'
 

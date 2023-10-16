@@ -12,11 +12,14 @@ import React, {
 // @ts-ignore
 import { jsxs, jsx } from 'react/jsx-runtime'
 
-import { HeroFallbackTracker, HeroInteractionIDContext } from '@metamon/common'
+import {
+  HeroFallbackTracker,
+  HeroInteractionIDContext,
+} from '@negiganaito/common'
 
-import * as HeroPlaceholderUtils from '@metamon/utils/common/hero-placeholder-utils'
-import { HeroInteractionContext } from '@metamon/common'
-import { useStable } from '@metamon/hooks'
+import * as HeroPlaceholderUtils from '@negiganaito/utils/common/hero-placeholder-utils'
+import { HeroInteractionContext } from '@negiganaito/common'
+import { useStable } from '@negiganaito/hooks'
 
 type HeroPlaceholderProps = {
   children?: ReactNode

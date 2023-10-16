@@ -13,6 +13,7 @@ type Props = {
   href: string
   icon: string
   isFirst: boolean
+  badgeCount?: number
   onHoverIn?: (...param: any) => any
   onHoverOut?: (...param: any) => any
   onPressIn?: (...param: any) => any

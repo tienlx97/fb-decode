@@ -13,11 +13,14 @@ import {
 import { jsx, jsxs } from 'react/jsx-runtime'
 import ResizeObserver from 'resize-observer-polyfill'
 
-import { BaseScrollableAreaContext } from '@metamon/context'
-import { useVisibilityObserver, useUnsafeRef_DEPRECATED } from '@metamon/hooks'
-import { CometDebounce } from '@metamon/utils/common/comet-debounce'
-import { isBrowser, isPlatform } from '@metamon/utils/user-agent'
-import { mergeClasses } from '@fluentui/react-components'
+import { BaseScrollableAreaContext } from '@negiganaito/context'
+import {
+  useVisibilityObserver,
+  useUnsafeRef_DEPRECATED,
+} from '@negiganaito/hooks'
+import { CometDebounce } from '@negiganaito/utils/common/comet-debounce'
+import { isBrowser, isPlatform } from '@negiganaito/utils/user-agent'
+import { mergeClasses } from '@griffel/react'
 import { useDummyStyles, useOStyles, usePStyles, useTStyles } from './styles'
 
 type BaseScrollableAreaProps = {

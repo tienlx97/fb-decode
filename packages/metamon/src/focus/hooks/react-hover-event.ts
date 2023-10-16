@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 
-import { hasPointerEvents } from '@metamon/utils/common/react-event-helpers'
-import { useEvent } from '@metamon/hooks'
+import { hasPointerEvents } from '@negiganaito/utils/common/react-event-helpers'
+import { useEvent } from '@negiganaito/hooks'
 import {
   hasEventHookPropagationStopped,
   stopEventHookPropagation,
-} from '@metamon/utils/common/react-event-hook-propagation'
+} from '@negiganaito/utils/common/react-event-hook-propagation'
 
 const hoverOptions = {
   passive: true,

@@ -10,16 +10,16 @@ import React, {
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { BaseMultiPageViewContext } from '@metamon/context'
+import { mergeClasses } from '@griffel/react'
+import { BaseMultiPageViewContext } from '@negiganaito/context'
 import {
   FocusInertRegion,
   FocusRegion,
   headerOrTabbableScopeQuery,
   tabbableScopeQuery,
-} from '@metamon/focus'
-import { mergeRefs } from '@metamon/hooks'
-import { emptyFunction } from '@metamon/utils/common/empty-function'
+} from '@negiganaito/focus'
+import { mergeRefs } from '@negiganaito/hooks'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 
 import HiddenSubtreeContextProvider from '../hidden-subtree-context-provider'
 import { useStyles } from './styles'

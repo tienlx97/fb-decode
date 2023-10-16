@@ -1,4 +1,4 @@
-import memoizeWithArgs from '@metamon/utils/common/memoize-with-args'
+import memoizeWithArgs from '@negiganaito/utils/common/memoize-with-args'
 import { TintableIconSource } from '../utils/tintable-icon-source'
 import coerceImageishSprited from '../utils/coerce-imageish-sprited'
 

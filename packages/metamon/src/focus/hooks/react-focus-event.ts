@@ -16,19 +16,19 @@ import {
   hasPointerEvents,
   isMac,
   isRelatedTargetWithin,
-} from '@metamon/utils/common/react-event-helpers'
+} from '@negiganaito/utils/common/react-event-helpers'
 
-import { useEvent } from '@metamon/hooks'
+import { useEvent } from '@negiganaito/hooks'
 
-import { useUnsafeRef_DEPRECATED } from '@metamon/hooks'
+import { useUnsafeRef_DEPRECATED } from '@negiganaito/hooks'
 
-// import checkPassiveEventsSupported from '@metamon/utils/common/check-passive-events-supported'
+// import checkPassiveEventsSupported from '@negiganaito/utils/common/check-passive-events-supported'
 // import gkx from '@ui/etc/gkx'
 
 import {
   hasEventHookPropagationStopped,
   stopEventHookPropagation,
-} from '@metamon/utils/common/react-event-hook-propagation'
+} from '@negiganaito/utils/common/react-event-hook-propagation'
 
 const globalFocusVisibleEvents = hasPointerEvents
   ? ['keydown', 'pointermove', 'pointerdown', 'pointerup']

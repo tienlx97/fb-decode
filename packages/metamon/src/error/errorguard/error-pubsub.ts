@@ -1,4 +1,4 @@
-import { removeFromArray } from '@metamon/utils/common/remove-from-array'
+import { removeFromArray } from '@negiganaito/utils/common/remove-from-array'
 import { Error2 } from './error-2'
 
 import ErrorGuardState from './error-guard-state'

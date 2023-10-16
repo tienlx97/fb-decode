@@ -14,22 +14,22 @@ import { jsx, jsxs } from 'react/jsx-runtime'
 import {
   CometHeroInteractionWithDiv,
   HeroInteractionContextPassthrough,
-} from '@metamon/common'
+} from '@negiganaito/common'
 import {
   BaseButtonPopoverContext,
   BaseScrollableAreaContext,
   CometMenuContext,
-} from '@metamon/context'
-import { CometErrorBoundary } from '@metamon/error'
+} from '@negiganaito/context'
+import { CometErrorBoundary } from '@negiganaito/error'
 import {
   useMergeRefs,
   useOnOutsideClick,
   useVisibilityObserver,
-} from '@metamon/hooks'
-import { CometHideLayerOnEscape } from '@metamon/keyboards'
-import { CometPlaceholder } from '@metamon/placeholder'
-import { useCometPrerendererImpl } from '@metamon/popover/hooks'
-import { getCurrentQueueTime } from '@metamon/utils/common/comet-event-timings'
+} from '@negiganaito/hooks'
+import { CometHideLayerOnEscape } from '@negiganaito/keyboards'
+import { CometPlaceholder } from '@negiganaito/placeholder'
+import { useCometPrerendererImpl } from '@negiganaito/popover/hooks'
+import { getCurrentQueueTime } from '@negiganaito/utils/common/comet-event-timings'
 
 import BaseContextualLayer from '../base-contextual-layer'
 import BaseContextualLayerDefaultContainer from '../base-contextual-layer-default-container'

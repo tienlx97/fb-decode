@@ -10,8 +10,8 @@ import React, {
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
-import { mergeRefs } from '@metamon/hooks'
+import { mergeClasses } from '@griffel/react'
+import { mergeRefs } from '@negiganaito/hooks'
 
 import {
   coerceImageishSprited,

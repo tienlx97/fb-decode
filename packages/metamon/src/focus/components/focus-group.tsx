@@ -15,7 +15,7 @@ import {
 import { jsx } from 'react/jsx-runtime'
 
 import { canElementTab, setElementCanTab } from '../util'
-import { useKeyboard } from '@metamon/keyboards'
+import { useKeyboard } from '@negiganaito/keyboards'
 import {
   hasFocusKeyboardEventPropagationStopped,
   stopFocusKeyboardEventPropagation,

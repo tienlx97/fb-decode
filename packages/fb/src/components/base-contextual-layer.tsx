@@ -39,7 +39,7 @@ import BasePortal from '@fb/portal/components/base-portal'
 import calculateBaseContextualLayerPosition from '@fb/utils/calculate-base-contextual-layer-position'
 import { isElementFixedOrSticky } from '@fb/utils/is-element-fixed-or-sticky'
 import { LayoutAnimationEventType } from '@fb/utils/layout-animation-events'
-import { makeStyles, mergeClasses } from '@fluentui/react-components'
+import { makeStyles, mergeClasses } from '@griffel/react'
 
 import { useResizeObserver } from '../hooks/use-resize-observer.js'
 import BaseContextualLayerAnchorRoot from './base-contextual-layer-anchor-root'

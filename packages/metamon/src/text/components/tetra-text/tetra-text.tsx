@@ -10,9 +10,9 @@ import {
 import {
   CometDensityModeContext,
   useCometDensityModeContext,
-} from '@metamon/context'
-import { CometTextTypography, TypeKeys } from '@metamon/styles'
-import { mergeClasses } from '@fluentui/react-components'
+} from '@negiganaito/context'
+import { CometTextTypography, TypeKeys } from '@negiganaito/styles'
+import { mergeClasses } from '@griffel/react'
 
 import { BaseHeading } from '../base-heading'
 import { CometLineClamp } from '../comet-line-clamp'

@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react'
 //@ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { useBaseInputValidators } from '@metamon/input'
-import { CometFormInputWrapper } from '@metamon/text'
-import { mergeClasses } from '@fluentui/react-components'
+import { useBaseInputValidators } from '@negiganaito/input'
+import { CometFormInputWrapper } from '@negiganaito/text'
+import { mergeClasses } from '@griffel/react'
 
 import { BaseTextArea } from '../base-textarea'
 import { useStyles } from './styles'

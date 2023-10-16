@@ -3,8 +3,8 @@ import React, { createElement, forwardRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { CometPressable } from '@metamon/pressable'
-import { mergeClasses } from '@fluentui/react-components'
+import { CometPressable } from '@negiganaito/pressable'
+import { mergeClasses } from '@griffel/react'
 
 import {
   parseFlightIcon,
@@ -20,7 +20,7 @@ import {
 } from '../comet-svg-icon'
 import { CometTintedIcon } from '../comet-tinted-icon'
 import { useStyles } from './styles'
-import { LegacySVGIcon, SVGIcon } from '@metamon/utils/common/svg-icon'
+import { LegacySVGIcon, SVGIcon } from '@negiganaito/utils/common/svg-icon'
 
 export type CometIconProps = {
   color: CometSVGIconColor

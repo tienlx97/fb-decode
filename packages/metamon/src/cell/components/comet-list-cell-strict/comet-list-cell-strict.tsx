@@ -2,19 +2,19 @@ import React, { forwardRef, useContext } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import { CometIcon, CometSkittleIcon } from '@metamon/image'
-import { mergeClasses } from '@fluentui/react-components'
+import { CometIcon, CometSkittleIcon } from '@negiganaito/image'
+import { mergeClasses } from '@griffel/react'
 import {
   CometCompositeStructureContext,
   CometDensityAwarenessContext,
   CometDensityModeContext,
   CometFocusGroupContext,
   CometFocusTableContext,
-} from '@metamon/context'
+} from '@negiganaito/context'
 /* eslint-disable camelcase */
-import { CometPressable } from '@metamon/pressable'
-import { TetraText, TetraTextPairing } from '@metamon/text'
-import { getItemRoleFromCompositeRole } from '@metamon/utils/common/get-item-role-from-composite-role'
+import { CometPressable } from '@negiganaito/pressable'
+import { TetraText, TetraTextPairing } from '@negiganaito/text'
+import { getItemRoleFromCompositeRole } from '@negiganaito/utils/common/get-item-role-from-composite-role'
 
 import { getEndAddOn } from '../get-list-cell-add-on'
 import {

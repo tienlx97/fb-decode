@@ -3,11 +3,7 @@
 import { CometPressable } from '@fb/components'
 import { BaseRow } from '@fb/components/base-row'
 import { BaseRowItem } from '@fb/components/base-row-item'
-import {
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from '@fluentui/react-components'
+import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
 import React, { CSSProperties, ReactNode, forwardRef, useRef } from 'react'
 // @ts-ignore
 import { jsxs, jsx } from 'react/jsx-runtime'

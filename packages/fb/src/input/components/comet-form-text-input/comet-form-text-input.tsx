@@ -4,7 +4,7 @@ import { CometPressable } from '@fb/components'
 import useBaseInputValidators from '@fb/hooks/use-base-input-validators'
 import { CometIcon } from '@fb/tetra-icon'
 import { CometFormInputWrapper } from '@fb/tetra-text'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React, { forwardRef, useState } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'

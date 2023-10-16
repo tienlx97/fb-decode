@@ -4,7 +4,7 @@ import { jsx } from 'react/jsx-runtime'
 
 import useBaseInputValidators from '@fb/hooks/use-base-input-validators'
 import { CometFormInputWrapper } from '@fb/tetra-text'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { BaseTextArea } from '../base-textarea'
 import { useStyles } from './styles'

@@ -1,7 +1,7 @@
 import { useCurrentDisplayMode } from '@fb/hooks/use-current-display-mode'
 import { getRingColor, getRingGifUrl } from '../comet-progress-ring-utils'
 import BaseLoadingStateElement from '@fb/glimmer/components/base-loading-state-element'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import CometImageFromIXValue from '@fb/tetra-icon/components/comet-image-from-ix-value'
 import { useDummyStyles, useStyles } from './styles'
 

@@ -1,4 +1,4 @@
-import { makeStyles, shorthands } from '@fluentui/react-components'
+import { makeStyles, shorthands } from '@griffel/react'
 
 const LOGIN_WIDTH = '396px'
 

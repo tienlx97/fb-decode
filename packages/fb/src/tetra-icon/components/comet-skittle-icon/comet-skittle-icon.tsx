@@ -1,4 +1,4 @@
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React, { forwardRef } from 'react'
 import { CometIcon } from '../comet-icon'
 import { getBadgePosition } from '@fb/utils/profile-photo-utils'

@@ -4,15 +4,15 @@ import {
   CometIcon,
   CometFormInputPasswordStateIcon,
   ImageIconSource,
-} from '@metamon/image'
-import { CometFormInputWrapper } from '@metamon/text'
-import { mergeClasses } from '@fluentui/react-components'
+} from '@negiganaito/image'
+import { CometFormInputWrapper } from '@negiganaito/text'
+import { mergeClasses } from '@griffel/react'
 import React, { forwardRef, useState } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { BaseTextInput } from '../base-text-input'
 import { useStyles } from './styles'
-import { CometPressable } from '@metamon/pressable'
+import { CometPressable } from '@negiganaito/pressable'
 import { useBaseInputValidators } from '../../hooks'
 
 type CometFormTextInputProps = {

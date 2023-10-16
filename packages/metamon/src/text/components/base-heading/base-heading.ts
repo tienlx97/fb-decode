@@ -2,7 +2,7 @@ import React, { forwardRef, ReactNode, useContext, useMemo } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { BaseHeadingContext, useBaseTextContext } from '../../context'
 import { useStyles } from './styles'

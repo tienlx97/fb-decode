@@ -4,7 +4,7 @@ import React, { forwardRef } from 'react'
 import { jsx } from 'react/jsx-runtime'
 import { TintableIconSource } from '@fb/tetra-icon/utils/tintable-icon-source'
 import BaseImage_DEPRECATED from '../base-image_DEPRECATED'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import { useFilterStyles, useImageStyles } from './styles'
 
 type CometTintedIconProps = {

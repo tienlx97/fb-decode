@@ -1,9 +1,9 @@
 'use client'
 
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
 
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import { LoginButton } from '../login-button'
 import { LoginInput } from '../login-input'
@@ -30,6 +30,7 @@ export default function RoyalForgotPasswordForm() {
       </div>
 
       <div className={classes.forgotPasswordWrapper}>
+        {/* @ts-ignore */}
         <Link
           href="/login"
           className={mergeClasses('caption', classes.forgotPassword)}

@@ -4,7 +4,7 @@ import React, { createElement, forwardRef } from 'react'
 import { jsx } from 'react/jsx-runtime'
 
 import { CometPressable } from '@fb/components'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 
 import parseFlightIcon from '../../utils/flight-serializable-icon'
 import { IconSource } from '../../utils/icon-source'

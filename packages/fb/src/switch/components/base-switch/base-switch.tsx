@@ -1,7 +1,7 @@
 import BaseView from '@fb/components/base-view'
 import { BaseFocusRing } from '@fb/focus/components/base-focus-ring'
 import { BaseInput } from '@fb/input/components/base-input'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React, { forwardRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'

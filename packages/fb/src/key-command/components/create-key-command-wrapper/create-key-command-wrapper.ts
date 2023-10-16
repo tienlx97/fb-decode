@@ -5,7 +5,7 @@ import CometKeyCommandUtilsContext from '@fb/key-command/context/comet-key-comma
 import areKeyCombinationsEqual from '@fb/key-command/utils/are-key-combinations-equal'
 import createKeyCommand from '@fb/key-command/utils/createKeyCommand'
 import isSingleCharKey from '@fb/key-command/utils/is-single-char-key'
-import { mergeClasses } from '@fluentui/react-components'
+import { mergeClasses } from '@griffel/react'
 import React, { useCallback, useContext, useMemo, useRef } from 'react'
 
 // @ts-ignore

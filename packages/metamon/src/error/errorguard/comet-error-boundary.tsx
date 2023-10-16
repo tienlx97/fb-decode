@@ -2,7 +2,7 @@ import React, { forwardRef, useContext } from 'react'
 import ErrorBoundaryReact, { ErrorBoundaryProps } from './error-boundary'
 import { ErrorMetadata } from './error-metadata'
 import { ErrorProps } from './types'
-import { HeroInteractionContext } from '@metamon/common'
+import { HeroInteractionContext } from '@negiganaito/common'
 
 const cometErrorBoundary = (props: ErrorBoundaryProps, ref: any) => {
   const context = useContext(HeroInteractionContext)
