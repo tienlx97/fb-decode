@@ -9,11 +9,12 @@ import { NormalizeErrorProps } from './types'
 const oa = '<anonymous guard>'
 let guardGlobalFlag = !1
 
-function applyWithGuard(a: any, b: any, c: any, nError: NormalizeErrorProps) {
+function applyWithGuard(a: any, b: any, c: any, nError?: NormalizeErrorProps) {
   ErrorGuardState.pushGuard({
     name:
       ((nError === null || nError === void 0 ? void 0 : nError.name) != null
-        ? nError.name
+        ? // @ts-ignore
+          nError.name
         : null) ||
       (a.name ? 'func_name:' + a.name : null) ||
       oa,

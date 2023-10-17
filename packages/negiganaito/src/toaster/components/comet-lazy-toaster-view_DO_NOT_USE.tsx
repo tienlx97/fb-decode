@@ -18,7 +18,7 @@ function m(a: any) {
 export const CometLazyToasterView_DO_NOT_USE = (
   props: CometToasterView_DO_NOT_USEProps,
 ) => {
-  var stateManager = useToasterStateManager()
+  const stateManager = useToasterStateManager()
   const [e, f] = useState(() => {
     return m(stateManager)
   })
@@ -33,7 +33,8 @@ export const CometLazyToasterView_DO_NOT_USE = (
       return
     }
     const c = stateManager.addListener(function () {
-      c.remove(), f(!0)
+      c.remove()
+      f(!0)
     })
     return c.remove
   }, [stateManager, e])

@@ -5,3 +5,4 @@ export { default as WorkCometIconNotifications } from './work-comet-icon-notific
 export { default as WorkCometIconKnowledgeLibrary } from './work-comet-icon-knowledge-library'
 export { default as WorkCometIconKnowledgeLibraryFilled } from './work-comet-icon-knowledge-library-filled'
 export { default as CaretDownFilled, CaretDownSvg } from './caret-down-filled'
+export { CometIconWirelessSlashFilled } from './comet-icon-wireless-slash-filled'

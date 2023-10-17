@@ -33,3 +33,5 @@ export { default as LayoutAnimationBoundaryContext } from './layout-animation-bo
 export { default as CometErrorProjectContext } from './comet-error-project-context'
 export { default as RelayProfilerContext } from './relay-profiler-context'
 export { default as WorkCometInteractiveElementContext } from './work-comet-interactive-element-context'
+
+export { default as BaseThemeConfigContext } from './base-theme-config-context'

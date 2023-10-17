@@ -60,8 +60,6 @@ const CometLineClamp = forwardRef<HTMLElement, CometLineClampProps>(
     const [w, x] = useState(false)
     const y = useRef<any>(null)
 
-    console.log({ w })
-
     let internalStyle: CSSProperties | undefined
     let childrenClone = children
 

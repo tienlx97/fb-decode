@@ -20,6 +20,7 @@ import {
   unstable_forceFrameRate,
   unstable_Profiling,
 } from './scheduler.classic'
+import { TimeSlice } from './time-slice'
 
 export const unstable__scheduleCallback = function (a: any, c: any, d?: any) {
   // var e = b('ifRequireable')(
@@ -35,7 +36,11 @@ export const unstable__scheduleCallback = function (a: any, c: any, d?: any) {
   //   },
   // )
 
-  const e = () => {}
+  const e = () =>
+    TimeSlice.guard(c, 'unstable_scheduleCallback', {
+      propagationType: TimeSlice.PropagationType.CONTINUATION,
+      registerCallStack: !0,
+    })
 
   return unstable_scheduleCallback(a, e, d)
 }
@@ -75,7 +80,12 @@ export const unstable__wrapCallback = (a: any) => {
   //     return a
   //   },
   // )
-  const c = () => {}
+
+  const c = () =>
+    TimeSlice.guard(a, 'unstable_wrapCallback', {
+      propagationType: TimeSlice.PropagationType.CONTINUATION,
+      registerCallStack: !0,
+    })
 
   return unstable_wrapCallback(c)
 }

@@ -34,11 +34,7 @@ type ToastType =
   | 'STOP_TIMER'
   | 'RESET_TIMER'
 
-interface ToastAction {
-  id?: string
-  type: ToastType
-  value?: any // You can replace 'any' with the appropriate type for your toast data.
-}
+type ToastAction = any
 
 class XPlatReactToasterStateManager {
   private $1: number = 0
@@ -105,7 +101,7 @@ class XPlatReactToasterStateManager {
     })
   }
 
-  expire(a: string): void {
+  expire(a: any): void {
     this.$8({
       id: a,
       type: 'EXPIRE',
@@ -142,10 +138,11 @@ class XPlatReactToasterStateManager {
   }
 
   addListener(a: ListenerCallback): { remove: () => void } {
+    var b = this
     this.$3.push(a)
     return {
-      remove: i(() => {
-        removeFromArray(this.$3, a)
+      remove: i(function () {
+        removeFromArray(b.$3, a)
       }),
     }
   }
@@ -163,21 +160,23 @@ class XPlatReactToasterStateManager {
     a: (state: Record<string, Toast>) => void,
     b: number = 1,
   ): { remove: () => void } {
-    const e = {
+    var d = this
+    b === void 0 && (b = 1)
+    var e = {
       handler: a,
       priority: b,
     }
     this.$4.push(e)
     this.$9(e)
     this.$10()
-
     return {
-      remove: i(() => {
-        removeFromArray(this.$4, e)
-        if (this.$5 === e) {
-          this.$5 = null
-          this.$4.forEach(a => this.$9(a))
-        }
+      remove: i(function () {
+        removeFromArray(d.$4, e),
+          d.$5 === e &&
+            ((d.$5 = null),
+            d.$4.forEach(function (a) {
+              return d.$9(a)
+            }))
       }),
     }
   }
@@ -188,7 +187,7 @@ class XPlatReactToasterStateManager {
       case 'PUSH':
         // eslint-disable-next-line no-case-declarations
         const c = a.node
-        this.$2 = new Map([...Array.from(this.$2), [c.id, c]])
+        this.$2 = new Map([].concat(Array.from(this.$2), [[c.id, c]])) // [...Array.from(this.$2), [c.id, c]])
         if (this.$6 !== 0) {
           const c = Array.from(this.$2.values()).filter(
             a => !a.shown && !a.expired,
@@ -258,18 +257,24 @@ class XPlatReactToasterStateManager {
   }
 
   $10(): void {
-    this.$3.forEach(b => this.$7(() => b()))
+    const a = this
+
+    this.$3.forEach(function (b) {
+      a.$7(function () {
+        b()
+      })
+    })
     this.$4.forEach(b =>
-      this.$7(() =>
-        b.handler(b === this.$5 ? this.getState() : this.getEmptyState()),
-      ),
+      a.$7(() => b.handler(b === a.$5 ? a.getState() : a.getEmptyState())),
     )
   }
 
   $12(a: Toast): Toast {
+    const b = this
+
     if (a.duration !== null && a.timer == null) {
       a.timer = setTimeout(() => {
-        this.expire(a.id)
+        b.expire(a.id)
       }, a.duration)
     }
     return a
@@ -284,11 +289,12 @@ class XPlatReactToasterStateManager {
   }
 
   $14(a: Toast): void {
+    const b = this
     this.$13(a)
     const d = a.id
     setTimeout(() => {
-      this.delete(d)
-    }, 1000)
+      b.delete(d)
+    }, 1e3)
   }
 
   $15(a: Toast): boolean {
