@@ -7,7 +7,7 @@
       "@/*": ["src/*"],
       "@ui/*": ["../../packages/ui/src/*"],
       "@fb/*": ["../../packages/fb/src/*"],
-      "@negiganaito/*": ["../../packages/metamon/src/*"]
+      "@negiganaito/*": ["../../packages/negiganaito/src/*"]
     },
     "strict": true,
     "plugins": [

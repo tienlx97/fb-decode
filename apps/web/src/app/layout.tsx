@@ -4,7 +4,7 @@ import '../styles/index.css'
 
 // eslint-disable-next-line camelcase
 // import { Space_Grotesk } from 'next/font/google'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import AppProvider from '@/utils/registry'
 import { GoogleAnalytics } from '@/components/google-analystic'
@@ -31,6 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         as="image"
         type="image/svg+xml"
       />
+
       <GoogleAnalytics />
       <body className="body-custom system-fonts--body segoe">
         <AuthProvider>

@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useEffect } from 'react'
-import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
+import Script from 'next/script'
+import React, { useEffect } from 'react'
+
 import { pageview } from '@/lib/gtag-helper'
 
 // https://gaudion.dev/blog/setup-google-analytics-with-gdpr-compliant-cookie-consent-in-nextjs13
