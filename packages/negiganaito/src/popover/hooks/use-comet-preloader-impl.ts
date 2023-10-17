@@ -1,5 +1,7 @@
 import { CometMouseActivity } from '@negiganaito/utils/common/comet-mouse-activity'
 import JSScheduler from '@negiganaito/utils/common/jss-scheduler'
+// eslint-disable-next-line camelcase
+import { setTimeoutAtPriority_DO_NOT_USE } from '@negiganaito/utils/common/set-timeout-comet-internals'
 import { useCallback, useEffect, useRef } from 'react'
 
 function isMousePointerType(a: any) {
@@ -29,7 +31,7 @@ export function useCometPreloaderImpl(a: any, b: any, d: any, e?: any) {
     //     f.current = c('setTimeout')(a, m)
     //   },
     // )
-    f.current = b.setTimeoutAtPriority_DO_NOT_USE(
+    f.current = setTimeoutAtPriority_DO_NOT_USE(
       JSScheduler.priorities.unstable_UserBlocking,
       a,
       m,
