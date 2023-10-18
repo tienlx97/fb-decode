@@ -17,6 +17,8 @@ import { CookieBanner } from '@/components/cookie-banner'
 //   display: 'swap',
 // })
 
+import GeminiApp from '@/components/gemini-app'
+
 export const metadata = {
   title: 'ChiThanh Potal',
   description: 'ChiThanh portal',
@@ -34,13 +36,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <GoogleAnalytics />
       <body className="body-custom system-fonts--body segoe">
-        <AuthProvider>
-          {/* @ts-ignore */}
-          <AppProvider className="app-custom">
-            {children}
-            <CookieBanner />
-          </AppProvider>
-        </AuthProvider>
+        <div
+          style={{
+            position: 'relative',
+            boxSizing: 'border-box',
+            zIndex: 0,
+          }}
+        >
+          <AuthProvider>
+            {/* @ts-ignore */}
+            <AppProvider className="app-custom">
+              <GeminiApp>{children}</GeminiApp>
+              <CookieBanner />
+            </AppProvider>
+          </AuthProvider>
+        </div>
       </body>
     </html>
   )

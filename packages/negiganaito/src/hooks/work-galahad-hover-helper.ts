@@ -8,7 +8,7 @@ export function useHover(cb?: any) {
     setHover(!0)
   }, [cb])
 
-  const onMouseLeave = useCallback(function () {
+  const onMouseLeave = useCallback(() => {
     return setHover(!1)
   }, [])
 

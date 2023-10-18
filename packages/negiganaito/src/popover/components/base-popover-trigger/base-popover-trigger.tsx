@@ -39,7 +39,7 @@ import { CometPrerenderer } from '../comet-prerenderer'
 // p = c('gkx')('8058')
 const p = true
 
-function q({ content, fallback }: any) {
+function popoverRendererComp({ content, fallback }: any) {
   return jsx(CometPlaceholder, {
     fallback: fallback ?? null,
     children: content,
@@ -57,7 +57,7 @@ function repositionContetual({ contextualLayerRef }: any) {
   return null
 }
 
-type BasePopoverTriggerProps = {
+export type BasePopoverTriggerProps = {
   children?: any
   doNotCloseOnOutsideClick?: boolean
   fallback?: ReactNode
@@ -87,7 +87,7 @@ function BasePopoverTrigger({
   onLayerDetached,
   onVisibilityChange,
   popover,
-  popoverRenderer = q,
+  popoverRenderer = popoverRendererComp,
   popoverPreloadResource,
   popoverProps,
   popoverType = 'dialog',

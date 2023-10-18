@@ -15,7 +15,7 @@ import {
   useGeminiLayoutHasFixedBanner,
 } from '@/context/gemini-layout-has-fixed-banner-context'
 import { Provider as GeminiLayoutHeaderHeightProvider } from '@/context/gemini-layout-header-height-context'
-import { useNavUIState } from '@/context/gemini-nav-and-channel-context'
+import { GeminiNavAndChannelContext } from '@/context/gemini-nav-and-channel-context'
 import {
   GeminiLayoutHorizontalScrollingContextProvider,
   useGeminiLayoutChannelMeasureListenerForNonSticky,
@@ -82,14 +82,15 @@ export function GeminiLayoutPage({
 }: GeminiLayoutPageProps) {
   const classes = useStyles()
 
-  const { isAutoHideEnabled } = useNavUIState()
-  const k = useGeminiLayoutIsFullWidth()
+  const { isAutoHideEnabled } = GeminiNavAndChannelContext.useNavUIState()
+  const isLayoutFullWidth = useGeminiLayoutIsFullWidth()
   const m = useGeminiLayoutHorizontalScrollingListener()
   const [n, o, q, x] = useGeminiLayoutChannelMeasureListenerForNonSticky(
     v + s,
     w,
     isAutoHideEnabled,
   )
+
   const y = useMemo(
       function () {
         return {
@@ -99,9 +100,9 @@ export function GeminiLayoutPage({
       },
       [x, q],
     ),
-    z = fixedBannerContent != null,
+    hasFixedBanner = fixedBannerContent != null,
     A = U({
-      hasFixedBanner: z,
+      hasFixedBanner: hasFixedBanner,
     }),
     B = useMemo(
       function () {
@@ -114,7 +115,10 @@ export function GeminiLayoutPage({
       },
       [A],
     ),
-    C = getDefaultIfFalsy(z, classes.contentWithTopBannerNarrowBuffer)
+    C = getDefaultIfFalsy(
+      hasFixedBanner,
+      classes.contentWithTopBannerNarrowBuffer,
+    )
   return jsx(GeminiLayoutPageWrapper, {
     children: function (clazz: any) {
       return jsxs(React.Fragment, {
@@ -129,7 +133,7 @@ export function GeminiLayoutPage({
               children: jsx(P.Provider, {
                 value: y,
                 children: jsx(GeminiLayoutHasFixedBannerContextProvider, {
-                  hasFixedBanner: z,
+                  hasFixedBanner: hasFixedBanner,
                   children: jsxs(
                     GeminiLayoutHorizontalScrollingContextProvider,
                     {
@@ -148,9 +152,9 @@ export function GeminiLayoutPage({
                                 name: 'navigation',
                                 children: jsx(H, {
                                   channelContent: channelContent,
-                                  hasFixedBanner: z,
-                                  isLayoutFullWidth: k,
                                   navContent: mainNavContent,
+                                  hasFixedBanner: hasFixedBanner,
+                                  isLayoutFullWidth: isLayoutFullWidth,
                                   navContentAndChannelContainer:
                                     navContentAndChannelContainer ??
                                     React.Fragment,
@@ -245,10 +249,10 @@ const H = memo(
     (
       {
         channelContent,
-        navContent,
-        navContentAndChannelContainer,
         hasFixedBanner,
         isLayoutFullWidth,
+        navContent,
+        navContentAndChannelContainer,
       },
       ref,
     ) => {
@@ -262,7 +266,8 @@ const H = memo(
       //   navContentAndChannelContainer,
       // } = a
 
-      const { isAutoHideEnabled, isChannelVisible } = useNavUIState()
+      const { isAutoHideEnabled, isChannelVisible } =
+        GeminiNavAndChannelContext.useNavUIState()
 
       const o = useGeminiLayoutHorizontalScrolling()
       const style = useMemo(
@@ -281,88 +286,82 @@ const H = memo(
         hasFixedBanner,
         classes.navigationInnerWithBannerNarrowBuffer,
       )
-      const Comp = useMemo(
-        function () {
-          return jsx(GeminiLayoutLeftHandColumnWrapper, {
-            ref: ref,
-            children: function (clazz: any) {
-              return jsxs(React.Fragment, {
-                children: [
-                  !cssStickySupport &&
-                    jsx('div', {
-                      className: classes.dummy1, // 'xh8yej3 x5yr21d',
-                    }),
-                  jsx(navContentAndChannelContainer, {
-                    children: jsx('div', {
-                      className: mergeClasses(
-                        cssStickySupport
-                          ? classes.navigationSticky
-                          : classes.navigationFixed,
-                        isGalileoNavMode && classes.navigationFixedWP4MAppBar,
-                      ),
-                      style: style,
-                      children: jsxs('div', {
-                        className: mergeClasses(classes.navigationInner, r),
-                        children: [
-                          jsx(CometErrorBoundary, {
-                            children: jsx(CometPagelet.Placeholder, {
-                              className: mergeClasses(
-                                classes.navigationAppNavList,
-                                isGalileoNavMode &&
-                                  classes.navigationAppNavListWP4MAppBar,
-                              ),
-                              fallback: null,
-                              name: 'GeminiLayoutNavigationAppList',
-                              children: navContent,
-                            }),
-                          }),
-                          jsx('div', {
+      const Comp = useMemo(() => {
+        return jsx(GeminiLayoutLeftHandColumnWrapper, {
+          ref: ref,
+          children: function (clazz: any) {
+            return jsxs(React.Fragment, {
+              children: [
+                !cssStickySupport &&
+                  jsx('div', {
+                    className: classes.dummy1, // 'xh8yej3 x5yr21d',
+                  }),
+                jsx(navContentAndChannelContainer, {
+                  children: jsx('div', {
+                    className: mergeClasses(
+                      cssStickySupport
+                        ? classes.navigationSticky
+                        : classes.navigationFixed,
+                      isGalileoNavMode && classes.navigationFixedWP4MAppBar,
+                    ),
+                    style: style,
+                    children: jsxs('div', {
+                      className: mergeClasses(classes.navigationInner, r),
+                      children: [
+                        jsx(CometErrorBoundary, {
+                          children: jsx(CometPagelet.Placeholder, {
                             className: mergeClasses(
-                              clazz,
-                              classes.channelWrapper,
-                              isAutoHideEnabled &&
-                                (isChannelVisible
-                                  ? classes.channelWrapperAutoHideButVisible
-                                  : classes.channelWrapperHidden),
+                              classes.navigationAppNavList,
                               isGalileoNavMode &&
-                                isAutoHideEnabled &&
-                                isChannelVisible &&
-                                classes.channelWrapperAutoHideButVisibleWP4MAppBar,
+                                classes.navigationAppNavListWP4MAppBar,
                             ),
-                            children: jsx(CometErrorBoundary, {
-                              children: jsx(CometPagelet.Placeholder, {
-                                fallback: null,
-                                name: 'GeminiLayoutNavigationChannel',
-                                children: jsx(
-                                  VoyageUserJourneyUILayerProvider,
-                                  {
-                                    name: 'channel',
-                                    children: channelContent,
-                                  },
-                                ),
+                            fallback: null,
+                            name: 'GeminiLayoutNavigationAppList',
+                            children: navContent,
+                          }),
+                        }),
+                        jsx('div', {
+                          className: mergeClasses(
+                            clazz,
+                            classes.channelWrapper,
+                            isAutoHideEnabled &&
+                              (isChannelVisible
+                                ? classes.channelWrapperAutoHideButVisible
+                                : classes.channelWrapperHidden),
+                            isGalileoNavMode &&
+                              isAutoHideEnabled &&
+                              isChannelVisible &&
+                              classes.channelWrapperAutoHideButVisibleWP4MAppBar,
+                          ),
+                          children: jsx(CometErrorBoundary, {
+                            children: jsx(CometPagelet.Placeholder, {
+                              fallback: null,
+                              name: 'GeminiLayoutNavigationChannel',
+                              children: jsx(VoyageUserJourneyUILayerProvider, {
+                                name: 'channel',
+                                children: channelContent,
                               }),
                             }),
                           }),
-                        ],
-                      }),
+                        }),
+                      ],
                     }),
                   }),
-                ],
-              })
-            },
-          })
-        },
-        [
-          navContentAndChannelContainer,
-          ref,
-          style,
-          r,
-          navContent,
-          isAutoHideEnabled,
-          isChannelVisible,
-          channelContent,
-        ],
-      )
+                }),
+              ],
+            })
+          },
+        })
+      }, [
+        navContentAndChannelContainer,
+        ref,
+        style,
+        r,
+        navContent,
+        isAutoHideEnabled,
+        isChannelVisible,
+        channelContent,
+      ])
       return Comp
     },
   ),
