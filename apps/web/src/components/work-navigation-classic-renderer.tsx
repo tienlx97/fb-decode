@@ -13,7 +13,6 @@ export function WorkNavigationClassicRenderer() {
     children: [
       jsx(WorkGalahadAppTabTopApps, {}),
       jsx(WorkNavigationCollapseButtonAndNubs, {}),
-      // jsx('WorkNavigationCollapseButtonAndNubs', {}),
     ],
   })
 }
