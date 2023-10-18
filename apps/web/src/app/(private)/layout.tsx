@@ -2,8 +2,7 @@ import React from 'react'
 import { redirect } from 'next/navigation'
 
 import { getCurrentUser } from '@/lib/auth'
-
-import GeminiApp from '@/components/gemini-app'
+import { GeminiAppContent } from '@/components/gemini-app-content'
 
 async function getData() {
   const user = await getCurrentUser()
@@ -20,5 +19,5 @@ interface Props {
 export default async function AuthLayout({ children }: Props) {
   await getData()
 
-  return <GeminiApp>{children}</GeminiApp>
+  return <GeminiAppContent>{children}</GeminiAppContent>
 }

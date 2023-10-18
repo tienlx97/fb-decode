@@ -20,7 +20,7 @@ export default function GeminiApp({ children }: GeminiAppProps) {
     <CometAppShell toaster={jsx(CometToasterRoot, {})}>
       <GeminiAppTopLevel.Provider>
         <GeminiNavAndChannelContext.Provider>
-          <GeminiAppContent>{children}</GeminiAppContent>
+          {children}
         </GeminiNavAndChannelContext.Provider>
       </GeminiAppTopLevel.Provider>
     </CometAppShell>
