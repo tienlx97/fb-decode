@@ -11,7 +11,9 @@
     "next": "link:/home/tienlx97/work/next.js/packages/next",
     "react": "workspace:*",
     "react-dom": "workspace:*",
-    "resize-observer-polyfill": "1.5.1"
+    "resize-observer-polyfill": "1.5.1",
+    "fbjs": "3.0.5",
+    "@types/fbjs": "3.0.8"
   },
   "devDependencies": {
     "@portal/eslint-config-react": "workspace:*",

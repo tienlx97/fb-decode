@@ -1,0 +1,21 @@
+import { InternalEnum } from '@negiganaito/utils/common/$InternalEnum'
+
+export const GeminiStackedChannelType = InternalEnum.Mirrored([
+  'GROUPS',
+  'SUBCOMMUNITY',
+  'KNOWLEDGES',
+  'KNOWLEDGE_ROOT_COLLECTION',
+  'KNOWLEDGE_GHOST_CATEGORY',
+  'KNOWLEDGE_PRELOADED_CONTENT_CATEGORY',
+  'MESSAGE_SEARCH_RESULTS',
+  'MESSAGE_SEARCH_ADVANCED',
+  'DATA_INTERCHANGE',
+  'SEARCH',
+  'WORKSTREAM',
+  'RECRUITING',
+  'MESSAGE_SEARCH',
+  'SAFETY_CHECK',
+  'CASE_CONNECT',
+  'EVENTS',
+  'CONTENT_MANAGER',
+])
