@@ -7,9 +7,15 @@ module.exports = {
     serverActions: true,
     // appDir: true,
     serverComponentsExternalPackages: ['@prisma/client'],
+    forceSwcTransforms: true,
   },
 
   reactStrictMode: false,
+
+  i18n: {
+    defaultLocale: 'vi',
+    locales: ['en', 'vi'],
+  },
 
   async redirects() {
     return [

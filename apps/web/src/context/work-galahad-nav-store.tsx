@@ -4,6 +4,7 @@ import React, {
   Dispatch,
   Reducer,
   createContext,
+  useContext,
   useMemo,
   useReducer,
 } from 'react'
@@ -208,6 +209,23 @@ const workGalahadNavStoreReducer = (
   }
 }
 
+const getSelectedAppTabID = (state: WorkGalahadNavStoreState) =>
+  state.selectedAppTabID
+
+const getActiveEntityKey = (state: WorkGalahadNavStoreState) =>
+  state.activeEntityKey
+
+const getNavigationKey = (state: WorkGalahadNavStoreState) =>
+  'navigation-key-' + state.lastNavigationIntentTimestamp
+
+const isChannelAutoFocusAllowed = (state: WorkGalahadNavStoreState) =>
+  state.allowChannelAutoFocus
+
+const getStackedChannelData = ({
+  stackedChannelData,
+}: WorkGalahadNavStoreState) =>
+  stackedChannelData[stackedChannelData.length - 1]
+
 const WorkGalahadNavStoreContext = createContext<{
   state: WorkGalahadNavStoreState
   dispatch: Dispatch<WorkGalahadNavStoreAction>
@@ -231,4 +249,21 @@ export const WorkGalahadNavStoreProvider = ({
       {children}
     </WorkGalahadNavStoreContext.Provider>
   )
+}
+
+export const useWorkGalahadNavStore = () => {
+  const context = useContext(WorkGalahadNavStoreContext)
+
+  if (context === undefined) {
+    throw new Error('useWorkGalahadNavStore was used outside of its Provider')
+  }
+  return context
+}
+
+export const WorkGalahadNavStore = {
+  getSelectedAppTabID,
+  getActiveEntityKey,
+  getNavigationKey,
+  isChannelAutoFocusAllowed,
+  getStackedChannelData,
 }

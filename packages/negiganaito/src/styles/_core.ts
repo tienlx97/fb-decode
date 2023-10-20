@@ -30,6 +30,6 @@ function retrieveElement(idOrElement: any, element: any) {
   return element
 }
 
-export const $Core = {
+export const _Core = {
   fromIDOrElement,
 }

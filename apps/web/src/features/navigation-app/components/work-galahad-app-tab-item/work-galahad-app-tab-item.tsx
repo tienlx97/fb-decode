@@ -1,11 +1,15 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import React, { forwardRef, useMemo } from 'react'
+import React, { forwardRef, useContext, useMemo } from 'react'
 
 import { WorkGalahadUIAppsListItem } from '../work-galahad-ui-apps-list-item'
 import { WorkGalahadUIAppNavButton } from '../work-galahad-ui-app-nav-button'
 import { WorkGalahadUIAppTabSelectorIcon } from '../work-galahad-ui-app-tab-selector-Icon'
+import {
+  WorkGalahadNavStore,
+  useWorkGalahadNavStore,
+} from '@/context/work-galahad-nav-store'
 
 type Props = {
   title: string
@@ -13,7 +17,7 @@ type Props = {
   href: string
   icon: string
   isFirst: boolean
-  badgeCount?: number
+  badgeCount: number
   onHoverIn?: (...param: any) => any
   onHoverOut?: (...param: any) => any
   onPressIn?: (...param: any) => any
@@ -25,6 +29,12 @@ const m = new Set(['knowledge', 'home'])
 
 const WorkGalahadAppTabItem = forwardRef<HTMLDivElement, Props>(
   ({ href, icon, id, title, isFirst, ...rest }, ref) => {
+    const { state } = useWorkGalahadNavStore()
+
+    const B = WorkGalahadNavStore.getSelectedAppTabID(state) === id
+
+    // const A = p(title, rest.badgeCount)
+
     const pathName = usePathname()
 
     const selected = pathName.startsWith(href)
@@ -52,6 +62,18 @@ const WorkGalahadAppTabItem = forwardRef<HTMLDivElement, Props>(
     )
   },
 )
+
+// function p(title: string, badgeCount: number) {
+//   return badgeCount > 0
+//     ? h._(
+//         {
+//           '*': '{title}, {number} new items',
+//           _1: '{title}, 1 new item',
+//         },
+//         [h._plural(badgeCount, 'number'), h._param('title', title)],
+//       )
+//     : title
+// }
 
 export default WorkGalahadAppTabItem
 

@@ -9,7 +9,12 @@
     "postinstall": "prisma generate",
     "lint": "eslint",
     "start": "next start",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "fbt:manifest": "fbt-manifest --src=src --enum-manifest=translations/enum_manifest.json --src-manifest=translations/src_manifest.json",
+    "fbt:collect": "fbt-collect --options=__self --pretty --manifest < translations/src_manifest.json > translations/source_strings.json",
+    "fbt:translate": "fbt-translate --source-strings=translations/source_strings.json --pretty --translations translations/translated/*.json --output-dir=translations/processed --jenkins",
+    "fbt": "npm run fbt:manifest && npm run fbt:collect && npm run fbt:translate",
+    "postfbt": "prettier -w translations"
   },
   "dependencies": {
     "@auth/core": "^0.14.0",
@@ -31,7 +36,8 @@
     "ui": "workspace:*",
     "zod": "3.22.2",
     "fbjs": "3.0.5",
-    "@types/fbjs": "3.0.8"
+    "@types/fbjs": "3.0.8",
+    "fbt": "1.0.0"
   },
   "devDependencies": {
     "@portal/eslint-config-next": "workspace:*",
@@ -40,6 +46,9 @@
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "@types/fbt": "1.0.3",
+    "babel-plugin-fbt": "1.0.0",
+    "babel-plugin-fbt-runtime": "1.0.0"
   }
 }

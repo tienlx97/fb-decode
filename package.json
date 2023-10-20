@@ -17,8 +17,7 @@
 		"prisma": "cd ./apps/web && pnpm prisma generate",
 		"start": "turbo run start --parallel",
 		"test": "turbo run test --parallel",
-		"dev": "turbo run dev --parallel",
-		"postinstall": "bash ./postinstall.sh"
+		"dev": "turbo run dev --parallel"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.2",
@@ -31,7 +30,8 @@
 		"turbo": "latest",
 		"typescript": "5.2.2",
 		"next": "13.5.3",
-		"@griffel/react": "1.5.16"
+		"@griffel/react": "1.5.16",
+		"fs-extra": "11.1.1"
 	},
 	"packageManager": "pnpm@8.6.10",
 	"engines": {
