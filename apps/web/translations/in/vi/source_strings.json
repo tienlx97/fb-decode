@@ -1,0 +1,35 @@
+{
+ "fb-locale": "vi_VN",
+ "translations": {
+  "A6Iq4/hXJq/xoSYcYOsAYA==": {
+   "tokens": [],
+   "types": [],
+   "translations": [
+    {
+     "translation": "Trang chủ",
+     "variations": []
+    }
+   ]
+  },
+  "zicdZjZ0sa78lhMt+trDJg==": {
+   "tokens": [],
+   "types": [],
+   "translations": [
+    {
+     "translation": "Thông báo",
+     "variations": []
+    }
+   ]
+  },
+  "0kzMsCNjQ3BYcTfjHxaodg==": {
+   "tokens": [],
+   "types": [],
+   "translations": [
+    {
+     "translation": "Thư viện tài liệu",
+     "variations": []
+    }
+   ]
+  }
+ }
+}

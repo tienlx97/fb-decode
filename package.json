@@ -17,7 +17,11 @@
 		"prisma": "cd ./apps/web && pnpm prisma generate",
 		"start": "turbo run start --parallel",
 		"test": "turbo run test --parallel",
-		"dev": "turbo run dev --parallel"
+		"dev": "turbo run dev --parallel",
+		"fbt:manifest": "cd ./apps/web && pnpm fbt:manifest",
+		"fbt:collect": "cd ./apps/web && pnpm fbt:collect",
+		"fbt:translate": "cd ./apps/web && pnpm fbt:translate",
+		"fbt": "cd ./apps/web && pnpm fbt"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.2",

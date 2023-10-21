@@ -12,7 +12,7 @@ import {
 } from '@/context/work-galahad-nav-store'
 
 type Props = {
-  title: string
+  title: any
   id: string
   href: string
   icon: string

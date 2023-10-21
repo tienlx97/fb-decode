@@ -1,0 +1,89 @@
+{
+ "phrases": [
+  {
+   "hashToLeaf": {
+    "A6Iq4/hXJq/xoSYcYOsAYA==": {
+     "text": "Home",
+     "desc": "work app tab set home title"
+    }
+   },
+   "filepath": "src/features/navigation-app/components/work-galahad-app-tab-top-apps/work-galahad-app-tab-top-apps.tsx",
+   "line_beg": 42,
+   "col_beg": 12,
+   "line_end": 42,
+   "col_end": 54,
+   "project": "",
+   "jsfbt": {
+    "t": {
+     "desc": "work app tab set home title",
+     "text": "Home"
+    },
+    "m": []
+   }
+  },
+  {
+   "hashToLeaf": {
+    "A6Iq4/hXJq/xoSYcYOsAYA==": {
+     "text": "Home",
+     "desc": "work app tab set home title"
+    }
+   },
+   "filepath": "src/features/navigation-app/components/work-galahad-app-tab-top-apps/work-galahad-app-tab-top-apps.tsx",
+   "line_beg": 51,
+   "col_beg": 13,
+   "line_end": 51,
+   "col_end": 63,
+   "project": "",
+   "jsfbt": {
+    "t": {
+     "desc": "work app tab set home title",
+     "text": "Home"
+    },
+    "m": []
+   }
+  },
+  {
+   "hashToLeaf": {
+    "zicdZjZ0sa78lhMt+trDJg==": {
+     "text": "Notifications",
+     "desc": "work app tab set notifications title"
+    }
+   },
+   "filepath": "src/features/navigation-app/components/work-galahad-app-tab-top-apps/work-galahad-app-tab-top-apps.tsx",
+   "line_beg": 60,
+   "col_beg": 8,
+   "line_end": 60,
+   "col_end": 76,
+   "project": "",
+   "jsfbt": {
+    "t": {
+     "desc": "work app tab set notifications title",
+     "text": "Notifications"
+    },
+    "m": []
+   }
+  },
+  {
+   "hashToLeaf": {
+    "0kzMsCNjQ3BYcTfjHxaodg==": {
+     "text": "Knowledge Library",
+     "desc": "work app tab set knowledge_library title"
+    }
+   },
+   "filepath": "src/features/navigation-app/components/work-galahad-app-tab-top-apps/work-galahad-app-tab-top-apps.tsx",
+   "line_beg": 69,
+   "col_beg": 8,
+   "line_end": 71,
+   "col_end": 14,
+   "project": "",
+   "jsfbt": {
+    "t": {
+     "desc": "work app tab set knowledge_library title",
+     "text": "Knowledge Library"
+    },
+    "m": []
+   }
+  }
+ ],
+ "childParentMappings": {}
+}

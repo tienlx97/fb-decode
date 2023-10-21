@@ -11,15 +11,16 @@ import { CookieBanner } from '@/components/cookie-banner'
 
 import GeminiApp from '@/components/gemini-app'
 import { WorkGalahadNavStoreProvider } from '@/context/work-galahad-nav-store'
+import { initTranslations } from '@/components/initTranslations'
 
 export const metadata = {
   title: 'ChiThanh Potal',
   description: 'ChiThanh portal',
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  console.log('123')
+initTranslations('vi_VN')
 
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html className="__fb-light-mode" id="portal" lang="vi" dir="ltr">
       <link

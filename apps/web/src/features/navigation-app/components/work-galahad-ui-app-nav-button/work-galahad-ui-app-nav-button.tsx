@@ -22,7 +22,7 @@ import dynamic from 'next/dynamic'
 type WorkGalahadUIAppNavButtonProps = {
   href: string
   elementId: string
-  label: string
+  label: any
   selected: boolean
   preventLocalNavigation: boolean
   addOn?: any

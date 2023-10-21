@@ -12,9 +12,8 @@
     "test": "jest --coverage",
     "fbt:manifest": "fbt-manifest --src=src --enum-manifest=translations/enum_manifest.json --src-manifest=translations/src_manifest.json",
     "fbt:collect": "fbt-collect --options=__self --pretty --manifest < translations/src_manifest.json > translations/source_strings.json",
-    "fbt:translate": "fbt-translate --source-strings=translations/source_strings.json --pretty --translations translations/translated/*.json --output-dir=translations/processed --jenkins",
-    "fbt": "npm run fbt:manifest && npm run fbt:collect && npm run fbt:translate",
-    "postfbt": "prettier -w translations"
+    "fbt:translate": "fbt-translate --source-strings=translations/source_strings.json --pretty --translations translations/in/**/*.json --output-dir=translations/out --jenkins",
+    "fbt": "pnpm run fbt:manifest && pnpm run fbt:collect && pnpm run fbt:translate"
   },
   "dependencies": {
     "@auth/core": "^0.14.0",
@@ -47,8 +46,10 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "tsconfig": "workspace:*",
-    "@types/fbt": "1.0.3",
     "babel-plugin-fbt": "1.0.0",
-    "babel-plugin-fbt-runtime": "1.0.0"
+    "babel-plugin-fbt-runtime": "1.0.0",
+    "@adeira/babel-preset-adeira": "4.0.0",
+    "@babel/preset-typescript": "7.23.2",
+    "@types/fbt": "1.0.3"
   }
 }
