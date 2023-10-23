@@ -5,6 +5,7 @@ import React, {
   Reducer,
   createContext,
   useContext,
+  useEffect,
   useMemo,
   useReducer,
 } from 'react'
@@ -114,7 +115,7 @@ type WorkGalahadNavStoreAction =
 const workGalahadNavStoreInitial = {
   activeEntityKey: null,
   loading: false,
-  selectedAppTabID: 'home',
+  selectedAppTabID: window.location.pathname.split('/')[1], // 'home',
   allowChannelAutoFocus: false,
   lastNavigationIntentTimestamp: 0,
   publicContentBanner: undefined,
@@ -230,6 +231,8 @@ const WorkGalahadNavStoreContext = createContext<{
   state: WorkGalahadNavStoreState
   dispatch: Dispatch<WorkGalahadNavStoreAction>
 }>({} as any)
+
+const map = ['home', '']
 
 export const WorkGalahadNavStoreProvider = ({
   children,

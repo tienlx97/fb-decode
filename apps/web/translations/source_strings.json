@@ -2,6 +2,43 @@
  "phrases": [
   {
    "hashToLeaf": {
+    "HKMhshSI4wbVOrH0t6VWKA==": {
+     "text": "{title} , {number} new items",
+     "desc": "title, badgeCount text"
+    },
+    "yXbm3pp9YnHPZuh9ZkdfeQ==": {
+     "text": "{title} , 1 new item",
+     "desc": "title, badgeCount text"
+    }
+   },
+   "filepath": "src/features/navigation-app/components/work-galahad-app-tab-item/work-galahad-app-tab-item.tsx",
+   "line_beg": 35,
+   "col_beg": 4,
+   "line_end": 45,
+   "col_end": 10,
+   "project": "",
+   "jsfbt": {
+    "t": {
+     "*": {
+      "desc": "title, badgeCount text",
+      "text": "{title} , {number} new items"
+     },
+     "_1": {
+      "desc": "title, badgeCount text",
+      "text": "{title} , 1 new item"
+     }
+    },
+    "m": [
+     {
+      "token": "number",
+      "type": 2,
+      "singular": true
+     }
+    ]
+   }
+  },
+  {
+   "hashToLeaf": {
     "A6Iq4/hXJq/xoSYcYOsAYA==": {
      "text": "Home",
      "desc": "work app tab set home title"

@@ -1,4 +1,4 @@
-'use-client'
+'use client'
 
 import React, { forwardRef, useContext } from 'react'
 // @ts-ignore

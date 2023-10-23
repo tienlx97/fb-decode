@@ -12,6 +12,7 @@ import { CookieBanner } from '@/components/cookie-banner'
 import GeminiApp from '@/components/gemini-app'
 import { WorkGalahadNavStoreProvider } from '@/context/work-galahad-nav-store'
 import { initTranslations } from '@/components/initTranslations'
+import { AppTabIdHandler } from '@/components/app-tab-id-handler'
 
 export const metadata = {
   title: 'ChiThanh Potal',
@@ -40,13 +41,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           }}
         >
           <WorkGalahadNavStoreProvider>
-            <AuthProvider>
-              {/* @ts-ignore */}
-              <AppProvider className="app-custom">
-                <GeminiApp>{children}</GeminiApp>
-                <CookieBanner />
-              </AppProvider>
-            </AuthProvider>
+            <AppTabIdHandler>
+              <AuthProvider>
+                {/* @ts-ignore */}
+                <AppProvider className="app-custom">
+                  <GeminiApp>{children}</GeminiApp>
+                  <CookieBanner />
+                </AppProvider>
+              </AuthProvider>
+            </AppTabIdHandler>
           </WorkGalahadNavStoreProvider>
         </div>
       </body>

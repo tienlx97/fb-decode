@@ -1,79 +1,143 @@
+/* eslint-disable no-undef */
 'use client'
+import React, { forwardRef, memo, useCallback, useMemo } from 'react'
 
-import { usePathname } from 'next/navigation'
-import React, { forwardRef, useContext, useMemo } from 'react'
+import { fbt, FbtParam, FbtPlural } from 'fbt'
 
 import { WorkGalahadUIAppsListItem } from '../work-galahad-ui-apps-list-item'
 import { WorkGalahadUIAppNavButton } from '../work-galahad-ui-app-nav-button'
 import { WorkGalahadUIAppTabSelectorIcon } from '../work-galahad-ui-app-tab-selector-Icon'
 import {
   WorkGalahadNavStore,
+  allowChannelAutoFocus,
+  dismissAllStackedChannels,
   useWorkGalahadNavStore,
 } from '@/context/work-galahad-nav-store'
+import { GeminiNavAndChannelContext } from '@/context/gemini-nav-and-channel-context'
 
 type Props = {
-  title: any
-  id: string
-  href: string
-  icon: string
-  isFirst: boolean
   badgeCount: number
+  isFirst: boolean
   onHoverIn?: (...param: any) => any
+  onPress?: (...param: any) => any
+
+  // ??
   onHoverOut?: (...param: any) => any
   onPressIn?: (...param: any) => any
-  onPress?: (...param: any) => any
-  badgeRenderer?: any
+
+  tab: {
+    badgeRenderer?: any
+    href: string
+    id: string
+    tabIconName: string
+    title: any
+  }
 }
 
-const m = new Set(['knowledge', 'home'])
+const m = new Set(['knowledge_library', 'home'])
 
-const WorkGalahadAppTabItem = forwardRef<HTMLDivElement, Props>(
-  ({ href, icon, id, title, isFirst, ...rest }, ref) => {
-    const { state } = useWorkGalahadNavStore()
+function formatTitleWithBadgeCount(title: string, badgeCount: number) {
+  return badgeCount > 0 ? (
+    <fbt desc="title, badgeCount text">
+      <FbtParam name="title">{title}</FbtParam> ,
+      <FbtPlural
+        count={badgeCount}
+        name="number"
+        showCount="ifMany"
+        many="new items"
+      >
+        1 new item
+      </FbtPlural>
+    </fbt>
+  ) : (
+    title
+  )
+}
 
-    const B = WorkGalahadNavStore.getSelectedAppTabID(state) === id
-
-    // const A = p(title, rest.badgeCount)
-
-    const pathName = usePathname()
-
-    const selected = pathName.startsWith(href)
-
-    const I = m.has(id)
-    const preventLocalNavigation = I ? !1 : !selected
-
-    const Icon = useMemo(
-      () => <WorkGalahadUIAppTabSelectorIcon icon={icon} selected={selected} />,
-      [selected, icon],
-    )
-
-    return (
-      <WorkGalahadUIAppsListItem ref={ref} withTopSpacing={!isFirst}>
-        <WorkGalahadUIAppNavButton
-          href={href}
-          elementId={id}
-          label={title}
-          selected={selected}
-          preventLocalNavigation={preventLocalNavigation}
-          addOn={Icon}
-          {...rest}
-        />
-      </WorkGalahadUIAppsListItem>
-    )
-  },
-)
-
-// function p(title: string, badgeCount: number) {
 //   return badgeCount > 0
-//     ? h._(
+//     ? fbt(
 //         {
 //           '*': '{title}, {number} new items',
 //           _1: '{title}, 1 new item',
 //         },
-//         [h._plural(badgeCount, 'number'), h._param('title', title)],
+//         // @ts-ignore
+//         [fbt.plural(badgeCount, 'number'), fbt.param('title', title)],
 //       )
 //     : title
 // }
+
+const WorkGalahadAppTabItem = memo(
+  forwardRef<HTMLDivElement, Props>(
+    (
+      {
+        badgeCount,
+        isFirst,
+        onHoverIn,
+        onPress,
+        //
+        tab,
+      },
+      ref,
+    ) => {
+      const { isAutoHideEnabled } = GeminiNavAndChannelContext.useNavUIState()
+
+      const ariaLabel = formatTitleWithBadgeCount(tab.title, badgeCount)
+
+      const { state, dispatch } = useWorkGalahadNavStore()
+      const selected = WorkGalahadNavStore.getSelectedAppTabID(state) === tab.id
+
+      const I = m.has(tab.id)
+
+      const onHoverInCb = useCallback(() => {
+        onHoverIn && onHoverIn()
+      }, [onHoverIn])
+
+      const onPressCb = useCallback(() => {
+        dispatch(allowChannelAutoFocus())
+        const f = I || selected
+
+        // if (tag.href && tag.href !== '#' && f) {
+        //   q(tag.id)
+        // }
+        dispatch(dismissAllStackedChannels())
+      }, [])
+
+      const preventLocalNavigation = I ? false : !selected
+
+      const Icon = useMemo(
+        () => (
+          <WorkGalahadUIAppTabSelectorIcon
+            icon={tab.tabIconName}
+            selected={selected}
+          />
+        ),
+        [selected, tab.tabIconName],
+      )
+
+      const workGalahadUIAppNavButtonProps = {
+        href: tab.href ?? undefined,
+        elementId: tab.id,
+        label: tab.title,
+        ariaLabel,
+        selected,
+        useGreyBadging: isAutoHideEnabled, // || y === 'doNotDisturb',
+        onPress: onPressCb,
+        preventLocalNavigation,
+        addOn: Icon,
+        badgeRenderer: tab.badgeRenderer,
+        onHoverIn: onHoverInCb,
+        // onHoverOut,
+        // onPressIn: F,
+      }
+
+      return (
+        <WorkGalahadUIAppsListItem ref={ref} withTopSpacing={!isFirst}>
+          <WorkGalahadUIAppNavButton {...workGalahadUIAppNavButtonProps} />
+        </WorkGalahadUIAppsListItem>
+      )
+    },
+  ),
+)
 
 export default WorkGalahadAppTabItem
 

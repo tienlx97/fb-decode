@@ -1,4 +1,4 @@
-'use-client'
+'use client'
 
 import { useHover } from '@negiganaito/hooks'
 import { emptyFunction } from '@negiganaito/utils/common/empty-function'

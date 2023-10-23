@@ -133,6 +133,9 @@ importers:
       '@adeira/babel-preset-adeira':
         specifier: 4.0.0
         version: 4.0.0(@babel/core@7.23.2)
+      '@babel/plugin-transform-react-jsx':
+        specifier: 7.22.15
+        version: 7.22.15(@babel/core@7.23.2)
       '@babel/preset-typescript':
         specifier: 7.23.2
         version: 7.23.2(@babel/core@7.23.2)

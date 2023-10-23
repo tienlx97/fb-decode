@@ -1,5 +1,5 @@
 /* eslint-disable react/no-children-prop */
-'use-client'
+'use client'
 
 import React, {
   forwardRef,

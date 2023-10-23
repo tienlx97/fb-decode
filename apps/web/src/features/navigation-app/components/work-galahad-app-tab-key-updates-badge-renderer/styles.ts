@@ -1,13 +1,11 @@
 import { makeStyles, shorthands } from '@griffel/react'
 
-import { TYPO_STYLES } from '@negiganaito/react-components'
-
 export const useStyles = makeStyles({
   badge: {
     ...shorthands.borderRadius('18px'),
     color: 'var(--always-white)',
-    // height: '18px',
-    height: '22px',
+    height: '18px',
+    // height: '22px',
     minWidth: '6px',
     ...shorthands.padding('0', '6px'),
     ...shorthands.border(
@@ -45,12 +43,12 @@ export const useStyles = makeStyles({
     ),
   },
   badgeNumber: {
-    ...TYPO_STYLES.overline,
-    fontSize: '10px',
-    // minHeight: '13px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
+    fontSize: '.625rem',
+    lineHeight: 1.3,
+    minHeight: '13px',
+    // display: 'flex',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // height: '100%',
   },
 })

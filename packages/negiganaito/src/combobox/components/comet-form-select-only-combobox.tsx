@@ -1,7 +1,7 @@
 /* eslint-disable react/no-children-prop */
 /* eslint-disable camelcase */
 
-'use-client'
+'use client'
 
 import dynamic from 'next/dynamic'
 import React, { useCallback, useId, useMemo, useRef, useState } from 'react'

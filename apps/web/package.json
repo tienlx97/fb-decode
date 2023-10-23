@@ -50,6 +50,7 @@
     "babel-plugin-fbt-runtime": "1.0.0",
     "@adeira/babel-preset-adeira": "4.0.0",
     "@babel/preset-typescript": "7.23.2",
-    "@types/fbt": "1.0.3"
+    "@types/fbt": "1.0.3",
+    "@babel/plugin-transform-react-jsx": "7.22.15"
   }
 }
