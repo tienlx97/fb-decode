@@ -62,7 +62,8 @@ import { WorkAppTabSet } from '../work-app-tab-set'
 import { GeminiStackedChannelType } from '@/utils/gemini-stacked-channel-type'
 import ErrorBoundaryReact from '@negiganaito/error/errorguard/error-boundary'
 import { emptyFunction } from '@negiganaito/utils/common/empty-function'
-import { CometPlaceholder } from '@negiganaito/placeholder'
+import { CometPagelet, CometPlaceholder } from '@negiganaito/placeholder'
+import { ChannelGeminiAutoFocusRegion } from '@negiganaito/index'
 
 const isRTL = false
 
@@ -171,43 +172,96 @@ export function ChannelGemini() {
 
   const v = f != null
   const w = f != null && !isSearchOverlayShown
-  const x =
-    (f == null ? void 0 : f.type) === GeminiStackedChannelType.EVENTS ||
-    g === 'events'
+  // const x =
+  //   (f == null ? void 0 : f.type) === GeminiStackedChannelType.EVENTS ||
+  //   g === 'events'
 
-  const y = useMemo(() => {
-    return v
-      ? jsx('div', {
-          className: 'x1emribx',
-          children: jsx('ChannelGeminiStackedChannelPopButton.react', {}),
-        })
-      : null
-  }, [v])
+  // const y = useMemo(() => {
+  //   return v
+  //     ? jsx('div', {
+  //         className: 'x1emribx',
+  //         children: jsx('ChannelGeminiStackedChannelPopButton.react', {}),
+  //       })
+  //     : null
+  // }, [v])
 
-  const z = useMemo(() => {
-    return u
-      ? jsx('div', {
-          'aria-label': 'Workplace', //  h._('Workplace'),
-          className:
-            'x13fuv20 x26u7qi xu3j5b3 x1q0q8m5 x972fbf xm0m39n xcfux6l x1qhh985 x9f619 x78zum5 x1iyjqo2 x1qughib xdj266r x11i5rnm xat24cr x1mh8g0r x2lwn1j xeuugli x1n2onr6 x1ja2u2z x6s0dn4 x1q0g3np x2lah0s xyamay9 x1pi30zi x1l90r2v x1swvt13',
-          role: 'search',
-          children: jsxs(ErrorBoundaryReact, {
-            onError: emptyFunction,
-            children: [
-              y,
-              jsx(CometPlaceholder, {
-                fallback: null,
-                children: jsx(m, {
-                  show: u,
-                }),
-              }),
-            ],
+  // search button
+  // const z = useMemo(() => {
+  //   return u
+  //     ? jsx('div', {
+  //         'aria-label': 'Workplace', //  h._('Workplace'),
+  //         className:
+  //           'x13fuv20 x26u7qi xu3j5b3 x1q0q8m5 x972fbf xm0m39n xcfux6l x1qhh985 x9f619 x78zum5 x1iyjqo2 x1qughib xdj266r x11i5rnm xat24cr x1mh8g0r x2lwn1j xeuugli x1n2onr6 x1ja2u2z x6s0dn4 x1q0g3np x2lah0s xyamay9 x1pi30zi x1l90r2v x1swvt13',
+  //         role: 'search',
+  //         children: jsxs(ErrorBoundaryReact, {
+  //           onError: emptyFunction,
+  //           children: [
+  //             y,
+  //             jsx(CometPlaceholder, {
+  //               fallback: null,
+  //               children: jsx(m, {
+  //                 show: u,
+  //               }),
+  //             }),
+  //           ],
+  //         }),
+  //       })
+  //     : jsx('div', {
+  //         className: 'x1y1aw1k x1sxyh0 xwib8y2 xurb0ha',
+  //       })
+  // }, [y, u])
+
+  return jsx('ChannelGeminiUIChannel.react', {
+    bottom: undefined,
+    hideBottom: true,
+    hideTop: true,
+    top: undefined,
+    //
+    children: jsxs(CometPagelet.Placeholder, {
+      className: 'x5yr21d x78zum5 xdt5ytf',
+      fallback: null,
+      name: 'ChannelGemini',
+      children: [
+        jsx(ChannelGeminiAutoFocusRegion, {
+          inert: v || !a,
+          navigationKey: j,
+          children: jsx('div', {
+            'aria-labelledby': v ? void 0 : g,
+            className: mergeClasses(
+              !v && !isSearchOverlayShown && classes.content,
+            ),
+            role: !v && !isSearchOverlayShown ? 'navigation' : void 0,
+            children: jsx('ChannelGeminiEntryPointContainer', {
+              hidden: v || isSearchOverlayShown,
+            }),
           }),
-        })
-      : jsx('div', {
-          className: 'x1y1aw1k x1sxyh0 xwib8y2 xurb0ha',
-        })
-  }, [y, u])
-
-  return <div />
+        }),
+        jsx('div', {
+          'aria-label':
+            w && (f == null ? void 0 : f.title)
+              ? f == null
+                ? void 0
+                : f.title
+              : void 0,
+          className: mergeClasses(
+            classes.stackedChannel,
+            w &&
+              (isRTL
+                ? classes.stackedChannelVisibleRTL
+                : classes.stackedChannelVisible),
+          ),
+          role: w ? 'navigation' : void 0,
+          children:
+            f &&
+            jsx(ChannelGeminiAutoFocusRegion, {
+              navigationKey: 'stack',
+              children: jsx('ChannelGeminiStackedChannelContainer.react', {
+                show: !isSearchOverlayShown,
+                stackedChannelData: f,
+              }),
+            }),
+        }),
+      ],
+    }),
+  })
 }

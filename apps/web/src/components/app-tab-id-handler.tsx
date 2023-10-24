@@ -14,6 +14,7 @@ type AppTabIdHandlerProps = {
 
 export function AppTabIdHandler({ children }: AppTabIdHandlerProps) {
   const pathname = usePathname()
+
   const { dispatch } = useWorkGalahadNavStore()
 
   useEffect(() => {

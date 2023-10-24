@@ -6,3 +6,4 @@ export { default as WorkCometIconKnowledgeLibrary } from './work-comet-icon-know
 export { default as WorkCometIconKnowledgeLibraryFilled } from './work-comet-icon-knowledge-library-filled'
 export { default as CaretDownFilled, CaretDownSvg } from './caret-down-filled'
 export { CometIconWirelessSlashFilled } from './comet-icon-wireless-slash-filled'
+export { ChannelGeminiUIChevronToggle } from './channel-gemini-ui-chevron-toggle'

@@ -13,6 +13,7 @@ import GeminiApp from '@/components/gemini-app'
 import { WorkGalahadNavStoreProvider } from '@/context/work-galahad-nav-store'
 import { initTranslations } from '@/components/initTranslations'
 import { AppTabIdHandler } from '@/components/app-tab-id-handler'
+import { CometRouterStateContextProvider } from '@/context/comet-router-state-context'
 
 export const metadata = {
   title: 'ChiThanh Potal',
@@ -42,13 +43,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         >
           <WorkGalahadNavStoreProvider>
             <AppTabIdHandler>
-              <AuthProvider>
-                {/* @ts-ignore */}
-                <AppProvider className="app-custom">
-                  <GeminiApp>{children}</GeminiApp>
-                  <CookieBanner />
-                </AppProvider>
-              </AuthProvider>
+              <CometRouterStateContextProvider>
+                <AuthProvider>
+                  {/* @ts-ignore */}
+                  <AppProvider className="app-custom">
+                    <GeminiApp>{children}</GeminiApp>
+                    <CookieBanner />
+                  </AppProvider>
+                </AuthProvider>
+              </CometRouterStateContextProvider>
             </AppTabIdHandler>
           </WorkGalahadNavStoreProvider>
         </div>
