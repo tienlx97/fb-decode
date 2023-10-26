@@ -1,4 +1,6 @@
 /* eslint-disable camelcase */
+'use client'
+
 import { usePathname } from 'next/navigation'
 import React, { createContext, useContext, useMemo } from 'react'
 

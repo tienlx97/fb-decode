@@ -5,10 +5,27 @@ import React, {
   Reducer,
   createContext,
   useContext,
-  useEffect,
   useMemo,
   useReducer,
 } from 'react'
+
+type SubMenu = {
+  icon: {
+    uri: string
+  }
+  key: string
+  path: string
+  title: string
+  subtitle?: string
+}
+
+type Menu = {
+  key: string
+  title: string
+  path: string
+  children: SubMenu[]
+  default_bookmark_count?: number
+}
 
 export type WorkGalahadNavStoreState = {
   activeEntityKey?: any
@@ -19,6 +36,9 @@ export type WorkGalahadNavStoreState = {
   publicContentBanner?: any
   stackedChannelData: any[]
   pendingTransitionState?: any
+
+  menus: Menu[]
+  specificMenu: Menu | undefined
 }
 
 export const selectAppTabID = (
@@ -112,6 +132,61 @@ type WorkGalahadNavStoreAction =
   | ReturnType<typeof dismissStackedChannel>
   | ReturnType<typeof replaceStackedChannel>
 
+const menus: Menu[] = [
+  {
+    key: 'home',
+    title: 'home',
+    path: '/home',
+    children: [
+      {
+        icon: {
+          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/4mhXitnfwjM.png',
+        },
+        key: 'posts',
+        path: '/home',
+        title: 'Posts',
+        subtitle: undefined,
+      },
+      {
+        icon: {
+          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yv/r/8AIkmY8ASX6.png',
+        },
+        key: 'important_news',
+        path: '/home/important-news',
+        title: 'Important news',
+        subtitle: undefined,
+      },
+      {
+        icon: {
+          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/6EB2VQOON-3.png',
+        },
+        key: 'knowledge',
+        path: '/knowledge',
+        title: 'Knowledge Library',
+        subtitle: undefined,
+      },
+      {
+        icon: {
+          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/4mhXitnfwjM.png',
+        },
+        key: 'directory',
+        path: '/home/orgsearch',
+        title: 'Directory',
+        subtitle: undefined,
+      },
+      {
+        icon: {
+          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/2XSFu6dqGH8.png',
+        },
+        key: 'org',
+        path: '/home/org',
+        title: 'Org Chart',
+        subtitle: undefined,
+      },
+    ],
+  },
+]
+
 const workGalahadNavStoreInitial = {
   activeEntityKey: null,
   loading: false,
@@ -121,6 +196,10 @@ const workGalahadNavStoreInitial = {
   publicContentBanner: undefined,
   stackedChannelData: [],
   pendingTransitionState: undefined,
+  menus,
+  specificMenu: menus.find(
+    menu => menu.key === window.location.pathname.split('/')[1],
+  ),
 }
 
 const navigationIntentTimestampProvider = () => {
@@ -195,14 +274,30 @@ const workGalahadNavStoreReducer = (
     case 'nav/selectAppTabID': {
       const { appTabID } = payload
 
-      return state.selectedAppTabID !== appTabID
-        ? {
-            ...state,
-            ...navigationIntentTimestampProvider(),
-            selectedAppTabID: appTabID,
-            stackedChannelData: [],
-          }
-        : { ...state, ...navigationIntentTimestampProvider() }
+      if (state.selectedAppTabID !== appTabID) {
+        const geminiMenuChannel = state.menus.find(
+          menu => menu.key === appTabID,
+        )
+
+        return {
+          ...state,
+          specificMenu: geminiMenuChannel,
+          ...navigationIntentTimestampProvider(),
+          selectedAppTabID: appTabID,
+          stackedChannelData: [],
+        }
+      } else {
+        return { ...state, ...navigationIntentTimestampProvider() }
+      }
+
+      // return state.selectedAppTabID !== appTabID
+      //   ? {
+      //       ...state,
+      //       ...navigationIntentTimestampProvider(),
+      //       selectedAppTabID: appTabID,
+      //       stackedChannelData: [],
+      //     }
+      //   : { ...state, ...navigationIntentTimestampProvider() }
     }
 
     default:
@@ -231,8 +326,6 @@ const WorkGalahadNavStoreContext = createContext<{
   state: WorkGalahadNavStoreState
   dispatch: Dispatch<WorkGalahadNavStoreAction>
 }>({} as any)
-
-const map = ['home', '']
 
 export const WorkGalahadNavStoreProvider = ({
   children,

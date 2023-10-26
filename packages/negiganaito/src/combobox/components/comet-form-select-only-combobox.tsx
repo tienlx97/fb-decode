@@ -30,7 +30,7 @@ import CometFormComboboxMenuItem from './comet-form-combobox-menu-item'
 
 const BaseContextualLayer = dynamic(
   // @ts-ignore
-  () => import('@fb/components/base-contextual-layer'),
+  () => import('@negiganaito/popover').then(r => r.BaseContextualLayer),
   {
     ssr: false,
   },

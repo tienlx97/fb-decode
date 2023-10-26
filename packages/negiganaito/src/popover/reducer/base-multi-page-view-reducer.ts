@@ -1,4 +1,4 @@
-import { FBLogger } from '@fb/error/errorguard'
+import { FBLogger } from '@negiganaito/error'
 
 let h = 0
 
