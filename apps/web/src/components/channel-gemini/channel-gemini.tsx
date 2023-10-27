@@ -64,6 +64,8 @@ import ErrorBoundaryReact from '@negiganaito/error/errorguard/error-boundary'
 import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 import { CometPagelet, CometPlaceholder } from '@negiganaito/placeholder'
 import { ChannelGeminiAutoFocusRegion } from '@negiganaito/index'
+import { ChannelGeminiUIChannel } from '../channel-gemini-ui-channel'
+import { ChannelGeminiEntryPointContainer } from '../channel-gemini-entry-point-container'
 
 const isRTL = false
 
@@ -211,7 +213,7 @@ export function ChannelGemini() {
   //       })
   // }, [y, u])
 
-  return jsx('ChannelGeminiUIChannel.react', {
+  return jsx(ChannelGeminiUIChannel, {
     bottom: undefined,
     hideBottom: true,
     hideTop: true,
@@ -231,36 +233,39 @@ export function ChannelGemini() {
               !v && !isSearchOverlayShown && classes.content,
             ),
             role: !v && !isSearchOverlayShown ? 'navigation' : void 0,
-            children: jsx('ChannelGeminiEntryPointContainer', {
+            children: jsx(ChannelGeminiEntryPointContainer, {
               hidden: v || isSearchOverlayShown,
+              channelEntryPoint: WorkAppTabSet().find(
+                v => v.id === state.selectedAppTabID,
+              )?.channelEntryPoint,
             }),
           }),
         }),
-        jsx('div', {
-          'aria-label':
-            w && (f == null ? void 0 : f.title)
-              ? f == null
-                ? void 0
-                : f.title
-              : void 0,
-          className: mergeClasses(
-            classes.stackedChannel,
-            w &&
-              (isRTL
-                ? classes.stackedChannelVisibleRTL
-                : classes.stackedChannelVisible),
-          ),
-          role: w ? 'navigation' : void 0,
-          children:
-            f &&
-            jsx(ChannelGeminiAutoFocusRegion, {
-              navigationKey: 'stack',
-              children: jsx('ChannelGeminiStackedChannelContainer.react', {
-                show: !isSearchOverlayShown,
-                stackedChannelData: f,
-              }),
-            }),
-        }),
+        // jsx('div', {
+        //   'aria-label':
+        //     w && (f == null ? void 0 : f.title)
+        //       ? f == null
+        //         ? void 0
+        //         : f.title
+        //       : void 0,
+        //   className: mergeClasses(
+        //     classes.stackedChannel,
+        //     w &&
+        //       (isRTL
+        //         ? classes.stackedChannelVisibleRTL
+        //         : classes.stackedChannelVisible),
+        //   ),
+        //   role: w ? 'navigation' : void 0,
+        //   children:
+        //     f &&
+        //     jsx(ChannelGeminiAutoFocusRegion, {
+        //       navigationKey: 'stack',
+        //       children: jsx('ChannelGeminiStackedChannelContainer.react', {
+        //         show: !isSearchOverlayShown,
+        //         stackedChannelData: f,
+        //       }),
+        //     }),
+        // }),
       ],
     }),
   })

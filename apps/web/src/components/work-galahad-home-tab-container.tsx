@@ -8,15 +8,16 @@ import { fbt } from 'fbt'
 import { jsx, jsxs } from 'react/jsx-runtime'
 import ChannelGeminiHomeTabContent from './channel-gemini-home-tab-content'
 import { ChannelGeminiSectionWithBookmarks } from './channel-gemini-section-with-bookmarks'
+import { ChannelGeminiUIChannelRoot } from './channel-gemini-ui-channel-root'
 
 export function WorkGalahadHomeTabContainer() {
-  return jsxs('ChannelGeminiUIChannelRoot.react', {
-    primaryAction: jsx('div', {
-      className: 'x1i64zmx xamitd3',
-      children: jsx('HomeGeminiHeaderCreatePostButton', {
-        showCreateGroupButton: true,
-      }),
-    }),
+  return jsxs(ChannelGeminiUIChannelRoot, {
+    // primaryAction: jsx('div', {
+    //   className: 'x1i64zmx xamitd3',
+    //   children: jsx('HomeGeminiHeaderCreatePostButton', {
+    //     showCreateGroupButton: true,
+    //   }),
+    // }),
     title: <fbt desc="WorkGalahadHomeTabContainer">Home</fbt>,
     testid: void 0,
     children: [
