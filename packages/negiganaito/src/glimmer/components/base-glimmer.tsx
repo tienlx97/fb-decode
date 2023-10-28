@@ -9,15 +9,23 @@ import { jsx } from 'react/jsx-runtime'
 const l = 200
 const useStyles = makeStyles({
   paused: {
-    animationPlayState: 'xorstpt',
+    animationPlayState: 'paused',
   },
   root: {
-    animationDirection: 'xpz12be',
-    animationDuration: 'x1q3qbx4',
-    animationIterationCount: 'xa4qsjk',
-    animationName: 'xeuoslp',
-    animationTimingFunction: 'x193epu2',
-    opacity: 'xvpkmg4',
+    animationDirection: 'var(--glimmer-animation-direction)',
+    animationDuration: 'var(--glimmer-animation-duration)',
+    animationIterationCount: 'infinite',
+    animationName: {
+      '0%': {
+        opacity: 'var(--glimmer-opacity-min)',
+      },
+
+      '100%': {
+        opacity: 'var(--glimmer-opacity-max)',
+      },
+    },
+    animationTimingFunction: 'steps(10,end)',
+    opacity: 'var(--glimmer-opacity-min)',
   },
 })
 

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use client'
 
 import React, {
@@ -9,17 +10,18 @@ import React, {
   useReducer,
 } from 'react'
 
-type SubMenu = {
+export type SubMenu = {
   icon: {
     uri: string
   }
+  entity_key: string
   key: string
   path: string
   title: string
   subtitle?: string
 }
 
-type Menu = {
+export type Menu = {
   key: string
   title: string
   path: string
@@ -27,17 +29,29 @@ type Menu = {
   default_bookmark_count?: number
 }
 
+const selectAppTab = ['home', 'notification', 'knowledge', 'chat', 'profile']
+
+type SelectedAppTabID =
+  | 'home'
+  | 'notification'
+  | 'knowledge'
+  | 'chat'
+  | 'profile'
+
 export type WorkGalahadNavStoreState = {
   activeEntityKey?: any
   loading: boolean
-  selectedAppTabID: string
+  // home / notification / knowledge / chat
+  selectedAppTabID: SelectedAppTabID
   allowChannelAutoFocus: boolean
   lastNavigationIntentTimestamp: number
   publicContentBanner?: any
   stackedChannelData: any[]
   pendingTransitionState?: any
 
+  // All the menu
   menus: Menu[]
+  // specific stack channel menu
   specificMenu: Menu | undefined
 }
 
@@ -140,45 +154,50 @@ const menus: Menu[] = [
     children: [
       {
         icon: {
-          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/4mhXitnfwjM.png',
+          uri: '/assets/menu/home/post.png',
         },
         key: 'posts',
+        entity_key: 'home',
         path: '/home',
         title: 'Posts',
         subtitle: undefined,
       },
       {
         icon: {
-          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yv/r/8AIkmY8ASX6.png',
+          uri: '/assets/menu/home/important-news.png',
         },
         key: 'important_news',
+        entity_key: 'home',
         path: '/home/important-news',
         title: 'Important news',
         subtitle: undefined,
       },
       {
         icon: {
-          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/6EB2VQOON-3.png',
+          uri: '/assets/menu/home/knowledge.png',
         },
         key: 'knowledge',
+        entity_key: 'home',
         path: '/knowledge',
         title: 'Knowledge Library',
         subtitle: undefined,
       },
       {
         icon: {
-          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/4mhXitnfwjM.png',
+          uri: '/assets/menu/home/directory.png',
         },
         key: 'directory',
+        entity_key: 'home',
         path: '/home/orgsearch',
         title: 'Directory',
         subtitle: undefined,
       },
       {
         icon: {
-          uri: 'https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/2XSFu6dqGH8.png',
+          uri: '/assets/menu/home/org.png',
         },
         key: 'org',
+        entity_key: 'home',
         path: '/home/org',
         title: 'Org Chart',
         subtitle: undefined,
@@ -190,16 +209,20 @@ const menus: Menu[] = [
 const workGalahadNavStoreInitial = {
   activeEntityKey: null,
   loading: false,
-  selectedAppTabID: window.location.pathname.split('/')[1], // 'home',
+  selectedAppTabID: (selectAppTab.includes(
+    window.location.pathname.split('/')[1],
+  )
+    ? window.location.pathname.split('/')[1]
+    : 'home') as SelectedAppTabID,
   allowChannelAutoFocus: false,
   lastNavigationIntentTimestamp: 0,
   publicContentBanner: undefined,
   stackedChannelData: [],
   pendingTransitionState: undefined,
   menus,
-  specificMenu: menus.find(
-    menu => menu.key === window.location.pathname.split('/')[1],
-  ),
+  specificMenu:
+    menus.find(menu => menu.key === window.location.pathname.split('/')[1]) ??
+    menus[0], // default is home menu
 }
 
 const navigationIntentTimestampProvider = () => {
@@ -283,7 +306,9 @@ const workGalahadNavStoreReducer = (
           ...state,
           specificMenu: geminiMenuChannel,
           ...navigationIntentTimestampProvider(),
-          selectedAppTabID: appTabID,
+          selectedAppTabID: (selectAppTab.includes(appTabID)
+            ? appTabID
+            : 'home') as SelectedAppTabID,
           stackedChannelData: [],
         }
       } else {

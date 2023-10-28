@@ -7,12 +7,14 @@ import { ChannelGeminiNavList } from './channel-gemini-nav-list'
 import ChannelGeminiBookmarkContainer from './channel-gemini-bookmark-container'
 import { ChannelGeminiBookmarksToggleItem } from './channel-gemini-bookmarks-toggle-item'
 import { useCometRouterState } from '@/context/comet-router-state-context'
+import { SubMenu } from '@/context/work-galahad-nav-store'
 
 type ChannelGeminiSectionWithBookmarksProps = {
-  bookmarks?: any[]
+  bookmarks?: SubMenu[]
   default_bookmark_count?: number
   subtitle?: any
   title?: any
+  entity_key?: string
 }
 
 export function ChannelGeminiSectionWithBookmarks(
@@ -22,7 +24,7 @@ export function ChannelGeminiSectionWithBookmarks(
 
   const [isExpanded, setExpanded] = useState(false)
 
-  const { entityKeyConfig } = useCometRouterState()
+  // const { entityKeyConfig } = useCometRouterState()
 
   if (!props) {
     return null
@@ -58,11 +60,7 @@ export function ChannelGeminiSectionWithBookmarks(
   bookmarks.forEach((bookmark, index) => {
     let isSelect = false
 
-    if (
-      bookmark.entity_key &&
-      entityKeyConfig &&
-      entityKeyConfig.entity_key === bookmark.entity_key
-    ) {
+    if (bookmark.key && props.entity_key && props.entity_key === bookmark.key) {
       isSelect = true
     }
 

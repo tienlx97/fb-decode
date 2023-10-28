@@ -8,10 +8,10 @@ import { BaseGlimmer, BaseGlimmerProps } from './base-glimmer'
 
 const useStyles = makeStyles({
   dark: {
-    backgroundColor: 'xhzw6zf',
+    backgroundColor: 'var(--placeholder-icon)',
   },
   light: {
-    backgroundColor: 'x1vtvx1t',
+    backgroundColor: 'var(--wash)',
   },
 })
 

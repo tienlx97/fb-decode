@@ -1,15 +1,13 @@
-import { mergeClasses } from '@griffel/react'
-import { useFocusState, useHover } from '@negiganaito/hooks'
-import { fbicon } from '@negiganaito/image'
-import {
-  CometCircleButton,
-  WorkGalahadChannelFocusableTableCell,
-} from '@negiganaito/index'
+import { makeStyles } from '@griffel/react'
 import React, { forwardRef } from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { ChannelGeminiUIChannelScrollableArea } from './channel-gemini-ui-channel-scrollable-area'
+import {
+  ChannelGeminiUIChannelHeader,
+  ChannelGeminiUIChannelHeaderProps,
+} from './channel-gemini-ui-channel-header'
 
 type ChannelGeminiUIChannelRootProps = {
   children?: any
@@ -18,7 +16,13 @@ type ChannelGeminiUIChannelRootProps = {
   hasTopShadow?: boolean
   scrollRef?: any
   testid?: any
-}
+} & ChannelGeminiUIChannelHeaderProps
+
+const useStyles = makeStyles({
+  root: {
+    flexShrink: 0,
+  },
+})
 
 export const ChannelGeminiUIChannelRoot = forwardRef<
   any,
@@ -36,11 +40,13 @@ export const ChannelGeminiUIChannelRoot = forwardRef<
     },
     ref,
   ) => {
+    const classes = useStyles()
+
     return jsx('div', {
       'data-testid': void 0,
       ref,
       children: [
-        jsx('ChannelGeminiUIChannelHeader', Object.assign({}, rest)),
+        jsx(ChannelGeminiUIChannelHeader, Object.assign({}, rest)),
         jsx(ChannelGeminiUIChannelScrollableArea, {
           expading: true,
           forceBrowserDefault: forceBrowserDefaultScrollbar,
@@ -50,7 +56,7 @@ export const ChannelGeminiUIChannelRoot = forwardRef<
           children,
         }),
         jsx('div', {
-          className: 'x2lah0s',
+          className: classes.root,
           children: footer,
         }),
       ],
