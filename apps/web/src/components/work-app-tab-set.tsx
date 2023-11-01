@@ -20,7 +20,7 @@ export const WorkAppTabSet = (): WorkAppTabSetProps[] => {
     {
       id: 'home',
       // @ts-ignore
-      title: <fbt desc="work app tab set home title">Home</fbt>,
+      title: 'Home', // <fbt desc="work app tab set home title">Home</fbt>,
       //  fbt('Home', 'work app tab set home title')
       href: '/home',
       tabIconName: 'HOME',
@@ -29,9 +29,10 @@ export const WorkAppTabSet = (): WorkAppTabSetProps[] => {
     },
     {
       id: 'notifications',
-      title: (
-        <fbt desc="work app tab set notifications title">Notifications</fbt>
-      ),
+      // title:  (
+      //   <fbt desc="work app tab set notifications title">Notifications</fbt>
+      // ),
+      title: 'Notifications',
       href: '/notifications',
       tabIconName: 'NOTIFICATIONS',
       badgeRenderer: WorkGalahadAppTabNotificationsBadgeRenderer,
@@ -39,11 +40,12 @@ export const WorkAppTabSet = (): WorkAppTabSetProps[] => {
     },
     {
       id: 'knowledge',
-      title: (
-        <fbt desc="work app tab set knowledge_library title">
-          Knowledge Library
-        </fbt>
-      ),
+      // title: (
+      //   <fbt desc="work app tab set knowledge_library title">
+      //     Knowledge Library
+      //   </fbt>
+      // ),
+      title: 'Knowledge Library',
       href: '/knowledge',
       tabIconName: 'KNOWLEDGE_LIBRARY',
       channelEntryPoint: WorkGalahadHomeTabContainer,

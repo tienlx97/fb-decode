@@ -97,80 +97,86 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
 
     const { url, ...restLinkProps } = linkProps
 
-    const [Q, R] = useState(!1)
+    const [pressed, R] = useState(!1)
 
-    const hoverAndFocusState = useHoverAndFocusState()
-    var S = hoverAndFocusState.focused,
-      T = hoverAndFocusState.hovered,
-      U = hoverAndFocusState.onFocusIn,
-      V = hoverAndFocusState.onFocusOut,
-      fa = hoverAndFocusState.onHoverIn,
-      ga = hoverAndFocusState.onHoverOut
+    const {
+      focused: focusVisible,
+      hovered: hovered,
+      onFocusIn: U,
+      onFocusOut: V,
+      onHoverIn: onMouseEnter,
+      onHoverOut: onMouseLeave,
+    } = useHoverAndFocusState()
+    // var S = hoverAndFocusState.focused,
+    //   T = hoverAndFocusState.hovered,
+    //   U = hoverAndFocusState.onFocusIn,
+    //   V = hoverAndFocusState.onFocusOut,
+    //   fa = hoverAndFocusState.onHoverIn,
+    //   ga = hoverAndFocusState.onHoverOut
 
     const N: any = o()
 
-    const a = useMemo(
-      function () {
-        return {
-          hovered: T,
-          focused: S,
-          pressed: Q,
-        }
-      },
-      [T, S, Q],
-    )
+    const workCometInteractiveElementValue = useMemo(() => {
+      return {
+        hovered: hovered,
+        focused: focusVisible,
+        pressed: pressed,
+      }
+    }, [hovered, focusVisible, pressed])
 
-    var W = useCallback(
-      function () {
-        onPreload && p && onPreload()
-      },
-      [onPreload],
-    )
+    var W = useCallback(() => {
+      onPreload && p && onPreload()
+    }, [onPreload])
 
     const [X, Y, _] = useCometPreloaderImpl('button_aggressive', void 0, W)
 
     const ha = useCallback(
       function (a: any) {
-        X(a), onHoverIn && onHoverIn(a)
+        X(a)
+        onHoverIn && onHoverIn(a)
       },
       [onHoverIn, X],
     )
 
     const ia = useCallback(
       function (a: any) {
-        Y(), onHoverOut && onHoverOut(a)
+        Y()
+        onHoverOut && onHoverOut(a)
       },
       [onHoverOut, Y],
     )
 
     const ja = useCallback(
       function (a: any) {
-        U(a), onFocusIn && onFocusIn(a)
+        U(a)
+        onFocusIn && onFocusIn(a)
       },
       [onFocusIn, U],
     )
 
     const ka = useCallback(
       function (a: any) {
-        V(a), onFocusOut && onFocusOut(a)
+        V(a)
+        onFocusOut && onFocusOut(a)
       },
       [onFocusOut, V],
     )
 
     const la = useCallback(
       function (a: any) {
-        R(!0), onPressIn && onPressIn(a)
+        R(!0)
+        onPressIn && onPressIn(a)
       },
       [onPressIn],
     )
 
-    const ma = useCallback(function () {
+    const ma = useCallback(() => {
       return R(!1)
     }, [])
 
     const Z = jsxs(React.Fragment, {
       children: [
-        addOnPrimary != null &&
+        addOnPrimary &&
           jsx('div', {
             className: mergeClasses(
               classes.addOnPrimary,
@@ -201,21 +207,21 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
       ],
     })
 
-    const na = isSemanticListItem ? 'li' : 'div'
+    const ListItemComp = isSemanticListItem ? 'li' : 'div'
     const $ = onPress || url != null
 
     return jsx(WorkGalahadChannelFocusableTableRow, {
       children: jsx(WorkCometInteractiveElementContext.Provider, {
-        value: a,
+        value: workCometInteractiveElementValue,
         children: jsx(BaseFocusRing, {
-          children: (a: any) => {
+          children: (clazz: any) => {
             let e
 
-            return jsxs(na, {
+            return jsxs(ListItemComp, {
               ref: wrapperRef,
-              role: role ?? ($ && isSemanticListItem) ? 'row' : void 0,
-              onMouseEnter: fa,
-              onMouseLeave: ga,
+              role: role ?? ($ && isSemanticListItem ? 'row' : void 0),
+              onMouseEnter: onMouseEnter,
+              onMouseLeave: onMouseLeave,
               className: mergeClasses(
                 classes.root,
                 r(
@@ -224,15 +230,15 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
                   },
                   classes,
                 ),
-                S && a,
+                focusVisible && clazz,
                 selected && classes.selected,
               ),
               children: [
                 $ &&
                   jsx(CometPressableOverlay, {
-                    focusVisible: S,
-                    hovered: T,
-                    pressed: Q,
+                    focusVisible: focusVisible,
+                    hovered: hovered,
+                    pressed: pressed,
                   }),
 
                 $
@@ -240,9 +246,8 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
                       children: jsx('div', {
                         className: dummyClasses.dummy2,
                         role:
-                          focusableRole ?? isSemanticListItem
-                            ? 'gridcell'
-                            : void 0,
+                          focusableRole ??
+                          (isSemanticListItem ? 'gridcell' : void 0),
                         children: jsx(
                           CometPressable,
                           Object.assign(
@@ -257,6 +262,7 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
                                 ? Object.assign({}, restLinkProps, {
                                     // url: (i || (i = c('URI'))).normalize(w),
                                     prefetchQueries: p,
+                                    url,
                                   })
                                 : void 0,
                               onHoverIn: ha,
@@ -281,7 +287,7 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
                       children: Z,
                     }),
 
-                addOnSecondary != null &&
+                addOnSecondary &&
                   jsx('div', {
                     className: mergeClasses(
                       classes.addOnSecondary,
@@ -292,7 +298,7 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
                     children: addOnSecondary,
                   }),
 
-                addOnTertiary != null &&
+                addOnTertiary &&
                   jsx('div', {
                     className: dummyClasses.dummy4,
                     children: addOnTertiary,
@@ -306,11 +312,14 @@ const WorkGalahadUIChannelItem = forwardRef<any, WorkGalahadUIChannelItemProps>(
   },
 )
 
-function r(a: any, q: any) {
-  a = a.indentationLevel
-  if (a === 1) return q.indentationLevel1
-  else if (a === 2) return q.indentationLevel2
-  else if (a === 3) return q.indentationLevel3
+function r({ indentationLevel }: any, classes: any) {
+  if (indentationLevel === 1) {
+    return classes.indentationLevel1
+  } else if (indentationLevel === 2) {
+    return classes.indentationLevel2
+  } else if (indentationLevel === 3) {
+    return classes.indentationLevel3
+  }
 }
 
 export default WorkGalahadUIChannelItem

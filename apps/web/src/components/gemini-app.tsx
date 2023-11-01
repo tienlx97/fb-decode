@@ -7,7 +7,6 @@ import { jsx } from 'react/jsx-runtime'
 
 import { GeminiAppTopLevel } from './gemini-app-top-level-provider'
 import { GeminiNavAndChannelContext } from '@/context/gemini-nav-and-channel-context'
-import { GeminiAppContent } from './gemini-app-content'
 import { CometAppShell } from './comet-app-shell'
 import { CometToasterRoot } from '@negiganaito/toaster'
 
@@ -25,10 +24,4 @@ export default function GeminiApp({ children }: GeminiAppProps) {
       </GeminiAppTopLevel.Provider>
     </CometAppShell>
   )
-
-  // return jsx(GeminiAppTopLevel.Provider, {
-  // children: jsx(GeminiNavAndChannelContext.Provider, {
-  //   children: jsx(GeminiAppContent, {}),
-  // }),
-  // })
 }

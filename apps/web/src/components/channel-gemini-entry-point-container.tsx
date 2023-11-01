@@ -34,9 +34,10 @@ export function ChannelGeminiEntryPointContainer({
       children: jsx(ChannelGeminiUIChannelHideableArea, {
         show: true, // !g,
         children: jsx(CometPlaceholder, {
-          fallback: jsx(<></>, {
-            appTabID,
-          }),
+          // fallback: jsx(React.Fragment, {
+          //   appTabID,
+          // }),
+          fallback: null,
           children: jsx(ChannelGeminiTabContext.Provider, {
             value: g ? m : l,
             children: jsx(channelEntryPoint, {}),

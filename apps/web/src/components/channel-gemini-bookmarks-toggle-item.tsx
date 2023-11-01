@@ -17,11 +17,14 @@ export function ChannelGeminiBookmarksToggleItem({
   expanded,
   toggle,
 }: ChannelGeminiBookmarksToggleItemProps) {
-  const label = expanded ? (
-    <fbt desc="ChannelGeminiBookmarksToggleItem/See Less">See Less</fbt>
-  ) : (
-    <fbt desc="ChannelGeminiBookmarksToggleItem/See more">See more</fbt>
-  )
+  // const label = expanded ? (
+  //   <fbt desc="ChannelGeminiBookmarksToggleItem/See Less">See Less</fbt>
+  // ) : (
+  //   <fbt desc="ChannelGeminiBookmarksToggleItem/See more">See more</fbt>
+  // )
+
+  const label = expanded ? 'See Less' : 'See more'
+
   return jsx(WorkGalahadUIChannelItem, {
     'aria-expanded': expanded,
     'aria-label': label,

@@ -1,8 +1,7 @@
 import '@negiganaito/react-components/src/styles/theme.css'
-
 import '../styles/index.css'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import AppProvider from '@/utils/registry'
 import { GoogleAnalytics } from '@/components/google-analystic'
@@ -13,7 +12,8 @@ import GeminiApp from '@/components/gemini-app'
 import { WorkGalahadNavStoreProvider } from '@/context/work-galahad-nav-store'
 import { initTranslations } from '@/components/initTranslations'
 import { AppTabIdHandler } from '@/components/app-tab-id-handler'
-import { CometRouterStateContextProvider } from '@/context/comet-router-state-context'
+
+import { PipedriveRouteContext } from '@/context/pipedrive-route-context'
 
 export const metadata = {
   title: 'ChiThanh Potal',
@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         >
           <WorkGalahadNavStoreProvider>
             <AppTabIdHandler>
-              <CometRouterStateContextProvider>
+              <PipedriveRouteContext>
                 <AuthProvider>
                   {/* @ts-ignore */}
                   <AppProvider className="app-custom">
@@ -51,7 +51,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <CookieBanner />
                   </AppProvider>
                 </AuthProvider>
-              </CometRouterStateContextProvider>
+              </PipedriveRouteContext>
             </AppTabIdHandler>
           </WorkGalahadNavStoreProvider>
         </div>

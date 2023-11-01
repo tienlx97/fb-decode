@@ -96,7 +96,7 @@ export function BaseToast({
     children: [
       addOnStart != null &&
         jsx(BaseView, {
-          xstyle: classes.item,
+          className: classes.item,
           children: addOnStart,
         }),
       jsx(
@@ -119,7 +119,7 @@ export function BaseToast({
           children: jsx(BaseView, {
             'aria-labelledby': toastMessageId,
             role: 'group',
-            xstyle: classes.item,
+            className: classes.item,
             children:
               action.element != null
                 ? action.element

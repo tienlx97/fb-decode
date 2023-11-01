@@ -11,10 +11,10 @@ import ChannelGeminiHomeTabContent from './channel-gemini-home-tab-content'
 import { ChannelGeminiSectionWithBookmarks } from './channel-gemini-section-with-bookmarks'
 import { ChannelGeminiUIChannelRoot } from './channel-gemini-ui-channel-root'
 import { ChannelGeminiItemChromeList } from './channel-gemini-item-chrome-list'
-import { useWorkGalahadNavStore } from '@/context/work-galahad-nav-store'
+import { usePipedriveRoute } from '@/context/pipedrive-route-context'
 
 export function WorkGalahadHomeTabContainer() {
-  const { state } = useWorkGalahadNavStore()
+  const { subMenu, view } = usePipedriveRoute()
 
   return jsxs(ChannelGeminiUIChannelRoot, {
     // primaryAction: jsx('div', {
@@ -23,7 +23,7 @@ export function WorkGalahadHomeTabContainer() {
     //     showCreateGroupButton: true,
     //   }),
     // }),
-    title: <fbt desc="WorkGalahadHomeTabContainer">Home</fbt>,
+    title: 'Home', // <fbt desc="WorkGalahadHomeTabContainer">Home</fbt>,
     testid: void 0,
     children: [
       jsxs('div', {
@@ -35,10 +35,11 @@ export function WorkGalahadHomeTabContainer() {
           // }),
           jsx(ChannelGeminiSectionWithBookmarks, {
             // eslint-disable-next-line camelcase
-            default_bookmark_count: state.specificMenu?.default_bookmark_count,
-            title: state.specificMenu?.title,
-            bookmarks: state.specificMenu?.children,
-            key: state.specificMenu?.key,
+            default_bookmark_count: subMenu?.default_bookmark_count,
+            // title: subMenu?.title,
+            bookmarks: subMenu?.children,
+            key: subMenu?.key,
+            selectedKey: view,
           }),
           undefined,
         ],

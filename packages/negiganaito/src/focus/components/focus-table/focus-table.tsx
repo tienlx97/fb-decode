@@ -19,10 +19,14 @@ import {
 } from '@negiganaito/focus/util'
 import { useKeyboard } from '@negiganaito/keyboards'
 import { useFocusWithin } from '@negiganaito/keyboards/hooks/react-focus-event'
-import React, { createContext, useContext, useMemo, useRef } from 'react'
-
-// @ts-ignore
-import { unstable_Scope } from 'react-dom'
+import React, {
+  createContext,
+  useContext,
+  useMemo,
+  useRef,
+  // @ts-ignore
+  unstable_Scope,
+} from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
@@ -448,13 +452,13 @@ export function createFocusTable(a: any) {
       function () {
         return {
           scopeRef: s,
-          colSpan: m,
-          tag: o,
+          colSpan,
+          tag,
           allowWithinCellNavigation: u,
           focusStaticCells: v,
         }
       },
-      [m, u, o, v],
+      [colSpan, u, tag, v],
     )
 
     const x = q == null ? void 0 : q.tabScopeQuery
@@ -507,7 +511,7 @@ export function createFocusTable(a: any) {
       value: w,
       children: jsx(unstable_Scope, {
         ref: reff,
-        children: h,
+        children: children,
       }),
     })
   }

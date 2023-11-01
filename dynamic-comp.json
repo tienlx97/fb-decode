@@ -22,6 +22,7 @@
 								{ "__rc": ["TimeSliceSham", null] },
 								-1
 							],
+							["cr:2602", [], { "__rc": [null, null] }, -1],
 							["cr:3798", [], { "__rc": [null, null] }, -1],
 							["cr:5473", [], { "__rc": [null, null] }, -1],
 							["cr:6640", [], { "__rc": [null, null] }, -1],
@@ -120,34 +121,12 @@
 							],
 							["cr:449", ["vc-tracker"], { "__rc": ["vc-tracker", null] }, -1],
 							[
-								"cr:496",
-								[],
-								{
-									"__rc": [
-										null,
-										"Aa0l2WYXOeZbuCpbldIYRTFO1tNYrpP_ZH5oBXzWxzALvflH8oBfTfDf_s0tjDS5fn8QLwOmianJMsy__X9nSND0KUl3ghmlPG52JYKFWdED"
-									]
-								},
-								-1
-							],
-							[
 								"cr:641",
 								["handleCometErrorCodeSideEffects"],
 								{ "__rc": ["handleCometErrorCodeSideEffects", null] },
 								-1
 							],
 							["cr:687", [], { "__rc": [null, null] }, -1],
-							[
-								"cr:714",
-								[],
-								{
-									"__rc": [
-										null,
-										"Aa0l2WYXOeZbuCpbldIYRTFO1tNYrpP_ZH5oBXzWxzALvflH8oBfTfDf_s0tjDS5fn8QLwOmianJMsy__X9nSND0KUl3ghmlPG52JYKFWdED"
-									]
-								},
-								-1
-							],
 							[
 								"cr:736",
 								["suspendOrThrowIfUsedInSSR"],
@@ -208,12 +187,6 @@
 							["cr:2701", [], { "__rc": [null, null] }, -1],
 							["cr:2708", [], { "__rc": [null, null] }, -1],
 							[
-								"cr:2744",
-								["ChatGeminiMessageDeliveryLoggerDeferred"],
-								{ "__rc": ["ChatGeminiMessageDeliveryLoggerDeferred", null] },
-								-1
-							],
-							[
 								"cr:2928",
 								["relay-runtime"],
 								{ "__rc": ["relay-runtime", null] },
@@ -250,6 +223,28 @@
 								"cr:6587",
 								["GetLsDatabase"],
 								{ "__rc": ["GetLsDatabase", null] },
+								-1
+							],
+							[
+								"cr:6855",
+								[],
+								{
+									"__rc": [
+										null,
+										"Aa3DMOOd-L6Oe7DJ4qH7aOw9SD5jGxGiC9T1d-EykHlunTWhBYBbBYL6d78KuWYgzeJumiHpdMDnPa58bso-W7F4dk0aqAtlNTRf6aLUoUjB"
+									]
+								},
+								-1
+							],
+							[
+								"cr:6999",
+								[],
+								{
+									"__rc": [
+										null,
+										"Aa3DMOOd-L6Oe7DJ4qH7aOw9SD5jGxGiC9T1d-EykHlunTWhBYBbBYL6d78KuWYgzeJumiHpdMDnPa58bso-W7F4dk0aqAtlNTRf6aLUoUjB"
+									]
+								},
 								-1
 							],
 							[
@@ -442,12 +437,6 @@
 								-1
 							],
 							[
-								"cr:2306",
-								["NullState404FailedLoadingWorkplace"],
-								{ "__rc": ["NullState404FailedLoadingWorkplace", null] },
-								-1
-							],
-							[
 								"cr:2710",
 								["GeminiNavAndChannelContext"],
 								{ "__rc": ["GeminiNavAndChannelContext", null] },
@@ -457,12 +446,6 @@
 								"cr:3211",
 								["NullStateGeneralWorkplace"],
 								{ "__rc": ["NullStateGeneralWorkplace", null] },
-								-1
-							],
-							[
-								"cr:3587",
-								["NullStatePermissionsWorkplace"],
-								{ "__rc": ["NullStatePermissionsWorkplace", null] },
 								-1
 							],
 							["cr:6171", [], { "__rc": [null, null] }, -1],
@@ -487,33 +470,47 @@
 								{ "__rc": ["VoyageUserJourneyUILayerProvider.react", null] },
 								-1
 							],
+							[
+								"cr:170",
+								["GeminiGenericError.react"],
+								{ "__rc": ["GeminiGenericError.react", null] },
+								-1
+							],
+							[
+								"cr:2306",
+								["NullState404FailedLoadingWorkplace"],
+								{ "__rc": ["NullState404FailedLoadingWorkplace", null] },
+								-1
+							],
+							[
+								"cr:3587",
+								["NullStatePermissionsWorkplace"],
+								{ "__rc": ["NullStatePermissionsWorkplace", null] },
+								-1
+							],
+							["cr:4648", [], { "__rc": [null, null] }, -1],
 							["cr:130", [], { "__rc": [null, null] }, -1],
+							[
+								"cr:1151",
+								["HomeGeminiHeaderCreatePostButton.react"],
+								{ "__rc": ["HomeGeminiHeaderCreatePostButton.react", null] },
+								-1
+							],
+							["cr:1594", [], { "__rc": [null, null] }, -1],
 							["cr:2075", [], { "__rc": [null, null] }, -1],
 							["cr:2151", [], { "__rc": [null, null] }, -1],
 							["cr:2203", [], { "__rc": [null, null] }, -1],
+							["cr:4084", [], { "__rc": [null, null] }, -1],
 							[
-								"cr:3109",
+								"cr:4790",
 								["QuickPerformanceLogger"],
 								{ "__rc": ["QuickPerformanceLogger", null] },
 								-1
 							],
-							["cr:4084", [], { "__rc": [null, null] }, -1],
 							[
-								"cr:1820624",
-								["WorkGalahadEntityKeyMatcher.gemini"],
-								{ "__rc": ["WorkGalahadEntityKeyMatcher.gemini", null] },
-								-1
-							],
-							[
-								"nux:282",
-								["WorkKnowledgeGhostHomepageCard.react"],
-								{ "__rc": ["WorkKnowledgeGhostHomepageCard.react", null] },
-								-1
-							],
-							[
-								"nux:283",
-								["WorkKnowledgeGhostNavItem.react"],
-								{ "__rc": ["WorkKnowledgeGhostNavItem.react", null] },
+								"nux:299",
+								["useGalileoNavExternalViewToolsNux"],
+								{ "__rc": ["useGalileoNavExternalViewToolsNux", null] },
 								-1
 							],
 							["IntlCurrentLocale", [], { "code": "en_US" }, 5954],
@@ -548,7 +545,7 @@
 									"timeout": 60000,
 									"hypStep4": true,
 									"phdOn": false,
-									"btCutoffIndex": 2868,
+									"btCutoffIndex": 2558,
 									"fastPathForAlreadyRequired": true,
 									"earlyRequireLazy": false,
 									"translationRetries": [200, 500],
@@ -602,12 +599,12 @@
 								"DTSGInitialData",
 								[],
 								{
-									"token": "NAcN1GlbMNJhb_7ZTtiIPsmk964dHb_nyqx1zcv12JBGH1bciDR7UIA:42:1697505254"
+									"token": "NAcMT8zDl88l52v5NZcoOK1DdOnATrDOSe0eJlRDZBeco6hYtJ7auVw:42:1697505254"
 								},
 								258
 							],
 							["ISB", [], {}, 330],
-							["LSD", [], { "token": "x2VOyYhpE3YzzkIB0z-yXn" }, 323],
+							["LSD", [], { "token": "idEubN4MFCpaR4Yra0WcAB" }, 323],
 							[
 								"RelayAPIConfigDefaults",
 								[],
@@ -633,19 +630,19 @@
 							[
 								"ServerNonce",
 								[],
-								{ "ServerNonce": "up-ZjDdj1DuOBCjQonBM0o" },
+								{ "ServerNonce": "TnMrS9_BlluE7kjT45bBJy" },
 								141
 							],
 							[
 								"SiteData",
 								[],
 								{
-									"server_revision": 1009347010,
-									"client_revision": 1009336620,
+									"server_revision": 1009603584,
+									"client_revision": 1009603584,
 									"tier": "",
 									"push_phase": "C3",
 									"pkg_cohort": "HYP:gemini_pkg",
-									"haste_session": "19649.HYP:gemini_pkg.2.1..0.0",
+									"haste_session": "19662.HYP:gemini_pkg.2.1..0.0",
 									"pr": 1,
 									"haste_site": "www",
 									"manifest_base_uri": "https://static.xx.fbcdn.net",
@@ -656,19 +653,19 @@
 									"is_comet": true,
 									"is_experimental_tier": false,
 									"is_jit_warmed_up": true,
-									"hsi": "7291581277637572816",
-									"semr_host_bucket": "6",
+									"hsi": "7296319873080052449",
+									"semr_host_bucket": "15",
 									"bl_hash_version": 2,
 									"skip_rd_bl": true,
 									"comet_env": 15,
 									"wbloks_env": false,
-									"ef_page": "WorkKnowledgeBundlesRoute",
+									"ef_page": "HomeGeminiRoute",
 									"compose_bootloads": true,
 									"spin": 4,
-									"__spin_r": 1009336620,
+									"__spin_r": 1009603584,
 									"__spin_b": "trunk",
-									"__spin_t": 1697703562,
-									"vip": "31.13.75.15"
+									"__spin_t": 1698806852,
+									"vip": "157.240.199.16"
 								},
 								317
 							],
@@ -823,8 +820,8 @@
 								"DTSGInitData",
 								[],
 								{
-									"token": "NAcN1GlbMNJhb_7ZTtiIPsmk964dHb_nyqx1zcv12JBGH1bciDR7UIA:42:1697505254",
-									"async_get_token": "AQy5iYSFNOogloRTxy-tcFZZfhJk8wZaIVlMy-jtfS72dWmS:42:1697505254"
+									"token": "NAcMT8zDl88l52v5NZcoOK1DdOnATrDOSe0eJlRDZBeco6hYtJ7auVw:42:1697505254",
+									"async_get_token": "AQz5PQgQBmZtx4RkdR17nI7RFXxC7fqZxWR68zVNvhat2QEG:42:1697505254"
 								},
 								3515
 							],
@@ -852,7 +849,8 @@
 										"officedepot.com.mx",
 										"bestbuy.com.mx",
 										"booking.com",
-										"nibio.no"
+										"nibio.no",
+										"myworkdayjobs.com"
 									]
 								},
 								3871
@@ -904,8 +902,8 @@
 								"QuickMarkersConfig",
 								[],
 								{
-									"pageLoadEventId": "7291581277637572816",
-									"pageLoadScriptPath": "XCometWorkKnowledgeBundlesController",
+									"pageLoadEventId": "7296319873080052449",
+									"pageLoadScriptPath": "/",
 									"sampleWeight": 1
 								},
 								4953
@@ -924,7 +922,7 @@
 								"CookieConsentIFrameConfig",
 								[],
 								{
-									"consent_param": "FQAREhISAA==.ARatpJ1-Pa1WtHwUHhgB_Mw_P2j8cCB_FhayJFXNemFlpAVq",
+									"consent_param": "FQAREhISAA==.ARZBbXpBA28Wlo6srAyifTDlvamywdxEmhwPCRhxX1HtiFiT",
 									"allowlisted_iframes": []
 								},
 								5540
@@ -935,7 +933,7 @@
 								{
 									"browser_id": "?",
 									"tab_id": "",
-									"page_id": "Ps2rogap7c111",
+									"page_id": "Ps3fbr8y2dvsc",
 									"transition_id": 0,
 									"version": 6
 								},
@@ -945,9 +943,9 @@
 								"ServerTimeData",
 								[],
 								{
-									"serverTime": 1697703562515,
-									"timeOfRequestStart": 1697703562069.1,
-									"timeOfResponseStart": 1697703562323.5
+									"serverTime": 1698806852381,
+									"timeOfRequestStart": 1698806852238.7,
+									"timeOfResponseStart": 1698806852305.4
 								},
 								5943
 							],
@@ -1052,8 +1050,8 @@
 									"default_meta_referrer_policy": "default",
 									"switched_meta_referrer_policy": "origin",
 									"non_linkshim_lnfb_mode": "ie",
-									"link_react_default_hash": "AT2NHRmJnQ4uZMtvsYtY7HRnChxcUcv0DILd4CsCjuxf6Y7gQZb0fiBhyJubdH-FZltk-XhlZVs1q_5CA1DyUJ-WxTM8c8M9uw3DOTTrNOqCLVxNfWuAxXa3o-BmjwYwg3hz799t8I8HHvVwhg",
-									"untrusted_link_default_hash": "AT0BybBUh7sFmPJleP9uV29SLj1MCOnn4R-u2ccIOpoc9HndxZMLyWfwZEUd8Ad5Y1-FFKYbE5hggSHpwOHkZQUhUAPBFGahdAF8ThkQi2sVHt-jiulFS8VZpM478pEt3nC0kjg79YkRh9voDA",
+									"link_react_default_hash": "AT0prWBqmtYysYqwwcN19ecOPvJ2sMWLql8oYlm33fclTfBPpIDrL_JaLU3rVx-OT3C614l_GXYD2t-FKanqbyt9Adyuv6fpf-TKhuYEFBw1hzU33BtQJ6zaTA7Sv4lfwRckBZn6oQMOWuBTqg",
+									"untrusted_link_default_hash": "AT1lxAS3H4Ux_YUotNvt81yqZiB0TlO2oM7AlpzkCDn5MNRpbXci3zfeidkXso-ZaYx4nGKldJaLc-JhAEZ0-fG-H6D5QElI9m7YIXyfDr5sy_sz4FRFVrEIX1GKvjBYRy7higxPQylDZomDEA",
 									"linkshim_host": "l.workplace.com",
 									"linkshim_path": "/l.php",
 									"linkshim_enc_param": "h",
@@ -1098,14 +1096,14 @@
 								},
 								54
 							],
-							["SessionNameConfig", [], { "seed": "1mUm" }, 757],
+							["SessionNameConfig", [], { "seed": "1fsv" }, 757],
 							["SoundInitialData", [], { "RPC_DISABLED": 1 }, 482],
 							[
 								"UserAgentData",
 								[],
 								{
 									"browserArchitecture": "64",
-									"browserFullVersion": "118.0.2088.46",
+									"browserFullVersion": "118.0.2088.76",
 									"browserMinorVersion": 0,
 									"browserName": "Edge (Chromium Based)",
 									"browserVersion": 118,
@@ -1365,7 +1363,8 @@
 										"dinn.com.mx",
 										"soriana.com",
 										"facebook.sso.datasite.com",
-										"services.apple"
+										"services.apple",
+										"appletvplus.com"
 									]
 								},
 								3829
@@ -1373,10 +1372,51 @@
 							[
 								"WorkGalahadDarkModeSetting",
 								[],
-								{ "initialSetting": "UNDECLARED" },
+								{ "initialSetting": "DISABLED" },
 								4615
 							],
 							["CometRelayConfig", [], { "gc_release_buffer_size": 50 }, 4685],
+							[
+								"WorkGalahadVariantSetting",
+								[],
+								{
+									"gemini": "ENABLED",
+									"river_knight": "DISABLED",
+									"dense_threadlist": "DEFAULT",
+									"smb": "DEFAULT",
+									"chat_first": "DEFAULT",
+									"simplification": "DEFAULT",
+									"chat_bubbleless": "DEFAULT",
+									"rp4smb": "DEFAULT",
+									"chatless": "DEFAULT",
+									"lightspeed_on_web": "DEFAULT",
+									"intern_appbar": "DEFAULT",
+									"intern_appbar_open_new_tab": "DEFAULT",
+									"intern_appbar_enable_hotkeys": "DEFAULT",
+									"blur_chat_messages": "DEFAULT",
+									"work_meeting_alerts": "DEFAULT",
+									"disable_link_previews": "DEFAULT",
+									"notif_priority_badge_count": "DEFAULT",
+									"notif_dot_on_tabs": "DEFAULT",
+									"notif_gdrive_setting": "DEFAULT",
+									"inclusive_language_suggestions": "DEFAULT",
+									"rhc_collapse_feed": "DEFAULT",
+									"rhc_collapse_group": "DEFAULT",
+									"rhc_collapse_chat": "DEFAULT",
+									"rhc_collapse_group_chat_linked": "DEFAULT",
+									"rhc_collapse_profile": "DEFAULT",
+									"rhc_collapse_next": "DEFAULT",
+									"rhc_collapse_knowledge": "DEFAULT",
+									"rhc_collapse_event": "DEFAULT",
+									"rhc_collapse_helpdesk": "DEFAULT",
+									"rhc_collapse_whats_new": "DEFAULT",
+									"rhc_collapse_device_login": "DEFAULT",
+									"rhc_collapse_hashtag": "DEFAULT",
+									"rhc_collapse_interview_mktplace": "DEFAULT",
+									"rhc_collapse_approvals": "DEFAULT"
+								},
+								4753
+							],
 							[
 								"TimeSpentWWWCometConfig",
 								[],
@@ -1394,7 +1434,7 @@
 							[
 								"MqttWebDeviceID",
 								[],
-								{ "clientID": "cb4265e1-dff3-4b6a-a9ae-d74f46f7de09" },
+								{ "clientID": "952a7987-1475-49ea-ba95-1dea81ac704e" },
 								5003
 							],
 							[
@@ -1433,439 +1473,6 @@
 								},
 								5842
 							],
-							[
-								"DateFormatConfig",
-								[],
-								{
-									"numericDateOrder": ["m", "d", "y"],
-									"numericDateSeparator": "/",
-									"shortDayNames": [
-										"Mon",
-										"Tue",
-										"Wed",
-										"Thu",
-										"Fri",
-										"Sat",
-										"Sun"
-									],
-									"narrowDayNames": ["M", "T", "W", "T", "F", "S", "S"],
-									"timeSeparator": ":",
-									"weekStart": 6,
-									"formats": {
-										"D": "D",
-										"D g:ia": "D g:ia",
-										"D M d": "D M d",
-										"D M d, Y": "D M d, Y",
-										"D M j": "D M j",
-										"D M j, g:ia": "D M j, g:ia",
-										"D M j, y": "D M j, y",
-										"D M j, Y g:ia": "D M j, Y g:ia",
-										"D, M j, Y": "D, M j, Y",
-										"F d": "F d",
-										"F d, Y": "F d, Y",
-										"F g": "F g",
-										"F j": "F j",
-										"F j, Y": "F j, Y",
-										"F j, Y \u0040 g:i A": "F j, Y \u0040 g:i A",
-										"F j, Y g:i a": "F j, Y g:i a",
-										"F jS": "F jS",
-										"F jS, g:ia": "F jS, g:ia",
-										"F jS, Y": "F jS, Y",
-										"F Y": "F Y",
-										"g A": "g A",
-										"g:i": "g:i",
-										"g:i A": "g:i A",
-										"g:i a": "g:i a",
-										"g:iA": "g:iA",
-										"g:ia": "g:ia",
-										"g:ia F jS, Y": "g:ia F jS, Y",
-										"g:iA l, F jS": "g:iA l, F jS",
-										"g:ia M j": "g:ia M j",
-										"g:ia M jS": "g:ia M jS",
-										"g:ia, F jS": "g:ia, F jS",
-										"g:iA, l M jS": "g:iA, l M jS",
-										"g:sa": "g:sa",
-										"H:I - M d, Y": "H:I - M d, Y",
-										"h:i a": "h:i a",
-										"h:m:s m/d/Y": "h:m:s m/d/Y",
-										"j": "j",
-										"l F d, Y": "l F d, Y",
-										"l g:ia": "l g:ia",
-										"l, F d, Y": "l, F d, Y",
-										"l, F j": "l, F j",
-										"l, F j, Y": "l, F j, Y",
-										"l, F jS": "l, F jS",
-										"l, F jS, g:ia": "l, F jS, g:ia",
-										"l, M j": "l, M j",
-										"l, M j, Y": "l, M j, Y",
-										"l, M j, Y g:ia": "l, M j, Y g:ia",
-										"M d": "M d",
-										"M d, Y": "M d, Y",
-										"M d, Y g:ia": "M d, Y g:ia",
-										"M d, Y ga": "M d, Y ga",
-										"M j": "M j",
-										"M j, Y": "M j, Y",
-										"M j, Y g:i A": "M j, Y g:i A",
-										"M j, Y g:ia": "M j, Y g:ia",
-										"M jS, g:ia": "M jS, g:ia",
-										"M Y": "M Y",
-										"M y": "M y",
-										"m-d-y": "m-d-y",
-										"M. d": "M. d",
-										"M. d, Y": "M. d, Y",
-										"j F Y": "j F Y",
-										"m.d.y": "m.d.y",
-										"m/d": "m/d",
-										"m/d/Y": "m/d/Y",
-										"m/d/y": "m/d/y",
-										"m/d/Y g:ia": "m/d/Y g:ia",
-										"m/d/y H:i:s": "m/d/y H:i:s",
-										"m/d/Y h:m": "m/d/Y h:m",
-										"n": "n",
-										"n/j": "n/j",
-										"n/j, g:ia": "n/j, g:ia",
-										"n/j/y": "n/j/y",
-										"Y": "Y",
-										"Y-m-d": "Y-m-d",
-										"Y/m/d": "Y/m/d",
-										"y/m/d": "y/m/d",
-										"j / F / Y": "j / F / Y"
-									},
-									"ordinalSuffixes": {
-										"1": "st",
-										"2": "nd",
-										"3": "rd",
-										"4": "th",
-										"5": "th",
-										"6": "th",
-										"7": "th",
-										"8": "th",
-										"9": "th",
-										"10": "th",
-										"11": "th",
-										"12": "th",
-										"13": "th",
-										"14": "th",
-										"15": "th",
-										"16": "th",
-										"17": "th",
-										"18": "th",
-										"19": "th",
-										"20": "th",
-										"21": "st",
-										"22": "nd",
-										"23": "rd",
-										"24": "th",
-										"25": "th",
-										"26": "th",
-										"27": "th",
-										"28": "th",
-										"29": "th",
-										"30": "th",
-										"31": "st"
-									}
-								},
-								165
-							],
-							[
-								"EmojiConfig",
-								[],
-								{
-									"pixelRatio": "1",
-									"schemaAuth": "https://static.xx.fbcdn.net/images/emoji.php/v9",
-									"hasEmojiPickerSearch": false
-								},
-								1421
-							],
-							[
-								"CLDRDateRenderingClientRollout",
-								[],
-								{ "formatDateClientLoggerSamplingRate": 0.0001 },
-								3003
-							],
-							[
-								"CLDRDateFormatConfig",
-								[],
-								{
-									"supportedPHPFormatsKeys": {
-										"D": "E",
-										"D g:ia": "Ejm",
-										"D M d": "MMMEd",
-										"D M d, Y": "yMMMEd",
-										"D M j": "MMMEd",
-										"D M j, y": "yMMMEd",
-										"D, M j": "MMMEd",
-										"D, M j, Y": "yMMMEd",
-										"F d": "MMMMd",
-										"F d, Y": "date_long",
-										"F j": "MMMMd",
-										"F j, Y": "date_long",
-										"F j, Y \u0040 g:i A": "dateTime_long_short",
-										"F j, Y g:i a": "dateTime_long_short",
-										"F j, Y \u0040 g:i:s A": "dateTime_long_medium",
-										"F jS": "MMMMd",
-										"F jS, g:ia": "dateTime_long_short",
-										"F jS, Y": "date_long",
-										"F Y": "yMMMM",
-										"g A": "j",
-										"G:i": "time_short",
-										"g:i": "time_short",
-										"g:i a": "time_short",
-										"g:i A": "time_short",
-										"g:i:s A": "time_medium",
-										"g:ia": "time_short",
-										"g:iA": "time_short",
-										"g:ia F jS, Y": "dateTime_long_short",
-										"g:iA l, F jS": "dateTime_full_short",
-										"g:ia M jS": "dateTime_medium_short",
-										"g:ia, F jS": "dateTime_long_short",
-										"g:iA, l M jS": "dateTime_full_short",
-										"h:i a": "time_short",
-										"h:m:s m/d/Y": "dateTime_short_short",
-										"j": "d",
-										"j F Y": "date_long",
-										"l F d, Y": "date_full",
-										"l, F d, Y": "date_full",
-										"l, F j": "date_full",
-										"l, F j, Y": "date_full",
-										"l, F jS": "date_full",
-										"l, F jS, g:ia": "dateTime_full_short",
-										"l, M j": "date_full",
-										"l, M j, Y": "date_full",
-										"l, M j, Y g:ia": "dateTime_full_short",
-										"M d": "MMMd",
-										"M d, Y": "date_medium",
-										"M d, Y g:ia": "dateTime_medium_short",
-										"M d, Y ga": "dateTime_medium_short",
-										"M j": "MMMd",
-										"M j, Y": "date_medium",
-										"M j, Y g:i A": "dateTime_medium_short",
-										"M j, Y g:ia": "dateTime_medium_short",
-										"M jS, g:ia": "dateTime_medium_short",
-										"M y": "yMMM",
-										"M Y": "yMMM",
-										"M. d": "MMMd",
-										"M. d, Y": "date_medium",
-										"m/d": "Md",
-										"m/d/Y g:ia": "dateTime_short_short",
-										"m/d/y H:i:s": "dateTime_short_short",
-										"n": "M",
-										"n/j": "Md",
-										"n/j, g:ia": "dateTime_short_short",
-										"n/j/y": "date_short",
-										"Y": "y"
-									},
-									"isLocaleInConfigerator": true,
-									"CLDRConfigeratorFormats": {
-										"dateFormats": {
-											"full": "EEEE, MMMM d, y",
-											"long": "MMMM d, y",
-											"medium": "MMM d, y",
-											"short": "M/d/yy"
-										},
-										"timeFormats": {
-											"full": "h:mm:ss a zzzz",
-											"long": "h:mm:ss a z",
-											"medium": "h:mm:ss a",
-											"short": "h:mm a"
-										},
-										"dateTimeFormats": {
-											"full": "{1} 'at' {0}",
-											"long": "{1} 'at' {0}",
-											"medium": "{1}, {0}",
-											"short": "{1}, {0}"
-										},
-										"availableFormats": {
-											"Bh": "h B",
-											"Bhm": "h:mm B",
-											"Bhms": "h:mm:ss B",
-											"E": "ccc",
-											"EBhm": "E h:mm B",
-											"EBhms": "E h:mm:ss B",
-											"EHm": "E HH:mm",
-											"EHms": "E HH:mm:ss",
-											"Ed": "d E",
-											"Ehm": "E h:mm a",
-											"Ehms": "E h:mm:ss a",
-											"Gy": "y G",
-											"GyMMM": "MMM y G",
-											"GyMMMEd": "E, MMM d, y G",
-											"GyMMMd": "MMM d, y G",
-											"H": "HH",
-											"Hm": "HH:mm",
-											"Hms": "HH:mm:ss",
-											"Hmsv": "HH:mm:ss v",
-											"Hmv": "HH:mm v",
-											"M": "L",
-											"MEd": "E, M/d",
-											"MMM": "LLL",
-											"MMMEd": "E, MMM d",
-											"MMMMW-count-one": "'week' W 'of' MMMM",
-											"MMMMW-count-other": "'week' W 'of' MMMM",
-											"MMMMd": "MMMM d",
-											"MMMd": "MMM d",
-											"Md": "M/d",
-											"d": "d",
-											"h": "h a",
-											"hm": "h:mm a",
-											"hms": "h:mm:ss a",
-											"hmsv": "h:mm:ss a v",
-											"hmv": "h:mm a v",
-											"ms": "mm:ss",
-											"y": "y",
-											"yM": "M/y",
-											"yMEd": "E, M/d/y",
-											"yMMM": "MMM y",
-											"yMMMEd": "E, MMM d, y",
-											"yMMMM": "MMMM y",
-											"yMMMd": "MMM d, y",
-											"yMd": "M/d/y",
-											"yQQQ": "QQQ y",
-											"yQQQQ": "QQQQ y",
-											"yw-count-one": "'week' w 'of' Y",
-											"yw-count-other": "'week' w 'of' Y"
-										}
-									},
-									"CLDRRegionalConfigeratorFormats": {
-										"dateFormats": {
-											"full": "EEEE, MMMM d, y",
-											"long": "MMMM d, y",
-											"medium": "MMM d, y",
-											"short": "M/d/yy"
-										},
-										"timeFormats": {
-											"full": "h:mm:ss a zzzz",
-											"long": "h:mm:ss a z",
-											"medium": "h:mm:ss a",
-											"short": "h:mm a"
-										},
-										"dateTimeFormats": {
-											"full": "{1} 'at' {0}",
-											"long": "{1} 'at' {0}",
-											"medium": "{1}, {0}",
-											"short": "{1}, {0}"
-										},
-										"availableFormats": {
-											"Bh": "h B",
-											"Bhm": "h:mm B",
-											"Bhms": "h:mm:ss B",
-											"E": "ccc",
-											"EBhm": "E h:mm B",
-											"EBhms": "E h:mm:ss B",
-											"EHm": "E HH:mm",
-											"EHms": "E HH:mm:ss",
-											"Ed": "d E",
-											"Ehm": "E h:mm a",
-											"Ehms": "E h:mm:ss a",
-											"Gy": "y G",
-											"GyMMM": "MMM y G",
-											"GyMMMEd": "E, MMM d, y G",
-											"GyMMMd": "MMM d, y G",
-											"H": "HH",
-											"Hm": "HH:mm",
-											"Hms": "HH:mm:ss",
-											"Hmsv": "HH:mm:ss v",
-											"Hmv": "HH:mm v",
-											"M": "L",
-											"MEd": "E, M/d",
-											"MMM": "LLL",
-											"MMMEd": "E, MMM d",
-											"MMMMW-count-one": "'week' W 'of' MMMM",
-											"MMMMW-count-other": "'week' W 'of' MMMM",
-											"MMMMd": "MMMM d",
-											"MMMd": "MMM d",
-											"Md": "M/d",
-											"d": "d",
-											"h": "h a",
-											"hm": "h:mm a",
-											"hms": "h:mm:ss a",
-											"hmsv": "h:mm:ss a v",
-											"hmv": "h:mm a v",
-											"ms": "mm:ss",
-											"y": "y",
-											"yM": "M/y",
-											"yMEd": "E, M/d/y",
-											"yMMM": "MMM y",
-											"yMMMEd": "E, MMM d, y",
-											"yMMMM": "MMMM y",
-											"yMMMd": "MMM d, y",
-											"yMd": "M/d/y",
-											"yQQQ": "QQQ y",
-											"yQQQQ": "QQQQ y",
-											"yw-count-one": "'week' w 'of' Y",
-											"yw-count-other": "'week' w 'of' Y"
-										}
-									},
-									"CLDRToPHPSymbolConversion": {
-										"G": "",
-										"yyyy": "Y",
-										"yy": "y",
-										"y": "Y",
-										"LLLLL": "M",
-										"LLLL": "f",
-										"LLL": "M",
-										"LL": "m",
-										"L": "n",
-										"MMMMM": "M",
-										"MMMM": "F",
-										"MMM": "M",
-										"MM": "m",
-										"M": "n",
-										"dd": "d",
-										"d": "j",
-										"ccccc": "D",
-										"cccc": "l",
-										"ccc": "D",
-										"cc": "D",
-										"c": "D",
-										"EEEEE": "D",
-										"EEEE": "l",
-										"EEE": "D",
-										"EE": "D",
-										"E": "D",
-										"aaaaa": "A",
-										"aaaa": "A",
-										"aaa": "A",
-										"aa": "A",
-										"a": "A",
-										"bbbbb": "A",
-										"bbbb": "A",
-										"bbb": "A",
-										"bb": "A",
-										"b": "A",
-										"BBBBB": "A",
-										"BBBB": "A",
-										"BBB": "A",
-										"BB": "A",
-										"B": "A",
-										"HH": "H",
-										"H": "G",
-										"hh": "h",
-										"h": "g",
-										"K": "g",
-										"mm": "i",
-										"m": "i",
-										"ss": "s",
-										"s": "s",
-										"z": "",
-										"zz": "",
-										"zzz": ""
-									},
-									"intlDateSpecialChars": {
-										"cldrDelimiter": "'",
-										"singleQuote": "'",
-										"singleQuoteHolder": "*"
-									}
-								},
-								3019
-							],
-							["IsInternSite", [], { "is_intern_site": false }, 4517],
-							[
-								"WorkKnowledgeConfig",
-								[],
-								{ "canManageKnowledge": true, "canManageAnyKnowledge": true },
-								5039
-							],
 							["cr:3976", [], { "__rc": [null, null] }, -1],
 							["cr:955714", [], { "__rc": [null, null] }, -1],
 							["cr:1094133", [], { "__rc": [null, null] }, -1],
@@ -1899,25 +1506,32 @@
 								{ "__rc": ["setTimeoutCometSpeculative", null] },
 								-1
 							],
+							["cr:1088", [], { "__rc": [null, null] }, -1],
+							["cr:1242", [], { "__rc": [null, null] }, -1],
+							["cr:1265", [], { "__rc": [null, null] }, -1],
+							["cr:3107", [], { "__rc": [null, null] }, -1],
+							["cr:3260", [], { "__rc": [null, null] }, -1],
+							["cr:6194", [], { "__rc": [null, null] }, -1],
+							["cr:6666", [], { "__rc": [null, null] }, -1],
+							["cr:6668", [], { "__rc": [null, null] }, -1],
 							[
-								"cr:706",
+								"cr:6998",
 								[],
 								{
 									"__rc": [
 										null,
-										"Aa0l2WYXOeZbuCpbldIYRTFO1tNYrpP_ZH5oBXzWxzALvflH8oBfTfDf_s0tjDS5fn8QLwOmianJMsy__X9nSND0KUl3ghmlPG52JYKFWdED"
+										"Aa3DMOOd-L6Oe7DJ4qH7aOw9SD5jGxGiC9T1d-EykHlunTWhBYBbBYL6d78KuWYgzeJumiHpdMDnPa58bso-W7F4dk0aqAtlNTRf6aLUoUjB"
 									]
 								},
 								-1
 							],
-							["cr:1088", [], { "__rc": [null, null] }, -1],
-							["cr:1242", [], { "__rc": [null, null] }, -1],
-							["cr:1265", [], { "__rc": [null, null] }, -1],
-							["cr:2135", [], { "__rc": [null, null] }, -1],
-							["cr:3107", [], { "__rc": [null, null] }, -1],
-							["cr:3138", [], { "__rc": [null, null] }, -1],
-							["cr:3260", [], { "__rc": [null, null] }, -1],
 							["cr:7349", [], { "__rc": [null, null] }, -1],
+							[
+								"cr:2774",
+								["LexicalUtils.prod"],
+								{ "__rc": ["LexicalUtils.prod", null] },
+								-1
+							],
 							[
 								"cr:5888",
 								["handleWorkCometReauthenticationSideEffects"],
@@ -1952,7 +1566,6 @@
 								{ "__rc": ["VoyageUserJourneyCometInit", null] },
 								-1
 							],
-							["cr:869493", [], { "__rc": [null, null] }, -1],
 							["cr:1132918", [], { "__rc": [null, null] }, -1],
 							["cr:1267207", [], { "__rc": [null, null] }, -1],
 							["cr:769", [], { "__rc": [null, null] }, -1],
@@ -1968,8 +1581,15 @@
 								{ "__rc": ["GeminiAppNavigationTourNub.react", null] },
 								-1
 							],
-							["cr:2605", [], { "__rc": [null, null] }, -1],
 							["cr:3561", [], { "__rc": [null, null] }, -1],
+							[
+								"cr:6552",
+								["WorkNavigationAppBarContainerExternal.react"],
+								{
+									"__rc": ["WorkNavigationAppBarContainerExternal.react", null]
+								},
+								-1
+							],
 							[
 								"cr:1738075",
 								["GeminiAppNavigationBugNub.react"],
@@ -1977,17 +1597,6 @@
 								-1
 							],
 							["cr:665", [], { "__rc": [null, null] }, -1],
-							[
-								"cr:757",
-								[],
-								{
-									"__rc": [
-										null,
-										"Aa0l2WYXOeZbuCpbldIYRTFO1tNYrpP_ZH5oBXzWxzALvflH8oBfTfDf_s0tjDS5fn8QLwOmianJMsy__X9nSND0KUl3ghmlPG52JYKFWdED"
-									]
-								},
-								-1
-							],
 							["cr:4489", [], { "__rc": [null, null] }, -1],
 							[
 								"cr:5774",
@@ -1996,6 +1605,17 @@
 								-1
 							],
 							["cr:6693", [], { "__rc": [null, null] }, -1],
+							[
+								"cr:7000",
+								[],
+								{
+									"__rc": [
+										null,
+										"Aa3DMOOd-L6Oe7DJ4qH7aOw9SD5jGxGiC9T1d-EykHlunTWhBYBbBYL6d78KuWYgzeJumiHpdMDnPa58bso-W7F4dk0aqAtlNTRf6aLUoUjB"
+									]
+								},
+								-1
+							],
 							["cr:7351", [], { "__rc": [null, null] }, -1],
 							["cr:1024", [], { "__rc": [null, null] }, -1],
 							[
@@ -2005,9 +1625,24 @@
 								-1
 							],
 							["cr:1288", [], { "__rc": [null, null] }, -1],
-							["cr:3566", [], { "__rc": [null, null] }, -1],
 							["cr:5546", [], { "__rc": [null, null] }, -1],
 							["cr:5977", [], { "__rc": [null, null] }, -1],
+							[
+								"cr:1810733",
+								["useGeminiStepsComposerDialog"],
+								{ "__rc": ["useGeminiStepsComposerDialog", null] },
+								-1
+							],
+							[
+								"EmojiConfig",
+								[],
+								{
+									"pixelRatio": "1",
+									"schemaAuth": "https://static.xx.fbcdn.net/images/emoji.php/v9",
+									"hasEmojiPickerSearch": false
+								},
+								1421
+							],
 							[
 								"WebLoomConfig",
 								[],
@@ -2016,17 +1651,15 @@
 										"interactions": {
 											"modules": { "730": 1, "809": 1, "953": 1, "2159": 1 },
 											"events": {
-												"53018625.work_galahad.channel.chats": 2.9,
-												"53018625.work_galahad.channel.home": 1.5,
-												"53018625.work_galahad.channel.notifications": 2,
-												"62455809.gemini.home": 4,
-												"62455811.comet.sharedmediaviewer.media": 1.7,
-												"62455811.gemini.chat.canonical": 8,
-												"62455811.gemini.chat.group": 9.7,
-												"62455811.gemini.chat.linked": 2.5,
-												"62455811.gemini.group": 3.5,
-												"62455811.gemini.home": 1.9,
-												"62455811.gemini.mediaviewer.photo": 2.4
+												"53018625.work_galahad.channel.chats": 2,
+												"53018625.work_galahad.channel.notifications": 1.3,
+												"62455809.gemini.home": 2.3,
+												"62455811.gemini.chat.canonical": 4.4,
+												"62455811.gemini.chat.group": 5.8,
+												"62455811.gemini.chat.linked": 1.7,
+												"62455811.gemini.group": 2,
+												"62455811.gemini.home": 1.1,
+												"62455811.gemini.mediaviewer.photo": 1.7
 											}
 										},
 										"qpl": {
@@ -2053,7 +1686,6 @@
 										"boosted_pagelikes": true,
 										"mercury_send_error_logging": true,
 										"platform_oauth_client_events": true,
-										"graphexplorer": true,
 										"sticker_search_ranking": true
 									},
 									"known_routes": [
@@ -2144,9 +1776,21 @@
 								5573
 							],
 							[
+								"cr:1820624",
+								["WorkGalahadEntityKeyMatcher.gemini"],
+								{ "__rc": ["WorkGalahadEntityKeyMatcher.gemini", null] },
+								-1
+							],
+							[
 								"cr:5280",
 								["ReactDOM-prod.modern"],
 								{ "__rc": ["ReactDOM-prod.modern", null] },
+								-1
+							],
+							[
+								"cr:2180",
+								["LexicalSelection.prod"],
+								{ "__rc": ["LexicalSelection.prod", null] },
 								-1
 							],
 							[
@@ -2184,6 +1828,7 @@
 								},
 								3790
 							],
+							["MessengerWebRegion", [], { "regionNullable": "ODN" }, 5389],
 							[
 								"GeminiBeeperConfig",
 								[],
@@ -2197,47 +1842,15 @@
 								5331
 							],
 							[
-								"WorkGalahadVariantSetting",
+								"CometCustomKeyCommands",
 								[],
 								{
-									"gemini": "ENABLED",
-									"river_knight": "DEFAULT",
-									"dense_threadlist": "DEFAULT",
-									"smb": "DEFAULT",
-									"chat_first": "DEFAULT",
-									"simplification": "DEFAULT",
-									"chat_bubbleless": "DEFAULT",
-									"rp4smb": "DEFAULT",
-									"chatless": "DEFAULT",
-									"lightspeed_on_web": "DEFAULT",
-									"intern_appbar": "DEFAULT",
-									"intern_appbar_open_new_tab": "DEFAULT",
-									"intern_appbar_enable_hotkeys": "DEFAULT",
-									"blur_chat_messages": "DEFAULT",
-									"work_meeting_alerts": "DEFAULT",
-									"disable_link_previews": "DEFAULT",
-									"notif_priority_badge_count": "DEFAULT",
-									"notif_dot_on_tabs": "DEFAULT",
-									"notif_gdrive_setting": "DEFAULT",
-									"inclusive_language_suggestions": "DEFAULT",
-									"rhc_collapse_feed": "DEFAULT",
-									"rhc_collapse_group": "DEFAULT",
-									"rhc_collapse_chat": "DEFAULT",
-									"rhc_collapse_group_chat_linked": "DEFAULT",
-									"rhc_collapse_profile": "DEFAULT",
-									"rhc_collapse_next": "DEFAULT",
-									"rhc_collapse_knowledge": "DEFAULT",
-									"rhc_collapse_event": "DEFAULT",
-									"rhc_collapse_helpdesk": "DEFAULT",
-									"rhc_collapse_whats_new": "DEFAULT",
-									"rhc_collapse_device_login": "DEFAULT",
-									"rhc_collapse_hashtag": "DEFAULT",
-									"rhc_collapse_interview_mktplace": "DEFAULT",
-									"rhc_collapse_approvals": "DEFAULT"
+									"customCommands": {},
+									"areSingleKeysDisabled": null,
+									"modifiedKeyboardShortcutsPreference": 4
 								},
-								4753
+								4521
 							],
-							["MessengerWebRegion", [], { "regionNullable": "ODN" }, 5389],
 							[
 								"PresenceConfigInitialData",
 								[],
@@ -2248,16 +1861,6 @@
 									"viewer_presence_capabilities": 0
 								},
 								3841
-							],
-							[
-								"CometCustomKeyCommands",
-								[],
-								{
-									"customCommands": {},
-									"areSingleKeysDisabled": null,
-									"modifiedKeyboardShortcutsPreference": 4
-								},
-								4521
 							],
 							[
 								"PresencePrivacyInitialData",
@@ -2340,7 +1943,7 @@
 								"AnalyticsCoreData",
 								[],
 								{
-									"device_id": "$^|AcYJZOvBBJppJ9OEr2GgX78jM1W8HmzWH7cYsq1ChgLaU17PHanhoANG0zZ5l0VO20YdAZvXmrdMu7QRtFvOZkqSaw|fd.AcYZfQ56qGphyknAZsZB4ClIFQ_jeoCLm2NBppKlcIEN9DeBmOhpkvub2RWq2Tx9dl5mp9Nz8_pkawEqsC0CTNLK",
+									"device_id": "$^|AcajsL-Res_k8ukMqGjmbwiPwgrTwbhACh3DvC-j8PFwlAyJOJf6jMOivRJRghE7Kcc5S6vec4TsSZ3ns2mp06bpug|fd.AcYkWB9o3NarbE5Ayzog-FZjw5cPnWQPqzLS2okbTYTdx7xMXNR043XUK4kHmIr9jdk0HODCJ5kRg3K0Ug7cNc83",
 									"app_id": "1586666294789976",
 									"enable_bladerunner": true,
 									"enable_ack": true,
@@ -2355,8 +1958,8 @@
 									"max_delay_br_init_not_complete": 3000,
 									"consents": {},
 									"app_universe": 1,
-									"br_stateful_batching_exp": true,
-									"enable_br_stateful_batching": false,
+									"br_stateful_migration_exp": false,
+									"br_stateful_migration_on": false,
 									"enable_non_fb_br_stateless_by_default": false,
 									"use_falco_as_mutex_key": false,
 									"identity": {
@@ -2364,9 +1967,9 @@
 											"actorId": "61552123927894",
 											"accountId": "61552123927894"
 										},
-										"claim": "hmac.AR0JDF7XQdj8dqvfAus_lAKVkZhwMcIAvG1TOF6Mx22D6wN9"
+										"claim": "hmac.AR0JDF7XQdj8dqvfAus_lAKVkZhwMcIAvG1TOF6Mx22D664m"
 									},
-									"state_for_br": "fase.Acbv2yfcWDdcGGViBhd-pke2kVHgSg4gqQDmau27N7HefHZjNzT0ynDHf8yvqw_ofH2kUIg5fGR3I7Yn4oW3SHyCpro5bjLVyltOWboBVPq0YDhWNpso73ARPY8grn0ugzIXYuGQIQk69cuJjcaZrylSsUMiZ69DaosQfJKiLHGxfxdVpke5K9rGIT69SSFKEthCTDmipWcnX4MffaTyJIqWMrlxjgE2dfjP3XlTNuNmCjiQjYiLmYXi_ziaJ5GzFzCGtJV-gdQLE33omWhO8ffGgXralOr1UyFbm8Yyrx3EanNSw8BBAUkDnOWz-PQ04EY1UXBDPDXhWWOBsq2WqTviOENEsezqrhLRjCUwEo3DKJOMAk7WDvQPe-OyPzvh0isn6V4REcbb-f2gOQdfI2rLwdKtwNyQF-dDdqUdhkE25wlxOR0fHqTWj-QqpucnMiuAF7JnVE9m1SsncuSqnqNW3FHI25wr19nOdxM9jVr6PBuzuHMBrpEAXy0eUAnPEC4Z8IRYGk7rzvCcVvUaZ31Nsc_kd8awn5bgbYbKPvDN-076_xcZUx05DFzNoHP2Zu7FVH1zw7iENgADwEtBoze9Q9H7nkIl8RVM-ENxVOioIdfQO3530Zv9_-RBb_aGAk89kGkuGTisXSqfoBV0t5pGLOhlwr_ioTv15iLASeugkpREW_VbQ6Ox76zpGtxaYehbp8Iewf4WhOPD-VkXSJgdbzOwLT5XjuMC4IFNx8Vzcf5g8If88DMJ8tTgVni8565gLmJnWvwj5K7XeiNPB0f90N5g4d4HnJh_8FcPZQ4xcYIVIw2OmXnshuf26M8fl6Fwc6J_zOx0V0qoLnHvQfbrQZ-Pz0zk5ZB3FhfJWZKgpSep0-JNXR51NFYMNcGN0QMXlp-g8FsN1KwZF2FlHKZo1TXwpNEpaUadvp1O6nWJiNU-WL3inZ3ASP-8ZEhQRPzKjkz4TkvU28D_UayNJKdYfOC_8UcH_njhA2RxN8S9fQYPRzvQYi3UHblhwxapumb_KsZ9J6h3pLVgqXv2Txtz0snSIdvecHykNQETg9rj1-BF7Yvvi0MbGthuGE195Qf7R4kVCj48x12GG06zEAWII00v-Fj__166FEHyEAs4v7aELtg-FDB99caeG72hkLhHt5QoiNEEnXSLXJpClQE7o3GRVx2OfNiK5Rsl2GIiECjlsl--7WAUUDmesUWA2kf657yUehMqE7H7sXJfEuIAqEEY9y4xGtFY09N1tqID4M0FqTgUsga8V-fjYMjmO6XObGOQhgUDQMh_Ygp-LF5Fml3FfBRyBHugE6VU7pAnmhypaYuRTl9IDciRU_A05d94btFL0dBHWoMtBNxS7f2TfnfKCMsb3sJ83h8UOei4E1oOoIIlHU82Weg92unSnFikWEbZ_sh6Y2ogRYRhrWK24U2b_LcC85UweKo0jf94r5p-jmbjd3s12w3H9kZPjTsc9toFRWVsM2C0G1C5rPnOnyo20Etk3ggjlWPKF5LFPm1VmhXdiB5jYTYNHjRwn_ambXvcDf46xdRikM7DbauZYTsnZl9zAsT3h2XNyoSReRv6Qp1gdp9rwxh5GQGg8ORxEK-5mwPBHqkyfZYAuixVDMRynapE7SfzoTOMtUMjdH2zyl71NhHVzVREJSYckTT5znIiaGEFWCQgO2app0VJReQjkrupgX6A9QOrTFiB8UWQyDjQ7ogjgVM9hfsanCpFsqJI4iBrGCMiCNMX7wBgU8kFxTD1fVF2KLtqaFuKaqhyH1ZXv3Wix6FBzugGgupjsYfhCuPVhGV01jLgZ5m0sBGRn3VYxbih-d4_vCHVcjxXT1oaCnnCHioJsx_XJ678Y9VpJUpZinWZemScrzgy5QSl5ZKwQgh8dMtPvmfqlz88X9SB6oPG6lzXipGQddcECe4ciASYNmyzMofWhoR6SnRgvzXh8lZeWCfc-5P_y2J2YQIV_nMLS38Pd1S9EqEhin6jLWePlfwqY2Lr4bBg4wyUGqOL_BHjvJfK1dO29Zx2NwYEvAFGk6slv921bbzSKqueRbOxZX5XQqRO4GwX4H8-gBBoiAGJq6rJv8TEf1QiSOESLC2-7E11uFQHcJKp92VNzVEmIQLDLGpxD8SfDF82aCqXKd4oE4hjgfHS6qD_FwVzOpuOnM43e5cpAds2q38AGKoRfBQPG4mcQg_7WQrzrIFoDI9NmhOnO5QXuIV-pNyWed8wRU-LTq7Yen5Y43lrkmZaeWGei8ZSYiksysR_DMO28AoWtNRp6E_yiLOpjblaha4Vf5mdMjBAeQlzBB6knPxOIN-YJGVz1pCE_buiKWovi0XR_EbKMSVyzMbRdfaOWZ7hz13Nam0J39-dVKnM5u0s0BSwM50Dubs_MIqdWrqRyRjbZSej7x57WTMyn6UahAqR9-6VxfFqhH_6b2rthGzVmrPEw4d7pAxj22CntEr61d6WqX0e27w8Ufn5CMWBd9ZEGrjrRdOFLcZCpA1wv18QWqwE5CM3JG2K-eP4Gtfc7MSaZ1SFR-vBIEuXhm4LeMPwidw_maAiAW5WekTdXLbKVyvZYnROaNDSAxPiOqhSGPOjWqQcJdwYduTlncrM2Q4VTft4HBU2tYgqdSkSvHM7FvpOfj6Y7f-fRHCsBWlQsXgKz76AZMKl26bI8nQax1sUkBQMQf9AokYPe6I6GbLJIl8ayfDx3Bcg04dr7NwkWM9kavJiWLpx8t7u1Jcu8EjMtTZSKXHSlafGNlA1GsJhGBgy3dCkutKM3g550Gg4DxeVToWcYjuAig4WIqEY4qJ-KeU2n5DP6IpBCfCrV3MrKiUZ1L9uUJnuo-3upYz5Nm-mFb3I8SFst6uuS82Tcbp_WfhwYX9mkiO--qfzl_k2LAECeK_zH7LT1qgr6rHaOpJDCSSdDZkZLpKdC42ShORoGXfUJesD0oMF2d0fay11Q6zk46zDH8158fU2SscO12ge751EGK4LVL-grJJ5LJ_V5znIJY_hki0zybgTvmClBy5vqdcPqx5r28SHKhLkdlIgGHgwIhNKKk0ZjZ6GW6DinaoTjvgxlO3CEYxc7cFerUNVi0Jp9Tnz_Cz0ihoE1PUCP4CNcFHHBcluVIA6o_e1E5j7pckblaVXmgjK8KiXQkyt9nwExEX7Jcj6jY_nfugqK8AInrJDCCQHdRyM9qbV59C3YfxfhYnAKVPOSb-Yq2J9apoa9d6jLgF70SoyhC1Mn9AgwHUsPh7QfHk7TIq5NabUYT2BWqjrfS1ya1sF8XKjTliXH69-YiMhMDfVfv15N_Nz6KQv7q-L9qgwES3qzcFJ2SBCiCH-QqrZfSbFrpMhAxXWf-9U3B2Q4KNp4ISjyw9aECCQrF62BYx_SxMsXzO2OlwB_OtYWlEWtSoWTfocYiwEmn2h9EnTzPWAcATPY-WQXu_qthSoVFysfiFmHvroooKZFzcT7cOvFtOkM_La1-CEgSUHJzbA7Z6o-tnvZ1VG54EiyPvHpI1wdiRk-27w_g1YbET_kxhNyBlahMX_aYkqG5W690Q92LzGnf1UL6bCi8mlvj5mh_wDSm3y_fGXhiOXQ8IbCe__e7yxWzajMjTVsod_hu_jANTMKra3QXLClb3l3MBErKkbnAICL_eojyC0upkuyBMDTQsdbhQg9jSkP9RA43aJCpgIRLbXO26FLuhvG437aYEDLxYm3W0ZUFtabEuxZvciyfSzq0s6NI130nxjQwKWajxO0tahSX9jgwVOtJ57qEWXR-SRnZTnOebFRjxU4b4H41eClZ9_j674qEkvlDdTvwi-v6cZOcY5oJMQ0KPDPsf4UFH9A-i8URIzLEkYVe5wz6ZHhK7vgBgDZSwh0l_wvXNeQyVhcl4jn2m5tdfOm4WmstI5haxRTfnPoYbKhyFxfCPRrz2xNcZ-9vnscIYr1pcYJ32bXFz3cf5FWgt8xghDVL3ZZwRlSzflTJFqU1PBP4Q1psTwyamC0LfF1Reokd8Go0sc4n4lBRggoAKTZj1kyAaHVtY6_1x62ef2bfWeQ_JrbaxlnUYxB1L3jMAiniytpUwT1XdQ8JEjTQFID7tUeQ42umUR43K3hJctPDDv8Il5WIugStRc51ZQlzcEPNfPnv1ZuJ0dnl4ZIAxLRL_DlJ9HVC7MDdtueuWMy4h6niYQP2lAtQWQB4AL9pbgumjwdvD6AivA51q8pr_l5K7JfWgpbsMjaMMQdly_o9RGYsKwF1tV6XZjqOeh1dCWUhZJhZ1D25JeYm5z1Y5_M82BpM2PEHwHI39lTgCH-EBDx6vmijoCxy-4-zX8fON96OVrtU_5ZkoIGLkfpDLgcetsMDXhlszqilm0U6jEm1NhA-ZzWjhKVEZjWJnUEUfqtp5WhSsRv68ddQnplH0GAfoYad214lCmkVSi7XogjV09LsyR_q-n_jTVDpJjXn-nEGZTjJiVYCqFR0khZ75pC0UXClzFwWLuwKbjL2hn97eSLs2iPWTf_5Wr-Yys4IdRb5qrV9MOYwm30TZ6g00zydQqLzeeKJPNpH_3-cShsVL1YFe3sxyzGP9QZ7onwRv435Iod45RKStdAGai18GFfDZxANRhtADiVyjYjXQ9HoSMaPCKaURpUne7dxQG4bXYjLIkN0FwyLNa2_3XoGFeNY-vvr-bCysRMuXlkEqJqUnSMj15se6XwWq05Fe4Vu-jDcD9oQjl8N7tS0M3LLGH3PgAlV2hZDVYK9JJUl-JmqCNlrxwxhhMh-fTJpPQK62f3IWJ5K6TTsLwWsPQ5xYjxT7yMnGG4KggVbJvqAC22YYiSRET5WvWJXgdxZzOJPI1gA7aukKWrvjW9GZWR1NU-2wFBLovD2GnzBzMnAT6nB8KZgZCmKOR8EOgd--rIDapTKESPowE8wQeQgwRbWLxpY3KwIWxOe4efBmy2A8nHxu08L4KhRLydPQmmtAFmkVn8FWlTFNQNLyKbegdVJYcx7CkNqaaCMTThioSlYgSE2bm_NGeUdew5po02IEbj_RyaAe7L2WlZEt-nSvGc_Ly-ML_96fZR81AU-36m5hv3FwQwiDFfEa1OqcO2zVjryu6eSHRzep3EriFkbffdw7gY-gbBkcvaifYK0dQcDLyodVKpQY_gL-PTrffUL4B68kedMwGtWY4hvdEmRWEq8YjpZ9tbcel6nXHqsxHB33zxTz16cgXmuMbXJjzQq5T5crknFoDk2JyG3NvCkdnewXqZoRAxjKAnFGPU-YupvXicOtT4UxuDu7IYD5TfZz_uTp0DkpcM-9QGnFA1CCKIPGd0_ZYN38ExW1NnWZSX1cNoEVKdusfWIdXKsGaharzaueG_rSzInBsLlDHKmDdasOlalY2ydKvvaaPuFqg_Vi_PTK07OznJbtpqIUe356CE6KvtQ",
+									"state_for_br": "fase.AcbBWhDmbzekxv_vZFWFhz2avg0aMy9T5epRF9vE2StE9i-Pbou53M6VSf3toDpYns1EXIY7-n1XWemHL3bZR9Wp_bKJn2SyhimawNj6gaUF6mWJz69U8ewj_uZkRlStPV8C8C8WYrBjaqpLNVA2VmSK-kVt5uehU7Vnd6L6ceTfLT9ki4EiMyGVxGly9KR4lgnYxUCId-2y-FRxjeZCf6-x7XD6gj8Mzb1Z2wW4fXCgRN9rlne5qqF0_6MOxTqdqVwkUipgipY-Cn5dVhGi3lzbfouwdwX6FM9OE3Ks7wgYARS--i8xht-Nd0-L_TUp2MjC_aDGpgUn1mkMv9uKztvk6_R1APrvHofroiiilNLNJZOSSanU3s4aC-Q_Vz7CaLk5vqEdH8mB4cagGHZMjEVWcdt06d9b-OYcHJmjhvRrMIkJyIvF2cmY4DX0WAD14EQNyu-dUkgegSn7xc15uLHQXXjfY8uXSNI8g3jsWBsFvKGy2vz4UPGcnwlS7vS3sqInpUr_jYMHyYihGe8mgp_zHoGS8sJZEgC14qrLzc98_6vPbJXeFiA5zUN4f4iELdIWfCtt5Fe5EsCNBd5sNvmCmWv1KRE7imRMNYPxuSxGBH4s7NjDAsML6hlnvSNT_xZs5fBYDKzcAyZMpPxh1rV950-HtNVhZzXT5LbARIYnAkgxtPL3fb1xGyaM7l0bskWuOVtlVmsvmBcxlJDBvJKIWNdGGBFiLjGz3ly4bbCdEvAkGRfsN5D6ntmK9cJzJqOOZ4LP4B-La331H6BvO5cMS-d39Wp3ZnR7pVdF4O_VTwiMeqFAH9zcsdIp_kJVcgCLpkz7UpCXwmqMTQiUQoUM1eB8K54viCMyK-eTa91E9xPIih-w4tSEl8N4Bi19NYoUxRq98iCh5NXC_czvAyZX9argZiTvIfaq2Ydr-4hMIS4wBvABz9n0Bq87UzSUR_ddNVp2huNMQjxMD2OMR-W3TdaUp8wWGn_vDBzCq8IdQderkAsX22y1iO9mWvMnX5RRxZDHDc6XuTRtyA4CoBEJ9OY8QJUv3NZPgJmFI8PlhcGgywF-JZPFcBvA3hi8F8HRKWsKufm3WO4nX_iP95v87djjQa0CxO2tvwBGdoM-w2bFkQcdZozNThcB-MJktfxNOVr0tUQBHuMZOBvlGoUhpQCNNnzdmp7pcgy8vEtHyj-ykY725l_KXHOrQJAgdRKhEx5a8BLNVT5g752oC7viRDMz7IJmOcLUvkzpfoNGE1F52xTT2FWNM4MqiZwDb9sgS971ekwxbxNZrAYyzEEj9OHOH_nC3eB1ORkb8K4j-Vioh1CkprDj_5b82DOEU5Oe57rKc_EMB-9filI2JYcsOoLuDxpbUr6oLNx-wOw6ozATzlF9ATnOeujsmpymuPvHOfjwgpsvUTyQ1CCrpqbYAMBHLcVuUBIcYdy3c2DryBFOo6jviQjmCyPtvbPMq6dyjDyewQQyyFkBNmWDizxDr3WnnOLduYzP_ww8Mbmjf-29Sgg5UhCKWJ0ao6XiwulO-XqDdlps5fV3lNj5sjEDpfrFqbGY1dwGfzmsV1yH2faAYGvWZ-JNPq3jlmNUq3qwZm6PMSFYJ_MsUhq8jP5O_gXhX1tL7jhcvw2Fx-20LJbrftsE-2fXbwG9dlZnTVKLiQxye45_DsegMCg9O1eFdGHa4U3SLaG1zwClTFkLv4BPgL4eA9VcfWcCnOBpF73SSFmmsYHOjve2_KTnafeP4yuof1512dbF6Dy4-VU7OVx2T21gHeTSePVytaM0ZMO8u032hjOlcWa6FGy3-QANXG0RUctCipFbrd1o3xpaGvEz3YZDSpb3cmg6PfC2w-sRlsK-FZMBuvEt4PHiv_61YGztb2rfjpbTa3z6prDSI08DTw14FEIMhWV14OhMQTOAexD9IcCI6AhIRgpI7lMqjdiXhFuph4OiZ-uIyKjya4YNMKR11s9_MsPudy9MhpI3ArTi6ijaokQHAKvdiTibIWz8abv6LSOsWtOwtsI8I3Q2ffPVYPC4ol-9y7k6bE_DDP2WR_c-qaK3z5Yt6LM3p8H3pKZ2Zk9TVtrcFP5RIL_GJaRAMDm8a2Q6rbjCWseO0JgnR5hYQZr6ruiWMjcDvanAmIGEetmeGHyBZPTbeJdapwC5cNShlFBrKjrDWFC7RPI3CZmybtBkQ6Vl7ruHUxgwo6QhbE3HaWjG_1_CXRtLvE6y3d1tKi3a-4dxgDxJNuK8jSjYAN-fRAKwA-pUl6TRXSitKaKSmClj6qtgqovIdUuku2PYWMJ2KXrcYUwa4s6AaC0yXC6BaMB5FqgMALzaXREE3_mXSDkc3xdavA2M8wo4_uDOATsJevj8WgTL2LjNsOGWX86caQksdeWiMT38qTszeygOfIZ_wJxA85CNTAHNI8KGdSFVmDUBWW9VHhnSQYVJiGMM4tcWCd6vHpVTkmM6QN8vLkkOrhZJunZx2NeJes2nW4q0efVLmu37VraYHWhiAEEXaiXaL51gxMsCZVwLi42Y1vgAzlQT-cgdecnvF7HOqlwNColEpuh7dIT0Kcm83wBD-aoqn2kr339QkMo0DeuaFdtiqUY5iXAp9kDRHWuLIelyRVGL85dLlL0GzgNA2JIxWixjweEOuFr_nVoLsxuIsvDT0Nk3Sz3tTOqeWC9i3-MyaZzS2vRaoBO5zzVuMLaVRUw7tf1XFScF0QariMla0Le2H-S3ZreBTYQSgfvtooSZp8AsgI8zKMQPbI3rMdAgnRshHvVnAHeS1_BU8oK-7fvFpdgRik63azH6LD_xcqktkA79yK0h-xB_cBnckfzbPxg54TcoYAh74Eu_EN-lRolxnX18Xv7R1i8hvhJgBm5TkhpEP1Rs4C_JPv0fgSDSXaECvrjsDnkB9JCpOiyQhHkIW6y7hRRCCncXzbZfKBLXRlZyucR_EU5u0nGJsDTzJInDjdIVgFB6R1IDOSWtSy8tTIsfwB4CTysIEA2pKpMZdGgT5Yh_mGF-OlJPWXkmJ58mURq_WA0SD2qXv5CQdtNDOr1mTW7J45BuQub4SdN6J2YYkG5ftLD776mIxr_gT5okYfzKX3CI4ep8rSHdOH_BG5RQ-0E-PofB4AVHrDKsUNLRX2QMDiPMG2ysEb5Ctsw_T-0Pyp6_HQRmZ5uQn_epSLttOq3EoFH2MNifrj2yAZ8k_Qp1u1UDVvK8eiQJ3Di_pewxs9Kf1-89q8cYZxozCSoOgMpnyRRQ-_YQraw6Fc1jCD3x9W_u1j6Yxek_kuX55FFpBBA90aJRFNkXiKVYnY7mB0ppyEmdfqUEK2zlMuC54xPotgfdKKlhnaVD9Jyg6U24IXIFerDfuyBiFuxl9I7nQ0h9ELVniwNBfvY0hLV37Wq0WdwsuoXuAfsshmRTP8pl4huxlHO_SJvvgLeQVfAlr7hDaZl6nJmsQ32FHTgaQQwKz78XFiWeGgwPn1C7iXZxLDowC0lihuhFsnns8fxtBP2LxZyoGgLcdbjisMqA3wjjjJdD8BDdH-eLFRpw5nFq-oh45O48omwTeZr5OyMygkkUnxxanTVWFQh2ZPGBtwhRrW48GwuGWyLFp2-uVddi0sOPtgnCOoKVp7ukL4bT1qryqXSlvl5kESCqLYzr16kjoc23NtqxWvW8SR5RotC8GhFS3aeUnRTStuB_HIwuSHl5jihdCupv4RxwNOHmMvTzQUTFKnUzG-Gd-cIBsy_sxjZvx0xIcLUlWQYQB7qS0xS_ztp2g-TBvTJAM2Jc5D9BTGjoBFfs7dwa-33hC4ol0DxvV7U4sWVf31sgJp-dfV8SmHfbHTrC99hHgPoWc5oKBR_5CusYu0nWLJeDcUAz5cuW94sSp8ZB5WfGsbh87utIdb5v7759mR0nwH8Xd2Xv35Pp0tO-c_DWlPr8F_gd8mrS9Utxkx0_vmBNGn-2ecdvnM8EYhTU9hvfnjQLp0emqNiEgZFXmuPcTjUkVN0X3AULdBEg-kCmZqZC14biglnIxqu6A0s3KsUIO_KiM25dAseethZy8aIb_1BneXzfXpv99Q2DuO6RzISrX_-kOYRMZGN892CIMy3PQ1DXc9qS7hHTvG93qEY03WDkgJG6Cx5UDRHVq5csSmtaF-eSfTarVk2ifYXpCnwmfBKFFieXYv1QHderJq1uEfD2817179TTuJRuGJkVbQlb9n4L8C553ZZGzJG220DhZhKwLWE1JbfjkNHAV5PCIMQYtraYK4r2RVImRhIevIJBjqbjaoFJT-JgwMCwurkyLvTOrqa2LkOyzrNTY7Sw418f2HvEx4wXEaRJcDNlSp63SwIjGeoTQNw-1Yh1ZUjmrGg5VUdRVCTXRUcWWk857pNIpj2alThN_3wSrSgJFq2zOkEpo-MwQKC0LHBvqhAOY9HzZDQVGEuMazLu5PHDDXYV6ctn8zQUFZe8yY57J50qz7Q4nC43GJ5Ff34nm9-OqeKD2eCNqZv86CGwaKbmXK1z4qvqupnY3Tz5RVvlQH00H6ATvxK49tjQr14DbExd7yJeGrZ_iBS7_KpbC270D-FO-tdqvFC75LKNrrFnQcSaRi9DvXR7-8_LJGZe0mdNErtNLFP5oKNZAm-QGoKIjRNOi77Bkr-NOaWtq2VRm1FjM8LaiIxrymRA4ScfBil5oXMSwzZhhNuZIUjELAoT2E4QMenvkTQ563VZfojtn40sQ-V7xLqr-Jw6aDgTKoySdm2F6o8olh_QtmCQIxJ1yV9OP2I5d2nuuDG1h0wJM8HDZrsgjfhdlcfthn2OO0DRuMVSX2xEeg5LWcnbK4R4Ex-P-g6uzELJxEEJLe_RYDuXI9NzTu_fXgIXJILJC8NEAH9JgLHEMFdYiH9RZ5NAaOikk8_RJ4eRVuIzcgl90GCbeOnfbfYHrGuD0fiY8FfOjCXTeAJ_9cwSq9vHg3LDR8AlABJHUX5eNO0NqNhGe5K4jTbTfE7k5sjQkW6vOeUqoZ0pDgiF-gVQpsarrX_ymZenw5OsIU865z0tMGRq1ZR1Dho8RFqzB-4lsmx7-ARp5ZlZ9gqtJXtE2zCOkyxptWleSHz_oOLkpYSNY8oyBGdI-eKdirsJgf3TsJsEskrHqwNEFZfd2v3F7rq3FM9nVcW3oUUh2VqQqr9R5mJi6HYVAjiAguOc3SaHyjElgmXa3-gUBx8vieWsPRyJczhRA18holDJ5QkKhVp7pBmoO_kLIPkBwbGT_LTx3N2QG1z2lM08YSX2IKrMh4y588oi7DVcbNUcT4uahpHfC7v45hGEq2oawS2--vh8neSebqfc_WKvnVKa0m9NYCHEWIS-zGMrFfFam5O8HmVaFb_cTgtx-xG4J03U0tmZdTGIVIh2oFPgu48Vx6k3CuMSBiLLrT49IuvT9JY51caEFT7-zb_PfAbO03-Fy29K9wBvftHXSfoPDIbdTvSZlnzNVb-dT9gPes16nkkCXT0xAX4OO2o0qutRFYSy0U6S6YLCuJlQNzSMKawuBuJcoF_vW-BHeqFNwISrdTJqOtNYfQhmPjsfzcKm3VokWmfJRQfqKvMjRVdDyJSJZ_MWvvIZiNTLNNtNOLaM0BYrhG6ZM4AX3gm9hu2poTbPYQuVqyRGlTXDaqGi0KLvmlHqTnr6JUJeQN6KaAviLhULLs889z6v",
 									"stateful_events_list_for_br": [
 										"comet_metrics_viewable_impression",
 										"web_time_spent_bit_array",
@@ -2378,18 +1981,6 @@
 								5237
 							],
 							[
-								"WorkKnowledgeCustomName",
-								[],
-								{ "knowledgeLibraryName": "Knowledge Library" },
-								6313
-							],
-							[
-								"WorkGalahadCompanyData",
-								[],
-								{ "showInviteLinkOnHeader": true, "showPremiumUpsell": false },
-								3446
-							],
-							[
 								"AvailableListInitialData",
 								[],
 								{
@@ -2399,157 +1990,295 @@
 									"playingNow": []
 								},
 								166
+							],
+							[
+								"WorkGalahadCompanyData",
+								[],
+								{ "showInviteLinkOnHeader": true, "showPremiumUpsell": false },
+								3446
+							],
+							[
+								"WorkKnowledgeCustomName",
+								[],
+								{ "knowledgeLibraryName": "Knowledge Library" },
+								6313
 							]
 						],
 						"require": [
+							["HomeGeminiContent.react\u0040626bcb3b06ac2e50f726ed5a760a7500"],
 							[
-								"WorkKnowledgeBundlesRoot.react\u0040df30d937c01d4c01ed4da514cb62fedf"
+								"HomeGeminiContent.entrypoint\u0040626bcb3b06ac2e50f726ed5a760a7500"
+							],
+							["HomeGeminiRoot.react\u0040626bcb3b06ac2e50f726ed5a760a7500"],
+							[
+								"WorkGalahadHomeTabContainer.react\u0040626bcb3b06ac2e50f726ed5a760a7500"
 							],
 							[
-								"WorkKnowledgeBundlesRoot.entrypoint\u0040df30d937c01d4c01ed4da514cb62fedf"
+								"WorkGalahadHomeTabContainer.entrypoint\u0040626bcb3b06ac2e50f726ed5a760a7500"
 							],
 							[
-								"WorkKnowledgesStackedChannel.react\u0040df30d937c01d4c01ed4da514cb62fedf"
-							],
-							[
-								"WorkGalahadKnowledgesStackedChannel.entrypoint\u0040df30d937c01d4c01ed4da514cb62fedf"
-							],
-							[
-								"CometPlatformRootClient\u00405017d710da6c4bdd3e459982bcdcdcd1",
+								"CometPlatformRootClient\u004049003e4cc6099170c3341a43517eb2aa",
 								"init",
 								["GeminiRootConfig", "RequireDeferredReference"],
 								[
 									{ "__m": "GeminiRootConfig" },
-									"mount_0_0_qP",
-									"7291581277637572816",
+									"mount_0_0_qC",
+									"7296319873080052449",
 									{
 										"actorID": "61552123927894",
 										"rootView": {
 											"allResources": [
-												{ "__dr": "WorkKnowledgeBundlesRoot.react" },
-												{ "__dr": "WorkKnowledgeBundlesRoot.entrypoint" }
+												{ "__dr": "HomeGeminiContent.react" },
+												{ "__dr": "HomeGeminiContent.entrypoint" },
+												{ "__dr": "HomeGeminiRoot.react" }
 											],
-											"resource": { "__dr": "WorkKnowledgeBundlesRoot.react" },
+											"resource": { "__dr": "HomeGeminiContent.react" },
 											"props": {},
-											"entryPoint": {
-												"__dr": "WorkKnowledgeBundlesRoot.entrypoint"
-											}
+											"entryPoint": { "__dr": "HomeGeminiContent.entrypoint" }
 										},
-										"tracePolicy": "gemini.knowledge.bundles",
+										"tracePolicy": "gemini.home",
 										"meta": {
-											"title": "Collections",
+											"title": null,
 											"accessory": null,
 											"favicon": null
 										},
 										"prefetchable": true,
 										"secondaryRootView": {
 											"allResources": [
-												{ "__dr": "WorkKnowledgesStackedChannel.react" },
-												{
-													"__dr": "WorkGalahadKnowledgesStackedChannel.entrypoint"
-												}
+												{ "__dr": "WorkGalahadHomeTabContainer.react" },
+												{ "__dr": "WorkGalahadHomeTabContainer.entrypoint" }
 											],
 											"resource": {
-												"__dr": "WorkKnowledgesStackedChannel.react"
+												"__dr": "WorkGalahadHomeTabContainer.react"
 											},
 											"props": {},
 											"entryPoint": {
-												"__dr": "WorkGalahadKnowledgesStackedChannel.entrypoint"
+												"__dr": "WorkGalahadHomeTabContainer.entrypoint"
 											}
 										},
 										"entityKeyConfig": {
-											"entity_type": {
-												"source": "constant",
-												"value": "bundles"
-											}
+											"entity_type": { "source": "constant", "value": "feed" },
+											"section": { "source": "constant", "value": "newsfeed" }
 										},
-										"hostableView": {
-											"allResources": [
-												{ "__dr": "WorkKnowledgeBundlesRoot.react" },
-												{ "__dr": "WorkKnowledgeBundlesRoot.entrypoint" }
-											],
-											"resource": { "__dr": "WorkKnowledgeBundlesRoot.react" },
-											"props": {},
-											"entryPoint": {
-												"__dr": "WorkKnowledgeBundlesRoot.entrypoint"
-											}
+										"isCometRootContainer": true,
+										"tabKey": "home",
+										"refreshBehavior": "none",
+										"url": "/",
+										"params": {
+											"filter": null,
+											"sk": null,
+											"ref": null,
+											"story_id": null,
+											"medium": null,
+											"story_graphql_id": null,
+											"funnel_id": null,
+											"team_id": null,
+											"caa_reg_splash_screen": null
 										},
-										"tabKey": "knowledge_library",
-										"url": "/work/knowledge/collections",
-										"params": { "bundle_id": null, "collection_id": null },
-										"routePath": "/work/knowledge/collections/{?bundle_id}/"
+										"routePath": "/"
 									},
 									[
 										{
 											"actorID": null,
-											"preloaderID": "adp_WorkGalahadProfileIconImplQueryRelayPreloader_6530e68a473439833700701",
+											"preloaderID": "adp_WorkGalahadProfileIconImplQueryRelayPreloader_6541bc4444acd7744022112",
 											"queryID": "6590813077622726",
 											"variables": { "scale": 1 }
 										},
 										{
 											"actorID": null,
-											"preloaderID": "adp_CometActorGatewayHandlerQueryRelayPreloader_6530e68a474076f63623831",
-											"queryID": "23977314838549816",
+											"preloaderID": "adp_CometActorGatewayHandlerQueryRelayPreloader_6541bc4444adc2928861944",
+											"queryID": "6673954972685553",
 											"variables": { "scale": 1 }
 										},
 										{
 											"actorID": null,
-											"preloaderID": "adp_WorkNavigationQueryRelayPreloader_6530e68a473af5208442833",
+											"preloaderID": "adp_WorkNavigationQueryRelayPreloader_6541bc4444ae89b44078521",
 											"queryID": "9581614405245742",
 											"variables": []
 										},
 										{
 											"actorID": null,
-											"preloaderID": "adp_useGeminiChatUnreadCountQueryRelayPreloader_6530e68a473fe9e52862940",
+											"preloaderID": "adp_useGeminiChatUnreadCountQueryRelayPreloader_6541bc44448f66360044205",
 											"queryID": "5265285936886198",
 											"variables": []
 										},
 										{
 											"actorID": null,
-											"preloaderID": "adp_WorkGalahadNotificationsBadgeQueryRelayPreloader_6530e68a472e00759128190",
-											"queryID": "6154550217977872",
-											"variables": []
+											"preloaderID": "adp_WorkGalahadNotificationsBadgeQueryRelayPreloader_6541bc444491d4172850199",
+											"queryID": "6924212887673173",
+											"variables": { "isWpThinClientMigrationWWW": true }
 										},
 										{
 											"actorID": null,
-											"preloaderID": "adp_useMWChatSyncEnvironmentQueryRelayPreloader_6530e68a4727b4d39686749",
+											"preloaderID": "adp_useMWChatSyncEnvironmentQueryRelayPreloader_6541bc444492c2627128897",
 											"queryID": "6570761162967480",
 											"variables": []
 										},
 										{
 											"actorID": null,
-											"preloaderID": "adp_useWorkGalahadPopUpsTurnedOffQueryRelayPreloader_6530e68a471f40880188770",
+											"preloaderID": "adp_useWorkGalahadPopUpsTurnedOffQueryRelayPreloader_6541bc44449383802336352",
 											"queryID": "7643578855682546",
 											"variables": []
 										},
 										{
-											"actorID": "61552123927894",
-											"preloaderID": "adp_WorkKnowledgeBundlesViewQueryRelayPreloader_6530e68a794136349935922",
-											"queryID": "24254522724147290",
-											"variables": {}
-										},
-										{
-											"actorID": "61552123927894",
-											"preloaderID": "adp_WorkKnowledgeBundlesRootQueryRelayPreloader_6530e68a794466c68684264",
-											"queryID": "5122006074524500",
-											"variables": {}
-										},
-										{
-											"actorID": "61552123927894",
-											"preloaderID": "adp_WorkKnowledgesStackedChannelQueryRelayPreloader_6530e68a7945a6a49908559",
-											"queryID": "6354952621262815",
+											"actorID": null,
+											"preloaderID": "adp_LSPlatformGraphQLLightspeedRequestQueryRelayPreloader_6541bc4444a7d0b46480422",
+											"queryID": "7357432314358409",
 											"variables": {
-												"nuxID": 9761,
-												"passSubcategoryPermissionsGK": true
+												"deviceId": "952a7987-1475-49ea-ba95-1dea81ac704e",
+												"includeChatVisibility": false,
+												"requestId": 0,
+												"requestPayload": "{\"database\":1,\"epoch_id\":0,\"last_applied_cursor\":null,\"sync_params\":\"{\\\"full_height\\\":200,\\\"locale\\\":\\\"en_US\\\",\\\"preview_height\\\":200,\\\"preview_height_large\\\":400,\\\"preview_width\\\":183,\\\"preview_width_large\\\":360,\\\"scale\\\":1,\\\"snapshot_num_threads_per_page\\\":15}\",\"version\":6687784611318398}",
+												"requestType": 1
+											}
+										},
+										{
+											"actorID": null,
+											"preloaderID": "adp_LSPlatformGraphQLLightspeedRequestQueryRelayPreloader_6541bc4444a994536660255",
+											"queryID": "7357432314358409",
+											"variables": {
+												"deviceId": "952a7987-1475-49ea-ba95-1dea81ac704e",
+												"includeChatVisibility": false,
+												"requestId": 1,
+												"requestPayload": "{\"database\":2,\"epoch_id\":0,\"last_applied_cursor\":null,\"sync_params\":\"{\\\"locale\\\":\\\"en_US\\\"}\",\"version\":6687784611318398}",
+												"requestType": 1
+											}
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_HomeGeminiHeaderContainerQueryRelayPreloader_6541bc4450a820d88930765",
+											"queryID": "9566122496761334",
+											"variables": { "scale": 1 }
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_HomeGeminiSideColumnContainerQueryRelayPreloader_6541bc4450ac18c14227596",
+											"queryID": "6118030404967226",
+											"variables": { "scale": 1 }
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_CometFeedInlineComposerQueryRelayPreloader_6541bc4450ad84129114115",
+											"queryID": "6367053090047555",
+											"variables": { "scale": 1, "includeSingleSprout": false }
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_HomeGeminiFeedQueryRelayPreloader_6541bc4450aec6231275673",
+											"queryID": "6734108076701711",
+											"variables": {
+												"RELAY_INCREMENTAL_DELIVERY": true,
+												"UFI2CommentsProvider_commentsKey": "HomeGeminiFeedQuery",
+												"connectionClass": "EXCELLENT",
+												"feedbackSource": 1,
+												"feedLocation": "NEWSFEED",
+												"feedStyle": "DEFAULT",
+												"orderby": ["TOP_STORIES"],
+												"privacySelectorRenderLocation": "COMET_STREAM",
+												"recentVPVs": [],
+												"refreshMode": null,
+												"renderLocation": "homepage_stream",
+												"scale": 1,
+												"useDefaultActor": false,
+												"__relay_internal__pv__CometRemoveNonFeedFieldsrelayprovider": false,
+												"__relay_internal__pv__IsWorkUserrelayprovider": true,
+												"__relay_internal__pv__IsMergQAPollsrelayprovider": false,
+												"__relay_internal__pv__CometUFIIsRTAEnabledrelayprovider": false,
+												"__relay_internal__pv__StoriesArmadilloReplyEnabledrelayprovider": false,
+												"__relay_internal__pv__StoriesRingrelayprovider": false
+											}
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_HomeGeminiImportantPostsQueryRelayPreloader_6541bc4450b0a7e60766498",
+											"queryID": "24062286516752307",
+											"variables": {
+												"feedbackSource": 1,
+												"feedLocation": "WORKPLACE_NEWSFEED_PROMOTED_POST",
+												"privacySelectorRenderLocation": "COMET_STREAM",
+												"renderLocation": "workplace_newsfeed_promoted_post",
+												"scale": 1,
+												"UFI2CommentsProvider_commentsKey": "HomeGeminiImportantPostsQuery",
+												"useDefaultActor": false,
+												"__relay_internal__pv__IsWorkUserrelayprovider": true,
+												"__relay_internal__pv__IsMergQAPollsrelayprovider": false,
+												"__relay_internal__pv__CometUFIIsRTAEnabledrelayprovider": false,
+												"__relay_internal__pv__StoriesArmadilloReplyEnabledrelayprovider": false,
+												"__relay_internal__pv__StoriesRingrelayprovider": false
+											}
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_HomeGeminiEmailLandingPostQueryRelayPreloader_6541bc4450b1a5699439215",
+											"queryID": "6593496080747132",
+											"variables": {
+												"feedbackSource": 1,
+												"feedLocation": "WORKPLACE_EMAIL_LANDING",
+												"privacySelectorRenderLocation": "COMET_STREAM",
+												"renderLocation": "workplace_email_landing",
+												"scale": 1,
+												"UFI2CommentsProvider_commentsKey": "HomeGeminiEmailLandingPostQuery",
+												"useDefaultActor": false,
+												"id": "",
+												"__relay_internal__pv__IsWorkUserrelayprovider": true,
+												"__relay_internal__pv__IsMergQAPollsrelayprovider": false,
+												"__relay_internal__pv__CometUFIIsRTAEnabledrelayprovider": false,
+												"__relay_internal__pv__StoriesArmadilloReplyEnabledrelayprovider": false,
+												"__relay_internal__pv__StoriesRingrelayprovider": false
+											}
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_GeminiMegaphoneRootQueryRelayPreloader_6541bc4450b295998334587",
+											"queryID": "6731089753642564",
+											"variables": { "first": 1, "scale": 1 }
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_GeminiQuickPromotionInterstitialsRootQueryRelayPreloader_6541bc4450b380c10564972",
+											"queryID": "5671777419570767",
+											"variables": { "first": 1, "scale": 1 }
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_HomeGeminiKeyUpdatesQueryRelayPreloader_6541bc4450b4a3d73910383",
+											"queryID": "24062716996677263",
+											"variables": {
+												"feedbackSource": 1,
+												"privacySelectorRenderLocation": "COMET_STREAM",
+												"renderLocation": "workplace_key_updates_feed_unit",
+												"scale": 1,
+												"UFI2CommentsProvider_commentsKey": "HomeGeminiFeedQuery",
+												"useDefaultActor": false,
+												"only_boosted": true,
+												"only_unseen": true,
+												"feedLocation": "WORKPLACE_KEY_UPDATES_FEED_UNIT",
+												"__relay_internal__pv__IsWorkUserrelayprovider": true,
+												"__relay_internal__pv__IsMergQAPollsrelayprovider": false,
+												"__relay_internal__pv__CometUFIIsRTAEnabledrelayprovider": false,
+												"__relay_internal__pv__StoriesArmadilloReplyEnabledrelayprovider": false
+											}
+										},
+										{
+											"actorID": "61552123927894",
+											"preloaderID": "adp_WorkGalahadHomeTabContainerQueryRelayPreloader_6541bc4450b650637720429",
+											"queryID": "6058284087604669",
+											"variables": {
+												"groupCount": 6,
+												"peopleCount": 15,
+												"user": "61552123927894",
+												"scale": 1,
+												"isHybridLeftNav": false,
+												"id": "HOME"
 											}
 										}
 									],
-									{ "imp_id": "0g8gYXx4bVbI3BFVf" },
+									{ "imp_id": "0MYi2kUZGOKjSFiyb" },
 									{ "backgroundRoute": null, "timeSpentMetaData": null }
 								]
 							],
 							[
-								"Bootloader\u0040495924e9968cf0c1a6c530001005e18f",
+								"Bootloader\u0040be64b03446632726270743a30a7df036",
 								"markComponentsAsImmediate",
 								[],
 								[
@@ -2560,37 +2289,38 @@
 										"CometKeyCommandWrapperDialog.react",
 										"CometModifiedKeyCommandWrapperDialog.react",
 										"CometProfileVideoSection.react",
-										"WorkKnowledgeInspirationContentDialog.react",
-										"WorkKnowledgeAddCollectionDialog.react",
 										"WorkroomsPhoenixInvitesList.react",
-										"ZenonUriBuilder"
+										"ZenonUriBuilder",
+										"CometHovercardQueryRenderer.react"
 									]
 								]
 							],
 							[
-								"RequireDeferredReference\u004073cdac2610661e488e1a5c30b81119b1",
+								"RequireDeferredReference\u004026e4367bc6abf2234accfb619cca0888",
 								"unblock",
 								[],
 								[
 									[
-										"WorkKnowledgeBundlesRoot.react",
-										"WorkKnowledgeBundlesRoot.entrypoint",
-										"WorkKnowledgesStackedChannel.react",
-										"WorkGalahadKnowledgesStackedChannel.entrypoint"
+										"HomeGeminiContent.react",
+										"HomeGeminiContent.entrypoint",
+										"HomeGeminiRoot.react",
+										"WorkGalahadHomeTabContainer.react",
+										"WorkGalahadHomeTabContainer.entrypoint"
 									],
 									"sd"
 								]
 							],
 							[
-								"RequireDeferredReference\u004073cdac2610661e488e1a5c30b81119b1",
+								"RequireDeferredReference\u004026e4367bc6abf2234accfb619cca0888",
 								"unblock",
 								[],
 								[
 									[
-										"WorkKnowledgeBundlesRoot.react",
-										"WorkKnowledgeBundlesRoot.entrypoint",
-										"WorkKnowledgesStackedChannel.react",
-										"WorkGalahadKnowledgesStackedChannel.entrypoint"
+										"HomeGeminiContent.react",
+										"HomeGeminiContent.entrypoint",
+										"HomeGeminiRoot.react",
+										"WorkGalahadHomeTabContainer.react",
+										"WorkGalahadHomeTabContainer.entrypoint"
 									],
 									"css"
 								]
@@ -2605,7 +2335,7 @@
 								"qplTimingsServerJS",
 								null,
 								null,
-								["7291581277637572816", "tierOneBeforeScheduler"]
+								["7296319873080052449", "tierOneBeforeScheduler"]
 							]
 						]
 					}
@@ -2617,7 +2347,7 @@
 								"qplTimingsServerJS",
 								null,
 								null,
-								["7291581277637572816", "tierOneInsideScheduler"]
+								["7296319873080052449", "tierOneInsideScheduler"]
 							]
 						]
 					}

@@ -21,16 +21,15 @@ export const CometToasterRoot = ({
 }: CometToasterView_DO_NOT_USEProps) => {
   // const e = useHideNotificationsToasts()
   return useMemo(
-    function () {
-      return jsx(CometErrorBoundary, {
+    () =>
+      jsx(CometErrorBoundary, {
         onError: onError,
         children: jsx(CometLazyToasterView_DO_NOT_USE, {
           align,
           filterToasts: null, // e === !0 ? set : null,
           maxWidth,
         }),
-      })
-    },
+      }),
     [align, maxWidth],
   )
 }

@@ -19,9 +19,7 @@ export const CometLazyToasterView_DO_NOT_USE = (
   props: CometToasterView_DO_NOT_USEProps,
 ) => {
   const stateManager = useToasterStateManager()
-  const [e, f] = useState(() => {
-    return m(stateManager)
-  })
+  const [e, f] = useState(() => m(stateManager))
 
   useEffect(() => {
     if (e) {

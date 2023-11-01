@@ -1,15 +1,18 @@
-import { ChannelGeminiNavListContext } from '@/context/channel-gemini-nav-list-context'
-import { makeStyles, mergeClasses } from '@griffel/react'
-import { useFocusState, useHover } from '@negiganaito/hooks'
-import {
-  ChannelGeminiFocusableTable,
-  WorkGalahadChannelFocusableScopeQuery,
-} from '@negiganaito/index'
-import { BaseHeadingContextWrapper } from '@negiganaito/text'
 import React, { ReactNode, useMemo } from 'react'
-
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
+
+import { ChannelGeminiNavListContext } from '@/context/channel-gemini-nav-list-context'
+import { makeStyles, mergeClasses } from '@griffel/react'
+import {
+  BaseHeadingContextWrapper,
+  ChannelGeminiFocusableTable,
+  List,
+  useFocusState,
+  useHover,
+  WorkGalahadChannelFocusableScopeQuery,
+} from '@negiganaito/react-components'
+
 import { WorkCometOnVisible } from './work-comet-on-visible'
 
 const useStyles = makeStyles({
@@ -108,7 +111,7 @@ export function ChannelGeminiNavList({
     isEmpty || childrenArr.length === 0
       ? childrenArr
       : jsxs(
-          'List.react',
+          List,
           Object.assign(
             {
               border: 'none',

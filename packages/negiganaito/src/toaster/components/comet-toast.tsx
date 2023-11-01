@@ -78,16 +78,16 @@ export function CometToast({
         : void 0,
     addOnStart: icon,
     closeButton:
-      supressCloseButton !== !0 &&
+      !supressCloseButton &&
       jsx(CometCircleButton, {
         icon: fbicon(
           {
             sprited: 2,
-            spi: '/assets/workplace/HuPTUqOhf0o.png',
-            _spi: '/assets/workplace/HuPTUqOhf0o.png',
+            spi: '/assets/workplace/zcrSldji3UB.png',
+            _spi: '/assets/workplace/zcrSldji3UB.png',
             w: 12,
             h: 12,
-            p: '-124px -147px',
+            p: '0 -1321px',
             sz: 'auto',
           },
           12,
