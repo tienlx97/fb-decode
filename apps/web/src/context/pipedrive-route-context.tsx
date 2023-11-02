@@ -21,7 +21,7 @@ const useMatchesHandler = () => {
       return defaultRoute[tabkey]
     }
 
-    return tabkey
+    return channelGeminiKey
   }, [pathName])
 
   return {

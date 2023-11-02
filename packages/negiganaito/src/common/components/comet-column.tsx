@@ -7,6 +7,7 @@ import BaseView from './base-view'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 import { CometColumnContext } from '../context/comet-column-context'
+import { CometColumnItem } from './comet-column-item'
 
 type CometColumnProps = {
   align?: any
@@ -80,7 +81,7 @@ export const CometColumn = forwardRef<any, CometColumnProps>(
     )
 
     if (previousCometColumnContext != null) {
-      return jsx('CometColumnItem', {
+      return jsx(CometColumnItem, {
         expanding: expanding ?? undefined,
         children: CometColumnItemChildren,
       })

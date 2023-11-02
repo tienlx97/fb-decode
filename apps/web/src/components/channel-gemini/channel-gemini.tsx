@@ -43,7 +43,7 @@
 
 // */
 
-import React, { useMemo } from 'react'
+import React, { memo, useMemo } from 'react'
 
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
@@ -66,6 +66,7 @@ import { CometPagelet, CometPlaceholder } from '@negiganaito/placeholder'
 import { ChannelGeminiAutoFocusRegion } from '@negiganaito/index'
 import { ChannelGeminiUIChannel } from '../channel-gemini-ui-channel'
 import { ChannelGeminiEntryPointContainer } from '../channel-gemini-entry-point-container'
+import { usePipedriveRoute } from '@/context/pipedrive-route-context'
 
 const isRTL = false
 
@@ -131,6 +132,10 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
   },
+
+  dummy2: {
+    height: '100%',
+  },
 })
 
 function o(state: WorkGalahadNavStoreState) {
@@ -152,9 +157,11 @@ function s(state: WorkGalahadNavStoreState) {
   return WorkGalahadNavStore.isChannelAutoFocusAllowed(state)
 }
 
-export function ChannelGemini() {
+function _ChannelGemini() {
   const classes = useStyles()
   const { state } = useWorkGalahadNavStore()
+
+  const { subMenu } = usePipedriveRoute()
 
   const f = WorkGalahadNavStore.getStackedChannelData(state)
   const g = WorkGalahadNavStore.getSelectedAppTabID(state)
@@ -174,6 +181,13 @@ export function ChannelGemini() {
 
   const v = f != null
   const w = f != null && !isSearchOverlayShown
+
+  const ChannelEntryPoint = useMemo(() => {
+    return WorkAppTabSet().find(v => v.id === subMenu?.key)!.channelEntryPoint
+  }, [subMenu])
+
+  console.log({ ChannelEntryPoint })
+
   // const x =
   //   (f == null ? void 0 : f.type) === GeminiStackedChannelType.EVENTS ||
   //   g === 'events'
@@ -220,7 +234,7 @@ export function ChannelGemini() {
     top: undefined,
     //
     children: jsxs(CometPagelet.Placeholder, {
-      className: 'x5yr21d x78zum5 xdt5ytf',
+      className: classes.dummy1, /// 'x5yr21d x78zum5 xdt5ytf',
       fallback: null,
       name: 'ChannelGemini',
       children: [
@@ -235,9 +249,7 @@ export function ChannelGemini() {
             role: !v && !isSearchOverlayShown ? 'navigation' : void 0,
             children: jsx(ChannelGeminiEntryPointContainer, {
               hidden: v || isSearchOverlayShown,
-              channelEntryPoint: WorkAppTabSet().find(
-                v => v.id === state.selectedAppTabID,
-              )?.channelEntryPoint,
+              channelEntryPoint: ChannelEntryPoint,
             }),
           }),
         }),
@@ -270,3 +282,5 @@ export function ChannelGemini() {
     }),
   })
 }
+
+export const ChannelGemini = memo(_ChannelGemini)

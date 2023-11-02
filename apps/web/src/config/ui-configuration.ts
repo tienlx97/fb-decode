@@ -18,7 +18,16 @@ export type SubMenu = {
   subtitle?: string
   type: string
   icon?: {
-    uri: string
+    uri?: string
+    fbicon?: {
+      sprited: number
+      spi: string
+      _spi: string
+      w: number
+      h: number
+      p: string
+      sz: string
+    }
   }
   extraKeys?: any
   default_bookmark_count?: number
@@ -42,7 +51,7 @@ export const uiConfiguration = {
       children: [
         {
           icon: {
-            uri: 'assets/menu/home/feed.png',
+            uri: '/assets/menu/home/feed.png',
           },
           key: 'feed',
           path: '/home',
@@ -51,7 +60,7 @@ export const uiConfiguration = {
         },
         {
           icon: {
-            uri: 'assets/menu/home/key_updates.png',
+            uri: '/assets/menu/home/key_updates.png',
           },
           key: 'key_updates',
           path: '/home/key_updates',
@@ -60,7 +69,7 @@ export const uiConfiguration = {
         },
         {
           icon: {
-            uri: 'assets/menu/home/knowledge.png',
+            uri: '/assets/menu/home/knowledge.png',
           },
           key: 'knowledge',
           path: '/home/knowledge',
@@ -69,7 +78,7 @@ export const uiConfiguration = {
         },
         {
           icon: {
-            uri: 'assets/menu/home/orgsearch.png',
+            uri: '/assets/menu/home/orgsearch.png',
           },
           key: 'orgsearch',
           path: '/home/orgsearch',
@@ -78,7 +87,7 @@ export const uiConfiguration = {
         },
         {
           icon: {
-            uri: 'assets/menu/home/saved.png',
+            uri: '/assets/menu/home/saved.png',
           },
           key: 'saved',
           path: '/home/saved',
@@ -87,7 +96,7 @@ export const uiConfiguration = {
         },
         {
           icon: {
-            uri: 'assets/menu/home/notes.png',
+            uri: '/assets/menu/home/notes.png',
           },
           key: 'notes',
           path: '/home/notes',
@@ -96,7 +105,7 @@ export const uiConfiguration = {
         },
         {
           icon: {
-            uri: 'assets/menu/home/org.png',
+            uri: '/assets/menu/home/org.png',
           },
           key: 'org',
           path: '/home/org',
@@ -123,7 +132,15 @@ export const uiConfiguration = {
       children: [
         {
           icon: {
-            uri: '',
+            fbicon: {
+              sprited: 2,
+              spi: '/assets/workplace/4b6BjmIYKO8.png',
+              _spi: '/assets/workplace/4b6BjmIYKO8.png',
+              w: 20,
+              h: 20,
+              p: '0 -746px',
+              sz: 'auto',
+            },
           },
           key: 'home',
           path: '/knowledge',
@@ -132,22 +149,30 @@ export const uiConfiguration = {
         },
         {
           icon: {
-            uri: '',
+            fbicon: {
+              sprited: 2,
+              spi: '/assets/workplace/IQ_qAGhgRyd.png',
+              _spi: '/assets/workplace/IQ_qAGhgRyd.png',
+              w: 20,
+              h: 20,
+              p: '-21px -263px',
+              sz: 'auto',
+            },
           },
           key: 'categories',
           path: '/knowledge/categories',
           title: 'Categories',
           type: 'menu',
         },
-        {
-          icon: {
-            uri: '',
-          },
-          key: 'collections',
-          path: '/knowledge/collections',
-          title: 'Collections',
-          type: 'menu',
-        },
+        // {
+        //   icon: {
+        //     uri: '',
+        //   },
+        //   key: 'collections',
+        //   path: '/knowledge/collections',
+        //   title: 'Collections',
+        //   type: 'menu',
+        // },
       ],
     },
   ] as SubMenu[],

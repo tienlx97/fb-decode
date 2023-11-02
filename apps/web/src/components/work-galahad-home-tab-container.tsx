@@ -1,15 +1,16 @@
+'use client'
+
 /* eslint-disable camelcase */
 import React from 'react'
 
 import { CometPlaceholder, nullthrows } from '@negiganaito/react-components'
-
-import { fbt } from 'fbt'
 
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 import ChannelGeminiHomeTabContent from './channel-gemini-home-tab-content'
 import { ChannelGeminiSectionWithBookmarks } from './channel-gemini-section-with-bookmarks'
 import { ChannelGeminiUIChannelRoot } from './channel-gemini-ui-channel-root'
+
 import { ChannelGeminiItemChromeList } from './channel-gemini-item-chrome-list'
 import { usePipedriveRoute } from '@/context/pipedrive-route-context'
 

@@ -1,7 +1,17 @@
-import { makeStyles } from '@griffel/react'
+import React, { forwardRef, useContext } from 'react'
+
+import { makeStyles, mergeClasses } from '@griffel/react'
 import { isBrowser } from '@negiganaito/utils/user-agent'
-import React from 'react'
-const l = makeStyles({
+
+import { CometColumnContext } from '../context/comet-column-context'
+
+// @ts-ignore
+import { jsxs, jsx } from 'react/jsx-runtime'
+import BaseView from './base-view'
+import { CometErrorBoundary } from '@negiganaito/error'
+import { CometPlaceholder } from '@negiganaito/placeholder'
+
+const useL = makeStyles({
   divider: {
     borderTopColor: 'var(--divider)',
     borderTopStyle: 'solid',
@@ -42,7 +52,7 @@ const l = makeStyles({
   },
 })
 
-const m = makeStyles({
+const useM = makeStyles({
   center: {
     alignItems: 'center',
   },
@@ -53,7 +63,8 @@ const m = makeStyles({
     alignItems: 'flex-start',
   },
 })
-const n = makeStyles({
+
+const useN = makeStyles({
   4: {
     paddingLeft: '4px',
     paddingRight: '4px',
@@ -75,7 +86,8 @@ const n = makeStyles({
     paddingRight: '20px',
   },
 })
-const o = makeStyles({
+
+const useO = makeStyles({
   0: {
     paddingTop: '0',
   },
@@ -99,7 +111,7 @@ const o = makeStyles({
   },
 })
 
-const p = makeStyles({
+const useP = makeStyles({
   4: {
     paddingTop: '4px',
     paddingBottom: '4px',
@@ -126,7 +138,7 @@ const p = makeStyles({
   },
 })
 
-const q = makeStyles({
+const useQ = makeStyles({
   4: {
     marginTop: '2px',
     marginBottom: '2px',
@@ -160,7 +172,8 @@ const q = makeStyles({
     marginBottom: '20px',
   },
 })
-const r = makeStyles({
+
+const useR = makeStyles({
   bottom: {
     justifyContent: 'flex-end',
   },
@@ -172,7 +185,7 @@ const r = makeStyles({
   },
 })
 
-const s = makeStyles({
+const useS = makeStyles({
   4: {
     marginLeft: '4px',
     marginRight: '4px',
@@ -197,67 +210,134 @@ const s = makeStyles({
 
 const t = isBrowser('IE >= 11')
 
-/*
+type CometColumnItemProps = {
+  align?: string
+  children?: any
+  expanding?: boolean
+  fallback?: any
+  paddingHorizontal?: any
+  paddingTop?: any
+  paddingVertical?: 0 | 4 | 8 | 12 | 16 | 20 | 40
+  placeholder?: any
+  verticalAlign?: 'bottom' | 'center' | 'space-between' | 'top'
+  className?: any
+}
 
-function a(a, b) {
-        var d, e, f, g;
-        d = (d = k(c("CometColumnContext"))) != null ? d : {};
-        var i = a.align;
-        e = i === void 0 ? (e = d.align) != null ? e : "stretch" : i;
-        i = a.children;
-        var v = a.expanding;
-        v = v === void 0 ? !1 : v;
-        var w = a.fallback
-          , x = a.paddingHorizontal;
-        f = x === void 0 ? (f = d.paddingHorizontal) != null ? f : 0 : x;
-        x = a.paddingTop;
-        var y = a.paddingVertical;
-        y = y === void 0 ? 0 : y;
-        var z = a.placeholder
-          , A = a.verticalAlign;
-        A = A === void 0 ? "top" : A;
-        var B = babelHelpers.objectWithoutPropertiesLoose(a, ["align", "children", "expanding", "fallback", "paddingHorizontal", "paddingTop", "paddingVertical", "placeholder", "verticalAlign"])
-          , C = (h || (h = c("stylex"))).compose(a.xstyle);
-        g = j.jsxs(j.Fragment, {
-            children: [d.hasDividers === !0 && j.jsx(c("BaseView.react"), {
-                role: "separator",
-                xstyle: [l.divider, s[(g = d.paddingHorizontal) != null ? g : 0], d.spacing != null && l.dividerMargin]
-            }), j.jsx(c("BaseView.react"), babelHelpers["extends"]({}, B, {
-                ref: b,
-                xstyle: [l.root, v && [l.expanding, t && l.expandingIE11], e !== "stretch" && m[e], A !== "top" && r[A], n[f], p[y], x != null && o[x], d.spacing != null && [q[d.spacing], C.marginBottom == null && l.marginLastChild, C.marginTop == null && l.marginFirstChild], a.xstyle],
-                children: j.jsx(c("CometColumnContext").Provider, {
-                    value: null,
-                    children: i
-                })
-            }))]
-        });
-        if (w !== void 0) {
-            a.fallback;
-            var D = babelHelpers.objectWithoutPropertiesLoose(a, ["fallback"]);
-            w === null ? g = j.jsx(c("CometErrorBoundary.react"), {
-                children: g
-            }) : g = j.jsx(c("CometErrorBoundary.react"), {
-                fallback: function(a, c) {
-                    return j.jsx(u, babelHelpers["extends"]({}, D, {
-                        ref: b,
-                        children: typeof w === "function" ? w(a, c) : w
-                    }))
-                },
-                children: g
-            })
-        }
-        if (z !== void 0) {
-            a.placeholder;
-            B = babelHelpers.objectWithoutPropertiesLoose(a, ["placeholder"]);
-            g = j.jsx(c("CometPlaceholder.react"), {
-                fallback: z != null ? j.jsx(u, babelHelpers["extends"]({}, B, {
-                    ref: b,
-                    children: z
-                })) : null,
-                children: g
-            })
-        }
-        return g
-    }
+const _CometColumnItem = (props: CometColumnItemProps, ref: any) => {
+  const {
+    align,
+    children,
+    expanding = false,
+    fallback,
+    paddingHorizontal,
+    paddingTop,
+    paddingVertical = 0,
+    placeholder,
+    verticalAlign = 'top',
+    ...rest
+  } = props
 
-*/
+  const l = useL()
+  const m = useM()
+  const n = useN()
+  const o = useO()
+  const p = useP()
+  const q = useQ()
+  const r = useR()
+  const s = useS()
+
+  const d = useContext(CometColumnContext) ?? {}
+
+  const _align = !align ? d.align ?? 'stretch' : align
+  const _paddingHorizontal = !paddingHorizontal
+    ? d.paddingHorizontal ?? 0
+    : paddingHorizontal
+
+  let g = jsxs(React.Fragment, {
+    children: [
+      d.hasDividers &&
+        jsx(BaseView, {
+          role: 'seperator',
+          className: mergeClasses(
+            l.divider,
+            // @ts-ignore
+            s[d.paddingHorizontal ?? 0],
+            d.spacing && l.dividerMargin,
+          ),
+        }),
+      jsx(
+        BaseView,
+        Object.assign({}, rest, {
+          ref,
+          className: mergeClasses(
+            l.root,
+            expanding && l.expanding,
+            expanding && t && l.expandingIE11,
+            // @ts-ignore
+            _align !== 'stretch' && m[_align],
+            verticalAlign !== 'top' && r[verticalAlign],
+            // @ts-ignore
+            n[_paddingHorizontal],
+            // @ts-ignore
+            p[paddingVertical],
+            // @ts-ignore
+            paddingTop && o[paddingTop],
+            // @ts-ignore
+            d.spacing && q[d.spacing],
+            // TODO: fix here // C = (h || (h = c("stylex"))).compose(a.xstyle);
+            // d.spacing && C.marginBottom == null && l.marginLastChild,
+            // d.spacing && C.marginTop == null && l.marginFirstChild,
+            props.className,
+          ),
+          children: jsx(CometColumnContext.Provider, {
+            value: null,
+            children,
+          }),
+        }),
+      ),
+    ],
+  })
+
+  if (fallback !== void 0) {
+    const { fallback, ...D } = props
+    fallback === null
+      ? (g = jsx(CometErrorBoundary, {
+          children: g,
+        }))
+      : (g = jsx(CometErrorBoundary, {
+          fallback: function (a: any, c: any) {
+            return jsx(
+              CometColumnItem,
+              Object.assign({}, D, {
+                ref,
+                children:
+                  typeof fallback === 'function' ? fallback(a, c) : fallback,
+              }),
+            )
+          },
+          children: g,
+        }))
+  }
+
+  if (placeholder !== void 0) {
+    // a.placeholder
+    const { placeholder, ...B } = props
+    g = jsx(CometPlaceholder, {
+      fallback:
+        placeholder != null
+          ? jsx(
+              CometColumnItem,
+              Object.assign({}, B, {
+                ref,
+                children: placeholder,
+              }),
+            )
+          : null,
+      children: g,
+    })
+  }
+
+  return g
+}
+
+export const CometColumnItem = forwardRef(_CometColumnItem)

@@ -2,9 +2,10 @@ import {
   WorkGalahadAppTabKeyUpdatesBadgeRenderer,
   WorkGalahadAppTabNotificationsBadgeRenderer,
 } from '@/features/navigation-app'
-import fbt from 'fbt'
 import { WorkGalahadHomeTabContainer } from './work-galahad-home-tab-container'
+
 import { ReactNode } from 'react'
+import { WorkKnowledgesStackedChannel } from './work-knowledges-stacked-channel'
 
 type WorkAppTabSetProps = {
   id: string
@@ -36,7 +37,7 @@ export const WorkAppTabSet = (): WorkAppTabSetProps[] => {
       href: '/notifications',
       tabIconName: 'NOTIFICATIONS',
       badgeRenderer: WorkGalahadAppTabNotificationsBadgeRenderer,
-      channelEntryPoint: WorkGalahadHomeTabContainer,
+      channelEntryPoint: '',
     },
     {
       id: 'knowledge',
@@ -48,7 +49,7 @@ export const WorkAppTabSet = (): WorkAppTabSetProps[] => {
       title: 'Knowledge Library',
       href: '/knowledge',
       tabIconName: 'KNOWLEDGE_LIBRARY',
-      channelEntryPoint: WorkGalahadHomeTabContainer,
+      channelEntryPoint: WorkKnowledgesStackedChannel,
     },
   ] as unknown as WorkAppTabSetProps[]
 }
