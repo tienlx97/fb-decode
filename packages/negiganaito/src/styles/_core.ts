@@ -1,7 +1,7 @@
 import TaalOpcodes from '@negiganaito/error/utils/taal-opcodes'
 import { fbErrorLite } from '..'
 
-function getElementFromIdOrElement(a: any) {
+function _Core(a: any) {
   return retrieveElement(
     a,
     typeof a === 'string' ? document.getElementById(a) : a,
@@ -30,6 +30,6 @@ function retrieveElement(idOrElement: any, element: any) {
   return element
 }
 
-export const _Core = {
-  fromIDOrElement,
-}
+_Core.fromIDOrElement = fromIDOrElement
+
+export default _Core

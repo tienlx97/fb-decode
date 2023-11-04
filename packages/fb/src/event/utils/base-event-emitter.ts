@@ -58,7 +58,7 @@ export class BaseEventEmitter {
     var b = this.$2.getSubscriptionsForType(a)
     if (b) {
       var c = Object.keys(b),
-        d
+        d: any
       for (var e = 0; e < c.length; e++) {
         var f: any = c[e],
           g = b[f]

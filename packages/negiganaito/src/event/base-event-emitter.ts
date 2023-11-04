@@ -1,8 +1,8 @@
+import ErrorGuard from '@negiganaito/error/errorguard/error-guard'
+import { unrecoverableViolation } from '..'
 import { thatReturnsTrue } from '../utils/common/empty-function'
 import { EmitterSubscription } from './emitter-subscription'
 import { EventSubscriptionVendor } from './event-subscription-vendor'
-
-var g: any
 
 export class BaseEventEmitter {
   private $2: EventSubscriptionVendor
@@ -14,6 +14,7 @@ export class BaseEventEmitter {
   }
 
   addListener(a: any, c: any, d?: any) {
+    // return this.$2.addSubscription(a, new EmitterSubscription(this.$2, c, d))
     return this.$2.addSubscription(a, new EmitterSubscription(this.$2, c, d))
   }
 
@@ -22,7 +23,7 @@ export class BaseEventEmitter {
   }
 
   once(a: any, b: any, c: any) {
-    var d = this
+    let d = this
     return this.addListener(a, function () {
       d.removeCurrentListener()
       b.apply(c, arguments)
@@ -39,8 +40,9 @@ export class BaseEventEmitter {
       //   'Not in an emitting cycle; there is no current subscription',
       //   'emitter',
       // )
-      throw new Error(
+      throw unrecoverableViolation(
         'Not in an emitting cycle; there is no current subscription',
+        'emitter',
       )
     this.$2.removeSubscription(this.$1)
   }
@@ -55,19 +57,19 @@ export class BaseEventEmitter {
   }
 
   emit(a: any) {
-    var b = this.$2.getSubscriptionsForType(a)
+    let b = this.$2.getSubscriptionsForType(a)
     if (b) {
-      var c = Object.keys(b),
+      let c = Object.keys(b),
         d: any
-      for (var e = 0; e < c.length; e++) {
-        var f: any = c[e],
+      for (let e = 0; e < c.length; e++) {
+        let f: any = c[e],
           g = b[f]
         if (g) {
           this.$1 = g
           if (d == null) {
             d = [g, a]
             for (
-              var h = 0, i = arguments.length <= 1 ? 0 : arguments.length - 1;
+              let h = 0, i = arguments.length <= 1 ? 0 : arguments.length - 1;
               h < i;
               h++
             )
@@ -90,8 +92,8 @@ export class BaseEventEmitter {
       f++
     )
       e[f - 2] = arguments[f]
-    // ;(g || (g = b('ErrorGuard'))).applyWithGuard(a.listener, a.context, e, {
-    //   name: 'EventEmitter ' + c + ' event',
-    // })
+    ErrorGuard.applyWithGuard(a.listener, a.context, e, {
+      name: 'EventEmitter ' + c + ' event',
+    } as any)
   }
 }

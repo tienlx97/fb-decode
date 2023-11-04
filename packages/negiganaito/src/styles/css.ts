@@ -1,4 +1,4 @@
-import { _Core } from './_core'
+import _Core from './_core'
 import { CssCore } from './css-core'
 
 let supports: any = typeof window != 'undefined' ? window.CSS : null,

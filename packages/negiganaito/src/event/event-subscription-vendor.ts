@@ -1,5 +1,9 @@
 export class EventSubscriptionVendor {
-  private $1: { [key: string]: any[] } = {}
+  private $1: { [key: string]: any[] }
+
+  constructor() {
+    this.$1 = {}
+  }
 
   addSubscription(eventType: string, subscriber: any): any {
     // if (subscriber !== this) {

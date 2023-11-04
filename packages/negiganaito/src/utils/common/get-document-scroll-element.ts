@@ -1,15 +1,18 @@
 import { invariantViolation } from './flow-migration-utils-for-legacy-files'
 
-const h =
+const isWebkit =
   typeof navigator !== 'undefined' &&
   navigator.userAgent.indexOf('AppleWebKit') > -1
 
-export function getDocumentScrollElement(a?: any) {
-  a = a || document
-  if (a.scrollingElement) {
-    return a.scrollingElement
+export function getDocumentScrollElement(doc?: any) {
+  doc = doc || document
+  if (doc.scrollingElement) {
+    return doc.scrollingElement
   }
-  a = !h && a.compatMode === 'CSS1Compat' ? a.documentElement : a.body
-  a || invariantViolation('null result in getDocumentScrollElement')
-  return a
+  doc =
+    !isWebkit && doc.compatMode === 'CSS1Compat'
+      ? doc.documentElement
+      : doc.body
+  doc || invariantViolation('null result in getDocumentScrollElement')
+  return doc
 }

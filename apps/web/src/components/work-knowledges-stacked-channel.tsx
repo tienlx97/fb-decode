@@ -7,10 +7,10 @@ import { jsxs, jsx } from 'react/jsx-runtime'
 import { ChannelGeminiUIChannelRoot } from './channel-gemini-ui-channel-root'
 import { ChannelGeminiNavList } from './channel-gemini-nav-list'
 import {
-  // CometColumn,
-  // CometPlaceholder,
-  // CometRow,
-  // CometRowItem,
+  CometColumn,
+  CometPlaceholder,
+  CometRow,
+  CometRowItem,
   CometSkittleIcon,
   fbiconWithoutMemorize,
 } from '@negiganaito/react-components'
@@ -28,7 +28,8 @@ const WorkGalahadUIChannelItem = dynamic(
 // import { WorkGalahadUIChannelItem } from './work-galahad-ui-channel-item'
 import { usePipedriveRoute } from '@/context/pipedrive-route-context'
 import { useRouter } from 'next/navigation'
-// import { ChannelGeminiItemChromeList } from './channel-gemini-item-chrome-list'
+import { ChannelGeminiItemChromeList } from './channel-gemini-item-chrome-list'
+import { WorkKnowledgeStackedChannelPinnedCollections } from './work-knowledge-stacked-channel-pinned-collections'
 
 export function WorkKnowledgesStackedChannel() {
   const { subMenu, view } = usePipedriveRoute()
@@ -53,48 +54,48 @@ export function WorkKnowledgesStackedChannel() {
           // can manage knowledge
         ],
       }),
-      // jsxs(CometColumn, {
-      //   paddingTop: 20,
-      //   spacing: 20,
-      //   children: [
-      //     jsx(CometRow, {
-      //       align: 'start',
-      //       paddingHorizontal: 0,
-      //       children: jsx(CometPlaceholder, {
-      //         fallback: jsx(ChannelGeminiItemChromeList, {
-      //           amount: 3,
-      //           type: 'groups',
-      //           withHeader: !0,
-      //         }),
-      //         children: jsx('WorkKnowledgeStackedChannelPinnedCollections', {
-      //           // userRef: a == null ? void 0 : a.actor,
-      //         }),
-      //       }),
-      //     }),
-      //     jsx(CometRow, {
-      //       align: 'start',
-      //       paddingHorizontal: 0,
-      //       children: jsx(CometRowItem, {
-      //         expanding: !0,
-      //         role: 'grid',
-      //         children: jsx(CometPlaceholder, {
-      //           fallback: jsx(ChannelGeminiItemChromeList, {
-      //             amount: 3,
-      //             type: 'groups',
-      //             withHeader: !0,
-      //           }),
-      //           children: jsx(
-      //             'WorkKnowledgesStackedChannelNavigationCategories',
-      //             {
-      //               // companyId: h.id,
-      //               // companyRef: h,
-      //             },
-      //           ),
-      //         }),
-      //       }),
-      //     }),
-      //   ],
-      // }),
+      jsxs(CometColumn, {
+        paddingTop: 20,
+        spacing: 20,
+        children: [
+          jsx(CometRow, {
+            align: 'start',
+            paddingHorizontal: 0,
+            children: jsx(CometPlaceholder, {
+              fallback: jsx(ChannelGeminiItemChromeList, {
+                amount: 3,
+                type: 'groups',
+                withHeader: !0,
+              }),
+              children: jsx(WorkKnowledgeStackedChannelPinnedCollections, {
+                // userRef: a == null ? void 0 : a.actor,
+              }),
+            }),
+          }),
+          // jsx(CometRow, {
+          //   align: 'start',
+          //   paddingHorizontal: 0,
+          //   children: jsx(CometRowItem, {
+          //     expanding: !0,
+          //     role: 'grid',
+          //     children: jsx(CometPlaceholder, {
+          //       fallback: jsx(ChannelGeminiItemChromeList, {
+          //         amount: 3,
+          //         type: 'groups',
+          //         withHeader: !0,
+          //       }),
+          //       children: jsx(
+          //         'WorkKnowledgesStackedChannelNavigationCategories',
+          //         {
+          //           // companyId: h.id,
+          //           // companyRef: h,
+          //         },
+          //       ),
+          //     }),
+          //   }),
+          // }),
+        ],
+      }),
     ],
   })
 }
