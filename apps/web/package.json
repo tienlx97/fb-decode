@@ -36,7 +36,8 @@
     "zod": "3.22.2",
     "fbjs": "3.0.5",
     "@types/fbjs": "3.0.8",
-    "fbt": "1.0.0"
+    "fbt": "1.0.0",
+    "immutable": "5.0.0-beta.4"
   },
   "devDependencies": {
     "@portal/eslint-config-next": "workspace:*",

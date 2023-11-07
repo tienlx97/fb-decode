@@ -3,7 +3,7 @@ import { DOMVector } from './dom-vector'
 import { Event } from '@negiganaito/draggable'
 
 export class Vector extends DOMVector {
-  constructor(b: any, c: any, d: any) {
+  constructor(b: any, c: any, d?: any) {
     super(parseFloat(b), parseFloat(c), d)
   }
 

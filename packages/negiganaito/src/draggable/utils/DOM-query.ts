@@ -23,7 +23,7 @@ import { css } from '@negiganaito/styles'
 import { FBLogger } from '@negiganaito/error'
 import { createObjectFrom } from './create-object-from'
 
-var h = /^\.-?[_a-zA-Z]+[\w-]*$/
+let h = /^\.-?[_a-zA-Z]+[\w-]*$/
 
 function i(a: any, b: any) {
   return a.hasAttribute ? a.hasAttribute(b) : a.getAttribute(b) !== null

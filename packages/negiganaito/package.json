@@ -13,7 +13,9 @@
     "react-dom": "workspace:*",
     "resize-observer-polyfill": "1.5.1",
     "fbjs": "3.0.5",
-    "@types/fbjs": "3.0.8"
+    "@types/fbjs": "3.0.8",
+    "prop-types": "15.8.1",
+    "@types/prop-types": "15.7.9"
   },
   "devDependencies": {
     "@portal/eslint-config-react": "workspace:*",

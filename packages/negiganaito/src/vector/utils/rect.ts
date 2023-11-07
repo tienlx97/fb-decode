@@ -54,13 +54,13 @@ export class Rect {
 
   contains(b: any) {
     b = new Rect(b).convertTo(this.domain)
-    var c = this
+    let c = this
     return c.l <= b.l && c.r >= b.r && c.t <= b.t && c.b >= b.b
   }
 
   intersection(b: any) {
     b = b.convertTo(this.domain)
-    var c = Math.min(this.b, b.getBottom()),
+    let c = Math.min(this.b, b.getBottom()),
       d = Math.max(this.l, b.getLeft()),
       e = Math.min(this.r, b.getRight())
     b = Math.max(this.t, b.getTop())
@@ -83,7 +83,7 @@ export class Rect {
       b instanceof Rect && b.domain != 'pure' && (b = b.convertTo(this.domain))
       return b instanceof Vector ? this.add(b.x, b.y) : this
     }
-    var e = parseFloat(b),
+    let e = parseFloat(b),
       f = parseFloat(d)
 
     return new Rect(this.t + f, this.r + e, this.b + f, this.l + e, this.domain)
@@ -110,7 +110,7 @@ export class Rect {
   }
 
   boundWithin(a: any) {
-    var b = 0,
+    let b = 0,
       c = 0
     this.l < a.l ? (b = a.l - this.l) : this.r > a.r && (b = a.r - this.r)
     this.t < a.t ? (c = a.t - this.t) : this.b > a.b && (c = a.b - this.b)
@@ -153,7 +153,7 @@ export class Rect {
     if (this.domain == b) return this
     if (b == 'pure') return new Rect(this.t, this.r, this.b, this.l, 'pure')
     if (this.domain == 'pure') return new Rect(0, 0, 0, 0)
-    var d = new Vector(this.l, this.t, this.domain).convertTo(b)
+    let d = new Vector(this.l, this.t, this.domain).convertTo(b)
     return new Rect(d.y, d.x + this.w(), d.y + this.h(), d.x, b)
   }
 
@@ -193,9 +193,9 @@ export class Rect {
   }
 
   static minimumBoundingBox(b: any) {
-    var c = new Rect(Infinity, -Infinity, -Infinity, Infinity),
+    let c = new Rect(Infinity, -Infinity, -Infinity, Infinity),
       d
-    for (var e = 0; e < b.length; e++)
+    for (let e = 0; e < b.length; e++)
       (d = b[e]),
         (c.t = Math.min(c.t, d.t)),
         (c.r = Math.max(c.r, d.r)),

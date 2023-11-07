@@ -14,7 +14,7 @@ let g: any,
 function m(a: any) {
   if (typeof a === 'string') return 'str_' + a
   else {
-    var b
+    let b
     return (
       'elem_' + ((b = a.__FB_TOKEN) != null ? b : (a.__FB_TOKEN = [l++]))[0]
     )
@@ -34,7 +34,7 @@ export const DataStore = {
       throw new TypeError(
         'DataStore.set: namespace is required, got ' + typeof a,
       )
-    var d = n(a)
+    let d = n(a)
     d[b] = c
     return a
   },
@@ -43,7 +43,7 @@ export const DataStore = {
       throw new TypeError(
         'DataStore.get: namespace is required, got ' + typeof a,
       )
-    var d = n(a),
+    let d = n(a),
       e = d[b]
     if (e === void 0 && a.getAttribute != null)
       if (a.hasAttribute != null && !a.hasAttribute('data-' + b)) e = void 0
@@ -59,7 +59,7 @@ export const DataStore = {
       throw new TypeError(
         'DataStore.remove: namespace is required, got ' + typeof a,
       )
-    var d = n(a),
+    let d = n(a),
       e = d[c]
     delete d[c]
     ;(g || (g = isEmpty))(d) && DataStore.purge(a)

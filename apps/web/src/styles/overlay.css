@@ -1,0 +1,37 @@
+._32rk {
+  position: absolute
+}
+
+._32rk._32rg {
+  left: 0
+}
+
+._32rk._32rh {
+  right: 0
+}
+
+._32rk._1cy5 {
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+._32rk._9ppc {
+  right: 100%
+}
+
+._32rk._32ri {
+  top: 0
+}
+
+._32rk._32rj {
+  bottom: 0
+}
+
+._32rk._1cy6 {
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+._32rk._1cy5._1cy6 {
+  transform: translate(-50%, -50%)
+}

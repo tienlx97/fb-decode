@@ -7,6 +7,8 @@ import { jsx } from 'react/jsx-runtime'
 import { ChannelGeminiNavList } from './channel-gemini-nav-list'
 import { WorkKnowledgeNavCollectionsHeader } from './work-knowledge-nav-collections-header'
 import { CometIcon, fbicon } from '@negiganaito/react-components'
+import { WorkKnowledgeCategoriesInlineOrderEditor } from './work-knowledge-categories-inline-order-editor'
+import { WorkKnowledgeNavItem } from './work-knowledge-nav-item'
 
 export function WorkKnowledgeStackedChannelPinnedCollections() {
   const [k, n] = useState(null)
@@ -14,7 +16,7 @@ export function WorkKnowledgeStackedChannelPinnedCollections() {
   const [q, r] = useState(WorkKnowledgeNavHeaderState.ENABLED)
   // fetch `pinned_knowledge_collections`
   // "client:61553101316293:work_info:pinned_knowledge_collections"
-  const pinned_knowledge_collections = []
+  const pinned_knowledge_collections: any[] = []
 
   const onCancelClick = function () {
     r(WorkKnowledgeNavHeaderState.ENABLED)
@@ -42,12 +44,14 @@ export function WorkKnowledgeStackedChannelPinnedCollections() {
       onSaveClick: onSaveClick,
     }),
     children: o
-      ? jsx('WorkKnowledgeCategoriesInlineOrderEditor', {
-          items: g.map(function (collectionRef: any) {
+      ? jsx(WorkKnowledgeCategoriesInlineOrderEditor, {
+          items: pinned_knowledge_collections.map(function (
+            collectionRef: any,
+          ) {
             return [
               collectionRef.id,
               jsx(
-                'WorkKnowledgeNavItem',
+                WorkKnowledgeNavItem,
                 {
                   collectionRef: collectionRef,
                   indentLevel: 1,

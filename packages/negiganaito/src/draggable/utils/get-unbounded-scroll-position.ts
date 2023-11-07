@@ -2,7 +2,7 @@ import { Scroll } from './scroll'
 
 export function getUnboundedScrollPosition(a: any) {
   if (a === window) {
-    var c
+    let c
     return {
       x:
         (c = window.pageXOffset) != null

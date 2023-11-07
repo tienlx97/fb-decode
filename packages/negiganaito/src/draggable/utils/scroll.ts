@@ -3,9 +3,9 @@ function g(a: any, b: any) {
 }
 
 export function getTop(a: any) {
-  var b
+  let b
   if (a == null) return 0
-  var c = a.ownerDocument
+  let c = a.ownerDocument
   return g(a, c)
     ? (c == null ? void 0 : (b = c.body) == null ? void 0 : b.scrollTop) ||
         (c == null
@@ -19,7 +19,7 @@ export function getTop(a: any) {
 
 export function setTop(a: any, b: any) {
   if (a == null) return
-  var c = a.ownerDocument
+  let c = a.ownerDocument
   g(a, c)
     ? ((c == null ? void 0 : c.body) && (c.body.scrollTop = b || 0),
       (c == null ? void 0 : c.documentElement) &&
@@ -28,7 +28,7 @@ export function setTop(a: any, b: any) {
 }
 
 export function getLeft(a: any) {
-  var b,
+  let b,
     c = a.ownerDocument
   return g(a, c)
     ? (c == null ? void 0 : (b = c.body) == null ? void 0 : b.scrollLeft) ||
@@ -42,7 +42,7 @@ export function getLeft(a: any) {
 }
 
 export function setLeft(a: any, b: any) {
-  var c = a.ownerDocument
+  let c = a.ownerDocument
   g(a, c)
     ? ((c == null ? void 0 : c.body) && (c.body.scrollLeft = b || 0),
       (c == null ? void 0 : c.documentElement) &&
