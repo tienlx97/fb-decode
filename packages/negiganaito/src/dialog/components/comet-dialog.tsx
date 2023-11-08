@@ -49,4 +49,4 @@ function CometDialog(props: CometDialogProps, ref: React.Ref<HTMLDivElement>) {
   )
 }
 
-export  forwardRef(CometDialog)
+export default forwardRef(CometDialog)
