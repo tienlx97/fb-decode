@@ -16,6 +16,7 @@ export function WorkKnowledgeStackedChannelPinnedCollections() {
   const [q, r] = useState(WorkKnowledgeNavHeaderState.ENABLED)
   // fetch `pinned_knowledge_collections`
   // "client:61553101316293:work_info:pinned_knowledge_collections"
+
   const pinned_knowledge_collections: any[] = []
 
   const onCancelClick = function () {

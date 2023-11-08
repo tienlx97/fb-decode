@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   // reactStrictMode: true,
-  transpilePackages: ['ui'],
+  transpilePackages: ['ui', '@negiganaito/react-components'],
 
   experimental: {
     serverActions: true,
-    // appDir: true,
     serverComponentsExternalPackages: ['@prisma/client'],
     forceSwcTransforms: true,
   },
@@ -25,6 +24,11 @@ module.exports = {
         permanent: true,
       },
     ]
+  },
+
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true }
+    return config
   },
 
   async headers() {

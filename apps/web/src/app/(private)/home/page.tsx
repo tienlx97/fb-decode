@@ -1,10 +1,12 @@
-import { Default } from '@/components/demo'
+import { HomeScreen } from '@/components/home-screen'
 import React from 'react'
 
-export default function Page() {
+const Page = () => {
   return (
     <div style={{ width: '100%', height: '100%' }}>
-      <Default />
+      <HomeScreen />
     </div>
   )
 }
+
+export default Page

@@ -31,10 +31,20 @@ import { CometPlaceholder } from '@negiganaito/placeholder'
 import { useCometPrerendererImpl } from '@negiganaito/popover/hooks'
 import { getCurrentQueueTime } from '@negiganaito/utils/common/comet-event-timings'
 
-import BaseContextualLayer from '../base-contextual-layer'
+// import BaseContextualLayer from '../base-contextual-layer'
+
+const BaseContextualLayer = dynamic(
+  // @ts-ignore
+  import('../base-contextual-layer').then(r => r.default),
+  {
+    ssr: false,
+  },
+)
+
 import BaseContextualLayerDefaultContainer from '../base-contextual-layer-default-container'
 import { BasePopoverLayerVisibility } from '../base-popover-layer-visibility'
 import { CometPrerenderer } from '../comet-prerenderer'
+import dynamic from 'next/dynamic'
 
 // p = c('gkx')('8058')
 const p = true
@@ -285,7 +295,7 @@ function BasePopoverTrigger({
         children: jsx(CometPrerenderer, {
           prerenderingProps: prerenderingProps,
           children: (a: any) => {
-            return React.createElement(
+            return jsx(
               BaseContextualLayer,
               Object.assign({}, a, rest, {
                 containFocus: !0,

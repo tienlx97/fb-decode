@@ -7,3 +7,6 @@ export { default as WorkCometIconKnowledgeLibraryFilled } from './work-comet-ico
 export { default as CaretDownFilled, CaretDownSvg } from './caret-down-filled'
 export { CometIconWirelessSlashFilled } from './comet-icon-wireless-slash-filled'
 export { ChannelGeminiUIChevronToggle } from './channel-gemini-ui-chevron-toggle'
+export { ArrowLeftFilled24 } from './arrow-left-filled-24'
+export { ArrowRightFilled24 } from './arrow-right-filled-24'
+export { CrossFilled24 } from './cross-filled-24'

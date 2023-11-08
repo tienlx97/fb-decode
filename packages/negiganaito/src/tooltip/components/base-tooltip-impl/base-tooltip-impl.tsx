@@ -5,10 +5,18 @@ import { useTooltipDelayedContent } from '../../hooks'
 
 import { HeroInteractionContextPassthrough } from '@negiganaito/common'
 import { useFadeEffect } from '@negiganaito/hooks'
-import { BaseContextualLayer } from '@negiganaito/popover'
+
+// import { BaseContextualLayer } from '@negiganaito/popover'
 import { mergeClasses } from '@griffel/react'
 import { CometPlaceholder } from '@negiganaito/placeholder'
 import { useDummyStyles, useStyles } from './styles'
+import dynamic from 'next/dynamic'
+
+const BaseContextualLayer = dynamic(
+  // @ts-ignore
+  import('@negiganaito/popover').then(r => r.BaseContextualLayer),
+  { ssr: false },
+)
 
 type BaseTooltipImplProps = {
   contentKey?: string
