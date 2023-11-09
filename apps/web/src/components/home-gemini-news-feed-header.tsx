@@ -1,11 +1,16 @@
 import {
+  CometFormInputWrapper,
   CometFormSelectOnlyCombobox,
+  CometIcon,
+  CometRow,
   CometRowItem,
+  TetraText,
+  TetraTextPairing,
   fbicon,
 } from '@negiganaito/react-components'
 
 // @ts-ignore
-import { jsx } from 'react/jsx-runtime'
+import { jsx, jsxs } from 'react/jsx-runtime'
 
 function getComboboxItems() {
   const icons = [
@@ -68,21 +73,75 @@ function getComboboxItems() {
 }
 
 export function HomeGeminiNewsFeedHeader() {
-  return jsx(CometRowItem, {
-    verticalAlign: 'center',
-    children: jsx(CometFormSelectOnlyCombobox, {
-      align: 'end',
-      label: 'Sort',
-      onValueChange: (a: any) => {
-        // a = d('ChannelGeminiNavFeedBookmarkMetaHelper').getItemUrlByParamValue(
-        //   a,
-        // )
-        // a != null && (f == null ? void 0 : f.go(a.toString(), {}))
-      },
-      options: getComboboxItems(),
-      size: 'small',
-      testid: void 0,
-      value: 'h_nor',
-    }),
+  return jsxs(CometRow, {
+    paddingHorizontal: 0,
+    paddingVertical: 12,
+    children: [
+      jsx(CometRowItem, {
+        expanding: !0,
+        verticalAlign: 'center',
+        children: jsx(TetraTextPairing, {
+          body: jsx(TetraText, {
+            color: 'secondary',
+            type: 'body4',
+            children: 'Discover posts from across your organization',
+          }),
+          headline: 'Feed',
+          level: 2,
+        }),
+      }),
+      jsx(CometRowItem, {
+        verticalAlign: 'center',
+        children: jsx(CometFormSelectOnlyCombobox, {
+          align: 'end',
+          label: 'Sort',
+          onValueChange: (a: any) => {
+            // a = d('ChannelGeminiNavFeedBookmarkMetaHelper').getItemUrlByParamValue(
+            //   a,
+            // )
+            // a != null && (f == null ? void 0 : f.go(a.toString(), {}))
+          },
+          options: getComboboxItems(),
+          size: 'small',
+          testid: void 0,
+          value: 'h_nor',
+        }),
+      }),
+      jsx(CometRowItem, {
+        verticalAlign: 'center',
+        children: jsx('div', {
+          'data-testid': void 0,
+          children: jsx(CometFormInputWrapper, {
+            cursor: 'pointer',
+            hideLabel: !0,
+            label: 'Manage your Feed',
+            onPress: () => {
+              return e()
+            },
+            children: () => {
+              return jsx('div', {
+                className: 'xyamay9 x1pi30zi x1l90r2v x1swvt13',
+                children: jsx(CometIcon, {
+                  color: 'secondary',
+                  icon: fbicon(
+                    {
+                      sprited: 2,
+                      spi: '/assets/workplace/m1poOTDbpnT.png',
+                      _spi: '/assets/workplace/m1poOTDbpnT.png',
+                      w: 24,
+                      h: 24,
+                      p: '0 0',
+                      sz: 'auto',
+                      loggingID: '496357',
+                    },
+                    24,
+                  ),
+                }),
+              })
+            },
+          }),
+        }),
+      }),
+    ],
   })
 }

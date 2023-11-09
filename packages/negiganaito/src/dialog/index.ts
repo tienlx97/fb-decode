@@ -55,3 +55,4 @@ __d("BaseDivider.react", ["react", "react-strict-dom"], (function(a, b, c, d, e,
 */
 
 export * from './components'
+export * from './hooks'
