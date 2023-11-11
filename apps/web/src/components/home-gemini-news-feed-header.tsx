@@ -1,3 +1,5 @@
+import { useHomeGeminiFeedPreferencesDialog } from '@/hooks/use-home-gemini-feed-preferences-dialog'
+import { makeStyles } from '@griffel/react'
 import {
   CometFormInputWrapper,
   CometFormSelectOnlyCombobox,
@@ -72,7 +74,21 @@ function getComboboxItems() {
   return icons
 }
 
+const useStyles = makeStyles({
+  dummy: {
+    paddingTop: '16px',
+    paddingRight: '16px',
+    paddingBottom: '16px',
+    paddingLeft: '16px',
+  },
+})
+
 export function HomeGeminiNewsFeedHeader() {
+  const classes = useStyles()
+
+  const b = useHomeGeminiFeedPreferencesDialog()
+  const e = b[0]
+
   return jsxs(CometRow, {
     paddingHorizontal: 0,
     paddingVertical: 12,
@@ -120,7 +136,7 @@ export function HomeGeminiNewsFeedHeader() {
             },
             children: () => {
               return jsx('div', {
-                className: 'xyamay9 x1pi30zi x1l90r2v x1swvt13',
+                className: classes.dummy,
                 children: jsx(CometIcon, {
                   color: 'secondary',
                   icon: fbicon(

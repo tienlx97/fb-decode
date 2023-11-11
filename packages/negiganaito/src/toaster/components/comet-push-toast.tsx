@@ -34,7 +34,7 @@ export function cometPushSimpleToast(message: any, b: any) {
   )
 }
 
-export function cometPushErrorToast(a: any, b: any, e: any) {
+export function cometPushErrorToast(a: any, b?: any, e?: any) {
   b === void 0 && (b = 2750)
   return cometPushToast(
     Object.assign({}, a, {
@@ -57,4 +57,10 @@ export function cometPushErrorToast(a: any, b: any, e: any) {
     b,
     e,
   )
+}
+
+export const CometPushToast = {
+  cometPushToast,
+  cometPushSimpleToast,
+  cometPushErrorToast,
 }

@@ -9,7 +9,7 @@ export function useCometPrerendererImpl(
   e: any,
   f?: any,
 ) {
-  var [j, k] = useState(!1)
+  const [j, k] = useState(!1)
 
   const [l, m] = useState(!1)
 

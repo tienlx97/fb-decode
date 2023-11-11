@@ -9,4 +9,6 @@ function a() {
     )
 }
 
-export const CometDialogContext = React.createContext(a)
+type CometDialogProps = any
+
+export const CometDialogContext = React.createContext<CometDialogProps>(a)

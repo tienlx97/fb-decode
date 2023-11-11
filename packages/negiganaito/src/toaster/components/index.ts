@@ -6,3 +6,4 @@ export { CometLazyToasterView_DO_NOT_USE } from './comet-lazy-toaster-view_DO_NO
 export { CometToasterRoot } from './comet-toaster-root'
 export { BaseToasterStateManagerProvider } from './base-toaster-state-manager-provider'
 export { CometNetworkStatusToast } from './comet-network-status-toast'
+export { CometPushToast } from './comet-push-toast'

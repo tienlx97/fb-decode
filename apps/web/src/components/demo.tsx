@@ -3,10 +3,10 @@
 import * as React from 'react'
 // import { TetraText } from '@negiganaito/text'
 import {
+  HelpCenterHeaderLanguageSelector,
   // CometTab, TetraButton,
   TetraText,
 } from '@negiganaito/react-components'
-import { HomeGeminiNewsFeedHeader } from './home-gemini-news-feed-header'
 // import { CometFormTextArea } from '@negiganaito/textarea'
 // import { CometFormTextInput } from '@negiganaito/input'
 // import { CometSwitch } from '@negiganaito/switch'
@@ -50,7 +50,10 @@ export const Default = () => {
         </TetraText>
       </div>
 
-      <HomeGeminiNewsFeedHeader />
+      <HelpCenterHeaderLanguageSelector
+        selectedLanguage="English (US)"
+        buttonTheme="secondary"
+      />
 
       {/* <TetraText color="secondary" align="center" type="body2">
         You're all caught up for now. Be sure to check for more updates soon.

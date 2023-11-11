@@ -2,19 +2,27 @@ import React from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { CometDialogLoadingState } from '../components'
+import { useBaseEntryPointDialog } from './use-base-entry-point-dialog'
 
-const j = (onClose: any) => {
+const defaultFallback = (onClose: any) => {
   return jsx(CometDialogLoadingState, {
     onClose,
   })
 }
 
 export function useCometEntryPointDialog(
-  a: any,
-  b: any,
-  d: any,
-  e: any,
+  entryPoint: any,
+  preloadParams: any,
+  preloadTrigger: any, // button , ...
+  fallback?: any, // loading state
   f?: any,
 ) {
-  return c('useBaseEntryPointDialog')(a, b, d, (a = e) != null ? a : j, f)
+  return useBaseEntryPointDialog(
+    entryPoint,
+    preloadParams,
+    preloadTrigger,
+    fallback ?? defaultFallback,
+    f,
+    //  (a = e) != null ? a : j, f
+  )
 }

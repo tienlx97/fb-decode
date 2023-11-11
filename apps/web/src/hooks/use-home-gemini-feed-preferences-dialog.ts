@@ -1,6 +1,7 @@
+import { HomeGeminiFeedPreferencesControlPanelDialog } from '@/components/home-gemini-feed-preferences-control-panel-dialog'
 import { HomeGeminiFeedPreferencesDialogLoadingState } from '@/components/home-gemini-feed-preferences-dialog-loading-state'
 import { useCometEntryPointDialog } from '@negiganaito/dialog'
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
@@ -28,39 +29,72 @@ __d("HomeGeminiFeedPreferencesDialogLoadingState.react",
 
 */
 
+const homeGeminiFeedPreferencesControlPanelDialog = {
+  root: HomeGeminiFeedPreferencesControlPanelDialog,
+}
+
 const l = (a: any) => {
   return jsx(HomeGeminiFeedPreferencesDialogLoadingState, {
     onClose: a,
   })
 }
 
-const m = !1
+let m = !1
 
-export function useHomeGeminiFeedPreferencesDialog(a: any) {
-  useRef(null)
-  const b = a ?? 'unknown'
+export function useHomeGeminiFeedPreferencesDialog(
+  controlPanelEntryPoint?: any,
+) {
+  useRef(null) //
+  const _controlPanelEntryPoint = controlPanelEntryPoint ?? 'unknown'
 
   // HomeGeminiFeedPreferencesControlPanelDialog.react
-  a = c('HomeGeminiFeedPreferencesControlPanelDialog.entrypoint')
-  a = useCometEntryPointDialog(a, {}, 'button', l)
+  // a = c('HomeGeminiFeedPreferencesControlPanelDialog.entrypoint')
+  let a = useCometEntryPointDialog(
+    homeGeminiFeedPreferencesControlPanelDialog,
+    {},
+    'button',
+    l,
+  )
   var d = a[0]
   a[1]
   a[2]
   a = a[3]
-  var e = j(
-    function (a) {
-      m ||
-        (d(
+  // const e = useCallback(
+  //   (a?: any) => {
+  //     m ||
+  //       (d(
+  //         {
+  //           controlPanelEntryPoint: _controlPanelEntryPoint,
+  //         },
+  //         () => {
+  //           m = !1
+  //           a && a()
+  //         },
+  //       ),
+  //       (m = !0))
+  //   },
+  //   [d, _controlPanelEntryPoint],
+  // )
+
+  const e = useCallback(
+    (a?: any) => {
+      if (!m) {
+        d(
           {
-            controlPanelEntryPoint: b,
+            controlPanelEntryPoint: _controlPanelEntryPoint,
           },
-          function () {
-            ;(m = !1), a != null && a()
+          () => {
+            m = false
+            if (a) {
+              a()
+            }
           },
-        ),
-        (m = !0))
+        )
+        m = true
+      }
     },
-    [d, b],
+    [d, _controlPanelEntryPoint],
   )
-  return [e, a]
+
+  return [e, a] as const
 }

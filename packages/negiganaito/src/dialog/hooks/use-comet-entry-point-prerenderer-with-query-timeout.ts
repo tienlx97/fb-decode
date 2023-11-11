@@ -3,9 +3,9 @@ import { useCallback } from 'react'
 import { useCometEntryPointPrerendererWithQueryTimeoutPrivate } from './use-comet-entry-point-prerenderer-with-query-timeout-private'
 
 export function useCometEntryPointPrerendererWithQueryTimeout(
-  a: any,
+  a: any, // {root: a, getPreloadProps: ƒ}
   b: any,
-  d: any,
+  d: any, // button
   e: any,
 ) {
   a = useCometEntryPointPrerendererWithQueryTimeoutPrivate(a, b, d, e)

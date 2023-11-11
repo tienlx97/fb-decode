@@ -5,13 +5,13 @@ import { useCometPrerendererImpl } from '@negiganaito/popover'
 const m = 3e4
 
 export function useCometEntryPointPrerendererWithQueryTimeoutPrivate(
-  a: any,
+  a: any, // {root: a, getPreloadProps: ƒ}
   b: any,
-  e: any,
-  f: any,
+  e: any, // button
+  f: any, // queryIsCheap_DO_NOT_USE_OR_YOU_WILL_BE_FIRED
 ) {
   const g = useRef<any>(null)
-  const h = stableStringify(b)
+  const h = stableStringify(b) // {}
   const n = useRef<any>(null)
 
   const o = useCallback(() => {
@@ -24,26 +24,22 @@ export function useCometEntryPointPrerendererWithQueryTimeoutPrivate(
     function () {
       let a
       o()
-      a =
-        (a = g.current) == null
-          ? void 0
-          : (a = a.preloadedEntryPoint) == null
-          ? void 0
-          : a.dispose
+      a = !(a = g.current)
+        ? void 0
+        : !(a = a.preloadedEntryPoint)
+        ? void 0
+        : a.dispose
       a && a()
       g.current = null
     },
     [o],
   )
 
-  let q = useCallback(
-    function () {
-      n.current = setTimeout(() => {
-        p()
-      }, m)
-    },
-    [p],
-  )
+  let q = useCallback(() => {
+    n.current = setTimeout(() => {
+      p()
+    }, m)
+  }, [p])
 
   useEffect(() => {
     return p
@@ -51,7 +47,9 @@ export function useCometEntryPointPrerendererWithQueryTimeoutPrivate(
 
   const s = useCallback(() => {
     o()
-    if (b == null) return
+    if (b == null) {
+      return
+    }
     if (
       g.current == null ||
       g.current.entryPoint !== a ||
@@ -59,8 +57,8 @@ export function useCometEntryPointPrerendererWithQueryTimeoutPrivate(
     ) {
       p()
       g.current = {
-        entryPoint: a,
-        preloadedEntryPoint: a, // d('CometRelay').loadEntryPoint(r, a, b),
+        entryPoint: a.root,
+        preloadedEntryPoint: a.root, // d('CometRelay').loadEntryPoint(r, a, b),
         preloadParamsHash: h,
       }
       // var c = l.getModuleIfRequireable()
@@ -94,7 +92,7 @@ export function useCometEntryPointPrerendererWithQueryTimeoutPrivate(
 
   let v = useCallback(() => {
     var a = s()
-    a != null && (g.current = null)
+    a && (g.current = null)
     return a
   }, [s])
 

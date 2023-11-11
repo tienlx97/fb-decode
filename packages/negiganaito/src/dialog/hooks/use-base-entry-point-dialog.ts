@@ -1,6 +1,9 @@
 import { useCallback, useContext } from 'react'
 import { CometDialogContext } from '../context/comet-dialog-context'
 import { useCometEntryPointPrerendererWithQueryTimeout } from './use-comet-entry-point-prerenderer-with-query-timeout'
+import { CometSuspendedDialogImpl } from '../components/comet-suspended-dialog-impl'
+// @ts-ignore
+import { jsx } from 'react/jsx-runtime'
 
 function l(a: any) {
   var b = a.onClose,
@@ -11,29 +14,36 @@ function l(a: any) {
     onClose: b,
     onHide: c,
   })
-  return i.jsx(d('CometRelay').EntryPointContainer, {
-    entryPointReference: a,
-    props: e,
-  })
+  // return i.jsx(d('CometRelay').EntryPointContainer, {
+  //   entryPointReference: a,
+  //   props: e,
+  // })
+
+  return jsx(a, e)
 }
 
 export function useBaseEntryPointDialog(
-  a: any,
-  b: any,
-  d: any,
-  e: any,
-  f: any,
+  entryPoint: any, // entryPoint
+  preloadParams: any,
+  preloadTrigger: any, // button
+  fallback: any,
+  f?: any,
 ) {
   const g = useContext(CometDialogContext)
   // const h =
 
   const i = !f ? void 0 : f.baseModalProps
 
-  b = useCometEntryPointPrerendererWithQueryTimeout(a, b, d, {
-    // eslint-disable-next-line camelcase
-    queryIsCheap_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:
-      f == null ? void 0 : f.queryIsCheap_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
-  })
+  let b = useCometEntryPointPrerendererWithQueryTimeout(
+    entryPoint,
+    preloadParams,
+    preloadTrigger,
+    {
+      // eslint-disable-next-line camelcase
+      queryIsCheap_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:
+        f == null ? void 0 : f.queryIsCheap_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
+    },
+  )
 
   const m = b[0]
   f = b[1]
@@ -47,22 +57,22 @@ export function useBaseEntryPointDialog(
     (b: any, f: any, j: any) => {
       m((f: any, k: any) => {
         g(
-          c('CometSuspendedDialogImpl.react'),
+          CometSuspendedDialogImpl,
           {
             dialog: h,
             dialogProps: {
               otherProps: b,
               preloadedEntryPoint: f,
             },
-            fallback: e,
+            fallback: fallback,
           },
           {
             loadType: 'entrypoint',
-            preloadTrigger: d,
-            tracePolicy:
-              (f = j) != null
-                ? f
-                : c('tracePolicyFromResource')('comet.dialog', a.root),
+            preloadTrigger: preloadTrigger,
+            // tracePolicy:
+            //   (f = j) != null
+            //     ? f
+            //     : c('tracePolicyFromResource')('comet.dialog', a.root),
           },
           k,
           {
@@ -71,7 +81,7 @@ export function useBaseEntryPointDialog(
         )
       }, f)
     },
-    [g, i, h, a.root, e, d, m],
+    [g, i, h, entryPoint.root, fallback, preloadTrigger, m],
   )
   return [p, f, n, o, b]
 }
