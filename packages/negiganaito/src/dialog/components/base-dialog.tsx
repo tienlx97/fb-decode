@@ -129,16 +129,16 @@ export const BaseDialog = forwardRef<any, BaseDialogProps>(
 
     const q = jsx(BaseThemeProvider, {
       config: themeConfig,
-      children: (a: any, b: any) => {
+      children: (themeClass: any, themeStyle: any) => {
         return jsx('div', {
           className: mergeClasses(
-            a,
+            themeClass.theme,
             classes.root,
             withDeprecatedStyles && classes.rootWithDeprecatedStyles,
             rootXStyle,
           ),
           ref: u,
-          style: b,
+          style: themeStyle,
           children: jsx('div', {
             className: mergeClasses(classes.anchor, anchorXStyle),
             children: jsx(

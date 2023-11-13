@@ -8,6 +8,7 @@ import { jsxs, jsx } from 'react/jsx-runtime'
 import { CometDialogContext } from '../context/comet-dialog-context'
 import { CometErrorBoundary, FBLogger } from '@negiganaito/error'
 import { CometPushToast } from '@negiganaito/toaster/components/comet-push-toast'
+import { BaseCometModal } from './base-comet-modal'
 
 type CometTransientDialogProviderProps = {
   displayBaseModal_DO_NOT_USE?: any

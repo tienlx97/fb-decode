@@ -16,6 +16,7 @@ import {
   isSingleCharKey,
 } from '../../util'
 import { useStyles } from './styles'
+import { recoverableViolation } from '@negiganaito/error'
 
 export default function createKeyCommandWrapper(
   isFocusCapture: boolean,
@@ -48,15 +49,15 @@ export default function createKeyCommandWrapper(
         var b,
           val = commandMap.get(a)
         if (
-          ((b = val) == null ? void 0 : b.groupID) != null &&
-          ((b = val) == null ? void 0 : b.commandID) != null
+          (!(b = val) ? void 0 : b.groupID) &&
+          (!(b = val) ? void 0 : b.commandID)
         ) {
           b = cometKeyCommandSettingsContextValue.getCustomKeyCombination(
             val.groupID,
             val.commandID,
           )
           if (
-            b == null ||
+            !b ||
             areKeyCombinationsEqual(b, (b = val) == null ? void 0 : b.command)
           ) {
             return val
@@ -65,9 +66,9 @@ export default function createKeyCommandWrapper(
           }
         }
         b = cometKeyCommandSettingsContextValue.getCustomCommandsMap().get(a)
-        if (b != null && b.groupID != null && b.commandID != null) {
+        if (b && b.groupID && b.commandID) {
           a = p(commandMap, b.groupID, b.commandID)
-          a != null && (val = a)
+          a && (val = a)
         }
         return val
       },
@@ -79,7 +80,7 @@ export default function createKeyCommandWrapper(
         addCommands: (commandArr: any, b?: any) => {
           commandArr.forEach((commandItem: any) => {
             var command = commandItem.command
-            if (command != null) {
+            if (command) {
               command = createKeyCommand(command)
               var e = commandMap.has(command),
                 g = e && b === !0
@@ -333,9 +334,9 @@ function n(a: any) {
 }
 
 var r = function (a: any, b: any) {
-    throw new Error(
+    recoverableViolation(
       'Tried to call showSingleCharacterKeyCommandWrapperDialogRef, but it was never set',
-      // 'comet_ax'
+      'comet_ax',
     )
 
     // c('recoverableViolation')(
@@ -344,9 +345,9 @@ var r = function (a: any, b: any) {
     // )
   },
   s = function (a: any, b: any) {
-    throw new Error(
+    recoverableViolation(
       'Tried to call showModifiedKeyCommandWrapperDialogRef, but it was never set',
-      // 'comet_ax'
+      'comet_ax',
     )
     // c('recoverableViolation')(
     //   'Tried to call showModifiedKeyCommandWrapperDialogRef, but it was never set',

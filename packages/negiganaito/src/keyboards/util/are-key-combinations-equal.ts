@@ -1,5 +1,5 @@
 export default function areKeyCombinationsEqual(a: any, b: any) {
-  return a == null || b == null
+  return !a || !b
     ? a === b
     : a.key !== '' &&
         b.key !== '' &&

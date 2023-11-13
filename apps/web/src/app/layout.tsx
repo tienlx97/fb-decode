@@ -14,6 +14,8 @@ import { initTranslations } from '@/components/initTranslations'
 import { AppTabIdHandler } from '@/components/app-tab-id-handler'
 
 import { PipedriveRouteContext } from '@/context/pipedrive-route-context'
+import { WorkGalahadDarkModeStateProvider } from '@/components/work-galahad-dark-mode-state-provider'
+import { CometKeyboardSettingsStateProvider } from '@/components/comet-keyboard-settings-state-provider'
 
 export const metadata = {
   title: 'ChiThanh Potal',
@@ -34,27 +36,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <GoogleAnalytics />
       <body className="body-custom system-fonts--body segoe">
-        <div
-          style={{
-            position: 'relative',
-            boxSizing: 'border-box',
-            zIndex: 0,
-          }}
-        >
-          <WorkGalahadNavStoreProvider>
-            <AppTabIdHandler>
-              <PipedriveRouteContext>
-                <AuthProvider>
-                  {/* @ts-ignore */}
-                  <AppProvider className="app-custom">
-                    <GeminiApp>{children}</GeminiApp>
-                    <CookieBanner />
-                  </AppProvider>
-                </AuthProvider>
-              </PipedriveRouteContext>
-            </AppTabIdHandler>
-          </WorkGalahadNavStoreProvider>
-        </div>
+        <CometKeyboardSettingsStateProvider>
+          <WorkGalahadDarkModeStateProvider>
+            <WorkGalahadNavStoreProvider>
+              <AppTabIdHandler>
+                <PipedriveRouteContext>
+                  <AuthProvider>
+                    <AppProvider className="app-custom">
+                      <GeminiApp>{children}</GeminiApp>
+                      <CookieBanner />
+                    </AppProvider>
+                  </AuthProvider>
+                </PipedriveRouteContext>
+              </AppTabIdHandler>
+            </WorkGalahadNavStoreProvider>
+          </WorkGalahadDarkModeStateProvider>
+        </CometKeyboardSettingsStateProvider>
       </body>
     </html>
   )

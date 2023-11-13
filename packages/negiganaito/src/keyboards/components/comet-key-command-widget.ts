@@ -1,5 +1,5 @@
 import createKeyCommandWidget from './create-key-command-widget'
 
-const a = createKeyCommandWidget()
+export const cometKeyCommandWidget = createKeyCommandWidget()
 
-export default a
+export default cometKeyCommandWidget

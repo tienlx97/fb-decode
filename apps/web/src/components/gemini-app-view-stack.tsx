@@ -17,6 +17,7 @@ import { GeminiAppsGlimmer } from './gemini-apps-glimmer'
 import { GeminiLayoutPage } from './gemini-layout-page'
 import { WorkGalahadUIAppsRoot } from './work-galahad-ui-apps-root'
 import { WorkNavigationClassicRenderer } from './work-navigation-classic-renderer'
+import { GeminiLayoutTopLevelProvider } from './gemini-layout-top-level-provider'
 
 const useStyles = makeStyles({
   contentContainer: {
@@ -62,18 +63,20 @@ export default function GeminiAppViewStack({
         value: basePortalTargetContextValue,
         children: [
           jsx(CometContextualLayerAnchorRoot, {
-            children: jsx(GeminiLayoutPage, {
-              // side nav 2
-              channelContent: ChannelContentComp,
-              // side nav 1
-              mainNavContent: MainNavContentComp,
-              navContentAndChannelContainer: NavContentAndChannelContainer,
-              children: jsx(CometSearchKeyCommandWrapper, {
-                className: classes.contentContainer,
-                children,
-                // children: jsx(o, {
-                //   routerState: a,
-                // }),
+            children: jsx(GeminiLayoutTopLevelProvider, {
+              children: jsx(GeminiLayoutPage, {
+                // side nav 2
+                channelContent: ChannelContentComp,
+                // side nav 1
+                mainNavContent: MainNavContentComp,
+                navContentAndChannelContainer: NavContentAndChannelContainer,
+                children: jsx(CometSearchKeyCommandWrapper, {
+                  className: classes.contentContainer,
+                  children,
+                  // children: jsx(o, {
+                  //   routerState: a,
+                  // }),
+                }),
               }),
             }),
           }),

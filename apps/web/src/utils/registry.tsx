@@ -9,7 +9,7 @@ import {
 } from '@griffel/react'
 import { useServerInsertedHTML } from 'next/navigation'
 
-type AppProviderProps = React.PropsWithChildren
+type AppProviderProps = any
 
 /**
  * // https://nextjs.org/docs/app/building-your-application/styling/css-in-js#configuring-css-in-js-in-app

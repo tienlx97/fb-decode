@@ -13,6 +13,20 @@ export default function CometHideLayerOnEscape({
   onHide,
   children,
 }: CometHideLayerOnEscapeProps) {
+  // const commandConfigs = useMemo(() => {
+  //   return [
+  //     {
+  //       command: {
+  //         key: cometKeys.ESCAPE,
+  //       },
+  //       description: 'Close', // h._('Close'),
+  //       handler: onHide,
+  //       triggerFromInputs: true,
+  //       triggerOnRepeats: false,
+  //     },
+  //   ]
+  // }, [onHide])
+
   const commandConfigs = useMemo(() => {
     return [
       {
@@ -25,13 +39,13 @@ export default function CometHideLayerOnEscape({
         triggerOnRepeats: false,
       },
     ]
-  }, [onHide])
+  }, [])
 
   return (
     <CometComponentWithKeyCommands
       commandConfigs={commandConfigs}
       debugName={debugName}
-      isWrapperFocusable={true}
+      isWrapperFocusable
     >
       {children}
     </CometComponentWithKeyCommands>

@@ -9,6 +9,11 @@ import suspendOrThrowIfUsedInSSR from '@negiganaito/utils/common/suspend-or-thro
 import { BasePortalTargetContext } from '../context'
 import BaseDomContainer from './base-dom-container'
 
+// @ts-ignore
+import { jsx } from 'react/jsx-runtime'
+import { BaseThemeProvider } from '@negiganaito/styles'
+import { mergeClasses } from '@griffel/react'
+
 type BasePortalProps = {
   children?: ReactNode
   hidden?: boolean
@@ -33,13 +38,44 @@ export default function BasePortal({
 
   return domNode
     ? createPortal(
-        <div hidden={hidden} className={className}>
-          <BasePortalTargetContext.Provider value={providerValue}>
-            {children}
-          </BasePortalTargetContext.Provider>
-          <BaseDomContainer node={providerValue} />
-        </div>,
+        jsx(BaseThemeProvider, {
+          children: (themeClasses: any, themeStyle: string) => {
+            return jsx(
+              'div',
+              Object.assign({}, hidden && { hidden }, {
+                className: mergeClasses(className, themeClasses.theme),
+                style: themeStyle,
+                children: [
+                  jsx(BasePortalTargetContext.Provider, {
+                    value: providerValue,
+                    children,
+                  }),
+                  jsx(BaseDomContainer, {
+                    node: providerValue,
+                  }),
+                ],
+              }),
+            )
+          },
+        }),
         domNode,
       )
     : undefined
+
+  //   return domNode
+  //     ? createPortal(
+  //       jsx(BaseThemeProvider, {
+  //         children:(a:any,b:any)=>{
+  // return jsx("div", Object.assign({}, hidden && {hidden}, {}))
+  //         }
+  //       })
+  //         <div hidden={hidden} className={className}>
+  //           <BasePortalTargetContext.Provider value={providerValue}>
+  //             {children}
+  //           </BasePortalTargetContext.Provider>
+  //           <BaseDomContainer node={providerValue} />
+  //         </div>,
+  //         domNode,
+  //       )
+  //     : undefined
 }

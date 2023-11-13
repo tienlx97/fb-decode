@@ -3,10 +3,9 @@ import React, { ReactNode } from 'react'
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-import CometKeyCommandWrapper from '../comet-key-command-wrapper'
-import { mergeClasses } from '@griffel/react'
-import useKeyCommands from '../../hooks/use-key-commands'
-import { useStyles } from './styles'
+import CometKeyCommandWrapper from './comet-key-command-wrapper'
+import { makeStyles, mergeClasses } from '@griffel/react'
+import useKeyCommands from '../hooks/use-key-commands'
 
 type CometComponentWithKeyCommandsProps = {
   children?: ReactNode
@@ -22,7 +21,29 @@ function j(props: any) {
   return null
 }
 
-export default function CometComponentWithKeyCommands({
+const useStyles = makeStyles({
+  displayInherit: {
+    display: 'inherit',
+  },
+
+  inherit: {
+    alignContent: 'inherit',
+    alignItems: 'inherit',
+    flexDirection: 'inherit',
+    flexGrow: 'inherit',
+    flexShrink: 'inherit',
+    height: 'inherit',
+    justifyContent: 'inherit',
+    maxHeight: 'inherit',
+    maxWidth: 'inherit',
+    minHeight: 'inherit',
+    minWidth: 'inherit',
+    position: 'relative',
+    width: 'inherit',
+  },
+})
+
+export function CometComponentWithKeyCommands({
   commandConfigs,
   className,
   children,
@@ -37,9 +58,10 @@ export default function CometComponentWithKeyCommands({
       {
         elementType,
         className:
-          className ?? elementType === 'span'
+          className ??
+          (elementType === 'span'
             ? classes.inherit
-            : mergeClasses(classes.inherit, classes.displayInherit),
+            : mergeClasses(classes.inherit, classes.displayInherit)),
       },
       rest,
       {
