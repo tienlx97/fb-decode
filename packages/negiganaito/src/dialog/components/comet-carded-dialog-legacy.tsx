@@ -201,9 +201,9 @@ export const CometCardedDialogLegacy = forwardRef<
     },
     ref,
   ) => {
-    const p = useStyles()
-    const q = useSizeStyles()
-    const r = useTitleHorizontalAlignmentStyles()
+    const classes = useStyles()
+    const sizeClasses = useSizeStyles()
+    const titleHorizontalAlignmentClasses = useTitleHorizontalAlignmentStyles()
 
     const isCometMobile = useIsCometOnMobile()
     const contentSize =
@@ -212,39 +212,43 @@ export const CometCardedDialogLegacy = forwardRef<
     const id = useId()
     const fallbackId = !title && (header ?? titleWithEntities) ? id : void 0
 
+    // let f: any
+    // f =
+    //   !title && ((f = header) != null ? f : titleWithEntities) ? id : undefined
+
     // d("Locale").isRTL();
     const isRTL = false
 
     return jsxs(BaseDialog, {
       anchorXStyle: mergeClasses(
-        p.anchor,
-        isCometMobile && p.anchorInMobileEnvironment,
+        classes.anchor,
+        isCometMobile && classes.anchorInMobileEnvironment,
         anchorXStyle,
       ),
-      'aria-label': labelledBy ? void 0 : ariaLabel ?? title ?? undefined,
+      'aria-label': labelledBy ? undefined : ariaLabel ?? title ?? undefined,
       'aria-labelledby': labelledBy ?? fallbackId,
       disableClosingWithMask,
       onClose,
       ref,
       rootXStyle: mergeClasses(
-        isCometMobile && p.rootInMobileEnvironment,
+        isCometMobile && classes.rootInMobileEnvironment,
         rootXStyle,
       ),
-      testid: void 0,
+      testid: undefined,
       withDeprecatedStyles,
       // @ts-ignore
-      className: mergeClasses(p.card, q[contentSize]),
+      className: mergeClasses(classes.card, sizeClasses[contentSize]),
       children: [
         header &&
           jsx('div', {
             className: mergeClasses(
-              p.header,
-              !disableHeaderDivider && p.headerBottomBorder,
-              withCloseButton && p.headerWithCloseButton,
-              withBackButton && p.headerWithBackButton,
+              classes.header,
+              !disableHeaderDivider && classes.headerBottomBorder,
+              withCloseButton && classes.headerWithCloseButton,
+              withBackButton && classes.headerWithBackButton,
               (withCloseButton || withBackButton) &&
                 titleHorizontalAlignment === 'center' &&
-                p.headerWithPadding,
+                classes.headerWithPadding,
             ),
             id: fallbackId,
             children: header,
@@ -253,20 +257,20 @@ export const CometCardedDialogLegacy = forwardRef<
           !header &&
           jsx('div', {
             className: mergeClasses(
-              p.header,
-              !disableHeaderDivider && p.headerBottomBorder,
-              withCloseButton && p.headerWithCloseButton,
-              withBackButton && p.headerWithBackButton,
+              classes.header,
+              !disableHeaderDivider && classes.headerBottomBorder,
+              withCloseButton && classes.headerWithCloseButton,
+              withBackButton && classes.headerWithBackButton,
               (withCloseButton || withBackButton) &&
                 titleHorizontalAlignment === 'center' &&
-                p.headerWithPadding,
+                classes.headerWithPadding,
             ),
             id: fallbackId,
             children: jsx('div', {
               className: mergeClasses(
-                p.titleWrapper,
+                classes.titleWrapper,
                 // @ts-ignore
-                r[titleHorizontalAlignment],
+                titleHorizontalAlignmentClasses[titleHorizontalAlignment],
               ),
               children: subtitle
                 ? jsx(TetraTextPairing, {
@@ -274,12 +278,12 @@ export const CometCardedDialogLegacy = forwardRef<
                     bodyLineLimit: 2,
                     headline: _title,
                     headlineLineLimit: 1,
-                    isSemanticHeading: !0,
+                    isSemanticHeading: true,
                     level: isCometMobile ? 3 : 2,
                     textAlign: 'center',
                   })
                 : jsx(TetraText, {
-                    isSemanticHeading: !0,
+                    isSemanticHeading: true,
                     numberOfLines: 1,
                     type: isCometMobile
                       ? 'headlineEmphasized3'
@@ -292,8 +296,8 @@ export const CometCardedDialogLegacy = forwardRef<
           ? jsx(CometTrackingNodeProvider, {
               trackingNode: 141,
               children: jsx('div', {
-                className: p.closeButton,
-                'data-testid': void 0,
+                className: classes.closeButton,
+                'data-testid': undefined,
                 children: jsx(CometCircleButton, {
                   color: 'secondary',
                   icon: fbicon(
@@ -320,8 +324,8 @@ export const CometCardedDialogLegacy = forwardRef<
 
         withBackButton
           ? jsx('div', {
-              className: p.backButton,
-              'data-testid': void 0,
+              className: classes.backButton,
+              'data-testid': undefined,
               children: jsx(CometCircleButton, {
                 color: 'secondary',
                 icon: isRTL ? rightIcon : LeftIcon,

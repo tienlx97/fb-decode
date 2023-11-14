@@ -53,6 +53,8 @@ type BaseDialogProps = {
   themeConfig: any
   withDeprecatedStyles?: boolean
   className?: any
+  'aria-label'?: string
+  'aria-labelledby'?: string
 }
 
 export const BaseDialog = forwardRef<any, BaseDialogProps>(
@@ -74,56 +76,59 @@ export const BaseDialog = forwardRef<any, BaseDialogProps>(
   ) => {
     const classes = useStyles()
 
-    const u = useRef<any>(null),
-      v = useRef<any>(null),
-      w = useRef<any>(null)
+    const u = useRef<any>(null)
+    const v = useRef<any>(null)
+    const w = useRef<any>(null)
 
-    useEffect(
-      function () {
-        let a = u.current,
-          b = v.current
-        if (a == null || b == null || disableClosingWithMask) {
-          return
+    useEffect(() => {
+      let a = u.current
+      let b = v.current
+      if (!a || !b || disableClosingWithMask) {
+        return
+      }
+
+      const isNodeInContainer = (target: any) => {
+        return (
+          target instanceof Node && !b.contains(target) && a.contains(target)
+        )
+      }
+      const hasPointerEvent = 'PointerEvent' in window
+      if (!hasPointerEvent) {
+        const clickEvent = (a: any) => {
+          isNodeInContainer(a.target) && onClose()
         }
-        function c(c: any) {
-          return c instanceof Node && !b.contains(c) && a.contains(c)
+        a.addEventListener('click', clickEvent)
+        return () => {
+          a.removeEventListener('click', clickEvent)
         }
-        let e = 'PointerEvent' in window
-        if (!e) {
-          let f = function (a: any) {
-            c(a.target) && onClose()
-          }
-          a.addEventListener('click', f)
-          return function () {
-            a.removeEventListener('click', f)
-          }
+      }
+
+      let g = false
+
+      const pointerdown = (ev: any) => {
+        if (ev.isPrimary) {
+          let b = isNodeInContainer(ev.target)
+          g = b
+          w.current = ev
         }
-        let g = !1
-        function h(a: any) {
-          if (a.isPrimary) {
-            let b = c(a.target)
-            g = b
-            w.current = a
-          }
+      }
+
+      const pointerup = (ev: any) => {
+        let b = isNodeInContainer(ev.target)
+        if (g && b && w.current && ev.isPrimary) {
+          b = isWithinThreshold(w.current, ev)
+          b && onClose()
         }
-        function i(a: any) {
-          let b = c(a.target)
-          if (g && b && w.current != null && a.isPrimary) {
-            b = isWithinThreshold(w.current, a)
-            b && onClose()
-          }
-          g = !1
-          w.current = null
-        }
-        a.addEventListener('pointerup', i)
-        a.addEventListener('pointerdown', h)
-        return function () {
-          a.removeEventListener('pointerup', i),
-            a.removeEventListener('pointerdown', h)
-        }
-      },
-      [disableClosingWithMask, onClose],
-    )
+        g = !1
+        w.current = null
+      }
+      a.addEventListener('pointerup', pointerup)
+      a.addEventListener('pointerdown', pointerdown)
+      return () => {
+        a.removeEventListener('pointerup', pointerup)
+        a.removeEventListener('pointerdown', pointerdown)
+      }
+    }, [disableClosingWithMask, onClose])
 
     const x = useMergeRefs(v, ref)
 

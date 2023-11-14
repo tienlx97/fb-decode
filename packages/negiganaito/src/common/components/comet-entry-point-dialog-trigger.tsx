@@ -26,7 +26,7 @@ export function CometEntryPointDialogTrigger({
 }: CometEntryPointDialogTriggerProps) {
   useRef(null)
 
-  const [n, onHoverIn, onHoverOut, onPressIn] = useCometEntryPointDialog(
+  const [trigger, onHoverIn, onHoverOut, onPressIn] = useCometEntryPointDialog(
     dialogEntryPoint,
     preloadParams,
     preloadTrigger,
@@ -34,12 +34,13 @@ export function CometEntryPointDialogTrigger({
   )
 
   const onPress = useCallback(() => {
-    n(otherProps, onHide, tracePolicy), onShow == null ? void 0 : onShow()
-  }, [n, otherProps, onHide, tracePolicy, onShow])
+    trigger(otherProps, onHide, tracePolicy)
+    !onShow ? undefined : onShow()
+  }, [trigger, otherProps, onHide, tracePolicy, onShow])
 
   // onPress: any,
-  //     onHoverIn: any,
-  //     onHoverOut: any,
-  //     onPressIn: any,
+  // onHoverIn: any,
+  // onHoverOut: any,
+  // onPressIn: any,
   return children(onPress, onHoverIn, onHoverOut, onPressIn)
 }

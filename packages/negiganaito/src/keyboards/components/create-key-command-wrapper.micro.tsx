@@ -259,7 +259,7 @@ export function createKeyCommandWrapperV2(a: any, b: any) {
       B = jsx(B, {
         className: mergeClasses(
           d.isWrapperFocusable ? classes.wrapperFocusable : void 0,
-          d.xstyle,
+          d.className,
         ),
         'data-testid': void 0,
         onFocusCapture: a ? A : void 0,

@@ -29,12 +29,12 @@ export function HelpCenterHeaderLanguageSelector({
         helpIdentifier: 'FACEBOOK',
       },
       preloadTrigger: 'button',
-      children: function (
+      children: (
         onPress: any,
         onHoverIn: any,
         onHoverOut: any,
         onPressIn: any,
-      ) {
+      ) => {
         return jsx(TetraButton, {
           label: selectedLanguage,
           onHoverIn,

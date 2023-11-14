@@ -16,7 +16,7 @@ type CometComponentWithKeyCommandsProps = {
   debugName?: string
 }
 
-function j(props: any) {
+function useKeyCommandHanlder(props: any) {
   useKeyCommands(props.commandConfigs)
   return null
 }
@@ -52,21 +52,28 @@ export function CometComponentWithKeyCommands({
 }: CometComponentWithKeyCommandsProps) {
   const classes = useStyles()
 
+  const customClassName =
+    elementType === 'span'
+      ? classes.inherit
+      : mergeClasses(classes.inherit, classes.displayInherit)
+
   return jsxs(
     CometKeyCommandWrapper,
     Object.assign(
       {
         elementType,
-        className:
-          className ??
-          (elementType === 'span'
-            ? classes.inherit
-            : mergeClasses(classes.inherit, classes.displayInherit)),
+        // className:
+        //   className ??
+        //   (elementType === 'span'
+        //     ? classes.inherit
+        //     : mergeClasses(classes.inherit, classes.displayInherit)),
+
+        className: className ? className : customClassName,
       },
       rest,
       {
         children: [
-          jsx(j, {
+          jsx(useKeyCommandHanlder, {
             commandConfigs,
           }),
           children,

@@ -107,7 +107,7 @@ export function BaseCometModal({
     return interactionUUID
   })
 
-  //           , u = c("useCometVisualChangeTracker")();
+  // u = c("useCometVisualChangeTracker")();
 
   const modalOverlay = jsx(VoyageUserJourneyUILayerProvider, {
     children: jsxs(React.Fragment, {
@@ -121,7 +121,7 @@ export function BaseCometModal({
         jsx(BaseContextualLayerAnchorRoot, {
           children: jsx(FocusRegion, {
             autoFocusQuery: headerFirstTabbableSecondScopeQuery,
-            autoRestoreFocus: !0,
+            autoRestoreFocus: true,
             containFocusQuery: tabbableScopeQuery,
             recoverFocusQuery: headerFirstTabbableSecondScopeQuery,
             children: blockKeyCommands
