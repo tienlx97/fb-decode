@@ -12,7 +12,7 @@ type BaseContextualLayerDefaultContainerProps = {
 }
 
 const BaseContextualLayerDefaultContainer = forwardRef<
-  HTMLElement,
+  any,
   BaseContextualLayerDefaultContainerProps
 >(({ className, stopClickPropagation, hidden, children }, ref) => {
   return jsx(LegacyHidden, {

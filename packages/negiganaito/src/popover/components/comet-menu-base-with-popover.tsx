@@ -28,10 +28,7 @@ export type CometMenuBaseWithPopoverProps = {
   truncate?: boolean
 }
 
-const CometMenuBaseWithPopover = forwardRef<
-  HTMLElement,
-  CometMenuBaseWithPopoverProps
->(
+const CometMenuBaseWithPopover = forwardRef<any, CometMenuBaseWithPopoverProps>(
   (
     {
       'aria-labelledby': al,

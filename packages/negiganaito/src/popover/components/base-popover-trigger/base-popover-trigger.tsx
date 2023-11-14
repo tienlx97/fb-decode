@@ -31,20 +31,20 @@ import { CometPlaceholder } from '@negiganaito/placeholder'
 import { useCometPrerendererImpl } from '@negiganaito/popover/hooks'
 import { getCurrentQueueTime } from '@negiganaito/utils/common/comet-event-timings'
 
-// import BaseContextualLayer from '../base-contextual-layer'
+import BaseContextualLayer from '../base-contextual-layer'
 
-const BaseContextualLayer = dynamic(
-  // @ts-ignore
-  import('../base-contextual-layer').then(r => r.default),
-  {
-    ssr: false,
-  },
-)
+// const BaseContextualLayer = dynamic(
+//   // @ts-ignore
+//   import('../base-contextual-layer').then(r => r.default),
+//   {
+//     ssr: false,
+//   },
+// )
+// import dynamic from 'next/dynamic'
 
 import BaseContextualLayerDefaultContainer from '../base-contextual-layer-default-container'
 import { BasePopoverLayerVisibility } from '../base-popover-layer-visibility'
 import { CometPrerenderer } from '../comet-prerenderer'
-import dynamic from 'next/dynamic'
 
 // p = c('gkx')('8058')
 const p = true
@@ -56,7 +56,7 @@ function popoverRendererComp({ content, fallback }: any) {
   })
 }
 
-function repositionContetual({ contextualLayerRef }: any) {
+function repositionContextual({ contextualLayerRef }: any) {
   useLayoutEffect(() => {
     const curr = contextualLayerRef.current
     curr &&
@@ -305,44 +305,44 @@ function BasePopoverTrigger({
                 key: 'popover',
                 onEscapeFocusRegion: isPopoverTypeMenu ? onCloseCb : void 0,
                 ref: baseContextualLayerRef,
-              }),
-              jsx(CometHideLayerOnEscape, {
-                onHide: onCloseCb,
-                children: jsx(CometMenuContext.Provider, {
-                  value: cometMenuContextValue,
-                  children: jsx(HeroInteractionContextPassthrough, {
-                    clear: true,
-                    children: jsx(CometHeroInteractionWithDiv, {
-                      interactionDesc:
-                        'popover_' +
-                        (popoverPreloadResource != null
-                          ? popoverPreloadResource.getModuleId()
-                          : 'Unknown'),
+                children: jsx(CometHideLayerOnEscape, {
+                  onHide: onCloseCb,
+                  children: jsx(CometMenuContext.Provider, {
+                    value: cometMenuContextValue,
+                    children: jsx(HeroInteractionContextPassthrough, {
+                      clear: true,
+                      children: jsx(CometHeroInteractionWithDiv, {
+                        interactionDesc:
+                          'popover_' +
+                          (popoverPreloadResource
+                            ? popoverPreloadResource.getModuleId()
+                            : 'Unknown'),
 
-                      interactionUUID: K,
-                      children: jsx(BasePopoverLayerVisibility, {
-                        onLayerDetached: onLayerDetached,
-                        children: popoverRenderer({
-                          content: jsxs(React.Fragment, {
-                            children: [
-                              jsx(repositionContetual, {
-                                contextualLayerRef: imperativeContextLayerRef,
-                              }),
-                              jsx(
-                                popover,
-                                Object.assign({}, popoverProps, {
-                                  onClose: onCloseCb,
+                        interactionUUID: K,
+                        children: jsx(BasePopoverLayerVisibility, {
+                          onLayerDetached: onLayerDetached,
+                          children: popoverRenderer({
+                            content: jsxs(React.Fragment, {
+                              children: [
+                                jsx(repositionContextual, {
+                                  contextualLayerRef: imperativeContextLayerRef,
                                 }),
-                              ),
-                            ],
-                          }),
-                          fallback: jsxs(React.Fragment, {
-                            children: [
-                              jsx(repositionContetual, {
-                                contextualLayerRef: imperativeContextLayerRef,
-                              }),
-                              fallback,
-                            ],
+                                jsx(
+                                  popover,
+                                  Object.assign({}, popoverProps, {
+                                    onClose: onCloseCb,
+                                  }),
+                                ),
+                              ],
+                            }),
+                            fallback: jsxs(React.Fragment, {
+                              children: [
+                                jsx(repositionContextual, {
+                                  contextualLayerRef: imperativeContextLayerRef,
+                                }),
+                                fallback,
+                              ],
+                            }),
                           }),
                         }),
                       }),
@@ -351,6 +351,64 @@ function BasePopoverTrigger({
                 }),
               }),
             )
+
+            // return React.createElement(
+            //   // @ts-ignore
+            //   BaseContextualLayer,
+            //   Object.assign({}, a, rest, {
+            //     containFocus: !0,
+            //     contextRef: contextRef,
+            //     customContainer: BaseContextualLayerDefaultContainer, // BaseContextualLayerDefaultContainer
+            //     imperativeRef: imperativeContextLayerRef,
+            //     key: 'popover',
+            //     onEscapeFocusRegion: isPopoverTypeMenu ? onCloseCb : void 0,
+            //     ref: baseContextualLayerRef,
+            //   }),
+            //   jsx(CometHideLayerOnEscape, {
+            //     onHide: onCloseCb,
+            //     children: jsx(CometMenuContext.Provider, {
+            //       value: cometMenuContextValue,
+            //       children: jsx(HeroInteractionContextPassthrough, {
+            //         clear: true,
+            //         children: jsx(CometHeroInteractionWithDiv, {
+            //           interactionDesc:
+            //             'popover_' +
+            //             (popoverPreloadResource
+            //               ? popoverPreloadResource.getModuleId()
+            //               : 'Unknown'),
+
+            //           interactionUUID: K,
+            //           children: jsx(BasePopoverLayerVisibility, {
+            //             onLayerDetached: onLayerDetached,
+            //             children: popoverRenderer({
+            //               content: jsxs(React.Fragment, {
+            //                 children: [
+            //                   jsx(repositionContextual, {
+            //                     contextualLayerRef: imperativeContextLayerRef,
+            //                   }),
+            //                   jsx(
+            //                     popover,
+            //                     Object.assign({}, popoverProps, {
+            //                       onClose: onCloseCb,
+            //                     }),
+            //                   ),
+            //                 ],
+            //               }),
+            //               fallback: jsxs(React.Fragment, {
+            //                 children: [
+            //                   jsx(repositionContextual, {
+            //                     contextualLayerRef: imperativeContextLayerRef,
+            //                   }),
+            //                   fallback,
+            //                 ],
+            //               }),
+            //             }),
+            //           }),
+            //         }),
+            //       }),
+            //     }),
+            //   }),
+            // )
           },
         }),
       }),

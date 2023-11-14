@@ -7,6 +7,7 @@ import {
   // CometTab, TetraButton,
   TetraText,
 } from '@negiganaito/react-components'
+import { WorkKnowledgeCustomHomePageHeaderActions } from './work-knowledge-custom-home-page-header-actions'
 // import { CometFormTextArea } from '@negiganaito/textarea'
 // import { CometFormTextInput } from '@negiganaito/input'
 // import { CometSwitch } from '@negiganaito/switch'
@@ -54,6 +55,10 @@ export const Default = () => {
         selectedLanguage="English (US)"
         buttonTheme="secondary"
       />
+
+      <div style={{ margin: '16px' }}>
+        <WorkKnowledgeCustomHomePageHeaderActions />
+      </div>
 
       {/* <TetraText color="secondary" align="center" type="body2">
         You're all caught up for now. Be sure to check for more updates soon.

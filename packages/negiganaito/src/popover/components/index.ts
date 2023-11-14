@@ -36,3 +36,5 @@ export { CometMenuItemSelectable_DEPRECATED } from './comet-menu-item-selectable
 export { default as CometContextualLayerAnchorRoot } from './comet-contextual-layer-anchor-root'
 export { CometScrollableArea } from './comet-scrollable-area'
 export * from './base-scrollable-area'
+export { CometMenuItem } from './comet-menu-item'
+export { CometDeferredPopoverTrigger } from './comet-deferred-popover-trigger'

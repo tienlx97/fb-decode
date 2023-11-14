@@ -39,14 +39,14 @@ export function CometDeferredPopoverTrigger({
         fallback:
           fallback ??
           jsx(CometPopoverLoadingState, {
-            withArrow: !0,
+            withArrow: true,
           }),
 
         interactionTracker: undefined,
         popover: popoverResource,
         popoverPreloadResource: undefined,
         popoverProps: Object.assign({}, popoverProps, {
-          loadImmediately: !0,
+          loadImmediately: true,
         }),
         preloadTrigger,
       },

@@ -45,7 +45,7 @@ export function BasePopoverLayerVisibility({
       l.current = null
     }
 
-    return function () {
+    return () => {
       l.current = window.setTimeout(onLayerDetachedRef.current, 1)
     }
   }, [])

@@ -3,10 +3,13 @@ import CometMenuBaseWithPopover, {
   CometMenuBaseWithPopoverProps,
 } from './comet-menu-base-with-popover'
 
+// @ts-ignore
+import { jsx } from 'react/jsx-runtime'
+
 type CometMenuProps = CometMenuBaseWithPopoverProps
 
 const CometMenu = forwardRef<any, CometMenuProps>((props, ref) => {
-  return <CometMenuBaseWithPopover {...props} ref={ref} />
+  return jsx(CometMenuBaseWithPopover, Object.assign({}, props, { ref })) //  <CometMenuBaseWithPopover {...props} ref={ref} />
 })
 
 export default CometMenu
