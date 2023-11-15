@@ -33,7 +33,6 @@
 		"lint-staged": "14.0.1",
 		"turbo": "latest",
 		"typescript": "5.2.2",
-		"next": "13.5.3",
 		"@griffel/react": "1.5.16",
 		"fs-extra": "11.1.1"
 	},
