@@ -1,4 +1,6 @@
+/* eslint-disable camelcase */
 // @ts-ignore
+import { CometProfilePhoto } from '@negiganaito/index'
 import { jsx } from 'react/jsx-runtime'
 
 type WorkGalahadUIProfilePhotoForActorProps = {
@@ -57,7 +59,7 @@ export function WorkGalahadUIProfilePhotoForActor({
   }
 
   return jsx(
-    'CometProfilePhoto',
+    CometProfilePhoto,
     Object.assign(
       {
         size,
