@@ -56,7 +56,7 @@ const Provider = ({ children }: WorkGalahadVariantStateProvider) => {
     hasSMB: false,
     hasChatFirst: false,
     hasSimplification: false,
-    hasRiverKnight: true,
+    hasRiverKnight: false,
     hasDenseThreadlist: false,
     hasGemini: true,
     hasChatBubbleless: false,

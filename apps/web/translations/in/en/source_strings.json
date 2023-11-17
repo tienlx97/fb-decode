@@ -1,0 +1,35 @@
+{
+ "fb-locale": "en_US",
+ "translations": {
+  "A6Iq4/hXJq/xoSYcYOsAYA==": {
+   "tokens": [],
+   "types": [],
+   "translations": [
+    {
+     "translation": "Home",
+     "variations": []
+    }
+   ]
+  },
+  "zicdZjZ0sa78lhMt+trDJg==": {
+   "tokens": [],
+   "types": [],
+   "translations": [
+    {
+     "translation": "Notifications",
+     "variations": []
+    }
+   ]
+  },
+  "0kzMsCNjQ3BYcTfjHxaodg==": {
+   "tokens": [],
+   "types": [],
+   "translations": [
+    {
+     "translation": "Knowledge Library",
+     "variations": []
+    }
+   ]
+  }
+ }
+}

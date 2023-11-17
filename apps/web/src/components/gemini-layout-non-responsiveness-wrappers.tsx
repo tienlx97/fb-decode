@@ -1,5 +1,5 @@
 import { useGeminiLayoutUserSettingsFullWidthMode } from '@/context/gemini-layout-full-width-mode-context'
-import { useNavUIState } from '@/context/gemini-nav-and-channel-context'
+import { GeminiNavAndChannelContext } from '@/context/gemini-nav-and-channel-context'
 import { makeStyles, mergeClasses } from '@griffel/react'
 import { forwardRef } from 'react'
 
@@ -80,7 +80,7 @@ export function GeminiLayoutPageWrapper({
 }: GeminiLayoutPageWrapperProps) {
   const classes = useStyles()
 
-  const { isAutoHideEnabled } = useNavUIState()
+  const { isAutoHideEnabled } = GeminiNavAndChannelContext.useNavUIState()
   const pageContainerFixedWidth = useGeminiLayoutUserSettingsFullWidthMode()
   return children(
     mergeClasses(
@@ -93,13 +93,16 @@ export function GeminiLayoutPageWrapper({
   )
 }
 
+type GeminiLayoutLeftHandColumnWrapperProps = {
+  children?: any
+}
+
 export const GeminiLayoutLeftHandColumnWrapper = forwardRef(
-  (props: any, ref) => {
+  ({ children }: GeminiLayoutLeftHandColumnWrapperProps, ref) => {
     const classes = useStyles()
 
-    const { children, onMouseEnter, onMouseLeave } = props
-
-    const { isAutoHideEnabled } = useNavUIState()
+    const { isAutoHideEnabled, onMouseEnter, onMouseLeave } =
+      GeminiNavAndChannelContext.useNavUIState()
 
     return jsx('div', {
       className: mergeClasses(

@@ -9,7 +9,11 @@
     "postinstall": "prisma generate",
     "lint": "eslint",
     "start": "next start",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "fbt:manifest": "fbt-manifest --src=src --enum-manifest=translations/enum_manifest.json --src-manifest=translations/src_manifest.json",
+    "fbt:collect": "fbt-collect --options=__self --pretty --manifest < translations/src_manifest.json > translations/source_strings.json",
+    "fbt:translate": "fbt-translate --source-strings=translations/source_strings.json --pretty --translations translations/in/**/*.json --output-dir=translations/out --jenkins",
+    "fbt": "pnpm run fbt:manifest && pnpm run fbt:collect && pnpm run fbt:translate"
   },
   "dependencies": {
     "@auth/core": "^0.14.0",
@@ -20,16 +24,18 @@
     "@prisma/client": "5.2.0",
     "@react-email/components": "0.0.7",
     "client-only": "0.0.1",
-    "next": "link:/home/tienlx97/work/next.js/packages/next",
-    "next-auth": "0.0.0-manual.ffd05533",
+    "next": "git://github.com/tienlx97/next-experimental.git#14.0.4-canary.1",
     "prisma": "5.2.0",
-    "react": "workspace:*",
-    "react-dom": "workspace:*",
+    "react": "git://github.com/tienlx97/react-experimental.git#www",
+    "react-dom": "git://github.com/tienlx97/react-dom-experimental.git#www",
     "react-hook-form": "7.46.1",
-    "resend": "1.0.0",
     "sharp": "^0.32.4",
     "ui": "workspace:*",
-    "zod": "3.22.2"
+    "zod": "3.22.2",
+    "fbjs": "3.0.5",
+    "@types/fbjs": "3.0.8",
+    "fbt": "1.0.0",
+    "immutable": "5.0.0-beta.4"
   },
   "devDependencies": {
     "@portal/eslint-config-next": "workspace:*",
@@ -38,6 +44,12 @@
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "babel-plugin-fbt": "1.0.0",
+    "babel-plugin-fbt-runtime": "1.0.0",
+    "@adeira/babel-preset-adeira": "4.0.0",
+    "@babel/preset-typescript": "7.23.2",
+    "@types/fbt": "1.0.3",
+    "@babel/plugin-transform-react-jsx": "7.22.15"
   }
 }

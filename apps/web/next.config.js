@@ -1,15 +1,20 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   // reactStrictMode: true,
-  transpilePackages: ['ui'],
+  transpilePackages: ['ui', '@negiganaito/react-components'],
 
   experimental: {
     serverActions: true,
-    // appDir: true,
     serverComponentsExternalPackages: ['@prisma/client'],
+    forceSwcTransforms: true,
   },
 
   reactStrictMode: false,
+
+  i18n: {
+    defaultLocale: 'vi',
+    locales: ['en', 'vi'],
+  },
 
   async redirects() {
     return [
@@ -19,6 +24,11 @@ module.exports = {
         permanent: true,
       },
     ]
+  },
+
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true }
+    return config
   },
 
   async headers() {

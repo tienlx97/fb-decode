@@ -1,4 +1,4 @@
-'use-client'
+'use client'
 
 import React, { ReactNode, forwardRef, useCallback, useReducer } from 'react'
 // @ts-ignore

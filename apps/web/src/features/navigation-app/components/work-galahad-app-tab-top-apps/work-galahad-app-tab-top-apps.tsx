@@ -1,43 +1,10 @@
 import React from 'react'
 
 import { WorkGalahadAppTabItem } from '@/features/navigation-app/components/work-galahad-app-tab-item/index'
-import {
-  WorkGalahadAppTabKeyUpdatesBadgeRenderer,
-  WorkGalahadAppTabNotificationsBadgeRenderer,
-} from '../work-galahad-app-tab-key-updates-badge-renderer'
 import ErrorBoundaryReact from '@negiganaito/error/errorguard/error-boundary'
 import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 
-type WorkAppTabSet = {
-  id: string
-  title: string
-  href: string
-  tabIconName: string
-  badgeRenderer?: any
-}
-
-const WORK_APP_TAB_SET: WorkAppTabSet[] = [
-  {
-    id: 'home',
-    title: 'Trang chủ',
-    href: '/home',
-    tabIconName: 'HOME',
-    badgeRenderer: WorkGalahadAppTabKeyUpdatesBadgeRenderer,
-  },
-  {
-    id: 'notifications',
-    title: 'Thông báo',
-    href: '/notifications',
-    tabIconName: 'NOTIFICATIONS',
-    badgeRenderer: WorkGalahadAppTabNotificationsBadgeRenderer,
-  },
-  {
-    id: 'knowledge_library',
-    title: 'Thư viện kiến thức',
-    href: '/knowledge',
-    tabIconName: 'KNOWLEDGE_LIBRARY',
-  },
-]
+import { WorkAppTabSet } from '@/components/work-app-tab-set'
 
 // function k() {
 //   return c('WorkAppTabSet').map(function (a, b) {
@@ -56,21 +23,24 @@ const WORK_APP_TAB_SET: WorkAppTabSet[] = [
 // }
 
 function WorkGalahadAppTabTopAppsCore() {
-  const a = 0 //`c('useGeminiChatUnreadCount')()`,
-  const b = 0 // `d('WorkGalahadNotificationsBadge.react').useCount()`
+  // This is for display ui unread message
+  const chatUnreadCount = 0 //`c('useGeminiChatUnreadCount')()`,
+  const notificationsBadgeCount = 0 // `d('WorkGalahadNotificationsBadge.react').useCount()`
 
-  return WORK_APP_TAB_SET.map((tab, index) => (
+  return WorkAppTabSet().map((tab, index) => (
     <WorkGalahadAppTabItem
-      badgeCount={tab.id === 'chats' ? a : tab.id === 'notifications' ? b : 0}
+      badgeCount={
+        tab.id === 'chats'
+          ? chatUnreadCount
+          : tab.id === 'notifications'
+          ? notificationsBadgeCount
+          : 0
+      }
       isFirst={index === 0}
       onHoverIn={emptyFunction}
       onPress={emptyFunction}
-      badgeRenderer={tab.badgeRenderer}
       key={tab.id}
-      href={tab.href}
-      icon={tab.tabIconName}
-      id={tab.id}
-      title={tab.title}
+      tab={tab}
     />
   ))
 }
@@ -81,16 +51,4 @@ export default function WorkGalahadAppTabTopApps() {
       <WorkGalahadAppTabTopAppsCore />
     </ErrorBoundaryReact>
   )
-
-  // return WORK_APP_TAB_SET.map((tab, index) => (
-  //   <WorkGalahadAppTabItem
-  //     badgeRenderer={tab.badgeRenderer}
-  //     key={tab.id}
-  //     href={tab.href}
-  //     icon={tab.tabIconName}
-  //     id={tab.id}
-  //     isFirst={index === 0}
-  //     title={tab.title}
-  //   />
-  // ))
 }

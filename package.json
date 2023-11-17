@@ -18,7 +18,10 @@
 		"start": "turbo run start --parallel",
 		"test": "turbo run test --parallel",
 		"dev": "turbo run dev --parallel",
-		"postinstall": "bash ./postinstall.sh"
+		"fbt:manifest": "cd ./apps/web && pnpm fbt:manifest",
+		"fbt:collect": "cd ./apps/web && pnpm fbt:collect",
+		"fbt:translate": "cd ./apps/web && pnpm fbt:translate",
+		"fbt": "cd ./apps/web && pnpm fbt"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.2",
@@ -30,8 +33,8 @@
 		"lint-staged": "14.0.1",
 		"turbo": "latest",
 		"typescript": "5.2.2",
-		"next": "13.5.3",
-		"@griffel/react": "1.5.16"
+		"@griffel/react": "1.5.16",
+		"fs-extra": "11.1.1"
 	},
 	"packageManager": "pnpm@8.6.10",
 	"engines": {
@@ -41,5 +44,11 @@
 		"overrides": {
 			"@auth/core": "^0.14.0"
 		}
+	},
+	"optionalDependencies": {
+		"@next/swc-linux-x64-gnu": "13.5.3-canary.1",
+		"@next/swc-win32-x64-msvc": "13.5.3-canary.1",
+		"@next/swc-darwin-x64": "13.5.3-canary.1",
+		"@next/swc-darwin-arm64": "13.5.3-canary.1"
 	}
 }

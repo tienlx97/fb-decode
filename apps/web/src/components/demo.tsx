@@ -2,7 +2,12 @@
 
 import * as React from 'react'
 // import { TetraText } from '@negiganaito/text'
-import { CometTab, TetraButton, TetraText } from '@negiganaito/react-components'
+import {
+  HelpCenterHeaderLanguageSelector,
+  // CometTab, TetraButton,
+  TetraText,
+} from '@negiganaito/react-components'
+import { WorkKnowledgeCustomHomePageHeaderActions } from './work-knowledge-custom-home-page-header-actions'
 // import { CometFormTextArea } from '@negiganaito/textarea'
 // import { CometFormTextInput } from '@negiganaito/input'
 // import { CometSwitch } from '@negiganaito/switch'
@@ -11,19 +16,20 @@ import { CometTab, TetraButton, TetraText } from '@negiganaito/react-components'
 // import { TetraButton } from '@fb/tetra-button'
 
 export const Default = () => {
-  const [state, setState] = React.useState(
-    'だれでもない。だれ　でもいたくないです。',
-  )
+  // const [state, setState] = React.useState(
+  // eslint-disable-next-line no-irregular-whitespace
+  //   'だれでもない。だれ　でもいたくないです。',
+  // )
 
-  const [password, setPassword] = React.useState('Lexuantien1997')
+  // const [password, setPassword] = React.useState('Lexuantien1997')
 
-  const [switchVal, setSwitchVal] = React.useState(true)
+  // const [switchVal, setSwitchVal] = React.useState(true)
 
-  const [comboboxValue, setComboboxValue] = React.useState('MARRIED_NAME')
+  // const [comboboxValue, setComboboxValue] = React.useState('MARRIED_NAME')
 
   return (
     <div style={{ width: '440px' }}>
-      <div style={{ margin: '3rem' }}>
+      {/* <div style={{ margin: '3rem' }}>
         <CometTab aria-haspopup="menu" />
       </div>
 
@@ -38,11 +44,21 @@ export const Default = () => {
           // addOnPrimary={<CaretDownFilled color="highlight" size={16} />}
           // icon={CaretDownSvg}
         />
+      </div> */}
+      <div style={{ display: 'none' }}>
+        <TetraText color="secondary" align="center" type="body2">
+          You are all caught up for now. Be sure to check for more updates soon.
+        </TetraText>
       </div>
 
-      <TetraText color="secondary" align="center" type="body2">
-        You're all caught up for now. Be sure to check for more updates soon.
-      </TetraText>
+      <HelpCenterHeaderLanguageSelector
+        selectedLanguage="English (US)"
+        buttonTheme="secondary"
+      />
+
+      <div style={{ margin: '16px' }}>
+        <WorkKnowledgeCustomHomePageHeaderActions />
+      </div>
 
       {/* <TetraText color="secondary" align="center" type="body2">
         You're all caught up for now. Be sure to check for more updates soon.

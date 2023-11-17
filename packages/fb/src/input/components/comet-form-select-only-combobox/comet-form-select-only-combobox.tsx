@@ -1,5 +1,5 @@
 /* eslint-disable react/no-children-prop */
-'use-client'
+'use client'
 
 import React, { useCallback, useId, useMemo, useRef, useState } from 'react'
 // @ts-ignore

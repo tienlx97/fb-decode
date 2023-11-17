@@ -1,0 +1,1053 @@
+import { fbicon } from '@negiganaito/react-components'
+import nullthrows from 'fbjs/lib/nullthrows'
+
+const j = new Map([
+  [
+    'AIRPLANE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -767px',
+        sz: 'auto',
+        loggingID: '562416',
+      },
+      16,
+    ),
+  ],
+  [
+    'PROFILE_CIRCLE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1056px',
+        sz: 'auto',
+        loggingID: '486580',
+      },
+      16,
+    ),
+  ],
+  [
+    'SCALE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1141px',
+        sz: 'auto',
+        loggingID: '566270',
+      },
+      16,
+    ),
+  ],
+  [
+    'HEART',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -988px',
+        sz: 'auto',
+        loggingID: '722857',
+      },
+      16,
+    ),
+  ],
+  [
+    'BUILDING_CITY',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -835px',
+        sz: 'auto',
+        loggingID: '497086',
+      },
+      16,
+    ),
+  ],
+  [
+    'PRIVACY',
+    fbicon(
+      {
+        sprited: 2,
+        // zcrSldji3UB
+        spi: '/assets/workplace/zcrSldji3UB.png',
+        _spi: '/assets/workplace/zcrSldji3UB.png',
+        w: 16,
+        h: 16,
+        p: '0 -1035px',
+        sz: 'auto',
+        loggingID: '497244',
+      },
+      16,
+    ),
+  ],
+  [
+    'RIBBON',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1090px',
+        sz: 'auto',
+        loggingID: '642550',
+      },
+      16,
+    ),
+  ],
+  [
+    'DIAGNOSED',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -886px',
+        sz: 'auto',
+        loggingID: '487069',
+      },
+      16,
+    ),
+  ],
+  [
+    'BACKPACK',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -801px',
+        sz: 'auto',
+        loggingID: '932069',
+      },
+      16,
+    ),
+  ],
+  [
+    'COIN_STACK',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -852px',
+        sz: 'auto',
+        loggingID: '688897',
+      },
+      16,
+    ),
+  ],
+  [
+    'BADGE',
+    fbicon(
+      {
+        sprited: 2,
+        //  gpyFOO4YgEx
+        spi: '/assets/workplace/gpyFOO4YgEx.png',
+        _spi: '/assets/workplace/gpyFOO4YgEx.png',
+        w: 16,
+        h: 16,
+        p: '0 -117px',
+        sz: 'auto',
+        loggingID: '496905',
+      },
+      16,
+    ),
+  ],
+  [
+    'READING_GLASSES',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1073px',
+        sz: 'auto',
+        loggingID: '923823',
+      },
+      16,
+    ),
+  ],
+  [
+    'RUNNING',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1124px',
+        sz: 'auto',
+        loggingID: '572408',
+      },
+      16,
+    ),
+  ],
+  [
+    'MENTORSHIP',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1005px',
+        sz: 'auto',
+        loggingID: '926281',
+      },
+      16,
+    ),
+  ],
+  [
+    'DOCUMENTS',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -903px',
+        sz: 'auto',
+        loggingID: '620422',
+      },
+      16,
+    ),
+  ],
+  [
+    'PIN_LOCAL_BUSINESS',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1022px',
+        sz: 'auto',
+        loggingID: '646946',
+      },
+      16,
+    ),
+  ],
+  [
+    'TROPHY',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1175px',
+        sz: 'auto',
+        loggingID: '688941',
+      },
+      16,
+    ),
+  ],
+  [
+    'STAR',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/90xNA5Li0dR.png',
+        _spi: '/assets/workplace/90xNA5Li0dR.png',
+        w: 16,
+        h: 16,
+        p: '0 -1120px',
+        sz: 'auto',
+        loggingID: '479324',
+      },
+      16,
+    ),
+  ],
+  [
+    'FOUNDED',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -954px',
+        sz: 'auto',
+        loggingID: '834046',
+      },
+      16,
+    ),
+  ],
+  [
+    'QUESTION_CIRCLE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/90xNA5Li0dR.png',
+        _spi: '/assets/workplace/90xNA5Li0dR.png',
+        w: 16,
+        h: 16,
+        p: '0 -1069px',
+        sz: 'auto',
+        loggingID: '496949',
+      },
+      16,
+    ),
+  ],
+  [
+    'FLASH_DEFAULT',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -937px',
+        sz: 'auto',
+        loggingID: '487615',
+      },
+      16,
+    ),
+  ],
+  [
+    'COMPASS',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -869px',
+        sz: 'auto',
+        loggingID: '1083849',
+      },
+      16,
+    ),
+  ],
+  [
+    'BADGE_CHECKMARK',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -818px',
+        sz: 'auto',
+        loggingID: '478211',
+      },
+      16,
+    ),
+  ],
+  [
+    'ROCKET',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1107px',
+        sz: 'auto',
+        loggingID: '485307',
+      },
+      16,
+    ),
+  ],
+  [
+    'ARMCHAIR',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -784px',
+        sz: 'auto',
+        loggingID: '802126',
+      },
+      16,
+    ),
+  ],
+  [
+    'HEALTH',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -971px',
+        sz: 'auto',
+        loggingID: '549487',
+      },
+      16,
+    ),
+  ],
+  [
+    'VOLUNTEER',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1192px',
+        sz: 'auto',
+        loggingID: '923867',
+      },
+      16,
+    ),
+  ],
+  [
+    'TOOTH',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -1158px',
+        sz: 'auto',
+        loggingID: '1135141',
+      },
+      16,
+    ),
+  ],
+  [
+    'FAMILY',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 16,
+        h: 16,
+        p: '0 -920px',
+        sz: 'auto',
+        loggingID: '719008',
+      },
+      16,
+    ),
+  ],
+  [
+    'MORTAR_BOARD',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/gpyFOO4YgEx.png',
+        _spi: '/assets/workplace/gpyFOO4YgEx.png',
+        w: 16,
+        h: 16,
+        p: '0 -151px',
+        sz: 'auto',
+        loggingID: '481934',
+      },
+      16,
+    ),
+  ],
+])
+
+const k = new Map([
+  [
+    'AIRPLANE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 0',
+        sz: 'auto',
+        loggingID: '658655',
+      },
+      24,
+    ),
+  ],
+  [
+    'PROFILE_CIRCLE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -450px',
+        sz: 'auto',
+        loggingID: '486582',
+      },
+      24,
+    ),
+  ],
+  [
+    'SCALE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -600px',
+        sz: 'auto',
+        loggingID: '566272',
+      },
+      24,
+    ),
+  ],
+  [
+    'HEART',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -350px',
+        sz: 'auto',
+        loggingID: '722861',
+      },
+      24,
+    ),
+  ],
+  [
+    'BUILDING_CITY',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -125px',
+        sz: 'auto',
+        loggingID: '497090',
+      },
+      24,
+    ),
+  ],
+  [
+    'PRIVACY',
+    fbicon(
+      {
+        // zcrSldji3UB
+        sprited: 2,
+        spi: '/assets/workplace/zcrSldji3UB.png',
+        _spi: '/assets/workplace/zcrSldji3UB.png',
+        w: 24,
+        h: 24,
+        p: '0 -150px',
+        sz: 'auto',
+        loggingID: '497246',
+      },
+      24,
+    ),
+  ],
+  [
+    'RIBBON',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -525px',
+        sz: 'auto',
+        loggingID: '642552',
+      },
+      24,
+    ),
+  ],
+  [
+    'DIAGNOSED',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -200px',
+        sz: 'auto',
+        loggingID: '574184',
+      },
+      24,
+    ),
+  ],
+  [
+    'BACKPACK',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -50px',
+        sz: 'auto',
+        loggingID: '932071',
+      },
+      24,
+    ),
+  ],
+  [
+    'COIN_STACK',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -150px',
+        sz: 'auto',
+        loggingID: '688899',
+      },
+      24,
+    ),
+  ],
+  [
+    'BADGE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -100px',
+        sz: 'auto',
+        loggingID: '496908',
+      },
+      24,
+    ),
+  ],
+  [
+    'READING_GLASSES',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -500px',
+        sz: 'auto',
+        loggingID: '820965',
+      },
+      24,
+    ),
+  ],
+  [
+    'RUNNING',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -575px',
+        sz: 'auto',
+        loggingID: '572412',
+      },
+      24,
+    ),
+  ],
+  [
+    'MENTORSHIP',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -375px',
+        sz: 'auto',
+        loggingID: '926282',
+      },
+      24,
+    ),
+  ],
+  [
+    'DOCUMENTS',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -225px',
+        sz: 'auto',
+        loggingID: '711261',
+      },
+      24,
+    ),
+  ],
+  [
+    'PIN_LOCAL_BUSINESS',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -425px',
+        sz: 'auto',
+        loggingID: '778955',
+      },
+      24,
+    ),
+  ],
+  [
+    'TROPHY',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -675px',
+        sz: 'auto',
+        loggingID: '688943',
+      },
+      24,
+    ),
+  ],
+  [
+    'STAR',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -625px',
+        sz: 'auto',
+        loggingID: '479330',
+      },
+      24,
+    ),
+  ],
+  [
+    'FOUNDED',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -300px',
+        sz: 'auto',
+        loggingID: '624934',
+      },
+      24,
+    ),
+  ],
+  [
+    'QUESTION_CIRCLE',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -475px',
+        sz: 'auto',
+        loggingID: '496953',
+      },
+      24,
+    ),
+  ],
+  [
+    'FLASH_DEFAULT',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -275px',
+        sz: 'auto',
+        loggingID: '487617',
+      },
+      24,
+    ),
+  ],
+  [
+    'COMPASS',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -175px',
+        sz: 'auto',
+        loggingID: '788361',
+      },
+      24,
+    ),
+  ],
+  [
+    'BADGE_CHECKMARK',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -75px',
+        sz: 'auto',
+        loggingID: '478215',
+      },
+      24,
+    ),
+  ],
+  [
+    'ROCKET',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -550px',
+        sz: 'auto',
+        loggingID: '485309',
+      },
+      24,
+    ),
+  ],
+  [
+    'ARMCHAIR',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -25px',
+        sz: 'auto',
+        loggingID: '802132',
+      },
+      24,
+    ),
+  ],
+  [
+    'HEALTH',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -325px',
+        sz: 'auto',
+        loggingID: '549489',
+      },
+      24,
+    ),
+  ],
+  [
+    'VOLUNTEER',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -700px',
+        sz: 'auto',
+        loggingID: '780978',
+      },
+      24,
+    ),
+  ],
+  [
+    'TOOTH',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -650px',
+        sz: 'auto',
+        loggingID: '1135143',
+      },
+      24,
+    ),
+  ],
+  [
+    'FAMILY',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -250px',
+        sz: 'auto',
+        loggingID: '719010',
+      },
+      24,
+    ),
+  ],
+  [
+    'MORTAR_BOARD',
+    fbicon(
+      {
+        sprited: 2,
+        spi: '/assets/workplace/4b6BjmIYKO8.png',
+        _spi: '/assets/workplace/4b6BjmIYKO8.png',
+        w: 24,
+        h: 24,
+        p: '0 -400px',
+        sz: 'auto',
+        loggingID: '481936',
+      },
+      24,
+    ),
+  ],
+])
+
+const d = [
+  'AIRPLANE',
+  'PROFILE_CIRCLE',
+  'SCALE',
+  'HEART',
+  'BUILDING_CITY',
+  'PRIVACY',
+  'RIBBON',
+  'DIAGNOSED',
+  'BACKPACK',
+  'COIN_STACK',
+  'BADGE',
+  'READING_GLASSES',
+  'RUNNING',
+  'MENTORSHIP',
+  'DOCUMENTS',
+  'PIN_LOCAL_BUSINESS',
+  'TROPHY',
+  'STAR',
+  'FOUNDED',
+  'QUESTION_CIRCLE',
+  'FLASH_DEFAULT',
+  'COMPASS',
+  'BADGE_CHECKMARK',
+  'ROCKET',
+  'ARMCHAIR',
+  'HEALTH',
+  'VOLUNTEER',
+  'TOOTH',
+  'FAMILY',
+  'MORTAR_BOARD',
+]
+
+const l = new Map([
+  ['AIRPLANE', 'icon: airplane'],
+  ['PROFILE_CIRCLE', 'icon: profile-circle'],
+  ['SCALE', 'icon: scale'],
+  ['HEART', 'icon: heart'],
+  ['BUILDING_CITY', 'icon: building-city'],
+  ['PRIVACY', 'icon: privacy'],
+  ['RIBBON', 'icon: ribbon'],
+  ['DIAGNOSED', 'icon: diagnosed'],
+  ['BACKPACK', 'icon: backpack'],
+  ['COIN_STACK', 'icon: coin-stack'],
+  ['BADGE', 'icon: badge'],
+  ['READING_GLASSES', 'icon: reading-glasses'],
+  ['RUNNING', 'icon: running'],
+  ['MENTORSHIP', 'icon: mentorship'],
+  ['DOCUMENTS', 'icon: documents'],
+  ['PIN_LOCAL_BUSINESS', 'icon: pin-local-business'],
+  ['TROPHY', 'icon: trophy'],
+  ['STAR', 'icon: star'],
+  ['FOUNDED', 'icon: founded'],
+  ['QUESTION_CIRCLE', 'icon: question-circle'],
+  ['FLASH_DEFAULT', 'icon: flash-default'],
+  ['COMPASS', 'icon: compass'],
+  ['BADGE_CHECKMARK', 'icon: badge-checkmark'],
+  ['ROCKET', 'icon: rocket'],
+  ['ARMCHAIR', 'icon: armchair'],
+  ['HEALTH', 'icon: health'],
+  ['VOLUNTEER', 'icon: volunteer'],
+  ['TOOTH', 'icon: tooth'],
+  ['FAMILY', 'icon: family'],
+  ['MORTAR_BOARD', 'icon: mortar-board'],
+])
+function a(a: any) {
+  return nullthrows(j.get(a))
+}
+function b(a: any) {
+  return nullthrows(k.get(a))
+}
+function e(a: any) {
+  return nullthrows(l.get(a))
+}
+
+export const WorkKnowledgeIconMapping = {
+  WorkKnowledgeIconValues: d,
+  getIconFromEnum: a,
+  getBigIconFromEnum: b,
+  getIconLabelFromEnum: e,
+}

@@ -1,5 +1,9 @@
-import { mergeClasses } from '@griffel/react'
+'use client'
+
 import React from 'react'
+
+import { mergeClasses } from '@griffel/react'
+
 import { useStyles } from './styles'
 
 type WorkGalahadAppTabKeyUpdatesBadgeRendererProps = {
@@ -66,7 +70,7 @@ export function WorkGalahadAppTabNotificationsBadgeRenderer(
 ) {
   // fetch notification
 
-  const fetchCount = 0
+  const fetchCount = 3
   return (
     <WorkGalahadUIBaseAppTabBadge
       {...props}

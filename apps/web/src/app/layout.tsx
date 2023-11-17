@@ -1,21 +1,19 @@
 import '@negiganaito/react-components/src/styles/theme.css'
-
 import '../styles/index.css'
 
-// eslint-disable-next-line camelcase
-// import { Space_Grotesk } from 'next/font/google'
 import React from 'react'
 
 import AppProvider from '@/utils/registry'
 import { GoogleAnalytics } from '@/components/google-analystic'
-import AuthProvider from '@/components/auth-provider'
 import { CookieBanner } from '@/components/cookie-banner'
 
-// If loading a variable font, you don't need to specify the font weight
-// const spaceGrotesk = Space_Grotesk({
-//   subsets: ['latin'],
-//   display: 'swap',
-// })
+import GeminiApp from '@/components/gemini-app'
+import { WorkGalahadNavStoreProvider } from '@/context/work-galahad-nav-store'
+import { AppTabIdHandler } from '@/components/app-tab-id-handler'
+
+import { PipedriveRouteContext } from '@/context/pipedrive-route-context'
+import { WorkGalahadDarkModeStateProvider } from '@/components/work-galahad-dark-mode-state-provider'
+import { CometKeyboardSettingsStateProvider } from '@/components/comet-keyboard-settings-state-provider'
 
 export const metadata = {
   title: 'ChiThanh Potal',
@@ -25,21 +23,22 @@ export const metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html className="__fb-light-mode" id="portal" lang="vi" dir="ltr">
-      <link
-        rel="preload"
-        href="/assets/icons/sprite.svg"
-        as="image"
-        type="image/svg+xml"
-      />
       <GoogleAnalytics />
       <body className="body-custom system-fonts--body segoe">
-        <AuthProvider>
-          {/* @ts-ignore */}
-          <AppProvider className="app-custom">
-            {children}
-            <CookieBanner />
-          </AppProvider>
-        </AuthProvider>
+        <CometKeyboardSettingsStateProvider>
+          <WorkGalahadDarkModeStateProvider>
+            <WorkGalahadNavStoreProvider>
+              <AppTabIdHandler>
+                <PipedriveRouteContext>
+                  <AppProvider className="app-custom">
+                    <GeminiApp>{children}</GeminiApp>
+                    <CookieBanner />
+                  </AppProvider>
+                </PipedriveRouteContext>
+              </AppTabIdHandler>
+            </WorkGalahadNavStoreProvider>
+          </WorkGalahadDarkModeStateProvider>
+        </CometKeyboardSettingsStateProvider>
       </body>
     </html>
   )

@@ -8,7 +8,7 @@ const m = executionEnvironment.canUseDOM ? supportsCSSSticky : !0
 export function useGeminiLayoutChannelMeasureListenerForNonSticky(
   a: any,
   b: any,
-  e: any,
+  isAutoHideEnabled: any,
 ) {
   let f = useGeminiLayoutUserSettingsFullWidthMode(),
     g = useRef<any>(null),
@@ -41,8 +41,8 @@ export function useGeminiLayoutChannelMeasureListenerForNonSticky(
         window.removeEventListener('resize', a, d as any)
       }
     },
-    [e, b, f, o],
+    [isAutoHideEnabled, b, f, o],
   )
-  i = e ? 95 : n.nav
+  i = isAutoHideEnabled ? 95 : n.nav
   return [g, h, i, n.entity]
 }

@@ -1,4 +1,4 @@
-'use-client'
+'use client'
 
 import {
   VoyageUILayerContext,
@@ -17,37 +17,33 @@ export function VoyageUserJourneyUILayerProvider({
   metadata,
   name,
 }: VoyageUserJourneyUILayerProviderProps) {
-  const f = useRef(metadata)
-  const g = useRef(name)
-  useLayoutEffect(
-    function () {
-      f.current = metadata
-      g.current = name
-    },
-    [metadata, name],
-  )
+  const metadataRef = useRef(metadata)
+  const nameRef = useRef(name)
+
+  useLayoutEffect(() => {
+    metadataRef.current = metadata
+    nameRef.current = name
+  }, [metadata, name])
+
   const voyageUILayerContextValue = useVoyageUILayerContext()
 
-  const a = useMemo(
-    function () {
-      return {
-        get: function () {
+  const voyageUILayerValue = useMemo(() => {
+    return {
+      get: () => {
+        // @ts-ignore
+        return [].concat(voyageUILayerContextValue.get(), [
           // @ts-ignore
-          return [].concat(voyageUILayerContextValue.get(), [
-            // @ts-ignore
-            {
-              name: g.current,
-              metadata: f.current,
-            },
-          ])
-        },
-      }
-    },
-    [voyageUILayerContextValue],
-  )
+          {
+            name: nameRef.current,
+            metadata: metadataRef.current,
+          },
+        ])
+      },
+    }
+  }, [voyageUILayerContextValue])
 
   return (
-    <VoyageUILayerContext.Provider value={a}>
+    <VoyageUILayerContext.Provider value={voyageUILayerValue}>
       {children}
     </VoyageUILayerContext.Provider>
   )

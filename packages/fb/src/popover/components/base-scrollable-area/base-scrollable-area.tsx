@@ -21,7 +21,7 @@ import { isBrowser, isPlatform } from '@fb/utils/user-agent'
 import { mergeClasses } from '@griffel/react'
 import { useDummyStyles, useOStyles, usePStyles, useTStyles } from './styles'
 
-type BaseScrollableAreaProps = {
+export type BaseScrollableAreaProps = {
   children?: ReactNode
   contentRef?: any
   expanding?: boolean

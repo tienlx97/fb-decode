@@ -30,28 +30,47 @@ export function ChannelGeminiBookmark({
   title,
 }: ChannelGeminiBookmarkProps) {
   return (
-    <VoyageUserJourneyUILayerProvider
-      name={'bookmark' + (entityKey ? '.' + serialize(entityKey) : '')}
-    >
-      <WorkGalahadUIChannelItem
-        addOnPrimary={!icon ? undefined : <BookmarkIcon image={icon} />}
-        linkProps={
-          href
-            ? {
-                url: href,
-              }
-            : undefined
-        }
-        onPress={(event: any) => {
-          onPress && onPress(event)
-        }}
-        selected={selected}
-        headline={title}
-        meta={subtitle}
-        addOnSecondary={addOnSecondary}
-        addOnTertiary={meta}
-        testid={undefined}
-      />
-    </VoyageUserJourneyUILayerProvider>
+    // <VoyageUserJourneyUILayerProvider
+    //   name={'bookmark' + (entityKey ? '.' + serialize(entityKey) : '')}
+    // >
+    //   <WorkGalahadUIChannelItem
+    //     addOnPrimary={!icon ? undefined : <BookmarkIcon image={icon} />}
+    //     linkProps={
+    //       href
+    //         ? {
+    //             url: href,
+    //           }
+    //         : undefined
+    //     }
+    //     onPress={(event: any) => {
+    //       onPress && onPress(event)
+    //     }}
+    //     selected={selected}
+    //     headline={title}
+    //     meta={subtitle}
+    //     addOnSecondary={addOnSecondary}
+    //     addOnTertiary={meta}
+    //     testid={undefined}
+    //   />
+    // </VoyageUserJourneyUILayerProvider>
+    <WorkGalahadUIChannelItem
+      addOnPrimary={!icon ? undefined : <BookmarkIcon image={icon} />}
+      linkProps={
+        href
+          ? {
+              url: href,
+            }
+          : undefined
+      }
+      onPress={(event: any) => {
+        onPress && onPress(event)
+      }}
+      selected={selected}
+      headline={title}
+      meta={subtitle}
+      addOnSecondary={addOnSecondary}
+      addOnTertiary={meta}
+      testid={undefined}
+    />
   )
 }
