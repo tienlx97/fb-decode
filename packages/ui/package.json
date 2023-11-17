@@ -7,9 +7,9 @@
   "dependencies": {
     "@griffel/react": "1.5.16",
     "@types/react": "18.2.21",
-    "next": "link:/home/tienlx97/work/next.js/packages/next",
-    "react": "workspace:*",
-    "react-dom": "workspace:*"
+    "next": "git://github.com/tienlx97/next-experimental.git#14.0.4-canary.1",
+    "react": "git://github.com/tienlx97/react-experimental.git#www",
+    "react-dom": "git://github.com/tienlx97/react-dom-experimental.git#www"
   },
   "devDependencies": {
     "@portal/eslint-config-react": "workspace:*",

@@ -8,16 +8,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict'
+'use strict';
 
 if (process.env.NODE_ENV !== 'production') {
-  ;(function () {
-    'use strict'
+  (function () {
+    'use strict';
 
-    var React = require('next/dist/compiled/react-experimental')
+    let React = require('next/dist/compiled/react-experimental');
 
-    var ReactSharedInternals =
-      React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED
+    let ReactSharedInternals =
+      React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
     function error(format) {
       {
@@ -29,10 +29,10 @@ if (process.env.NODE_ENV !== 'production') {
             _key2 < _len2;
             _key2++
           ) {
-            args[_key2 - 1] = arguments[_key2]
+            args[_key2 - 1] = arguments[_key2];
           }
 
-          printWarning('error', format, args)
+          printWarning('error', format, args);
         }
       }
     }
@@ -41,65 +41,66 @@ if (process.env.NODE_ENV !== 'production') {
       // When changing this logic, you might want to also
       // update consoleWithStackDev.www.js as well.
       {
-        var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame
-        var stack = ReactDebugCurrentFrame.getStackAddendum()
+        let ReactDebugCurrentFrame =
+          ReactSharedInternals.ReactDebugCurrentFrame;
+        let stack = ReactDebugCurrentFrame.getStackAddendum();
 
         if (stack !== '') {
-          format += '%s'
-          args = args.concat([stack])
+          format += '%s';
+          args = args.concat([stack]);
         } // eslint-disable-next-line react-internal/safe-string-coercion
 
-        var argsWithFormat = args.map(function (item) {
-          return String(item)
-        }) // Careful: RN currently depends on this prefix
+        let argsWithFormat = args.map(function (item) {
+          return String(item);
+        }); // Careful: RN currently depends on this prefix
 
-        argsWithFormat.unshift('Warning: ' + format) // We intentionally don't use spread (or .apply) directly because it
+        argsWithFormat.unshift('Warning: ' + format); // We intentionally don't use spread (or .apply) directly because it
         // breaks IE9: https://github.com/facebook/react/issues/13610
         // eslint-disable-next-line react-internal/no-production-logging
 
-        Function.prototype.apply.call(console[level], console, argsWithFormat)
+        Function.prototype.apply.call(console[level], console, argsWithFormat);
       }
     }
 
-    var ReactVersion = '18.3.0-canary-593ecee66-20231114'
+    let ReactVersion = '18.3.0-canary-aec521a96-20231114';
 
-    var Internals = {
+    let Internals = {
       usingClientEntryPoint: false,
       Events: null,
       Dispatcher: {
         current: null,
       },
-    }
+    };
 
     function getCrossOriginString(input) {
       if (typeof input === 'string') {
-        return input === 'use-credentials' ? input : ''
+        return input === 'use-credentials' ? input : '';
       }
 
-      return undefined
+      return undefined;
     }
     function getCrossOriginStringAs(as, input) {
       if (as === 'font') {
-        return ''
+        return '';
       }
 
       if (typeof input === 'string') {
-        return input === 'use-credentials' ? input : ''
+        return input === 'use-credentials' ? input : '';
       }
 
-      return undefined
+      return undefined;
     }
 
-    var Dispatcher = Internals.Dispatcher
+    let Dispatcher = Internals.Dispatcher;
     function prefetchDNS(href) {
       {
         if (typeof href !== 'string' || !href) {
           error(
             'ReactDOM.prefetchDNS(): Expected the `href` argument (first) to be a non-empty string but encountered %s instead.',
             getValueDescriptorExpectingObjectForWarning(href)
-          )
+          );
         } else if (arguments.length > 1) {
-          var options = arguments[1]
+          let options = arguments[1];
 
           if (
             typeof options === 'object' &&
@@ -108,20 +109,20 @@ if (process.env.NODE_ENV !== 'production') {
             error(
               'ReactDOM.prefetchDNS(): Expected only one argument, `href`, but encountered %s as a second argument instead. This argument is reserved for future options and is currently disallowed. It looks like the you are attempting to set a crossOrigin property for this DNS lookup hint. Browsers do not perform DNS queries using CORS and setting this attribute on the resource hint has no effect. Try calling ReactDOM.prefetchDNS() with just a single string argument, `href`.',
               getValueDescriptorExpectingEnumForWarning(options)
-            )
+            );
           } else {
             error(
               'ReactDOM.prefetchDNS(): Expected only one argument, `href`, but encountered %s as a second argument instead. This argument is reserved for future options and is currently disallowed. Try calling ReactDOM.prefetchDNS() with just a single string argument, `href`.',
               getValueDescriptorExpectingEnumForWarning(options)
-            )
+            );
           }
         }
       }
 
-      var dispatcher = Dispatcher.current
+      let dispatcher = Dispatcher.current;
 
       if (dispatcher && typeof href === 'string') {
-        dispatcher.prefetchDNS(href)
+        dispatcher.prefetchDNS(href);
       } // We don't error because preconnect needs to be resilient to being called in a variety of scopes
       // and the runtime may not be capable of responding. The function is optimistic and not critical
       // so we favor silent bailout over warning or erroring.
@@ -132,63 +133,63 @@ if (process.env.NODE_ENV !== 'production') {
           error(
             'ReactDOM.preconnect(): Expected the `href` argument (first) to be a non-empty string but encountered %s instead.',
             getValueDescriptorExpectingObjectForWarning(href)
-          )
+          );
         } else if (options != null && typeof options !== 'object') {
           error(
             'ReactDOM.preconnect(): Expected the `options` argument (second) to be an object but encountered %s instead. The only supported option at this time is `crossOrigin` which accepts a string.',
             getValueDescriptorExpectingEnumForWarning(options)
-          )
+          );
         } else if (options != null && typeof options.crossOrigin !== 'string') {
           error(
             'ReactDOM.preconnect(): Expected the `crossOrigin` option (second argument) to be a string but encountered %s instead. Try removing this option or passing a string value instead.',
             getValueDescriptorExpectingObjectForWarning(options.crossOrigin)
-          )
+          );
         }
       }
 
-      var dispatcher = Dispatcher.current
+      let dispatcher = Dispatcher.current;
 
       if (dispatcher && typeof href === 'string') {
-        var crossOrigin = options
+        let crossOrigin = options
           ? getCrossOriginString(options.crossOrigin)
-          : null
-        dispatcher.preconnect(href, crossOrigin)
+          : null;
+        dispatcher.preconnect(href, crossOrigin);
       } // We don't error because preconnect needs to be resilient to being called in a variety of scopes
       // and the runtime may not be capable of responding. The function is optimistic and not critical
       // so we favor silent bailout over warning or erroring.
     }
     function preload(href, options) {
       {
-        var encountered = ''
+        let encountered = '';
 
         if (typeof href !== 'string' || !href) {
           encountered +=
             ' The `href` argument encountered was ' +
             getValueDescriptorExpectingObjectForWarning(href) +
-            '.'
+            '.';
         }
 
         if (options == null || typeof options !== 'object') {
           encountered +=
             ' The `options` argument encountered was ' +
             getValueDescriptorExpectingObjectForWarning(options) +
-            '.'
+            '.';
         } else if (typeof options.as !== 'string' || !options.as) {
           encountered +=
             ' The `as` option encountered was ' +
             getValueDescriptorExpectingObjectForWarning(options.as) +
-            '.'
+            '.';
         }
 
         if (encountered) {
           error(
             'ReactDOM.preload(): Expected two arguments, a non-empty `href` string and an `options` object with an `as` property valid for a `<link rel="preload" as="..." />` tag.%s',
             encountered
-          )
+          );
         }
       }
 
-      var dispatcher = Dispatcher.current
+      let dispatcher = Dispatcher.current;
 
       if (
         dispatcher &&
@@ -197,8 +198,8 @@ if (process.env.NODE_ENV !== 'production') {
         options !== null &&
         typeof options.as === 'string'
       ) {
-        var as = options.as
-        var crossOrigin = getCrossOriginStringAs(as, options.crossOrigin)
+        let as = options.as;
+        let crossOrigin = getCrossOriginStringAs(as, options.crossOrigin);
         dispatcher.preload(href, as, {
           crossOrigin: crossOrigin,
           integrity:
@@ -223,27 +224,27 @@ if (process.env.NODE_ENV !== 'production') {
             typeof options.imageSizes === 'string'
               ? options.imageSizes
               : undefined,
-        })
+        });
       } // We don't error because preload needs to be resilient to being called in a variety of scopes
       // and the runtime may not be capable of responding. The function is optimistic and not critical
       // so we favor silent bailout over warning or erroring.
     }
     function preloadModule(href, options) {
       {
-        var encountered = ''
+        let encountered = '';
 
         if (typeof href !== 'string' || !href) {
           encountered +=
             ' The `href` argument encountered was ' +
             getValueDescriptorExpectingObjectForWarning(href) +
-            '.'
+            '.';
         }
 
         if (options !== undefined && typeof options !== 'object') {
           encountered +=
             ' The `options` argument encountered was ' +
             getValueDescriptorExpectingObjectForWarning(options) +
-            '.'
+            '.';
         } else if (
           options &&
           'as' in options &&
@@ -252,25 +253,25 @@ if (process.env.NODE_ENV !== 'production') {
           encountered +=
             ' The `as` option encountered was ' +
             getValueDescriptorExpectingObjectForWarning(options.as) +
-            '.'
+            '.';
         }
 
         if (encountered) {
           error(
             'ReactDOM.preloadModule(): Expected two arguments, a non-empty `href` string and, optionally, an `options` object with an `as` property valid for a `<link rel="modulepreload" as="..." />` tag.%s',
             encountered
-          )
+          );
         }
       }
 
-      var dispatcher = Dispatcher.current
+      let dispatcher = Dispatcher.current;
 
       if (dispatcher && typeof href === 'string') {
         if (options) {
-          var crossOrigin = getCrossOriginStringAs(
+          let crossOrigin = getCrossOriginStringAs(
             options.as,
             options.crossOrigin
-          )
+          );
           dispatcher.preloadModule(href, {
             as:
               typeof options.as === 'string' && options.as !== 'script'
@@ -281,9 +282,9 @@ if (process.env.NODE_ENV !== 'production') {
               typeof options.integrity === 'string'
                 ? options.integrity
                 : undefined,
-          })
+          });
         } else {
-          dispatcher.preloadModule(href)
+          dispatcher.preloadModule(href);
         }
       } // We don't error because preload needs to be resilient to being called in a variety of scopes
       // and the runtime may not be capable of responding. The function is optimistic and not critical
@@ -295,21 +296,21 @@ if (process.env.NODE_ENV !== 'production') {
           error(
             'ReactDOM.preinit(): Expected the `href` argument (first) to be a non-empty string but encountered %s instead.',
             getValueDescriptorExpectingObjectForWarning(href)
-          )
+          );
         } else if (options == null || typeof options !== 'object') {
           error(
             'ReactDOM.preinit(): Expected the `options` argument (second) to be an object with an `as` property describing the type of resource to be preinitialized but encountered %s instead.',
             getValueDescriptorExpectingEnumForWarning(options)
-          )
+          );
         } else if (options.as !== 'style' && options.as !== 'script') {
           error(
             'ReactDOM.preinit(): Expected the `as` property in the `options` argument (second) to contain a valid value describing the type of resource to be preinitialized but encountered %s instead. Valid values for `as` are "style" and "script".',
             getValueDescriptorExpectingEnumForWarning(options.as)
-          )
+          );
         }
       }
 
-      var dispatcher = Dispatcher.current
+      let dispatcher = Dispatcher.current;
 
       if (
         dispatcher &&
@@ -317,14 +318,14 @@ if (process.env.NODE_ENV !== 'production') {
         options &&
         typeof options.as === 'string'
       ) {
-        var as = options.as
-        var crossOrigin = getCrossOriginStringAs(as, options.crossOrigin)
-        var integrity =
-          typeof options.integrity === 'string' ? options.integrity : undefined
-        var fetchPriority =
+        let as = options.as;
+        let crossOrigin = getCrossOriginStringAs(as, options.crossOrigin);
+        let integrity =
+          typeof options.integrity === 'string' ? options.integrity : undefined;
+        let fetchPriority =
           typeof options.fetchPriority === 'string'
             ? options.fetchPriority
-            : undefined
+            : undefined;
 
         if (as === 'style') {
           dispatcher.preinitStyle(
@@ -337,7 +338,7 @@ if (process.env.NODE_ENV !== 'production') {
               integrity: integrity,
               fetchPriority: fetchPriority,
             }
-          )
+          );
         } else if (as === 'script') {
           dispatcher.preinitScript(href, {
             crossOrigin: crossOrigin,
@@ -345,7 +346,7 @@ if (process.env.NODE_ENV !== 'production') {
             fetchPriority: fetchPriority,
             nonce:
               typeof options.nonce === 'string' ? options.nonce : undefined,
-          })
+          });
         }
       } // We don't error because preinit needs to be resilient to being called in a variety of scopes
       // and the runtime may not be capable of responding. The function is optimistic and not critical
@@ -353,44 +354,44 @@ if (process.env.NODE_ENV !== 'production') {
     }
     function preinitModule(href, options) {
       {
-        var encountered = ''
+        let encountered = '';
 
         if (typeof href !== 'string' || !href) {
           encountered +=
             ' The `href` argument encountered was ' +
             getValueDescriptorExpectingObjectForWarning(href) +
-            '.'
+            '.';
         }
 
         if (options !== undefined && typeof options !== 'object') {
           encountered +=
             ' The `options` argument encountered was ' +
             getValueDescriptorExpectingObjectForWarning(options) +
-            '.'
+            '.';
         } else if (options && 'as' in options && options.as !== 'script') {
           encountered +=
             ' The `as` option encountered was ' +
             getValueDescriptorExpectingEnumForWarning(options.as) +
-            '.'
+            '.';
         }
 
         if (encountered) {
           error(
             'ReactDOM.preinitModule(): Expected up to two arguments, a non-empty `href` string and, optionally, an `options` object with a valid `as` property.%s',
             encountered
-          )
+          );
         } else {
-          var as =
-            options && typeof options.as === 'string' ? options.as : 'script'
+          let as =
+            options && typeof options.as === 'string' ? options.as : 'script';
 
           switch (as) {
             case 'script': {
-              break
+              break;
             }
             // We have an invalid as type and need to warn
 
             default: {
-              var typeOfAs = getValueDescriptorExpectingEnumForWarning(as)
+              let typeOfAs = getValueDescriptorExpectingEnumForWarning(as);
 
               error(
                 'ReactDOM.preinitModule(): Currently the only supported "as" type for this function is "script"' +
@@ -399,21 +400,21 @@ if (process.env.NODE_ENV !== 'production') {
                   ' (https://github.com/tc39/proposal-import-attributes)',
                 typeOfAs,
                 href
-              )
+              );
             }
           }
         }
       }
 
-      var dispatcher = Dispatcher.current
+      let dispatcher = Dispatcher.current;
 
       if (dispatcher && typeof href === 'string') {
         if (typeof options === 'object' && options !== null) {
           if (options.as == null || options.as === 'script') {
-            var crossOrigin = getCrossOriginStringAs(
+            let crossOrigin = getCrossOriginStringAs(
               options.as,
               options.crossOrigin
-            )
+            );
             dispatcher.preinitModuleScript(href, {
               crossOrigin: crossOrigin,
               integrity:
@@ -422,10 +423,10 @@ if (process.env.NODE_ENV !== 'production') {
                   : undefined,
               nonce:
                 typeof options.nonce === 'string' ? options.nonce : undefined,
-            })
+            });
           }
         } else if (options == null) {
-          dispatcher.preinitModuleScript(href)
+          dispatcher.preinitModuleScript(href);
         }
       } // We don't error because preinit needs to be resilient to being called in a variety of scopes
       // and the runtime may not be capable of responding. The function is optimistic and not critical
@@ -439,7 +440,7 @@ if (process.env.NODE_ENV !== 'production') {
         ? '`undefined`'
         : thing === ''
         ? 'an empty string'
-        : 'something with type "' + typeof thing + '"'
+        : 'something with type "' + typeof thing + '"';
     }
 
     function getValueDescriptorExpectingEnumForWarning(thing) {
@@ -453,15 +454,15 @@ if (process.env.NODE_ENV !== 'production') {
         ? JSON.stringify(thing)
         : typeof thing === 'number'
         ? '`' + thing + '`'
-        : 'something with type "' + typeof thing + '"'
+        : 'something with type "' + typeof thing + '"';
     }
 
-    var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher // Since the "not pending" value is always the same, we can reuse the
+    let ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher; // Since the "not pending" value is always the same, we can reuse the
 
     function resolveDispatcher() {
       // Copied from react/src/ReactHooks.js. It's the same thing but in a
       // different package.
-      var dispatcher = ReactCurrentDispatcher.current
+      let dispatcher = ReactCurrentDispatcher.current;
 
       {
         if (dispatcher === null) {
@@ -472,27 +473,27 @@ if (process.env.NODE_ENV !== 'production') {
               '2. You might be breaking the Rules of Hooks\n' +
               '3. You might have more than one copy of React in the same app\n' +
               'See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.'
-          )
+          );
         }
       } // Will result in a null access error if accessed outside render phase. We
       // intentionally don't throw our own error because this is in a hot path.
       // Also helps ensure this is inlined.
 
-      return dispatcher
+      return dispatcher;
     }
 
     function useFormStatus() {
       {
-        var dispatcher = resolveDispatcher() // $FlowFixMe[not-a-function] We know this exists because of the feature check above.
+        let dispatcher = resolveDispatcher(); // $FlowFixMe[not-a-function] We know this exists because of the feature check above.
 
-        return dispatcher.useHostTransitionStatus()
+        return dispatcher.useHostTransitionStatus();
       }
     }
     function useFormState(action, initialState, permalink) {
       {
-        var dispatcher = resolveDispatcher() // $FlowFixMe[not-a-function] This is unstable, thus optional
+        let dispatcher = resolveDispatcher(); // $FlowFixMe[not-a-function] This is unstable, thus optional
 
-        return dispatcher.useFormState(action, initialState, permalink)
+        return dispatcher.useFormState(action, initialState, permalink);
       }
     }
 
@@ -501,7 +502,7 @@ if (process.env.NODE_ENV !== 'production') {
         'createPortal was called on the server. Portals are not currently' +
           ' supported on the server. Update your program to conditionally call' +
           ' createPortal on the client only.'
-      )
+      );
     }
     function flushSync() {
       throw new Error(
@@ -509,14 +510,14 @@ if (process.env.NODE_ENV !== 'production') {
           ' function being called during render or in module scope that was' +
           ' intended to be called from an effect or event handler. Update your' +
           ' to not call flushSync no the server.'
-      )
+      );
     } // on the server we just call the callback because there is
     // not update mechanism. Really this should not be called on the
     // server but since the semantics are generally clear enough we
     // can provide this trivial implementation.
 
     function batchedUpdates(fn, a) {
-      return fn(a)
+      return fn(a);
     }
 
     function experimental_useFormStatus() {
@@ -524,36 +525,36 @@ if (process.env.NODE_ENV !== 'production') {
         error(
           'useFormStatus is now in canary. Remove the experimental_ prefix. ' +
             'The prefixed alias will be removed in an upcoming release.'
-        )
+        );
       }
 
-      return useFormStatus()
+      return useFormStatus();
     }
     function experimental_useFormState(action, initialState, permalink) {
       {
         error(
           'useFormState is now in canary. Remove the experimental_ prefix. ' +
             'The prefixed alias will be removed in an upcoming release.'
-        )
+        );
       }
 
-      return useFormState(action, initialState, permalink)
+      return useFormState(action, initialState, permalink);
     }
 
-    exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = Internals
-    exports.createPortal = createPortal
-    exports.experimental_useFormState = experimental_useFormState
-    exports.experimental_useFormStatus = experimental_useFormStatus
-    exports.flushSync = flushSync
-    exports.preconnect = preconnect
-    exports.prefetchDNS = prefetchDNS
-    exports.preinit = preinit
-    exports.preinitModule = preinitModule
-    exports.preload = preload
-    exports.preloadModule = preloadModule
-    exports.unstable_batchedUpdates = batchedUpdates
-    exports.useFormState = useFormState
-    exports.useFormStatus = useFormStatus
-    exports.version = ReactVersion
-  })()
+    exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = Internals;
+    exports.createPortal = createPortal;
+    exports.experimental_useFormState = experimental_useFormState;
+    exports.experimental_useFormStatus = experimental_useFormStatus;
+    exports.flushSync = flushSync;
+    exports.preconnect = preconnect;
+    exports.prefetchDNS = prefetchDNS;
+    exports.preinit = preinit;
+    exports.preinitModule = preinitModule;
+    exports.preload = preload;
+    exports.preloadModule = preloadModule;
+    exports.unstable_batchedUpdates = batchedUpdates;
+    exports.useFormState = useFormState;
+    exports.useFormStatus = useFormStatus;
+    exports.version = ReactVersion;
+  })();
 }

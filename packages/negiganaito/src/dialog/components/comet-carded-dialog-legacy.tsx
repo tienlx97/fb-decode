@@ -117,33 +117,33 @@ const useTitleHorizontalAlignmentStyles = makeStyles({
   },
 })
 
-const rightIcon = fbicon(
-  {
-    sprited: 2,
-    spi: '/assets/workplace/uPfeic3zR5x.png',
-    _spi: '/assets/workplace/uPfeic3zR5x.png',
-    w: 20,
-    h: 20,
-    p: '0 -221px',
-    sz: 'auto',
-    loggingID: '514454',
-  },
-  20,
-)
+// const rightIcon = fbicon(
+//   {
+//     sprited: 2,
+//     spi: '/assets/workplace/uPfeic3zR5x.png',
+//     _spi: '/assets/workplace/uPfeic3zR5x.png',
+//     w: 20,
+//     h: 20,
+//     p: '0 -221px',
+//     sz: 'auto',
+//     loggingID: '514454',
+//   },
+//   20,
+// )
 
-const LeftIcon = fbicon(
-  {
-    sprited: 2,
-    spi: '/assets/workplace/uPfeic3zR5x.png',
-    _spi: '/assets/workplace/uPfeic3zR5x.png',
-    w: 20,
-    h: 20,
-    p: '0 -200px',
-    sz: 'auto',
-    loggingID: '512647',
-  },
-  20,
-)
+// const LeftIcon = fbicon(
+//   {
+//     sprited: 2,
+//     spi: '/assets/workplace/uPfeic3zR5x.png',
+//     _spi: '/assets/workplace/uPfeic3zR5x.png',
+//     w: 20,
+//     h: 20,
+//     p: '0 -200px',
+//     sz: 'auto',
+//     loggingID: '512647',
+//   },
+//   20,
+// )
 
 export type CometCardedDialogLegacyProps = {
   anchorXStyle?: any
@@ -328,7 +328,33 @@ export const CometCardedDialogLegacy = forwardRef<
               'data-testid': undefined,
               children: jsx(CometCircleButton, {
                 color: 'secondary',
-                icon: isRTL ? rightIcon : LeftIcon,
+                icon: isRTL
+                  ? fbicon(
+                      {
+                        sprited: 2,
+                        spi: '/assets/workplace/uPfeic3zR5x.png',
+                        _spi: '/assets/workplace/uPfeic3zR5x.png',
+                        w: 20,
+                        h: 20,
+                        p: '0 -221px',
+                        sz: 'auto',
+                        loggingID: '514454',
+                      },
+                      20,
+                    )
+                  : fbicon(
+                      {
+                        sprited: 2,
+                        spi: '/assets/workplace/uPfeic3zR5x.png',
+                        _spi: '/assets/workplace/uPfeic3zR5x.png',
+                        w: 20,
+                        h: 20,
+                        p: '0 -200px',
+                        sz: 'auto',
+                        loggingID: '512647',
+                      },
+                      20,
+                    ),
                 label: 'Back',
                 onPress: onBack,
                 size: 36,

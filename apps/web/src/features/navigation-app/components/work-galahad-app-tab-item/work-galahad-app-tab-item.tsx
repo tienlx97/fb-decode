@@ -2,7 +2,7 @@
 'use client'
 import React, { forwardRef, memo, useCallback, useMemo } from 'react'
 
-import { fbt, FbtParam, FbtPlural } from 'fbt'
+// import { fbt, FbtParam, FbtPlural } from 'fbt'
 
 import { WorkGalahadUIAppsListItem } from '../work-galahad-ui-apps-list-item'
 import { WorkGalahadUIAppNavButton } from '../work-galahad-ui-app-nav-button'
@@ -37,21 +37,20 @@ type Props = {
 const m = new Set(['knowledge_library', 'home'])
 
 function formatTitleWithBadgeCount(title: string, badgeCount: number) {
-  return badgeCount > 0 ? (
-    <fbt desc="title, badgeCount text">
-      <FbtParam name="title">{title}</FbtParam> ,
-      <FbtPlural
-        count={badgeCount}
-        name="number"
-        showCount="ifMany"
-        many="new items"
-      >
-        1 new item
-      </FbtPlural>
-    </fbt>
-  ) : (
-    title
-  )
+  return badgeCount > 0
+    ? // <fbt desc="title, badgeCount text">
+      //   <FbtParam name="title">{title}</FbtParam> ,
+      //   <FbtPlural
+      //     count={badgeCount}
+      //     name="number"
+      //     showCount="ifMany"
+      //     many="new items"
+      //   >
+      //     1 new item
+      //   </FbtPlural>
+      // </fbt>
+      'title, badgeCount text'
+    : title
 }
 
 //   return badgeCount > 0

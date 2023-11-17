@@ -4,6 +4,7 @@ import React from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
+import { WorkGalahadProfileIconImpl } from './work-galahad-profile-icon-impl'
 
 type WorkGalahadProfileIconProps = {
   size?: number
@@ -45,7 +46,7 @@ export function WorkGalahadProfileIcon({
         size === 40 && classes.icon40,
       ),
     }),
-    children: jsx('WorkGalahadProfileIconImpl', {
+    children: jsx(WorkGalahadProfileIconImpl, {
       size,
       disableAltText,
     }),
