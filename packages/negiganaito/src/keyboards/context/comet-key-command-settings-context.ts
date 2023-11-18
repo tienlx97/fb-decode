@@ -13,7 +13,7 @@ type CometKeyCommandSettingsContextProps = {
   resetCustomCommand: (props: any) => any
   setAreSingleKeysDisabled: (props: any) => any
   setModifiedKeyboardShortcutsPreference: (props: any) => any
-  setViewerInfo: (props: any) => any
+  setViewerInfo: (...props: any) => any
   viewerType: string
 }
 
@@ -45,7 +45,7 @@ const CometKeyCommandSettingsContext =
     resetCustomCommand: function (a: any) {},
     setAreSingleKeysDisabled: function (a: any) {},
     setModifiedKeyboardShortcutsPreference: function (a: any) {},
-    setViewerInfo: function (a: any) {},
+    setViewerInfo: function (...a: any) {},
     viewerType: 'see_all',
   })
 

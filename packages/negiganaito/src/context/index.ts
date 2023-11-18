@@ -36,3 +36,4 @@ export { default as WorkCometInteractiveElementContext } from './work-comet-inte
 
 export { default as BaseThemeConfigContext } from './base-theme-config-context'
 export { CometHovercardSettingsContext } from './comet-hovercard-settings-context'
+export { CometListCellContext } from './comet-list-cell-context'
