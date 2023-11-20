@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-// @ts-ignore
 import { CometProfilePhoto } from '@negiganaito/index'
+// @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 
 type WorkGalahadUIProfilePhotoForActorProps = {
@@ -48,13 +48,18 @@ export function WorkGalahadUIProfilePhotoForActor({
   size,
   ...rest
 }: WorkGalahadUIProfilePhotoForActorProps) {
+  const profile_picture = {
+    uri: 'https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-1/281785584_122043038985708771_336913588166787812_n.png?stp=cp0_dst-webp_p50x50&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=vJpWIUB03NIAX89xj1z&_nc_ht=scontent.fsgn2-7.fna&uss=709763d7439f33fd&odm=dGllczYyOTEud29ya3BsYWNlLmNvbQ&oe2=655EC017&oh=00_AfAD5E20KFCdHlkEzT6upPkU5l6zbZAqcmvM8B-ZgncLUA&oe=65597053',
+    scale: 1,
+  }
+
   const source = {
     height: size,
     scale:
-      actor.scale ?? (SiteData.pr && SiteData.pr > 0)
+      profile_picture.scale ?? (SiteData.pr && SiteData.pr > 0)
         ? SiteData.pr
         : window.devicePixelRatio || 1,
-    uri: actor.uri,
+    uri: profile_picture.uri,
     width: size,
   }
 

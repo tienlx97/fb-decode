@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import { WorkNavigationCenteredChannelToggle } from './work-navigation-centered-channel-toggle'
+import { WorkGalahadAppTabProfileItem } from './work-galahad-app-tab-profile-item'
 
 export const WorkNavigationCollapseButtonAndNubs = memo(() => {
   return (
@@ -7,7 +8,7 @@ export const WorkNavigationCollapseButtonAndNubs = memo(() => {
       {/* WorkNavigationCenteredChannelToggle */}
       <WorkNavigationCenteredChannelToggle />
       {/* GeminiNubs */}
-      {/* WorkGalahadAppTabProfileItem */}
+      <WorkGalahadAppTabProfileItem />
     </React.Fragment>
   )
 })

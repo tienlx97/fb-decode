@@ -5,7 +5,7 @@ import { CometSuspendedDialogImpl } from '../components'
 export function useBaseLazyDialog(
   dialog: any,
   fallback: any,
-  tracePolicy: any,
+  tracePolicy?: any,
   e?: any,
 ) {
   const onOpen = useContext(CometDialogContext)

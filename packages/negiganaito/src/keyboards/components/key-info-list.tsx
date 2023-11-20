@@ -11,59 +11,86 @@ import React from 'react'
 
 // @ts-ignore
 import { jsx, jsxs } from 'react/jsx-runtime'
+import { isSingleCharKey } from '../util'
+import { makeStyles } from '@griffel/react'
+import { KeyInfo } from './key-info'
 
 type KeyInfoListProps = {
   commands?: any
   isFullTable?: any
+  hideSingleCharKeys?: any
+  disabled?: any
+  editable?: any
 }
 
-export function KeyInfoList({ commands: b, isFullTable: d }: KeyInfoListProps) {
-  const e = [],
-    f = -1
-  if (b != null) {
-    var g = Array.from(b.keys()),
-      i = Array.from(b.values())
-    i = i.some(function (a) {
-      return 'order' in a[0]
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+  },
+})
+
+export function KeyInfoList({
+  commands,
+  isFullTable,
+  hideSingleCharKeys,
+  disabled,
+  editable,
+}: KeyInfoListProps) {
+  const e: any = []
+  let f: any = -1
+
+  const classes = useStyles()
+
+  if (commands) {
+    const commandsArrKey = Array.from(commands.keys())
+    const commandsArrValue = Array.from(commands.values())
+
+    const i = commandsArrValue.some((commandValue: any) => {
+      return 'order' in commandValue[0]
     })
+
     i
-      ? g.sort(function (a, c) {
-          a = (a = b.get(a)) != null ? a : [{}]
-          c = (c = b.get(c)) != null ? c : [{}]
-          a = (a = a[0].order) != null ? a : 99999
-          c = (c = c[0].order) != null ? c : 99999
+      ? commandsArrKey.sort((commandKey: any, c: any) => {
+          const a = (commands.get(commandKey) ?? [{}])[0] ?? 99999 // (a = commands.get(a)) != null ? a : [{}]
+          c = (commands.get(c) ?? [{}])[0] ?? 99999 // (c = commands.get(c)) != null ? c : [{}]
+          // a = (a = a[0].order) != null ? a : 99999
+          // c = (c = c[0].order) != null ? c : 99999
           return a - c
         })
-      : g.sort(function (a, b) {
-          if (a < b) return -1
-          return b > a ? 1 : 0
+      : commandsArrKey.sort((a: any, b: any) => {
+          if (a < b) {
+            return -1
+          }
+          return commands > a ? 1 : 0
         })
-    g.forEach(function (h, i) {
-      var k = b.get(h)
-      k &&
-        k.forEach(function (b, l) {
+    commandsArrKey.forEach((keyCommand: any, i: any) => {
+      const _command = commands.get(keyCommand)
+      _command &&
+        _command.forEach((_commandItem: any, index: any) => {
           f++
           if (
-            b.isHiddenCommand ||
-            b.command == null ||
-            (a.hideSingleCharKeys === !0 && c('isSingleCharKey')(h))
-          )
+            _commandItem.isHiddenCommand ||
+            !_commandItem.command ||
+            (hideSingleCharKeys && isSingleCharKey(keyCommand))
+          ) {
             return
-          var m = i === g.length - 1 && l === k.length - 1
+          }
+          const isEndOfList =
+            i === commandsArrKey.length - 1 && index === _command.length - 1
           return e.push(
-            j.jsx(
-              c('KeyInfo.react'),
+            jsx(
+              KeyInfo,
               {
-                command: b.command,
-                commandID: b.commandID,
-                description: b.description,
-                disabled: a.disabled,
-                displayType: d ? 'full' : 'compact',
-                editable: a.editable,
-                groupID: b.groupID,
-                index: l,
-                isEndOfList: m,
-                keyCommand: h,
+                command: _commandItem.command,
+                commandID: _commandItem.commandID,
+                description: _commandItem.description,
+                disabled: disabled,
+                displayType: isFullTable ? 'full' : 'compact',
+                editable: editable,
+                groupID: _commandItem.groupID,
+                index: index,
+                isEndOfList: isEndOfList,
+                keyCommand: keyCommand,
               },
               f,
             ),
@@ -73,7 +100,7 @@ export function KeyInfoList({ commands: b, isFullTable: d }: KeyInfoListProps) {
   }
   return jsx('table', {
     cellSpacing: '0',
-    className: 'xh8yej3',
+    className: classes.root, // 'xh8yej3',
     children: jsxs('tbody', {
       children: [
         jsxs('tr', {

@@ -1,5 +1,6 @@
 import { CometHovercardSettingsContext } from '@negiganaito/context'
 import {
+  CometKeyShortcutDialog,
   CometMenuItem,
   CometMenuItemCheckbox,
   CometMenuItemWithSubmenu,

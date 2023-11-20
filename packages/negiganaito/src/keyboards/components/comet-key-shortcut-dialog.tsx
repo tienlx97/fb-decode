@@ -16,6 +16,7 @@ import { CometSwitch } from '@negiganaito/switch'
 import { fbicon } from '@negiganaito/image'
 import { CometListCell } from '@negiganaito/cell'
 import { TetraCircleButton } from '@negiganaito/button'
+import { KeyInfoList } from './key-info-list'
 
 const globalKeyboards: any = {
   global: {
@@ -303,6 +304,15 @@ const useStyles = makeStyles({
       maxWidth: '100%',
     },
   },
+
+  dummy7: {
+    // xvob6b x1s0knhj x1noequ8
+    '@media only screen and (max-width: 970px)': {
+      maxWidth: 'unset',
+      paddingRight: '32px',
+      width: '100%',
+    },
+  },
 })
 // q = c("gkx")("1820857");
 const dynamic1820857 = true
@@ -362,7 +372,7 @@ function r({
       }),
       jsx('div', {
         className: classes.dummy2, // 'x78zum5 x1iyjqo2 x1a02dak x6prxxf xk50ysn xyamay9 x4uap5 x1l90r2v xkhd6sd',
-        children: jsx(c('KeyInfoList.react'), {
+        children: jsx(KeyInfoList, {
           commands: commandsMap1,
           editable: false, //c('gkx')('6950'),
           isFullTable: true,
@@ -380,7 +390,7 @@ function r({
               jsx('div', {
                 className: classes.dummy2,
                 // 'x78zum5 x1iyjqo2 x1a02dak x6prxxf xk50ysn xyamay9 x4uap5 x1l90r2v xkhd6sd',
-                children: jsx(c('KeyInfoList.react'), {
+                children: jsx(KeyInfoList, {
                   commands: commandsMap2,
                   disabled: true,
                   isFullTable: true,
@@ -458,7 +468,7 @@ export function CometKeyShortcutDialog({
       jsxs(
         'div',
         {
-          className: 'xvob6b x1s0knhj x1noequ8',
+          className: classes.dummy7, // 'xvob6b x1s0knhj x1noequ8',
           children: [z, A],
         },
         'global and search',

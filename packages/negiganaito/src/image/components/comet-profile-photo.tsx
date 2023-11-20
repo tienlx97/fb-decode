@@ -194,6 +194,10 @@ const useStyles = makeStyles({
     verticalAlign: 'bottom',
     zIndex: 'unset',
   },
+
+  dummy3: {
+    verticalAlign: 'bottom',
+  },
 })
 
 export const CometProfilePhoto = forwardRef<any, CometProfilePhotoProps>(
@@ -326,7 +330,7 @@ export const CometProfilePhoto = forwardRef<any, CometProfilePhotoProps>(
                 {
                   'aria-hidden': !alt ? !0 : void 0,
                   'aria-label': alt,
-                  className: 'x3ajldb',
+                  className: l.dummy3, // 'x3ajldb',
                 },
                 // c('CometVisualCompletionAttributes').IGNORE_DYNAMIC,
                 {
@@ -680,6 +684,8 @@ function m({ addOn, pressed, size }: MProps) {
       return null
   }
 }
+
+m.displayName = 'm [from CometProfilePhoto]'
 
 type ActivityBadgeCompProps = {
   backgroundColor?: string

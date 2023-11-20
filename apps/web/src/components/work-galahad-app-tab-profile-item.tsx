@@ -1,12 +1,14 @@
 import { WorkGalahadUIAppNavButton } from '@/features/navigation-app/components/work-galahad-ui-app-nav-button'
 import { WorkGalahadUIAppsListItem } from '@/features/navigation-app/components/work-galahad-ui-apps-list-item'
-import { CometEntryPointPopoverTrigger_Legacy } from '@negiganaito/index'
+// eslint-disable-next-line camelcase
+import { CometEntryPointPopoverTrigger_Legacy } from '@negiganaito/react-components'
 import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 import React from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { WorkGalahadProfileIcon } from './work-galahad-profile-icon'
+import { GeminiUserSettingsMenu } from './gemini-user-settings-menu'
 
 type WorkGalahadAppTabProfileItemProps = {
   isDisabled?: boolean
@@ -20,7 +22,7 @@ export function WorkGalahadAppTabProfileItem({
   return jsx(CometEntryPointPopoverTrigger_Legacy, {
     align: 'middle',
     entryPointParams: {},
-    popoverEntryPoint: `c('GeminiUserSettingsMenu.entrypoint')`,
+    popoverEntryPoint: GeminiUserSettingsMenu,
     otherProps: {},
     popoverType: 'menu',
     position: 'end',

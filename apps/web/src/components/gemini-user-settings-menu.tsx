@@ -2,21 +2,22 @@ import { CometMenu } from '@negiganaito/react-components'
 import React from 'react'
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
+import { GeminiUserSettingsMenuItemDisplayOptions } from './gemini-user-settings-menuItem-display-options'
 
 export function GeminiUserSettingsMenu() {
   // fetch comp from server
 
   const settingArr = [
-    'GeminiUserSettingsMenuItemProfile.react',
-    'GeminiUserSettingsMenuItemStatus.react',
-    'GeminiUserSettingsMenuItemDoNotDisturb.react',
-    'GeminiUserSettingsMenuItemActivityLog.react',
-    'GeminiUserSettingsMenuItemDivider.react',
-    'GeminiUserSettingsMenuItemDisplayOptions.react',
-    'GeminiUserSettingsMenuItemSettings.react',
-    'GeminiUserSettingsMenuItemDivider.react',
-    'GeminiUserSettingsMenuItemSwitchWorkplace.react',
-    'GeminiUserSettingsMenuItemLogout.react',
+    // 'GeminiUserSettingsMenuItemProfile.react',
+    // 'GeminiUserSettingsMenuItemStatus.react',
+    // 'GeminiUserSettingsMenuItemDoNotDisturb.react',
+    // 'GeminiUserSettingsMenuItemActivityLog.react',
+    // 'GeminiUserSettingsMenuItemDivider.react',
+    GeminiUserSettingsMenuItemDisplayOptions,
+    // 'GeminiUserSettingsMenuItemSettings.react',
+    // 'GeminiUserSettingsMenuItemDivider.react',
+    // 'GeminiUserSettingsMenuItemSwitchWorkplace.react',
+    // 'GeminiUserSettingsMenuItemLogout.react',
   ]
 
   //
