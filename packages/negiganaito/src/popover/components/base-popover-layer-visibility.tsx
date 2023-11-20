@@ -26,7 +26,7 @@ export function BasePopoverLayerVisibility({
         onLayerDetached()
       g.current = _hiddenOrBackgrounded
     })
-    return function () {
+    return () => {
       cb.remove()
     }
   }, [onLayerDetached, subscribeToChanges])

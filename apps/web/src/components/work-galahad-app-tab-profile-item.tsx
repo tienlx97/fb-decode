@@ -22,23 +22,25 @@ export function WorkGalahadAppTabProfileItem({
   return jsx(CometEntryPointPopoverTrigger_Legacy, {
     align: 'middle',
     entryPointParams: {},
-    popoverEntryPoint: GeminiUserSettingsMenu,
+    popoverEntryPoint: {
+      root: GeminiUserSettingsMenu,
+    },
     otherProps: {},
     popoverType: 'menu',
     position: 'end',
-    children: (a: any, onPress: any) => {
+    children: (ref: any, onPress: any) => {
       return jsx(WorkGalahadUIAppsListItem, {
-        ref: a,
-        withTopSpacing: !1,
+        ref,
+        withTopSpacing: false,
         children: jsx(WorkGalahadUIAppNavButton, {
           label: d,
           ariaLabel: d,
           elementId: 'profile',
-          selected: !1,
+          selected: false,
           // linkDataFT: c('TrackingNodes').getTrackingInfo(404),
           'data-testid': void 0,
           onPress: isDisabled ? emptyFunction : onPress,
-          largeAddOn: !0,
+          largeAddOn: true,
           addOn: jsx(WorkGalahadProfileIcon, {
             size: 40,
           }),

@@ -87,6 +87,7 @@ export type BasePopoverTriggerProps = {
   triggerOutsideClickOnDrag?: any
 }
 
+// @ts-ignore
 function BasePopoverTrigger({
   children,
   doNotCloseOnOutsideClick = false,
@@ -293,7 +294,7 @@ function BasePopoverTrigger({
       }),
       jsx(CometErrorBoundary, {
         children: jsx(CometPrerenderer, {
-          prerenderingProps: prerenderingProps,
+          prerenderingProps,
           children: (a: any) => {
             return jsx(
               BaseContextualLayer,
@@ -315,12 +316,13 @@ function BasePopoverTrigger({
                         interactionDesc:
                           'popover_' +
                           (popoverPreloadResource
-                            ? popoverPreloadResource.getModuleId()
-                            : 'Unknown'),
+                            ? popoverPreloadResource.name
+                            : // ? popoverPreloadResource.getModuleId()
+                              'Unknown'),
 
                         interactionUUID: K,
                         children: jsx(BasePopoverLayerVisibility, {
-                          onLayerDetached: onLayerDetached,
+                          onLayerDetached,
                           children: popoverRenderer({
                             content: jsxs(React.Fragment, {
                               children: [

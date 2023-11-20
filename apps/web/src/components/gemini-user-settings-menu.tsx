@@ -13,7 +13,10 @@ export function GeminiUserSettingsMenu() {
     // 'GeminiUserSettingsMenuItemDoNotDisturb.react',
     // 'GeminiUserSettingsMenuItemActivityLog.react',
     // 'GeminiUserSettingsMenuItemDivider.react',
-    GeminiUserSettingsMenuItemDisplayOptions,
+    // jsx(GeminiUserSettingsMenuItemDisplayOptions, {}),
+    jsx('div', {
+      children: 'asasdas',
+    }),
     // 'GeminiUserSettingsMenuItemSettings.react',
     // 'GeminiUserSettingsMenuItemDivider.react',
     // 'GeminiUserSettingsMenuItemSwitchWorkplace.react',

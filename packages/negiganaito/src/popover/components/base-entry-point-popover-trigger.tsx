@@ -29,7 +29,7 @@ export function BaseEntryPointPopoverTrigger({
   //   r = p[1]
   // p = p[2]
 
-  var s = useRef(null),
+  const s = useRef(null),
     onHighIntentPreload = useCallback(() => {
       if (entryPointParams == null) return
       // if (q !== null && deepEquals(s.current, entryPointParams)) return
@@ -67,17 +67,14 @@ export function BaseEntryPointPopoverTrigger({
         fallback,
         interactionTracker: false,
         onHighIntentPreload: onHighIntentPreload,
-        // onLayerDetached: p,
         onVisibilityChange: onVisibilityChangeCb,
-        // popover: BaseEntryPointPopoverContainer,
-        // popoverPreloadResource: popoverEntryPoint.root,
-        // popoverProps: popoverProps,
-        // preloadTrigger: preloadTrigger,
 
-        popover: popoverEntryPoint.root,
-        popoverPreloadResource: undefined,
-        popoverProps: popoverProps,
-        preloadTrigger: preloadTrigger,
+        popoverPreloadResource: popoverEntryPoint.root,
+        popoverProps,
+        preloadTrigger,
+        popover: BaseEntryPointPopoverContainer,
+
+        // onLayerDetached: p,
       },
       rest,
     ),
