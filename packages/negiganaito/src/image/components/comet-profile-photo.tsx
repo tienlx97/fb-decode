@@ -61,7 +61,7 @@ type CometProfilePhotoProps = {
   source?: any
   storyStatus?: any
   testid?: string
-  testOnly_pressed?: string
+  testOnly_pressed?: any
   testOnly_previewDelay?: any
 }
 
@@ -377,7 +377,7 @@ export const CometProfilePhoto = forwardRef<any, CometProfilePhotoProps>(
                                 'circle',
                                 Object.assign(
                                   {
-                                    cx: L.left ?? size - (L.left ?? 0),
+                                    cx: L.left ?? size - (L.right ?? 0),
                                     // cx:
                                     //   (k = L.left) != null
                                     //     ? k
@@ -597,7 +597,10 @@ export const CometProfilePhoto = forwardRef<any, CometProfilePhotoProps>(
       })
     }
 
-    return !onPress && !linkProps && shouldShowCloseFriendsBadge !== !0
+    return !onPress &&
+      !linkProps &&
+      //  /**  shouldShowCloseFriendsBadge */
+      testOnly_pressed !== !0
       ? H(
           {
             pressed: false,

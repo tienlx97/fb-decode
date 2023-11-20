@@ -7,7 +7,8 @@ import { BaseEntryPointPopoverTrigger } from './base-entry-point-popover-trigger
 
 type CometEntryPointPopoverTriggerProps = any
 
-export function CometEntryPointPopoverTrigger({
+// eslint-disable-next-line camelcase
+export function CometEntryPointPopoverTrigger_Legacy({
   fallback,
   ...rest
 }: CometEntryPointPopoverTriggerProps) {
