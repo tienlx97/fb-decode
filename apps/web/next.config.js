@@ -5,15 +5,17 @@ module.exports = {
 
   experimental: {
     serverActions: true,
-    serverComponentsExternalPackages: ['@prisma/client'],
     forceSwcTransforms: true,
   },
 
   reactStrictMode: false,
 
-  i18n: {
-    defaultLocale: 'vi',
-    locales: ['en', 'vi'],
+  compiler: {
+    relay: {
+      src: './',
+      language: 'typescript',
+      artifactDirectory: '__generated__',
+    },
   },
 
   async redirects() {

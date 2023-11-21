@@ -14,9 +14,13 @@ export function GeminiUserSettingsMenu() {
     // 'GeminiUserSettingsMenuItemActivityLog.react',
     // 'GeminiUserSettingsMenuItemDivider.react',
     // jsx(GeminiUserSettingsMenuItemDisplayOptions, {}),
-    jsx('div', {
-      children: 'asasdas',
-    }),
+    jsx(
+      'div',
+      {
+        children: 'asasdas',
+      },
+      'd-1',
+    ),
     // 'GeminiUserSettingsMenuItemSettings.react',
     // 'GeminiUserSettingsMenuItemDivider.react',
     // 'GeminiUserSettingsMenuItemSwitchWorkplace.react',

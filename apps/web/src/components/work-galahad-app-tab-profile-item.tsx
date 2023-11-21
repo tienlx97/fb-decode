@@ -17,7 +17,7 @@ type WorkGalahadAppTabProfileItemProps = {
 export function WorkGalahadAppTabProfileItem({
   isDisabled = false,
 }: WorkGalahadAppTabProfileItemProps) {
-  const d = 'Le Xuan Tien'
+  const fullName = 'Le Xuan Tien'
 
   return jsx(CometEntryPointPopoverTrigger_Legacy, {
     align: 'middle',
@@ -33,8 +33,8 @@ export function WorkGalahadAppTabProfileItem({
         ref,
         withTopSpacing: false,
         children: jsx(WorkGalahadUIAppNavButton, {
-          label: d,
-          ariaLabel: d,
+          label: fullName,
+          ariaLabel: fullName,
           elementId: 'profile',
           selected: false,
           // linkDataFT: c('TrackingNodes').getTrackingInfo(404),

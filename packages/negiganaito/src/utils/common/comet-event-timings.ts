@@ -1,5 +1,8 @@
 import performanceNavigationStart from './performance-navigation-start'
-import performanceNow from './performance-now'
+// import performanceNow from './performance-now'
+
+// @ts-ignore
+import performanceNow from 'fbjs/lib/performanceNow'
 
 export function getCurrentQueueTime(a?: any) {
   let b = performanceNow(),
