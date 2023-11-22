@@ -3,8 +3,10 @@ import performance from './performance'
 function performanceNow(): number {
   let fn: () => number
   // support window
+  // @ts-ignore
   if (performance.now)
     fn = function () {
+      // @ts-ignore
       return performance.now()
     }
   else {

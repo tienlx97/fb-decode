@@ -17,6 +17,8 @@ export function WorkKnowledgeStackedChannelPinnedCollections() {
   // fetch `pinned_knowledge_collections`
   // "client:61553101316293:work_info:pinned_knowledge_collections"
 
+  const g: any = []
+
   const pinned_knowledge_collections: any[] = []
 
   const onCancelClick = function () {

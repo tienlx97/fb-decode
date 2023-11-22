@@ -15,6 +15,8 @@ import { WorkKnowledgeCustomHomePageHeaderActions } from './work-knowledge-custo
 
 // import { TetraButton } from '@fb/tetra-button'
 
+import JSResource from 'jsresource'
+
 export const Default = () => {
   // const [state, setState] = React.useState(
   // eslint-disable-next-line no-irregular-whitespace
@@ -29,6 +31,14 @@ export const Default = () => {
 
   return (
     <div style={{ width: '440px' }}>
+      <button
+        onClick={() => {
+          JSResource('BaseText')
+        }}
+      >
+        123
+      </button>
+
       {/* <div style={{ margin: '3rem' }}>
         <CometTab aria-haspopup="menu" />
       </div>

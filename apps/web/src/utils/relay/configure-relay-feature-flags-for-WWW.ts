@@ -1,10 +1,16 @@
-import {RelayFeatureFlags} from "relay-runtime"
+import { RelayFeatureFlags } from 'relay-runtime'
 
-export function configureRelayFeatureFlagsForWWW(){
-
+export function configureRelayFeatureFlagsForWWW() {
+  RelayFeatureFlags.ENABLE_RELAY_RESOLVERS = true
   RelayFeatureFlags.ENABLE_CLIENT_EDGES = true
   // @ts-ignore
-  RelayFeatureFlags.ENABLE_FIELD_ERROR_HANDLING = false 
+  RelayFeatureFlags.ENABLE_FIELD_ERROR_HANDLING = false
+  RelayFeatureFlags.ENABLE_FRIENDLY_QUERY_NAME_GQL_URL = false
+  RelayFeatureFlags.ENABLE_LOAD_QUERY_REQUEST_DEDUPING = true
+  RelayFeatureFlags.ENABLE_DO_NOT_WRAP_LIVE_QUERY = true
+  RelayFeatureFlags.ENABLE_CONTAINERS_SUBSCRIBE_ON_COMMIT = true
+  RelayFeatureFlags.STRING_INTERN_LEVEL = 2
+  RelayFeatureFlags.MAX_DATA_ID_LENGTH = 100
 }
 
 /*

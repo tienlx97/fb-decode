@@ -16,8 +16,8 @@ function compareStringsForEqualityAndSubkey(a: string, b: string) {
   return aLC === bLC
     ? comparisonStatus.EQUAL
     : aLC.indexOf(bLC) === 0 && aLC[bLC.length] === '/'
-    ? comparisonStatus.SUBKEY
-    : comparisonStatus.DIFFERENT
+      ? comparisonStatus.SUBKEY
+      : comparisonStatus.DIFFERENT
 }
 
 export const fromString_DO_NOT_USE = (str: any) => str

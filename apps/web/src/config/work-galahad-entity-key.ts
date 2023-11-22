@@ -10,8 +10,8 @@ function j(pathA: string, pathB: string) {
   return pathA === pathB
     ? i.EQUAL
     : pathA.indexOf(pathB) === 0 && pathA[pathB.length] === '/'
-    ? i.SUBKEY
-    : i.DIFFERENT
+      ? i.SUBKEY
+      : i.DIFFERENT
 }
 
 function $(a: string, b: string) {

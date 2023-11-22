@@ -18,7 +18,8 @@
     "prop-types": "15.8.1",
     "react": "git://github.com/tienlx97/react-experimental.git#www",
     "react-dom": "git://github.com/tienlx97/react-dom-experimental.git#www",
-    "resize-observer-polyfill": "1.5.1"
+    "resize-observer-polyfill": "1.5.1",
+    "jsresource": "0.0.8"
   },
   "devDependencies": {
     "@portal/eslint-config-react": "workspace:*",

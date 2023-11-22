@@ -122,3 +122,19 @@ export function WorkKnowledgeCustomHomePageHeaderActions() {
 
   return f
 }
+
+/*
+__d("JSResource", 
+  ["JSResourceReferenceImpl"]
+
+__d("JSResourceReferenceImpl", 
+  ["JSResourceEvents", 
+  "Promise", 
+  "PromiseAnnotate", 
+  "ifRequireable", 
+  "ifRequired"]
+
+__d("JSResourceEvents", 
+  ["performanceAbsoluteNow"]
+
+*/

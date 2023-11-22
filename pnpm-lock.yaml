@@ -91,6 +91,9 @@ importers:
       immutable:
         specifier: 5.0.0-beta.4
         version: 5.0.0-beta.4
+      jsresource:
+        specifier: 0.0.8
+        version: 0.0.8
       next:
         specifier: git://github.com/tienlx97/next-experimental.git#14.0.4-canary.1
         version: github.com/tienlx97/next-experimental/af16eca3d588ce77cfd493c79c8ce0de04af50c1(@babel/core@7.23.3)(react-dom@0.0.0-experimental-aec521a96-20231114)(react@0.0.0-experimental-aec521a96-20231114)
@@ -222,6 +225,9 @@ importers:
       fbjs:
         specifier: 3.0.5
         version: 3.0.5(encoding@0.1.13)
+      jsresource:
+        specifier: 0.0.8
+        version: 0.0.8
       next:
         specifier: git://github.com/tienlx97/next-experimental.git#14.0.4-canary.1
         version: github.com/tienlx97/next-experimental/af16eca3d588ce77cfd493c79c8ce0de04af50c1(@babel/core@7.23.3)(react-dom@0.0.0-experimental-aec521a96-20231114)(react@0.0.0-experimental-aec521a96-20231114)
@@ -2729,6 +2735,11 @@ packages:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
+  /app-root-path@3.0.0:
+    resolution: {integrity: sha512-qMcx+Gy2UZynHjOHOIXPNvpf+9cjvk3cWrBBK7zg4gH9+clobJRb9NGzcT7mQTcV/6Gm/1WelUtqxVXnNlrwcw==}
+    engines: {node: '>= 6.0.0'}
+    dev: false
+
   /arg@4.1.3:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
     dev: true
@@ -4791,6 +4802,12 @@ packages:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
     engines: {'0': node >= 0.2.0}
     dev: true
+
+  /jsresource@0.0.8:
+    resolution: {integrity: sha512-FtA0jhgtxenzax9a4JVIPEkNRkVZWyRUTu75AzQtmKUes+ZcdcmEvMipIYtd7O3Ri5MhZONT5LcFM3x6Rb6ODA==}
+    dependencies:
+      app-root-path: 3.0.0
+    dev: false
 
   /jsx-ast-utils@3.3.5:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}

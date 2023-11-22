@@ -4,7 +4,7 @@ import { CometKeyCommandUtilsContext } from '../context'
 import { CometLayerKeyCommandWidget } from './comet-layer-key-command-widget'
 import { recoverableViolation } from '@negiganaito/error'
 
-export function SetActiveLayerIfAttached(a) {
+export function SetActiveLayerIfAttached(a: any) {
   let b = useContext(HiddenSubtreeContext)
   a = useContext(CometKeyCommandUtilsContext)
   let d = a && a.setActiveLayer,

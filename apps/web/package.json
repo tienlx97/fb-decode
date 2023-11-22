@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "relay-compiler --validate && next build",
+    "build": "next build",
     "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
     "dev": "next dev",
     "lint": "eslint",
@@ -25,7 +25,8 @@
     "relay-runtime": "16.0.0",
     "sharp": "^0.32.4",
     "ui": "workspace:*",
-    "zod": "3.22.2"
+    "zod": "3.22.2",
+    "jsresource": "0.0.8"
   },
   "devDependencies": {
     "@adeira/babel-preset-adeira": "4.0.0",
