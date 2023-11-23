@@ -1,8 +1,7 @@
 import React from 'react'
 import { JSResource } from '@negiganaito/lazy-load-component'
 import type { EntryPoint } from 'react-relay'
-
-type Params = any
+import { WebPixelRatio } from '@negiganaito/utils'
 
 // @ts-ignore
 const GeminiUserSettingsMenuEntryPoint: EntryPoint = {
@@ -12,7 +11,7 @@ const GeminiUserSettingsMenuEntryPoint: EntryPoint = {
         menuQueryReference: {
           parameters: c('GeminiUserSettingsMenuQuery$Parameters'),
           variables: {
-            scale: d('WebPixelRatio').get(),
+            scale: WebPixelRatio.get(),
           },
         },
       },
