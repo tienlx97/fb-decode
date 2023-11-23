@@ -189,7 +189,6 @@ const TetraText = forwardRef<HTMLSpanElement, TetraTextProps>(
         isPrimaryHeading={isPrimaryHeading}
         className={classes1.heading}
       >
-        {/* @ts-ignore */}
         {textChild}
       </BaseHeading>
     ) : (

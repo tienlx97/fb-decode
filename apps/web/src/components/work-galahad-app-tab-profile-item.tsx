@@ -1,12 +1,14 @@
 import { WorkGalahadUIAppNavButton } from '@/features/navigation-app/components/work-galahad-ui-app-nav-button'
 import { WorkGalahadUIAppsListItem } from '@/features/navigation-app/components/work-galahad-ui-apps-list-item'
-import { CometEntryPointPopoverTrigger_Legacy } from '@negiganaito/index'
+// eslint-disable-next-line camelcase
+import { CometEntryPointPopoverTrigger_Legacy } from '@negiganaito/react-components'
 import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 import React from 'react'
 
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { WorkGalahadProfileIcon } from './work-galahad-profile-icon'
+import { GeminiUserSettingsMenu } from './gemini-user-settings-menu'
 
 type WorkGalahadAppTabProfileItemProps = {
   isDisabled?: boolean
@@ -15,28 +17,30 @@ type WorkGalahadAppTabProfileItemProps = {
 export function WorkGalahadAppTabProfileItem({
   isDisabled = false,
 }: WorkGalahadAppTabProfileItemProps) {
-  const d = 'Le Xuan Tien'
+  const fullName = 'Le Xuan Tien'
 
   return jsx(CometEntryPointPopoverTrigger_Legacy, {
     align: 'middle',
     entryPointParams: {},
-    popoverEntryPoint: `c('GeminiUserSettingsMenu.entrypoint')`,
+    popoverEntryPoint: {
+      root: GeminiUserSettingsMenu,
+    },
     otherProps: {},
     popoverType: 'menu',
     position: 'end',
-    children: (a: any, onPress: any) => {
+    children: (ref: any, onPress: any) => {
       return jsx(WorkGalahadUIAppsListItem, {
-        ref: a,
-        withTopSpacing: !1,
+        ref,
+        withTopSpacing: false,
         children: jsx(WorkGalahadUIAppNavButton, {
-          label: d,
-          ariaLabel: d,
+          label: fullName,
+          ariaLabel: fullName,
           elementId: 'profile',
-          selected: !1,
+          selected: false,
           // linkDataFT: c('TrackingNodes').getTrackingInfo(404),
           'data-testid': void 0,
           onPress: isDisabled ? emptyFunction : onPress,
-          largeAddOn: !0,
+          largeAddOn: true,
           addOn: jsx(WorkGalahadProfileIcon, {
             size: 40,
           }),

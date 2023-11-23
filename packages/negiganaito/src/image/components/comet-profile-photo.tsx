@@ -61,7 +61,7 @@ type CometProfilePhotoProps = {
   source?: any
   storyStatus?: any
   testid?: string
-  testOnly_pressed?: string
+  testOnly_pressed?: any
   testOnly_previewDelay?: any
 }
 
@@ -193,6 +193,10 @@ const useStyles = makeStyles({
     position: 'relative',
     verticalAlign: 'bottom',
     zIndex: 'unset',
+  },
+
+  dummy3: {
+    verticalAlign: 'bottom',
   },
 })
 
@@ -326,7 +330,7 @@ export const CometProfilePhoto = forwardRef<any, CometProfilePhotoProps>(
                 {
                   'aria-hidden': !alt ? !0 : void 0,
                   'aria-label': alt,
-                  className: 'x3ajldb',
+                  className: l.dummy3, // 'x3ajldb',
                 },
                 // c('CometVisualCompletionAttributes').IGNORE_DYNAMIC,
                 {
@@ -373,7 +377,7 @@ export const CometProfilePhoto = forwardRef<any, CometProfilePhotoProps>(
                                 'circle',
                                 Object.assign(
                                   {
-                                    cx: L.left ?? size - (L.left ?? 0),
+                                    cx: L.left ?? size - (L.right ?? 0),
                                     // cx:
                                     //   (k = L.left) != null
                                     //     ? k
@@ -593,7 +597,10 @@ export const CometProfilePhoto = forwardRef<any, CometProfilePhotoProps>(
       })
     }
 
-    return !onPress && !linkProps && shouldShowCloseFriendsBadge !== !0
+    return !onPress &&
+      !linkProps &&
+      //  /**  shouldShowCloseFriendsBadge */
+      testOnly_pressed !== !0
       ? H(
           {
             pressed: false,
@@ -680,6 +687,8 @@ function m({ addOn, pressed, size }: MProps) {
       return null
   }
 }
+
+m.displayName = 'm [from CometProfilePhoto]'
 
 type ActivityBadgeCompProps = {
   backgroundColor?: string

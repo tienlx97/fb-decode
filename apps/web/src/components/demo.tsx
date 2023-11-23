@@ -4,8 +4,9 @@ import * as React from 'react'
 // import { TetraText } from '@negiganaito/text'
 import {
   HelpCenterHeaderLanguageSelector,
+  JSResource,
   // CometTab, TetraButton,
-  TetraText,
+  // TetraText,
 } from '@negiganaito/react-components'
 import { WorkKnowledgeCustomHomePageHeaderActions } from './work-knowledge-custom-home-page-header-actions'
 // import { CometFormTextArea } from '@negiganaito/textarea'
@@ -14,6 +15,12 @@ import { WorkKnowledgeCustomHomePageHeaderActions } from './work-knowledge-custo
 // import { CometFormSelectOnlyCombobox } from '@negiganaito/combobox'
 
 // import { TetraButton } from '@fb/tetra-button'
+
+const R = JSResource(
+  'TetraText',
+  // @ts-ignore
+  React.lazy(() => import('./footer/footer')),
+)
 
 export const Default = () => {
   // const [state, setState] = React.useState(
@@ -26,9 +33,19 @@ export const Default = () => {
   // const [switchVal, setSwitchVal] = React.useState(true)
 
   // const [comboboxValue, setComboboxValue] = React.useState('MARRIED_NAME')
+  console.log({ R })
 
   return (
     <div style={{ width: '440px' }}>
+      <button
+        type="button"
+        onClick={() => {
+          console.log({ _1: R.getModuleId() })
+        }}
+      >
+        Click
+      </button>
+
       {/* <div style={{ margin: '3rem' }}>
         <CometTab aria-haspopup="menu" />
       </div>
@@ -45,11 +62,11 @@ export const Default = () => {
           // icon={CaretDownSvg}
         />
       </div> */}
-      <div style={{ display: 'none' }}>
+      {/* <div style={{ display: 'none' }}>
         <TetraText color="secondary" align="center" type="body2">
           You are all caught up for now. Be sure to check for more updates soon.
         </TetraText>
-      </div>
+      </div> */}
 
       <HelpCenterHeaderLanguageSelector
         selectedLanguage="English (US)"

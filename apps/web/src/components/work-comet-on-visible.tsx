@@ -25,8 +25,8 @@ export function WorkCometOnVisible({
             intersectionObserverEntryIsIntersecting(a)
               ? onVisible()
               : onHidden == null
-              ? void 0
-              : onHidden()
+                ? void 0
+                : onHidden()
           },
           {
             rootMargin: '0px',

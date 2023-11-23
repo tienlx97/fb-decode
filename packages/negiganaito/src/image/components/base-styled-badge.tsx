@@ -1,6 +1,6 @@
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
-import { BaseBadge } from './comet-profile-photo-notification-badge'
+import { BaseBadge } from './base-badge'
 import { makeStyles, mergeClasses, shorthands } from '@griffel/react'
 
 type BaseStyledBadgeProps = {
@@ -11,7 +11,32 @@ type BaseStyledBadgeProps = {
   className?: string
 } & any
 
-const useSizeWithBorderStyles = makeStyles({
+export function BaseStyledBadge({
+  border = false,
+  children,
+  colorXStyle,
+  size = 8,
+  className,
+  ...rest
+}: BaseStyledBadgeProps) {
+  const sizeWithBorderClasses = useSizeWithBorderStyles()
+  const sizeWithoutBorderClasses = useSizeWithoutBorderStyles()
+
+  return jsx(
+    BaseBadge,
+    Object.assign({}, rest, {
+      className: mergeClasses(
+        colorXStyle,
+        // @ts-ignore
+        border ? sizeWithBorderClasses[size] : sizeWithoutBorderClasses[size],
+        className,
+      ),
+      children,
+    }),
+  )
+}
+
+const useSizeWithoutBorderStyles = makeStyles({
   6: {
     height: '6px',
     width: '6px',
@@ -70,7 +95,7 @@ const useSizeWithBorderStyles = makeStyles({
   },
 })
 
-const useSizeWithoutBorderStyles = makeStyles({
+const useSizeWithBorderStyles = makeStyles({
   6: {
     ...shorthands.borderStyle('solid'),
     ...shorthands.borderWidth('1.5px'),
@@ -156,28 +181,3 @@ const useSizeWithoutBorderStyles = makeStyles({
     width: '49px',
   },
 })
-
-export function BaseStyledBadge({
-  border = false,
-  children,
-  colorXStyle,
-  size = 8,
-  className,
-  ...rest
-}: BaseStyledBadgeProps) {
-  const sizeWithBorderClasses = useSizeWithBorderStyles()
-  const sizeWithoutBorderClasses = useSizeWithoutBorderStyles()
-
-  return jsx(
-    BaseBadge,
-    Object.assign({}, rest, {
-      className: mergeClasses(
-        colorXStyle,
-        // @ts-ignore
-        border ? sizeWithBorderClasses[size] : sizeWithoutBorderClasses[size],
-        className,
-      ),
-      children,
-    }),
-  )
-}

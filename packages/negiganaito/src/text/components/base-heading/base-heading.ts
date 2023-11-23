@@ -12,9 +12,9 @@ type BaseHeadingReactProps = {
   isPrimaryHeading?: boolean
   testid?: string
   className?: string
-} & HTMLElement
+} & any
 
-const BaseHeading = forwardRef<HTMLElement, BaseHeadingReactProps>(
+const BaseHeading = forwardRef<any, BaseHeadingReactProps>(
   ({ children, className, isPrimaryHeading = false, testid, ...rest }, ref) => {
     const classes = useStyles()
 

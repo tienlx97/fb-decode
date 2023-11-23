@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { fbt } from 'fbt'
-
 // @ts-ignore
 import { jsx } from 'react/jsx-runtime'
 import { WorkGalahadUIChannelItem } from './work-galahad-ui-channel-item'

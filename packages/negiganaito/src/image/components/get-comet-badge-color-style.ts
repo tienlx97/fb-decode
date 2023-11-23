@@ -3,25 +3,25 @@ import { unrecoverableViolation } from '@negiganaito/error'
 
 const useStyles = makeStyles({
   blue: {
-    backgroundColor: 'x107p15e',
+    backgroundColor: 'var(--badge-background-color-blue)',
   },
   darkGray: {
-    backgroundColor: 'x167v862',
+    backgroundColor: 'var(--badge-background-color-dark-gray)',
   },
   gray: {
-    backgroundColor: 'x80cks',
+    backgroundColor: 'var(--badge-background-color-gray)',
   },
   green: {
-    backgroundColor: 'x7amd0a',
+    backgroundColor: 'var(--badge-background-color-green)',
   },
   lightBlue: {
-    backgroundColor: 'x56hhle',
+    backgroundColor: 'var(--badge-background-color-light-blue)',
   },
   red: {
-    backgroundColor: 'xdi0jry',
+    backgroundColor: 'var(--badge-background-color-red)',
   },
   yellow: {
-    backgroundColor: 'x1ajtyu9',
+    backgroundColor: 'var(--badge-background-color-yellow)',
   },
 })
 

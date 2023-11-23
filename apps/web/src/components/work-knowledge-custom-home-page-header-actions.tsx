@@ -12,7 +12,7 @@ import {
 } from '@negiganaito/react-components'
 
 export function WorkKnowledgeCustomHomePageHeaderActions() {
-  const k = [
+  const menuItem = [
     jsx(
       CometMenuItem,
       {
@@ -87,7 +87,7 @@ export function WorkKnowledgeCustomHomePageHeaderActions() {
   const f = jsx(CometDeferredPopoverTrigger, {
     align: 'end',
     popoverProps: {
-      children: k,
+      children: menuItem,
       withArrow: true,
     },
     popoverResource: CometMenu,
@@ -122,3 +122,19 @@ export function WorkKnowledgeCustomHomePageHeaderActions() {
 
   return f
 }
+
+/*
+__d("JSResource", 
+  ["JSResourceReferenceImpl"]
+
+__d("JSResourceReferenceImpl", 
+  ["JSResourceEvents", 
+  "Promise", 
+  "PromiseAnnotate", 
+  "ifRequireable", 
+  "ifRequired"]
+
+__d("JSResourceEvents", 
+  ["performanceAbsoluteNow"]
+
+*/

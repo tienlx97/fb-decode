@@ -5,8 +5,8 @@ module.exports = {
     ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
   ],
   plugins: [
-    'babel-plugin-fbt',
-    'babel-plugin-fbt-runtime',
+    // 'babel-plugin-fbt',
+    // 'babel-plugin-fbt-runtime',
     [
       '@babel/plugin-transform-react-jsx',
       {

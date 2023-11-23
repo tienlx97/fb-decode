@@ -15,7 +15,7 @@ import {
 import { mergeClasses } from '@griffel/react'
 import { CometIcon, CometSVGIconColor } from '@negiganaito/image'
 
-type CometCircleButtonProps = {
+export type CometCircleButtonProps = {
   icon?: any
   label?: string
   color?: CometSVGIconColor

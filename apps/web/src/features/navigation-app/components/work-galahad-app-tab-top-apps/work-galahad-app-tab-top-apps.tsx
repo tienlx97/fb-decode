@@ -33,8 +33,8 @@ function WorkGalahadAppTabTopAppsCore() {
         tab.id === 'chats'
           ? chatUnreadCount
           : tab.id === 'notifications'
-          ? notificationsBadgeCount
-          : 0
+            ? notificationsBadgeCount
+            : 0
       }
       isFirst={index === 0}
       onHoverIn={emptyFunction}

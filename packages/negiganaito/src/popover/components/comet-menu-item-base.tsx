@@ -85,7 +85,7 @@ const useDummyStyles = makeStyles({
 
 const o = true
 
-type CometMenuItemBaseProps = {
+export type CometMenuItemBaseProps = {
   alignCenter?: boolean
   autoScrollOnLoad?: boolean
   aux?: any

@@ -47,7 +47,7 @@ import { BasePopoverLayerVisibility } from '../base-popover-layer-visibility'
 import { CometPrerenderer } from '../comet-prerenderer'
 
 // p = c('gkx')('8058')
-const p = true
+const dynamic8058 = true
 
 function popoverRendererComp({ content, fallback }: any) {
   return jsx(CometPlaceholder, {
@@ -87,6 +87,7 @@ export type BasePopoverTriggerProps = {
   triggerOutsideClickOnDrag?: any
 }
 
+// @ts-ignore
 function BasePopoverTrigger({
   children,
   doNotCloseOnOutsideClick = false,
@@ -108,66 +109,71 @@ function BasePopoverTrigger({
   ...rest
 }: BasePopoverTriggerProps) {
   const H = useRef(false)
-  const [I, J] = useState(false)
+  const [visible, setVisible] = useState(false)
 
-  const [K, L] = useState(null)
+  // const [K, L] = useState(null)
+  const [interactionUUID, setInteractionUUID] = useState(null)
   const contextRef = useRef<any>(null)
   const N = useRef<any>(null)
-  const O = useCallback(
-    (a: any) => {
-      J(a)
+
+  const onVisibleHandler = useCallback(
+    (val: boolean) => {
+      setVisible(val)
       if (onVisibilityChange) {
-        onVisibilityChange(a)
+        onVisibilityChange(val)
       }
     },
     [onVisibilityChange],
   )
 
   const onCloseCb = useCallback(() => {
-    O(!1)
-    L(null)
+    onVisibleHandler(false)
+    setInteractionUUID(null)
     N.current = null
-  }, [O])
+  }, [onVisibleHandler])
 
-  const Q = useCallback(
+  const onOpenCb = useCallback(
     (a?: any) => {
-      if (!I)
-        if (!interactionTracker) {
-          O(!0)
-        } else {
-          const [b, a0] = getCurrentQueueTime(a ?? a.timeStamp)
+      if (!visible)
+        // if (!interactionTracker) {
+        //   O(!0)
+        // } else {
+        //   // const [b, a0] = getCurrentQueueTime(a ?? a.timeStamp)
 
-          interactionTracker(
-            (e: any) => {
-              N.current = e
-              O(!0)
-              // L(
-              //   c('CometHeroLogging').genHeroInteractionUUIDAndMarkStart(
-              //     e.getTraceId(),
-              //   ),
-              // )
-            },
-            b,
-            a0,
-          )
-        }
+        //   O(!0)
+
+        //   // interactionTracker(
+        //   //   (e: any) => {
+        //   //     N.current = e
+        //   //     O(!0)
+        //   //     // L(
+        //   //     //   c('CometHeroLogging').genHeroInteractionUUIDAndMarkStart(
+        //   //     //     e.getTraceId(),
+        //   //     //   ),
+        //   //     // )
+        //   //   },
+        //   //   b,
+        //   //   a0,
+        //   // )
+        // }
+        onVisibleHandler(true)
     },
-    [I, interactionTracker, O],
+    [visible, interactionTracker, onVisibleHandler],
   )
 
   useImperativeHandle(
     imperativeRef,
-    function () {
+    () => {
       return {
-        hide: function () {
+        hide: () => {
           onCloseCb()
         },
-        show: function () {
-          Q()
+        show: () => {
+          onOpenCb()
         },
       }
     },
-    [Q, onCloseCb],
+    [onOpenCb, onCloseCb],
   )
 
   const cometInteractionVCRef = useCallback(
@@ -177,27 +183,29 @@ function BasePopoverTrigger({
       //   a != null &&
       //   K != null &&
       //   b('cr:1791018').addMutationRootForTraceId(K, a)
+
+      return undefined
     },
-    [K],
+    [interactionUUID],
   )
 
   const imperativeContextLayerRef = useRef(null)
   const [prerenderingProps, y, u, S, a] = useCometPrerendererImpl(
     popoverRenderer,
-    I,
+    visible,
     popoverPreloadResource,
     onHighIntentPreload,
   )
 
   useLayoutEffect(() => {
-    if (visibleOnLoad === !0 && H.current === !1) {
-      H.current = !0
-      Q()
+    if (visibleOnLoad === true && H.current === false) {
+      H.current = true
+      onOpenCb()
     }
     // visibleOnLoad === !0 && H.current === !1 && ((H.current = !0), Q())
-  }, [Q, visibleOnLoad])
+  }, [onOpenCb, visibleOnLoad])
 
-  const T = useContext(BaseScrollableAreaContext)
+  const baseScrollableAreaValue = useContext(BaseScrollableAreaContext)
 
   const U = useVisibilityObserver({
     onHidden: useCallback(
@@ -205,9 +213,10 @@ function BasePopoverTrigger({
         if (hiddenReason === 'COMPONENT_UNMOUNTED') {
           return
         }
-        T[T.length - 1] != null && onCloseCb()
+        baseScrollableAreaValue[baseScrollableAreaValue.length - 1] &&
+          onCloseCb()
       },
-      [onCloseCb, T],
+      [onCloseCb, baseScrollableAreaValue],
     ),
   })
 
@@ -215,19 +224,19 @@ function BasePopoverTrigger({
     switch (popoverType) {
       case 'menu':
         return {
-          expanded: I,
+          expanded: visible,
           haspopup: 'menu',
         }
       case 'dialog':
       default:
         return null
     }
-  }, [I, popoverType])
+  }, [visible, popoverType])
 
-  const W = useCallback(
-    (a: any) => {
-      contextRef.current = a != null ? a : null
-      U(a)
+  const internalRef = useCallback(
+    (node: any) => {
+      contextRef.current = node ?? undefined // a != null ? a : null
+      U(node)
     },
     [U],
   )
@@ -245,31 +254,32 @@ function BasePopoverTrigger({
     N.current.cancelTrace('close_popover', traceStatus)
   }
 
-  const Y = useCallback(() => {
-    doNotCloseOnOutsideClick || (p && X(), onCloseCb())
+  const onOutSideClickHandler = useCallback(() => {
+    // doNotCloseOnOutsideClick || (dynamic8058 && X(), onCloseCb())
+
+    if (!doNotCloseOnOutsideClick) {
+      onCloseCb()
+    }
   }, [doNotCloseOnOutsideClick, onCloseCb])
 
   const outSideClickRef = useOnOutsideClick(
-    I ? Y : null,
-    useMemo(
-      function () {
-        return {
-          isTargetEligible: (a: any) => {
-            const b = contextRef.current
-            return b != null ? !b.contains(a) : !0
-          },
-          triggerOutsideClickOnDrag: triggerOutsideClickOnDrag,
-        }
-      },
-      [triggerOutsideClickOnDrag],
-    ),
+    visible ? onOutSideClickHandler : null,
+    useMemo(() => {
+      return {
+        isTargetEligible: (a: any) => {
+          const b = contextRef.current
+          return b != null ? !b.contains(a) : !0
+        },
+        triggerOutsideClickOnDrag: triggerOutsideClickOnDrag,
+      }
+    }, [triggerOutsideClickOnDrag]),
   )
 
-  const Z = useCallback(
+  const startHanderWhenPressWasDelegated = useCallback(
     (a: any) => {
-      I ? onCloseCb() : Q(a)
+      visible ? onCloseCb() : onOpenCb(a)
     },
-    [I, onCloseCb, Q],
+    [visible, onCloseCb, onOpenCb],
   )
 
   const baseContextualLayerRef = useMergeRefs(
@@ -289,16 +299,25 @@ function BasePopoverTrigger({
     children: [
       jsx(BaseButtonPopoverContext.Provider, {
         value: baseButtonPopoverContextValue,
-        children: children(W, Z, onCloseCb, y, u, S, a, I),
+        children: children(
+          internalRef,
+          startHanderWhenPressWasDelegated,
+          onCloseCb,
+          y,
+          u,
+          S,
+          a,
+          visible,
+        ),
       }),
       jsx(CometErrorBoundary, {
         children: jsx(CometPrerenderer, {
-          prerenderingProps: prerenderingProps,
-          children: (a: any) => {
+          prerenderingProps,
+          children: (cometPrerendererProps: any) => {
             return jsx(
               BaseContextualLayer,
-              Object.assign({}, a, rest, {
-                containFocus: !0,
+              Object.assign({}, cometPrerendererProps, rest, {
+                containFocus: true,
                 contextRef: contextRef,
                 customContainer: BaseContextualLayerDefaultContainer, // BaseContextualLayerDefaultContainer
                 imperativeRef: imperativeContextLayerRef,
@@ -315,12 +334,13 @@ function BasePopoverTrigger({
                         interactionDesc:
                           'popover_' +
                           (popoverPreloadResource
-                            ? popoverPreloadResource.getModuleId()
-                            : 'Unknown'),
+                            ? popoverPreloadResource.name
+                            : // ? popoverPreloadResource.getModuleId()
+                              'Unknown'),
 
-                        interactionUUID: K,
+                        interactionUUID: interactionUUID,
                         children: jsx(BasePopoverLayerVisibility, {
-                          onLayerDetached: onLayerDetached,
+                          onLayerDetached,
                           children: popoverRenderer({
                             content: jsxs(React.Fragment, {
                               children: [

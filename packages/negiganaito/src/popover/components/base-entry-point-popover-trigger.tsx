@@ -5,6 +5,7 @@ import { BasePopoverTrigger } from './base-popover-trigger'
 import { deepEquals } from '@negiganaito/utils/common/deepEquals'
 import { BasePopoverTriggerProps } from './base-popover-trigger/base-popover-trigger'
 import { BaseEntryPointPopoverContainer } from './base-entry-point-popover-container'
+import { emptyFunction } from '@negiganaito/utils/common/empty-function'
 
 type BaseEntryPointPopoverTriggerProps = BasePopoverTriggerProps & {
   entryPointParams?: any
@@ -29,23 +30,25 @@ export function BaseEntryPointPopoverTrigger({
   //   r = p[1]
   // p = p[2]
 
-  var s = useRef(null),
-    onHighIntentPreload = useCallback(() => {
-      if (entryPointParams == null) return
-      // if (q !== null && deepEquals(s.current, entryPointParams)) return
-      s.current = entryPointParams
-      // r(entryPointParams)
-    }, [
-      entryPointParams,
-      // q, r
-    ])
+  const s = useRef(null)
+  const onHighIntentPreload = useCallback(() => {
+    if (!entryPointParams) {
+      return
+    }
+    // if (q !== null && deepEquals(s.current, entryPointParams)) return
+    s.current = entryPointParams
+    // r(entryPointParams)
+  }, [
+    entryPointParams,
+    // q, r
+  ])
 
   const popoverProps = useMemo(() => {
     return {
-      entryPointParams: entryPointParams,
+      entryPointParams,
       // entryPointReference: q,
       load: onHighIntentPreload,
-      otherProps: otherProps,
+      otherProps,
     }
   }, [
     entryPointParams,
@@ -53,31 +56,31 @@ export function BaseEntryPointPopoverTrigger({
     onHighIntentPreload,
     otherProps,
   ])
+
   const onVisibilityChangeCb = useCallback(
-    (...val: any) => {
+    (val: boolean) => {
+      val && onHighIntentPreload()
       onVisibilityChange && onVisibilityChange(val)
     },
     [onHighIntentPreload, onVisibilityChange],
   )
+
   return jsx(
     BasePopoverTrigger,
     Object.assign(
       {
         doNotCloseOnOutsideClick,
         fallback,
-        interactionTracker: false,
-        onHighIntentPreload: onHighIntentPreload,
-        // onLayerDetached: p,
+        interactionTracker: emptyFunction,
+        onHighIntentPreload,
         onVisibilityChange: onVisibilityChangeCb,
-        // popover: BaseEntryPointPopoverContainer,
-        // popoverPreloadResource: popoverEntryPoint.root,
-        // popoverProps: popoverProps,
-        // preloadTrigger: preloadTrigger,
 
-        popover: popoverEntryPoint.root,
-        popoverPreloadResource: undefined,
-        popoverProps: popoverProps,
-        preloadTrigger: preloadTrigger,
+        popoverPreloadResource: popoverEntryPoint.root,
+        popoverProps,
+        preloadTrigger,
+        popover: BaseEntryPointPopoverContainer,
+
+        // onLayerDetached: p,
       },
       rest,
     ),

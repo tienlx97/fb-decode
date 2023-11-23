@@ -51,12 +51,12 @@ export function WorkKnowledgePinnedCollectionNavItem({
 
   return jsx(WorkKnowledgeNavItem, {
     canShowCategoryTitleTooltip: !i,
-    collectionRef: f,
+    // collectionRef: f,
     indentLevel: 1,
     onPress: e,
     onPressIn: emptyFunction,
-    tertiaryIndicator: jsx(c('WorkKnowledgePinCollectionCircleButton.react'), {
-      collectionRef: f,
+    tertiaryIndicator: jsx('WorkKnowledgePinCollectionCircleButton.react', {
+      // collectionRef: f,
       onTooltipVisibilityChange: a,
       source: 'shortcuts',
     }),

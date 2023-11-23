@@ -40,8 +40,8 @@ export class FbtResultBase {
         ;(f = this.__errorListener) == null
           ? void 0
           : f.onStringSerializationError == null
-          ? void 0
-          : f.onStringSerializationError(e)
+            ? void 0
+            : f.onStringSerializationError(e)
       }
     }
     Object.isFrozen(this) || (this.$2 = b)
@@ -58,8 +58,8 @@ export class FbtResultBase {
       Array.isArray(e)
         ? c.push.apply(c, FbtResultBase.flattenToArray(e))
         : e instanceof FbtResultBase
-        ? c.push.apply(c, e.flattenToArray())
-        : c.push(e)
+          ? c.push.apply(c, e.flattenToArray())
+          : c.push(e)
     }
     return c
   }
@@ -113,8 +113,8 @@ export class FbtResultBase {
     ;(b = this.__errorListener) == null
       ? void 0
       : b.onStringMethodUsed == null
-      ? void 0
-      : b.onStringMethodUsed(a)
+        ? void 0
+        : b.onStringMethodUsed(a)
     for (var c = arguments.length, d = new Array(c), e = 0; e < c; e++)
       d[e] = arguments[e]
     // @ts-ignore
