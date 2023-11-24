@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "next build",
     "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
-    "dev": "next dev",
-    "lint": "eslint",
+    "dev": "mkdir -p __generated__ && concurrently \"relay-compiler --watch\" \"next dev\"",
+    "build": "relay-compiler --validate && next build",
     "relay": "relay-compiler",
+    "lint": "eslint",
     "start": "next start",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "get-graphql-schema": "get-graphql-schema https://podhouse-server.herokuapp.com/graphql > schema.graphql --graphql"
   },
   "dependencies": {
     "@griffel/react": "1.5.16",
@@ -42,6 +43,10 @@
     "@types/relay-runtime": "14.1.18",
     "eslint-plugin-relay": "1.8.3",
     "relay-compiler": "16.0.0",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "concurrently": "^7.6.0",
+    "babel-plugin-relay": "16.0.0",
+    "get-graphql-schema": "2.1.2",
+    "graphql": "16.8.1"
   }
 }

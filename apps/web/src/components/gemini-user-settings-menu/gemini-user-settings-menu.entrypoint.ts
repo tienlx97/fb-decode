@@ -8,10 +8,11 @@ const GeminiUserSettingsMenuEntryPoint: EntryPoint = {
   getPreloadProps(params: any) {
     return {
       queries: {
-        menuQueryReference: {
+        Media: {
           parameters: c('GeminiUserSettingsMenuQuery$Parameters'),
           variables: {
-            scale: WebPixelRatio.get(),
+            // scale: WebPixelRatio.get(),
+            id: 15125,
           },
         },
       },

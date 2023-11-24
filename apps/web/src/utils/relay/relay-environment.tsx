@@ -23,7 +23,7 @@ async function fetchFunction(
   variables: Variables,
   _cacheConfig: CacheConfig,
 ) {
-  const response = fetch('https://graphql.anilist.co', {
+  const response = fetch('https://beta.pokeapi.co/graphql/v1beta', {
     method: 'POST',
     headers: [['Content-Type', 'application/json']],
     body: JSON.stringify({
